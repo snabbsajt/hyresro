@@ -7,7 +7,7 @@ import { products } from "@/data/products";
 export const metadata: Metadata = {
   title: `${site.name} — ${site.tagline}`,
   description:
-    "Dekorera hyreslägenheten utan att förstöra depositionen. Produkter utan borr, klara guider och en checklista inför flytt.",
+    "Ett hyreskontrakt kräver att ni återställer bostaden vid utflyttning. Med rätt metoder undviker ni skador och behåller er deposition.",
 };
 
 const featured = products.filter((p) =>
@@ -16,68 +16,69 @@ const featured = products.filter((p) =>
   ),
 );
 
+const entries = [
+  {
+    href: "/guide/kolla-kontraktet",
+    title: "Så läser ni kontraktet",
+    body: "Förstå regler kring ändringar och underhåll innan ni påbörjar projekt.",
+  },
+  {
+    href: "/guide/rullgardin-utan-borra",
+    title: "Rullgardin utan att borra",
+    body: "Montera solskydd säkert utan att skada fönsterkarmar eller väggar.",
+  },
+  {
+    href: "/guide/hylla-utan-borra",
+    title: "Hylla utan att borra",
+    body: "Använd anpassade fästen och tejp för stabil upphängning utan hål.",
+  },
+] as const;
+
 export default function HomePage() {
   return (
     <div className="space-y-10">
       <section className="space-y-4">
         <h1 className="text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">
-          {site.name}
+          trygghet och kontroll i ert boende.
         </h1>
-        <p className="text-lg text-stone-600">{site.tagline}</p>
-        <p className="max-w-xl leading-relaxed text-stone-700">
-          Hyresro hjälper er att inreda hyresrätt utan onödiga hål i väggen.
-          Vi samlar produkter utan borr, korta guider och praktiska tips — så
-          lägenheten håller sig i skick.
+        <p className="text-lg text-stone-600">
+          Lägenheten i skick, depositionen i fred.
         </p>
-        <div className="flex flex-wrap gap-3 pt-1">
-          <Link
-            href="/guide/borra-i-hyresratt"
-            className="rounded-md bg-sage-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-sage-800"
-          >
-            Guide: borra i hyresrätt
-          </Link>
-          <Link
-            href="/solskydd"
-            className="rounded-md border border-stone-300 bg-white px-4 py-2.5 text-sm font-medium text-stone-800 hover:bg-stone-50"
-          >
-            Se solskydd
-          </Link>
+        <p className="max-w-xl leading-relaxed text-stone-700">
+          Ett hyreskontrakt kräver att ni återställer bostaden vid utflyttning.
+          Med rätt metoder undviker ni skador och behåller er deposition.
+        </p>
+        <div className="grid gap-3 pt-1 sm:grid-cols-3">
+          {entries.map((e) => (
+            <Link
+              key={e.href}
+              href={e.href}
+              className="rounded-lg border border-stone-200 bg-white p-4 hover:border-sage-600"
+            >
+              <span className="block text-sm font-semibold text-sage-800">
+                {e.title}
+              </span>
+              <span className="mt-1 block text-sm leading-relaxed text-stone-600">
+                {e.body}
+              </span>
+            </Link>
+          ))}
         </div>
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-stone-800">Utvalda produkter</h2>
+        <h2 className="text-xl font-semibold text-stone-800">
+          Utvalda produkter
+        </h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {featured.map((p) => (
             <ProductCard key={p.slug} product={p} />
           ))}
         </div>
-      </section>
-
-      <section className="space-y-3 rounded-lg border border-stone-200 bg-white p-5">
-        <h2 className="text-lg font-semibold text-stone-800">Korta vägar</h2>
-        <ul className="space-y-2 text-sm text-stone-700">
-          <li>
-            <Link href="/guide/hylla-utan-borra" className="text-sage-800 underline-offset-2 hover:underline">
-              Hylla utan borr
-            </Link>
-          </li>
-          <li>
-            <Link href="/guide/rullgardin-utan-borra" className="text-sage-800 underline-offset-2 hover:underline">
-              Rullgardin utan borr
-            </Link>
-          </li>
-          <li>
-            <Link href="/fasten" className="text-sage-800 underline-offset-2 hover:underline">
-              Fästen och tejp
-            </Link>
-          </li>
-          <li>
-            <Link href="/checklista-flytta" className="text-sage-800 underline-offset-2 hover:underline">
-              Checklista inför flytt
-            </Link>
-          </li>
-        </ul>
+        <p className="text-sm leading-relaxed text-stone-600">
+          Kontrollera alltid villkoren i ert hyreskontrakt innan ni köper
+          monteringsutrustning.
+        </p>
       </section>
     </div>
   );

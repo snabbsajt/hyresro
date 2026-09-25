@@ -5,9 +5,9 @@ import { ProductCard } from "@/components/ProductCard";
 import { getProductsByCategory } from "@/data/products";
 
 export const metadata: Metadata = {
-  title: "Solskydd för hyresrätt",
+  title: "Solskydd utan att borra",
   description:
-    "Rullgardiner och mörkläggning som går att montera utan borr. Produkter och kort guide.",
+    "Solskydd utan borr i hyresrätt. Klämfästen, mätning och mörkläggning — plus produkter.",
 };
 
 export default function SolskyddPage() {
@@ -17,29 +17,45 @@ export default function SolskyddPage() {
     <div className="space-y-8">
       <header className="space-y-3">
         <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
-          Solskydd
+          Solskydd utan att borra
         </h1>
-        <p className="max-w-xl leading-relaxed text-stone-700">
-          Rullgardin med klämfäste är ofta enklast i hyresrätt. Behöver ni
-          mörkläggning finns det både kläm- och skruvvarianter.
-        </p>
-        <p className="text-sm text-stone-600">
-          Läs{" "}
+      </header>
+
+      <section className="space-y-3 leading-relaxed text-stone-700">
+        <h2 className="text-xl font-semibold text-stone-800">Kort svar</h2>
+        <ul className="list-disc space-y-2 pl-5">
+          <li>Klämfästen monteras direkt på fönsterbågen utan verktyg.</li>
+          <li>
+            Mät fönstret noggrant för att välja rätt bredd på mörkläggningen.
+          </li>
+          <li>
+            Mörkläggande tyg stänger ute både ljus och värme effektivt.
+          </li>
+          <li>
+            Skruvhål i fönsterkarmar räknas ofta som onormalt slitage.
+          </li>
+        </ul>
+        <p>
+          Läs vår fullständiga guide för steg för steg-instruktioner om
+          rullgardiner utan borrhål:{" "}
           <Link
             href="/guide/rullgardin-utan-borra"
             className="text-sage-800 underline underline-offset-2"
           >
-            guiden om rullgardin utan borr
+            Rullgardin utan att borra
           </Link>
           .
         </p>
-      </header>
+      </section>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        {items.map((p) => (
-          <ProductCard key={p.slug} product={p} />
-        ))}
-      </div>
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold text-stone-800">Produkter</h2>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {items.map((p) => (
+            <ProductCard key={p.slug} product={p} />
+          ))}
+        </div>
+      </section>
 
       <Disclosure compact />
     </div>
