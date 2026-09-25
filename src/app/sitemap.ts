@@ -6,6 +6,7 @@ const paths = [
   "/guide/borra-i-hyresratt",
   "/guide/hylla-utan-borra",
   "/guide/rullgardin-utan-borra",
+    "/guide/kolla-kontraktet",
   "/solskydd",
   "/fasten",
   "/checklista-flytta",
