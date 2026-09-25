@@ -1,5 +1,6 @@
 import type { Product } from "@/data/types";
 import { AffiliateLink } from "./AffiliateLink";
+import { ContractNote } from "./ContractNote";
 
 const mountLabel: Record<Product["mountType"], string> = {
   "no-drill": "Utan borr",
