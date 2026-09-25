@@ -27,8 +27,7 @@ export function ProductCard({ product }: Props) {
           Från ca {product.priceFromSek} kr
         </p>
       )}
-      {product.legalNote && (
-        <p className="mb-3 text-xs text-stone-500">{product.legalNote && <ContractNote className="mb-3" />}
+      {product.legalNote && <ContractNote className="mb-3" />}
       <ul className="flex flex-wrap gap-2">
         {product.merchants.map((m) => (
           <li key={m.name}>
