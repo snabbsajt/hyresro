@@ -4,7 +4,7 @@ import { site } from "@/config/site";
 const links = [
   { href: "/solskydd", label: "Solskydd" },
   { href: "/fasten", label: "Fästen" },
-  { href: "/guide/borra-i-hyresratt", label: "Guider" },
+  { href: "/guide/kolla-kontraktet", label: "Kontraktet" },
   { href: "/checklista-flytta", label: "Checklista" },
 ];
 
