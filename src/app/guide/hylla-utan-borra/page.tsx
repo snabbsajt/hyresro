@@ -36,28 +36,40 @@ export default function HyllaUtanBorraPage() {
       </header>
 
       <section className="space-y-3 leading-relaxed text-stone-700">
-        <h2 className="text-xl font-semibold text-stone-800">Kort svar</h2>
+        <h2 className="text-xl font-semibold text-stone-800">
+          Viktigt att tänka på innan ni börjar
+        </h2>
         <ul className="list-disc space-y-2 pl-5">
           <li>
-            Bäst ytor: kakel, glas, metall och slät målad vägg. Tapet och
-            strukturputz håller sämre.
+            <strong className="font-medium text-stone-800">
+              Underlag och fäste:
+            </strong>{" "}
+            Självhäftande lösningar kräver en ren, slät och fast yta, till
+            exempel målad betong, gips eller kakel. De fäster inte på
+            papperstapet (eftersom tapeten släpper från väggen), porösa ytor
+            eller dammiga väggar.
           </li>
           <li>
-            Maxvikten på förpackningen gäller. Överlast är vanligaste orsaken
-            till fall.
+            <strong className="font-medium text-stone-800">Fukt:</strong> I
+            badrum gör den höga luftfuktigheten att klistret med tiden förlorar
+            sin fästförmåga.
           </li>
           <li>
-            Tejp-skruv (t.ex. Powerbond): fäste på väggen, hylla eller krok
-            ovanpå. Bra för lätta till medeltunga grejer.
+            <strong className="font-medium text-stone-800">Maxvikt:</strong>{" "}
+            Självhäftande lösningar klarar oftast bara ett par kilos belastning.
+            För tyngre hyllor är klämkonstruktioner mellan golv och tak ett bra
+            alternativ, medan tunga möbler och TV-apparater alltid kräver skruv
+            och plugg.
           </li>
           <li>
-            Klämhylla: kläms mot något plant (hyllplan, skåpkant) — ingen tejp på
-            väggen. Annat användningsområde.
+            <strong className="font-medium text-stone-800">Hyresavtal:</strong>{" "}
+            Kontrollera alltid ert hyreskontrakt eller fråga fastighetsägaren om
+            ni är osäkra på vad som gäller för er bostad.
           </li>
         </ul>
         <p>
-          Hyresro är inte juridisk rådgivning. Kontraktet styr. Mer om vad som
-          får ändras finns hos{" "}
+          Hyresro är inte juridisk rådgivning. Mer om vad som får ändras finns
+          hos{" "}
           <a
             href="https://www.hyresgastforeningen.se/"
             target="_blank"
@@ -66,50 +78,12 @@ export default function HyllaUtanBorraPage() {
           >
             Hyresgästföreningen
           </a>
-          .
-        </p>
-      </section>
-
-      <section className="space-y-3 leading-relaxed text-stone-700">
-        <h2 className="text-xl font-semibold text-stone-800">Gör så här</h2>
-        <ol className="list-decimal space-y-2 pl-5">
-          <li>
-            Rengör ytan. Fett, damm och kalk gör att tejpen släpper. Torka torrt.
-          </li>
-          <li>
-            Tryck fast fästet enligt instruktion. Hela ytan ska sitta mot
-            underlaget — inte bara kanterna.
-          </li>
-          <li>
-            Vänta den tid tillverkaren anger innan ni hänger något. Ofta flera
-            timmar, ibland ett dygn.
-          </li>
-          <li>
-            Lasta inte fullt dag 1. Börja lätt. Öka vikten när ni sett att det
-            sitter.
-          </li>
-        </ol>
-        <p>
-          Spara borttagningsinstruktionen till flytt. Fel metod river färg.
-        </p>
-      </section>
-
-      <section className="space-y-3 leading-relaxed text-stone-700">
-        <h2 className="text-xl font-semibold text-stone-800">
-          När det inte håller
-        </h2>
-        <ul className="list-disc space-y-2 pl-5">
-          <li>Tapet, struktur, gipsdamm och fuktiga ytor (många badrum).</li>
-          <li>Tung TV, stora bokhyllor, speglar över maxvikten.</li>
-          <li>Yta som fortfarande är kall eller fuktig efter städning.</li>
-        </ul>
-        <p>
-          Då är det antingen annan förvaring, eller borr. Borr ={" "}
+          .{" "}
           <Link
             href="/guide/kolla-kontraktet"
             className="text-sage-800 underline underline-offset-2"
           >
-            läs kontraktet
+            Läs kontraktet
           </Link>{" "}
           och{" "}
           <Link
@@ -120,6 +94,37 @@ export default function HyllaUtanBorraPage() {
           </Link>
           .
         </p>
+      </section>
+
+      <section className="space-y-3 leading-relaxed text-stone-700">
+        <h2 className="text-xl font-semibold text-stone-800">
+          Steg för steg: Så monterar ni självhäftande produkter
+        </h2>
+        <ol className="list-decimal space-y-2 pl-5">
+          <li>
+            <strong className="font-medium text-stone-800">Rengör ytan:</strong>{" "}
+            Torka av väggen noggrant med isopropanol eller ett fettlösande
+            rengöringsmedel.
+          </li>
+          <li>
+            <strong className="font-medium text-stone-800">Låt torka:</strong> Se
+            till att ytan är helt torr innan ni sätter igång.
+          </li>
+          <li>
+            <strong className="font-medium text-stone-800">Pressa fast:</strong>{" "}
+            Tryck den självhäftande produkten hårt mot väggen under den tid som
+            tillverkaren rekommenderar.
+          </li>
+          <li>
+            <strong className="font-medium text-stone-800">Låt härda:</strong>{" "}
+            Vänta den angivna tiden (ofta 12–24 timmar) innan ni belastar
+            upphängningen.
+          </li>
+          <li>
+            <strong className="font-medium text-stone-800">Belasta rätt:</strong>{" "}
+            Montera hyllan och se till att vikten fördelas jämnt.
+          </li>
+        </ol>
       </section>
 
       <section className="space-y-4">
