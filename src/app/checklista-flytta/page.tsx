@@ -1,79 +1,87 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContractNote } from "@/components/ContractNote";
 import { Disclosure } from "@/components/Disclosure";
-import { ProductCard } from "@/components/ProductCard";
-import { getProduct } from "@/data/products";
 
 export const metadata: Metadata = {
-  title: "Checklista inför flytt från hyresrätt",
+  title: "Checklista: flytta in och ut",
   description:
-    "Kort checklista inför flytt: ta bort fästen, laga småskador och lämna lägenheten i gott skick.",
+    "Checklista för flytt in och ut i hyresrätt: dokumentera, ta ner fästen och återställ ytor.",
 };
 
-const steps = [
-  "Gå igenom kontraktet och eventuell besiktningslista.",
-  "Ta bort självhäftande fästen enligt tillverkarens instruktion.",
-  "Kontrollera väggar, golv och fönster efter märken.",
-  "Laga små hål med spackel om det ingår i överenskommelsen.",
-  "Rengör kök, badrum och förvaring.",
-  "Dokumentera skicket med foton innan ni lämnar nycklarna.",
-  "Lämna tillbaka alla nycklar och brickor.",
-];
-
 export default function ChecklistaFlyttaPage() {
-  const brandfilt = getProduct("brandfilt");
-
   return (
     <div className="space-y-8">
       <header className="space-y-3">
         <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
-          Checklista inför flytt
+          Checklista: flytta in och ut
         </h1>
         <p className="max-w-xl leading-relaxed text-stone-700">
-          En enkel lista inför återlämning. Syftet: lägenheten i skick,
-          depositionen i fred.
+          Fota allt innan du bär in möblerna – en noggrann dokumentation är ditt
+          bästa skydd mot tvister och innehållen deposition vid utflyttningen.
+          Gå igenom bostaden metodiskt, både när du flyttar in och ut.
         </p>
+        <ContractNote />
       </header>
 
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold text-stone-800">Att göra</h2>
-        <ul className="space-y-2">
-          {steps.map((step) => (
-            <li
-              key={step}
-              className="flex gap-3 rounded-md border border-stone-200 bg-white px-3 py-2.5 text-sm text-stone-700"
-            >
-              <span className="mt-0.5 h-4 w-4 shrink-0 rounded border border-stone-300" aria-hidden />
-              {step}
-            </li>
-          ))}
+      <section className="space-y-3 leading-relaxed text-stone-700">
+        <h2 className="text-xl font-semibold text-stone-800">
+          När du flyttar in:
+        </h2>
+        <ul className="list-disc space-y-2 pl-5">
+          <li>
+            <strong className="font-medium text-stone-800">
+              Dokumentera befintliga skador.
+            </strong>{" "}
+            Gå igenom kontraktet tillsammans med hyresvärden och fotografera
+            alla märken, repor och slitage.
+          </li>
+          <li>
+            <strong className="font-medium text-stone-800">
+              Kontrollera säkerheten.
+            </strong>{" "}
+            Verifiera att brandvarnare och brandfilt finns på plats och att
+            befintliga upphängningar sitter säkert.
+          </li>
+          <li>
+            <strong className="font-medium text-stone-800">
+              Planera möbleringen direkt.
+            </strong>{" "}
+            Det minimerar onödigt håltagning i väggarna senare.
+          </li>
         </ul>
-        <p className="text-sm leading-relaxed text-stone-600">
-          Tvister om skick och deposition hanteras bäst via er hyresvärd och
-          eventuellt{" "}
-          <a
-            href="https://www.hyresgastforeningen.se/"
-            target="_blank"
-            rel="noopener noreferrer"
+        <p>
+          Osäker på kontraktsvillkor?{" "}
+          <Link
+            href="/guide/kolla-kontraktet"
             className="text-sage-800 underline underline-offset-2"
           >
-            Hyresgästföreningen
-          </a>
-          . Kolla ditt kontrakt.
+            Så läser ni kontraktet
+          </Link>
+          .
         </p>
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold text-stone-800">Relaterat</h2>
-        <p className="text-sm text-stone-600">
-          <Link
-            href="/guide/borra-i-hyresratt"
-            className="text-sage-800 underline underline-offset-2"
-          >
-            Guide: borra i hyresrätt
-          </Link>
-        </p>
-        {brandfilt && <ProductCard product={brandfilt} />}
+      <section className="space-y-3 leading-relaxed text-stone-700">
+        <h2 className="text-xl font-semibold text-stone-800">
+          När du flyttar ut:
+        </h2>
+        <ul className="list-disc space-y-2 pl-5">
+          <li>
+            <strong className="font-medium text-stone-800">
+              Ta ner fästena skonsamt.
+            </strong>{" "}
+            Demontera borrfria fästen enligt tillverkarens anvisningar så att
+            underlaget inte skadas.
+          </li>
+          <li>
+            <strong className="font-medium text-stone-800">
+              Återställ ytorna.
+            </strong>{" "}
+            Spackla bara igen borrhål om avtalet kräver det. Fota sedan hela
+            bostaden när den är tömd och slutstädad.
+          </li>
+        </ul>
       </section>
 
       <Disclosure compact />
