@@ -19,9 +19,6 @@ export function Footer() {
               {link.label}
             </Link>
           ))}
-          <a href={`mailto:${site.email}`} className="hover:text-stone-900">
-            {site.email}
-          </a>
         </div>
         <p className="text-xs text-stone-400">
           © {new Date().getFullYear()} {site.name}
