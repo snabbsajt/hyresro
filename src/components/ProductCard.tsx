@@ -15,6 +15,18 @@ type Props = {
 export function ProductCard({ product }: Props) {
   return (
     <article className="rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
+      {product.imageUrl ? (
+        <img
+          src={product.imageUrl}
+          alt={product.imageAlt || product.name}
+          className="mb-3 aspect-[4/3] w-full rounded object-cover"
+        />
+      ) : (
+        <div
+          className="mb-3 aspect-[4/3] w-full rounded bg-stone-100"
+          aria-hidden
+        />
+      )}
       <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
         <h3 className="font-medium text-stone-800">{product.name}</h3>
         <span className="rounded-full bg-sage-100 px-2 py-0.5 text-xs text-sage-800">

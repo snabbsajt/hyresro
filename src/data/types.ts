@@ -16,4 +16,6 @@ export type Product = {
   merchants: Merchant[];
   notes: string;
   legalNote?: string;
+  imageUrl?: string;
+  imageAlt?: string;
 };
