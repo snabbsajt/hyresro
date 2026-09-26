@@ -36,25 +36,25 @@ export default async function SolskyddPage() {
         caption="Vilken typ ska ni välja"
         rows={[
           {
-            name: "Rullgardin med kläm",
+            name: "Rullgardin — Bolga mörkläggande",
             bestFor: "Sova, mörklägga, vanligt fönster",
             watch: "Bågen måste tåla klämman. Mät karmdjup.",
             fromSek: 199,
           },
           {
-            name: "Plisségardin",
+            name: "Plisségardin — Hven upp/ner",
             bestFor: "Insyn och ljus upp/ner",
             watch: "Bekräfta att just den modellen har klämfäste.",
             fromSek: 275,
           },
           {
-            name: "Fönsterfilm",
+            name: "Fönsterfilm — D-C-FIX solskydd",
             bestFor: "Glas utan list, sol på kök/badrum",
             watch: "Testa liten yta. Kan lämna lim om den sitter länge.",
             fromSek: 200,
           },
           {
-            name: "Spännstång",
+            name: "Gardinstång — GARDINIA spännstång",
             bestFor: "Nisch eller fönster mellan två väggar",
             watch: "Kräver motstånd på båda sidor. Inte på lös list.",
             fromSek: 167,

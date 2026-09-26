@@ -23,25 +23,25 @@ export default async function FastenPage() {
         caption="Vilket fäste ska ni välja"
         rows={[
           {
-            name: "Tesa lätt",
+            name: "Självhäftande skruv — Tesa lätt",
             bestFor: "Krokar, ljus ram, slät yta",
             watch: "Maxvikt på förpackningen. Ren, torr vägg.",
             fromSek: 70,
           },
           {
-            name: "Tesa tung",
+            name: "Självhäftande skruv — Tesa tung",
             bestFor: "Tyngre grejer på kakel, glas, målad slät vägg",
             watch: "Tapet och strukturputt släpper ofta. Ta bort enligt Tesa.",
             fromSek: 70,
           },
           {
-            name: "Command tavla",
+            name: "Tavelupphängning — Command 5 kg",
             bestFor: "Tavlor upp till angiven vikt",
             watch: "Dra av remsan vid flytt. Inte på fuktig fog.",
             fromSek: 50,
           },
           {
-            name: "Tesa krok kakel",
+            name: "Krok — Tesa kakel",
             bestFor: "Handduk och lätta grejer i badrum",
             watch: "Kakelplattan, inte fogen.",
             fromSek: 137,
