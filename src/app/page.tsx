@@ -68,6 +68,14 @@ export default async function HomePage() {
             <ProductCard key={p.slug} product={p} />
           ))}
         </div>
+        <p>
+          <Link
+            href="/produkter"
+            className="text-sm font-medium underline underline-offset-2 hover:text-stone-800"
+          >
+            Visa alla rekommenderade produkter
+          </Link>
+        </p>
         <p className="text-sm leading-relaxed text-stone-600">
           Kontrollera alltid villkoren i ert{" "}
           <Link

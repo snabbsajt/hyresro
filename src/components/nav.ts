@@ -35,6 +35,11 @@ export const navItems: readonly NavItem[] = [
     links: [{ href: "/sakerhet", label: "Säkerhet" }],
   },
   {
+    id: "alla",
+    label: "Alla produkter",
+    links: [{ href: "/produkter", label: "Hela katalogen" }],
+  },
+  {
     id: "guider",
     label: "Guider",
     links: [
