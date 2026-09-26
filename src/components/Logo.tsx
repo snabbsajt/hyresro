@@ -4,13 +4,11 @@ type Props = {
   className?: string;
 };
 
-const WINDOW = "#8BA4D9";
+const WINDOW = "#6B8FD4";
 
 export function Logo({ className = "" }: Props) {
   return (
-    <span
-      className={`inline-flex items-center gap-3 ${className}`}
-    >
+    <span className={`inline-flex items-center gap-3 ${className}`}>
       <svg
         width="36"
         height="34"
