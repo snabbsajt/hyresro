@@ -146,13 +146,13 @@ export function Header() {
         <>
           <button
             type="button"
-            className="fixed inset-0 top-[57px] z-40 bg-stone-900/20 md:hidden"
+            className="fixed inset-0 top-[57px] z-40 bg-[#F3EFEA] md:hidden"
             aria-label="Stäng meny"
             onClick={closeMobile}
           />
           <nav
             id={menuId}
-            className="glass-bar fixed inset-x-0 top-[57px] z-50 max-h-[calc(100dvh-57px)] overflow-y-auto border-t border-stone-300 md:hidden"
+            className="fixed inset-x-0 top-[57px] z-50 max-h-[calc(100dvh-57px)] overflow-y-auto border-t border-stone-300 bg-[#F3EFEA] md:hidden"
             aria-label="Huvudmeny"
           >
             <ul className="mx-auto max-w-6xl px-4 py-2 sm:px-6">
