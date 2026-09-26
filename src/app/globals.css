@@ -3,7 +3,7 @@
 :root {
   --paper: #f3e6d4;
   --ink: #1c1917;
-  --accent: #3e63dd;
+  --accent: #7a9ae0;
   --background: var(--paper);
   --foreground: var(--ink);
 }
@@ -21,7 +21,7 @@ html,
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   line-height: 1.6;
 }
 
@@ -31,6 +31,8 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: inherit;
+  font-style: normal;
   line-height: 1.15;
 }
 

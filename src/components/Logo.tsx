@@ -4,33 +4,45 @@ type Props = {
   className?: string;
 };
 
-/** Husikon med fyra indigo-rutor + text. */
+const WINDOW = "#8BA4D9";
+
 export function Logo({ className = "" }: Props) {
   return (
     <span
-      className={`inline-flex items-center gap-2 text-base font-semibold tracking-tight text-ink ${className}`}
+      className={`inline-flex items-center gap-2 font-sans text-base font-semibold tracking-tight text-ink ${className}`}
     >
       <svg
         width="28"
-        height="28"
-        viewBox="0 0 28 28"
+        height="26"
+        viewBox="0 0 28 26"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden
         className="shrink-0"
       >
-        {/* House outline */}
         <path
-          d="M4 12.5L14 4l10 8.5V24a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V12.5z"
+          d="M4 13 L14 4 L20 9.2 V6.5 H23.2 V12 L24 13"
           stroke="currentColor"
-          strokeWidth="1.75"
+          strokeWidth="1.8"
           strokeLinejoin="round"
+          strokeLinecap="round"
         />
-        {/* Four indigo windows */}
-        <rect x="8" y="13" width="4" height="4" fill="#3E63DD" />
-        <rect x="16" y="13" width="4" height="4" fill="#3E63DD" />
-        <rect x="8" y="19" width="4" height="4" fill="#3E63DD" />
-        <rect x="16" y="19" width="4" height="4" fill="#3E63DD" />
+        <path
+          d="M5.2 12.2 V24"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M22.8 12.2 V24"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+        <rect x="10.2" y="13.2" width="3.2" height="3.2" fill={WINDOW} />
+        <rect x="14.6" y="13.2" width="3.2" height="3.2" fill={WINDOW} />
+        <rect x="10.2" y="17.6" width="3.2" height="3.2" fill={WINDOW} />
+        <rect x="14.6" y="17.6" width="3.2" height="3.2" fill={WINDOW} />
       </svg>
       <span>{site.name}</span>
     </span>
