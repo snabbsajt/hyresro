@@ -7,7 +7,7 @@ import { getCatalog } from "@/lib/catalog";
 export const metadata: Metadata = {
   title: `${site.name} — Inred hyresrätten utan att borra`,
   description:
-    "Guider och utvalda grejer som inte kräver hål i väggen. Solskydd, fästen, förvaring och belysning för hyresrätt.",
+    "Guider och utvalda produkter som inte kräver hål i väggen. Solskydd, fästen, förvaring och belysning för hyresrätt.",
 };
 
 const featuredSlugs = [
@@ -35,16 +35,16 @@ export default async function HomePage() {
           Inred hyresrätten utan att borra
         </h1>
         <p className="max-w-xl font-sans text-xl text-stone-600 sm:text-2xl">
-          Guider och utvalda grejer som inte kräver hål i väggen.
+          Guider och utvalda produkter som inte kräver hål i väggen.
         </p>
         <div className="grid gap-4 pt-2 sm:grid-cols-3">
           {entries.map((e) => (
             <Link
               key={e.href}
               href={e.href}
-              className="border border-[#E2E0D8] bg-white px-5 py-8 font-sans text-lg font-semibold text-[#1A1A1A] transition-colors hover:border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white sm:py-10"
+              className="group border border-[#E2E0D8] bg-white px-5 py-8 font-sans text-lg font-semibold sm:py-10 hover:border-[#1A1A1A] hover:bg-[#1A1A1A]"
             >
-              {e.title}
+              <span className="text-[#1A1A1A] group-hover:text-white">{e.title}</span>
             </Link>
           ))}
         </div>

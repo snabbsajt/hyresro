@@ -47,7 +47,7 @@ export async function ProductCard({ product }: Props) {
         ) : null}
         {product.priceFromSek != null && (
           <p className="mb-3 text-sm text-stone-600">
-            Ca {product.priceFromSek} kr
+            Från {product.priceFromSek} kr
             {product.priceNote ? ` · ${product.priceNote}` : ""}
           </p>
         )}
