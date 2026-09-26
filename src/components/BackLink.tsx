@@ -1,14 +1,15 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export function BackLink() {
   const router = useRouter();
+  const path = usePathname();
+  if (!path || path === "/") return null;
 
   return (
     <button
       type="button"
-      className="mt-2 text-sm text-stone-600 hover:text-stone-900"
       onClick={() => {
         if (typeof window !== "undefined" && window.history.length > 1) {
           router.back();
@@ -16,8 +17,9 @@ export function BackLink() {
           router.push("/");
         }
       }}
+      className="text-sm text-stone-500 hover:text-stone-800"
     >
-      Tillbaka
+      ← Tillbaka
     </button>
   );
 }

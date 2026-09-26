@@ -1,18 +1,13 @@
 import Link from "next/link";
 import { site } from "@/config/site";
 
-type Props = { className?: string };
-
-export function ContractNote({ className = "" }: Props) {
+export function ContractNote() {
   return (
-    <p className={`text-xs text-stone-500 ${className}`.trim()}>
-      <Link
-        href={site.contractPath}
-        className="text-ink underline underline-offset-2 hover:text-accent"
-      >
-        Så läser ni kontraktet
-      </Link>{" "}
-      innan ni sätter upp något på vägg.
-    </p>
+    <Link
+      href={site.contractPath}
+      className="text-sm text-stone-500 underline underline-offset-2 hover:text-stone-800"
+    >
+      Så läser ni kontraktet
+    </Link>
   );
 }

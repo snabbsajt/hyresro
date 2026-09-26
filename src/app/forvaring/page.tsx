@@ -21,17 +21,15 @@ export default async function Page() {
       <header className="space-y-3">
         <Crumbs items={[{ href: "/produkter", label: "Alla produkter" }, { label: "Förvaring" }]} />
         <h1 className="text-3xl font-semibold tracking-tight">Förvaring utan att borra</h1>
-        <p className="max-w-2xl leading-relaxed text-stone-700">
-          Fristående ställ, spännstång i nisch och hylla på tejp. Vägghylla kräver slät yta och angiven maxvikt.
-          Balkonglåda kläms på räcke — kolla kontraktet innan ni hänger något utåt.
+        <p className="max-w-2xl text-stone-700">
+          Fristående ställ, spännstång i nisch och hylla på tejp. Balkonglåda kläms på räcke.
         </p>
-        <p className="text-sm text-stone-600">
-          Guide:{" "}
-          <Link href="/guide/hylla-utan-borra" className="underline underline-offset-2">
+        <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-500">
+          <Link href="/guide/hylla-utan-borra" className="underline underline-offset-2 hover:text-stone-800">
             Hylla utan att borra
           </Link>
+          <ContractNote />
         </p>
-        <ContractNote />
       </header>
       <div className="grid gap-4 sm:grid-cols-2">
         {items.map((p) => (

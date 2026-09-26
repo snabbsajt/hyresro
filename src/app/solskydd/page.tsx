@@ -4,6 +4,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { CompareTable } from "@/components/CompareTable";
 import { getProductsByCategory } from "@/lib/catalog";
 import { Crumbs } from "@/components/Crumbs";
+import { ContractNote } from "@/components/ContractNote";
 
 export const metadata: Metadata = {
   title: "Solskydd utan att borra",
@@ -23,15 +24,14 @@ export default async function SolskyddPage() {
       <header className="space-y-3">
         <Crumbs items={[{ href: "/produkter", label: "Alla produkter" }, { label: "Solskydd" }]} />
         <h1 className="text-3xl font-semibold tracking-tight">Solskydd utan att borra</h1>
-        <p className="max-w-2xl leading-relaxed text-stone-700">
-          Klämfäste sitter i bågen, inte i väggen. Mät bredd innan köp — butikerna räknar olika.
-          Skruvhål i karm räknas ofta som onormalt slitage.
+        <p className="max-w-2xl text-stone-700">
+          Klämfäste sitter i bågen. Mät bredd innan köp. Skruvhål i karm räknas ofta som onormalt slitage.
         </p>
-        <p className="text-sm text-stone-600">
-          Guide:{" "}
-          <Link href="/guide/rullgardin-utan-borra" className="underline underline-offset-2">
+        <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-500">
+          <Link href="/guide/rullgardin-utan-borra" className="underline underline-offset-2 hover:text-stone-800">
             Rullgardin utan att borra
           </Link>
+          <ContractNote />
         </p>
       </header>
       <CompareTable
