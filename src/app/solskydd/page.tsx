@@ -24,12 +24,16 @@ export default async function SolskyddPage() {
       <header className="space-y-3">
         <Crumbs items={[{ href: "/produkter", label: "Alla produkter" }, { label: "Solskydd" }]} />
         <h1 className="text-3xl font-semibold tracking-tight">Solskydd utan att borra</h1>
-        <p className="max-w-2xl text-stone-700">
-          Klämfäste sitter i bågen. Mät bredd innan köp. Skruvhål i karm räknas ofta som onormalt slitage.
+        <p className="max-w-2xl">
+          Klämfäste sitter i bågen. Mät bredd innan köp. Skruvhål i karm räknas ofta som
+          onormalt slitage.
         </p>
         <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-500">
-          <Link href="/guide/rullgardin-utan-borra" className="underline underline-offset-2 hover:text-stone-800">
+          <Link href="/guide/rullgardin-utan-borra" className="underline underline-offset-2 hover:text-white">
             Rullgardin utan att borra
+          </Link>
+          <Link href="/guide/plissegardin-utan-borra" className="underline underline-offset-2 hover:text-white">
+            Plisségardin utan att borra
           </Link>
           <ContractNote />
         </p>

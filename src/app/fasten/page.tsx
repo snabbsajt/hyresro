@@ -22,12 +22,16 @@ export default async function FastenPage() {
       <header className="space-y-3">
         <Crumbs items={[{ href: "/produkter", label: "Alla produkter" }, { label: "Fästen" }]} />
         <h1 className="text-3xl font-semibold tracking-tight">Fästen utan att borra</h1>
-        <p className="max-w-2xl text-stone-700">
-          Håller på slät målad vägg eller kakel, om ni håller maxvikten. Tapet och fuktig fog släpper.
+        <p className="max-w-2xl">
+          Håller på slät målad vägg eller kakel, om ni håller maxvikten. Tapet och fuktig fog
+          släpper.
         </p>
         <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-500">
-          <Link href="/guide/hylla-utan-borra" className="underline underline-offset-2 hover:text-stone-800">
+          <Link href="/guide/hylla-utan-borra" className="underline underline-offset-2 hover:text-white">
             Hylla utan att borra
+          </Link>
+          <Link href="/guide/tavla-pa-gips" className="underline underline-offset-2 hover:text-white">
+            Tavla på gips
           </Link>
           <ContractNote />
         </p>
