@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BackLink } from "@/components/BackLink";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { site } from "@/config/site";
 import "./globals.css";
 
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistSans.className} relative flex min-h-screen flex-col font-sans antialiased`}
       >
+        <GoogleAnalytics />
         <div className="site-bg" aria-hidden />
         <div className="relative z-[1] flex min-h-screen flex-col">
           <Header />
