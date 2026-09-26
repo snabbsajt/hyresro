@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
+import { CompareTable } from "@/components/CompareTable";
 import { getProductsByCategory } from "@/lib/catalog";
 import { Crumbs } from "@/components/Crumbs";
 
 export const metadata: Metadata = {
   title: "Solskydd utan att borra",
-  description: "Solskydd utan borr i hyresrätt. Klämfästen, mätning och mörkläggning.",
+  description:
+    "Jämför rullgardin med kläm, plissé och fönsterfilm. Utan skruv i karm.",
 };
 
 export default async function SolskyddPage() {
@@ -30,6 +32,35 @@ export default async function SolskyddPage() {
           </Link>
         </p>
       </section>
+      <CompareTable
+        caption="Vilken typ ska ni välja"
+        rows={[
+          {
+            name: "Rullgardin med kläm",
+            bestFor: "Sova, mörklägga, vanligt fönster",
+            watch: "Bågen måste tåla klämman. Mät karmdjup.",
+            fromSek: 199,
+          },
+          {
+            name: "Plisségardin",
+            bestFor: "Insyn och ljus upp/ner",
+            watch: "Bekräfta att just den modellen har klämfäste.",
+            fromSek: 275,
+          },
+          {
+            name: "Fönsterfilm",
+            bestFor: "Glas utan list, sol på kök/badrum",
+            watch: "Testa liten yta. Kan lämna lim om den sitter länge.",
+            fromSek: 200,
+          },
+          {
+            name: "Spännstång",
+            bestFor: "Nisch eller fönster mellan två väggar",
+            watch: "Kräver motstånd på båda sidor. Inte på lös list.",
+            fromSek: 167,
+          },
+        ]}
+      />
       <div className="grid gap-4 sm:grid-cols-2">
         {items.map((p) => (
           <ProductCard key={p.slug} product={p} />
