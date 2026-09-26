@@ -16,31 +16,22 @@ export function CompareTable({
     <section className="space-y-3">
       <h2 className="text-xl font-semibold">{caption}</h2>
 
-      <ul className="space-y-3 md:hidden">
+      <ul className="divide-y divide-[#E3DFD9] border border-[#E3DFD9] bg-white md:hidden">
         {rows.map((r) => (
-          <li key={r.name} className="border border-[#E3DFD9] bg-white p-4">
-            <p className="font-medium text-[#1A1A1A]">{r.name}</p>
-            <dl className="mt-3 space-y-2 text-sm">
-              <div>
-                <dt className="text-stone-500">Passar när</dt>
-                <dd className="text-stone-700">{r.bestFor}</dd>
-              </div>
-              <div>
-                <dt className="text-stone-500">Se upp med</dt>
-                <dd className="text-stone-700">{r.watch}</dd>
-              </div>
-              <div>
-                <dt className="text-stone-500">Från</dt>
-                <dd className="text-stone-700">
-                  {r.fromSek != null ? `${r.fromSek} kr` : "—"}
-                </dd>
-              </div>
-            </dl>
+          <li key={r.name} className="px-3 py-2.5">
+            <div className="flex items-baseline justify-between gap-3">
+              <p className="text-sm font-medium text-[#1A1A1A]">{r.name}</p>
+              <p className="shrink-0 text-sm text-stone-600">
+                {r.fromSek != null ? `${r.fromSek} kr` : ""}
+              </p>
+            </div>
+            <p className="mt-1 text-sm text-stone-700">{r.bestFor}</p>
+            <p className="text-sm text-stone-500">{r.watch}</p>
           </li>
         ))}
       </ul>
 
-      <div className="hidden overflow-x-auto border border-[#E3DFD9] bg-white md:block">
+      <div className="hidden border border-[#E3DFD9] bg-white md:block">
         <table className="w-full text-left text-sm">
           <thead className="border-b border-[#E3DFD9] text-stone-500">
             <tr>
