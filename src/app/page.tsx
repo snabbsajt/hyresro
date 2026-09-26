@@ -5,9 +5,9 @@ import { site } from "@/config/site";
 import { getCatalog } from "@/lib/catalog";
 
 export const metadata: Metadata = {
-  title: `${site.name} — ${site.tagline}`,
+  title: `${site.name} — Inred hyresrätten utan att borra`,
   description:
-    "Inred hyresrätten utan onödiga hål. Guider, produkter och tips så lägenheten är i skick vid avflytt.",
+    "Guider och utvalda grejer som inte kräver hål i väggen. Solskydd, fästen, förvaring och belysning för hyresrätt.",
 };
 
 const featuredSlugs = [
@@ -17,18 +17,9 @@ const featuredSlugs = [
 ] as const;
 
 const entries = [
-  {
-    href: "/guide/kolla-kontraktet",
-    title: "Så läser ni kontraktet",
-  },
-  {
-    href: "/guide/rullgardin-utan-borra",
-    title: "Rullgardin utan att borra",
-  },
-  {
-    href: "/guide/hylla-utan-borra",
-    title: "Hylla utan att borra",
-  },
+  { href: "/guide/kolla-kontraktet", title: "Så läser ni kontraktet" },
+  { href: "/guide/rullgardin-utan-borra", title: "Rullgardin utan att borra" },
+  { href: "/guide/hylla-utan-borra", title: "Hylla utan att borra" },
 ] as const;
 
 export default async function HomePage() {
@@ -41,17 +32,17 @@ export default async function HomePage() {
     <div className="space-y-16">
       <section className="space-y-6 py-6 sm:py-10">
         <h1 className="font-sans text-4xl font-semibold tracking-tight text-[#1A1A1A] sm:text-5xl">
-          Lägenheten i skick
+          Inred hyresrätten utan att borra
         </h1>
-        <p className="font-sans text-xl text-stone-600 sm:text-2xl">
-          Inred hyresrätten utan onödiga hål.
+        <p className="max-w-xl font-sans text-xl text-stone-600 sm:text-2xl">
+          Guider och utvalda grejer som inte kräver hål i väggen.
         </p>
         <div className="grid gap-4 pt-2 sm:grid-cols-3">
           {entries.map((e) => (
             <Link
               key={e.href}
               href={e.href}
-              className="border border-[#E2E0D8] bg-white px-5 py-8 font-sans text-lg font-semibold text-[#1A1A1A] hover:border-[#1A1A1A] sm:py-10"
+              className="border border-[#E2E0D8] bg-white px-5 py-8 font-sans text-lg font-semibold text-[#1A1A1A] transition-colors hover:border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white sm:py-10"
             >
               {e.title}
             </Link>

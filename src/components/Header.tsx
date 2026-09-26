@@ -50,8 +50,17 @@ export function Header() {
     return () => document.removeEventListener("mousedown", onPointer);
   }, [desktopOpenId, closeDesktop]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [mobileOpen]);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-stone-300 bg-stone-100">
+    <header className="sticky top-0 z-50 border-b border-stone-300 bg-[#F3EFEA]/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
@@ -92,9 +101,7 @@ export function Header() {
                     aria-expanded={open}
                     aria-haspopup="true"
                     onClick={() =>
-                      setDesktopOpenId((cur) =>
-                        cur === item.id ? null : item.id,
-                      )
+                      setDesktopOpenId((cur) => (cur === item.id ? null : item.id))
                     }
                   >
                     {item.label}
@@ -117,7 +124,7 @@ export function Header() {
         <button
           ref={buttonRef}
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-stone-800 hover:bg-stone-200 md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center text-stone-800 hover:bg-stone-200/80 md:hidden"
           aria-expanded={mobileOpen}
           aria-controls={menuId}
           aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
@@ -136,51 +143,57 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <nav
-          id={menuId}
-          className="border-t border-stone-300 bg-stone-50 md:hidden"
-          aria-label="Huvudmeny"
-        >
-          <ul className="mx-auto max-w-6xl px-4 py-2 sm:px-6">
-            {navItems.map((item) => {
-              const expanded = mobileExpanded === item.id;
-              return (
-                <li key={item.id} className="border-b border-stone-200 last:border-b-0">
-                  <button
-                    type="button"
-                    className="flex w-full items-center justify-between py-3 text-left text-base font-medium text-stone-800"
-                    aria-expanded={expanded}
-                    onClick={() =>
-                      setMobileExpanded((cur) =>
-                        cur === item.id ? null : item.id,
-                      )
-                    }
-                  >
-                    <span>{item.label}</span>
-                    <span className="text-lg leading-none text-stone-500" aria-hidden>
-                      {expanded ? "\u2212" : "+"}
-                    </span>
-                  </button>
-                  {expanded && (
-                    <ul className="pb-3 pl-3">
-                      {item.links.map((link) => (
-                        <li key={link.href}>
-                          <Link
-                            href={link.href}
-                            className="block py-2 text-sm text-stone-700 hover:text-stone-950"
-                            onClick={closeMobile}
-                          >
-                            {link.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 top-[57px] z-40 bg-stone-900/20 md:hidden"
+            aria-label="Stäng meny"
+            onClick={closeMobile}
+          />
+          <nav
+            id={menuId}
+            className="fixed inset-x-0 top-[57px] z-50 max-h-[calc(100dvh-57px)] overflow-y-auto border-t border-stone-300 bg-[#F3EFEA]/95 backdrop-blur-md md:hidden"
+            aria-label="Huvudmeny"
+          >
+            <ul className="mx-auto max-w-6xl px-4 py-2 sm:px-6">
+              {navItems.map((item) => {
+                const expanded = mobileExpanded === item.id;
+                return (
+                  <li key={item.id} className="border-b border-stone-200 last:border-b-0">
+                    <button
+                      type="button"
+                      className="flex w-full items-center justify-between py-3 text-left text-base font-medium text-stone-800"
+                      aria-expanded={expanded}
+                      onClick={() =>
+                        setMobileExpanded((cur) => (cur === item.id ? null : item.id))
+                      }
+                    >
+                      <span>{item.label}</span>
+                      <span className="text-lg leading-none text-stone-500" aria-hidden>
+                        {expanded ? "\u2212" : "+"}
+                      </span>
+                    </button>
+                    {expanded && (
+                      <ul className="pb-3 pl-3">
+                        {item.links.map((link) => (
+                          <li key={link.href}>
+                            <Link
+                              href={link.href}
+                              className="block py-2 text-sm text-stone-700 hover:text-stone-950"
+                              onClick={closeMobile}
+                            >
+                              {link.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </>
       )}
     </header>
   );
