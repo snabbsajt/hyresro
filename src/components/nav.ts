@@ -1,14 +1,35 @@
 export type NavLink = { href: string; label: string };
 
-/** Primära rumslänkar (vänster / överst). Endast befintliga routes. */
-export const primaryNav: readonly NavLink[] = [
-  { href: "/solskydd", label: "Fönster" },
-  { href: "/fasten", label: "Fästa" },
-] as const;
+export type NavItem = {
+  id: string;
+  label: string;
+  links: readonly NavLink[];
+};
 
-/** Guider (höger på desktop / under streck i hamburgare). */
-export const secondaryNav: readonly NavLink[] = [
-  { href: "/guide/kolla-kontraktet", label: "Kontrakt" },
-  { href: "/guide/borra-i-hyresratt", label: "Borra" },
-  { href: "/checklista-flytta", label: "Flytt" },
+export const navItems: readonly NavItem[] = [
+  {
+    id: "fasta",
+    label: "Fästa & hänga",
+    links: [
+      { href: "/fasten", label: "Fästen" },
+      { href: "/guide/hylla-utan-borra", label: "Hylla utan borr" },
+    ],
+  },
+  {
+    id: "sol",
+    label: "Sol & fönster",
+    links: [
+      { href: "/solskydd", label: "Solskydd" },
+      { href: "/guide/rullgardin-utan-borra", label: "Rullgardin utan borr" },
+    ],
+  },
+  {
+    id: "guider",
+    label: "Guider",
+    links: [
+      { href: "/guide/kolla-kontraktet", label: "Kolla kontraktet" },
+      { href: "/guide/borra-i-hyresratt", label: "Borra i hyresrätt" },
+      { href: "/checklista-flytta", label: "Checklista vid flytt" },
+    ],
+  },
 ] as const;
