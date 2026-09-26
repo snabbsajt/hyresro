@@ -9,9 +9,10 @@ export type NavItem = {
 export const navItems: readonly NavItem[] = [
   {
     id: "fasta",
-    label: "Fästa & hänga",
+    label: "Fästa & förvara",
     links: [
       { href: "/fasten", label: "Fästen" },
+      { href: "/forvaring", label: "Förvaring" },
       { href: "/guide/hylla-utan-borra", label: "Hylla utan borr" },
     ],
   },
@@ -22,6 +23,16 @@ export const navItems: readonly NavItem[] = [
       { href: "/solskydd", label: "Solskydd" },
       { href: "/guide/rullgardin-utan-borra", label: "Rullgardin utan borr" },
     ],
+  },
+  {
+    id: "ljus",
+    label: "Ljus & el",
+    links: [{ href: "/belysning", label: "Belysning & sladd" }],
+  },
+  {
+    id: "sakerhet",
+    label: "Kök & säkerhet",
+    links: [{ href: "/sakerhet", label: "Säkerhet" }],
   },
   {
     id: "guider",
