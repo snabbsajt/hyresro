@@ -52,8 +52,8 @@ export function Header() {
 
   return (
     <>
-      <header className="glass-bar sticky top-0 z-50 border-b border-white/10">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+      <header className="glass-bar sticky top-0 z-50 border-b border-white/20">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2 sm:px-6 md:py-2.5">
           <Link
             href="/"
             className="shrink-0"
@@ -81,7 +81,7 @@ export function Header() {
                     onMouseEnter={() => setDesktopOpenId(item.id)}
                   >
                     {index > 0 && (
-                      <span className="select-none px-1 text-stone-600" aria-hidden>
+                      <span className="select-none px-1 text-stone-500" aria-hidden>
                         |
                       </span>
                     )}
@@ -138,7 +138,7 @@ export function Header() {
       {mobileOpen ? (
         <nav
           id={menuId}
-          className="fixed inset-x-0 top-[57px] z-[60] max-h-[70vh] overflow-y-auto border-b border-white/10 bg-[#111] shadow-md md:hidden"
+          className="fixed inset-x-0 top-[68px] z-[60] max-h-[70vh] overflow-y-auto border-b border-white/10 bg-[#111] shadow-md md:hidden"
           style={{ WebkitOverflowScrolling: "touch" }}
           aria-label="Huvudmeny"
         >

@@ -8,10 +8,10 @@ export function Logo({ className = "" }: Props) {
       <img
         src="/hyresro1.png"
         alt="Hyresro"
-        className="h-8 w-auto sm:h-9"
+        className="h-11 w-auto md:h-14 lg:h-16"
         style={{ mixBlendMode: "screen" }}
-        width={180}
-        height={50}
+        width={280}
+        height={80}
       />
     </span>
   );
