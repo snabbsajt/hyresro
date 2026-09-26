@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContractNote } from "@/components/ContractNote";
-import { Disclosure } from "@/components/Disclosure";
 import { ProductCard } from "@/components/ProductCard";
 import { getProductsByCategory } from "@/data/products";
 import { BackLink } from "@/components/BackLink";
@@ -102,8 +101,6 @@ export default function FastenPage() {
           ))}
         </div>
       </section>
-
-      <Disclosure compact />
     </div>
   );
 }

@@ -32,14 +32,5 @@ export const navItems: readonly NavItem[] = [
       { href: "/solskydd", label: "Solskydd" },
       { href: "/guide/rullgardin-utan-borra", label: "Rullgardin utan borr" },
     ],
-  },
-  {
-    id: "om",
-    label: "Om",
-    links: [
-      { href: "/om", label: "Om Hyresro" },
-      { href: "/affiliate-info", label: "Så finansieras sajten" },
-      { href: "/integritet", label: "Integritet" },
-    ],
-  },
+  }
 ] as const;

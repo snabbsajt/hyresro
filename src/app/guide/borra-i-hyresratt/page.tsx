@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContractNote } from "@/components/ContractNote";
-import { Disclosure } from "@/components/Disclosure";
 import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { BackLink } from "@/components/BackLink";
@@ -140,8 +139,6 @@ export default function BorraIHyresrattPage() {
           </Link>
         </p>
       </section>
-
-      <Disclosure compact />
     </article>
   );
 }

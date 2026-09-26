@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Disclosure } from "@/components/Disclosure";
 import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
@@ -126,8 +125,6 @@ export default function KollaKontraktetPage() {
           </li>
         </ul>
       </section>
-
-      <Disclosure compact />
     </article>
   );
 }

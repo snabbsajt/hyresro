@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContractNote } from "@/components/ContractNote";
-import { Disclosure } from "@/components/Disclosure";
 import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
@@ -92,8 +91,6 @@ export default function ChecklistaFlyttaPage() {
           </li>
         </ul>
       </section>
-
-      <Disclosure compact />
     </div>
   );
 }
