@@ -31,10 +31,10 @@ export default async function HomePage() {
   return (
     <div className="space-y-16">
       <section className="space-y-6 py-6 sm:py-10">
-        <h1 className="font-sans text-4xl font-semibold tracking-tight text-[#1A1A1A] sm:text-5xl">
+        <h1 className="font-sans text-4xl font-semibold tracking-tight sm:text-5xl">
           Inred hyresrätten utan att borra
         </h1>
-        <p className="max-w-xl font-sans text-xl text-stone-600 sm:text-2xl">
+        <p className="max-w-xl font-sans text-xl text-stone-400 sm:text-2xl">
           Guider och utvalda produkter som inte kräver hål i väggen.
         </p>
         <div className="grid gap-4 pt-2 sm:grid-cols-3">
@@ -42,37 +42,29 @@ export default async function HomePage() {
             <Link
               key={e.href}
               href={e.href}
-              className="group border border-[#E2E0D8] bg-white px-5 py-8 font-sans text-lg font-semibold sm:py-10 hover:border-[#1A1A1A] hover:bg-[#1A1A1A]"
+              className="group border border-white/15 bg-white px-5 py-8 font-sans text-lg font-semibold sm:py-10 hover:border-white"
             >
-              <span className="text-[#1A1A1A] group-hover:text-white">{e.title}</span>
+              <span className="text-[#1A1A1A]">{e.title}</span>
             </Link>
           ))}
         </div>
       </section>
 
       <section className="space-y-4">
-        <h2 className="font-sans text-xl font-semibold text-[#1A1A1A]">
-          Utvalda produkter
-        </h2>
+        <h2 className="font-sans text-xl font-semibold">Utvalda produkter</h2>
         <div className="grid gap-4 sm:grid-cols-3">
           {featured.map((p) => (
             <ProductCard key={p.slug} product={p} />
           ))}
         </div>
         <p>
-          <Link
-            href="/produkter"
-            className="text-sm font-medium underline underline-offset-2 hover:text-stone-800"
-          >
+          <Link href="/produkter" className="text-sm font-medium underline underline-offset-2 hover:text-white">
             Visa alla rekommenderade produkter
           </Link>
         </p>
-        <p className="text-sm leading-relaxed text-stone-600">
+        <p className="text-sm leading-relaxed text-stone-400">
           Kontrollera alltid villkoren i ert{" "}
-          <Link
-            href="/guide/kolla-kontraktet"
-            className="underline underline-offset-2 hover:text-stone-800"
-          >
+          <Link href="/guide/kolla-kontraktet" className="underline underline-offset-2 hover:text-white">
             hyreskontrakt
           </Link>{" "}
           innan ni köper monteringsutrustning.

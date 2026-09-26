@@ -17,7 +17,7 @@ export function BackLink() {
           router.push("/");
         }
       }}
-      className="text-sm text-stone-500 hover:text-stone-800"
+      className="text-sm text-stone-400 hover:text-white"
     >
       ← Tillbaka
     </button>
