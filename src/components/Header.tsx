@@ -60,7 +60,7 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-stone-300 bg-[#F3EFEA]">
+    <header className="glass-bar sticky top-0 z-50 border-b border-stone-300">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
@@ -152,7 +152,7 @@ export function Header() {
           />
           <nav
             id={menuId}
-            className="fixed inset-x-0 top-[57px] z-50 max-h-[calc(100dvh-57px)] overflow-y-auto border-t border-stone-300 bg-[#F3EFEA] md:hidden"
+            className="glass-bar fixed inset-x-0 top-[57px] z-50 max-h-[calc(100dvh-57px)] overflow-y-auto border-t border-stone-300 md:hidden"
             aria-label="Huvudmeny"
           >
             <ul className="mx-auto max-w-6xl px-4 py-2 sm:px-6">
