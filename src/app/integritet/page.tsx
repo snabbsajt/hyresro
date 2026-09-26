@@ -16,11 +16,12 @@ export default function IntegritetPage() {
       <div className="max-w-2xl space-y-4 leading-relaxed">
         <h2 className="text-xl font-semibold">Personuppgiftsansvarig</h2>
         <p>
-          {site.name}. Privatperson, Stockholm. E-post:{" "}
+          Jonathan Gref, privatperson, Stockholm.
+          <br />
+          E-post:{" "}
           <a href={`mailto:${site.contactEmail}`} className="underline underline-offset-2">
             {site.contactEmail}
           </a>
-          .
         </p>
 
         <h2 className="text-xl font-semibold">Vad vi behandlar</h2>
