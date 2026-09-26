@@ -16,7 +16,7 @@ export default function IntegritetPage() {
       <div className="max-w-2xl space-y-4 leading-relaxed">
         <h2 className="text-xl font-semibold">Personuppgiftsansvarig</h2>
         <p>
-          Jonathan Gref, privatperson, Stockholm.
+          Jonathan Gref, privatperson.
           <br />
           E-post:{" "}
           <a href={`mailto:${site.contactEmail}`} className="underline underline-offset-2">
