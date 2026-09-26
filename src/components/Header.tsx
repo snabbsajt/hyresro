@@ -50,8 +50,6 @@ export function Header() {
     return () => document.removeEventListener("mousedown", onPointer);
   }, [desktopOpenId, closeDesktop]);
 
-  const openDesktopItem = navItems.find((i) => i.id === desktopOpenId);
-
   return (
     <header className="sticky top-0 z-50 border-b border-stone-300 bg-stone-100">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
@@ -66,56 +64,59 @@ export function Header() {
           {site.name}
         </Link>
 
-        {/* Desktop: text labels */}
         <nav
           ref={desktopNavRef}
-          className="relative hidden md:block"
+          className="hidden md:block"
           aria-label="Huvudmeny"
           onMouseLeave={closeDesktop}
         >
           <ul className="flex items-center gap-1">
-            {navItems.map((item, index) => (
-              <li key={item.id} className="flex items-center gap-1">
-                {index > 0 && (
-                  <span
-                    className="select-none px-1 text-stone-400"
-                    aria-hidden
-                  >
-                    |
-                  </span>
-                )}
-                <button
-                  type="button"
-                  className={`px-2 py-1.5 text-sm font-medium text-stone-800 hover:text-stone-950 ${
-                    desktopOpenId === item.id ? "text-stone-950" : ""
-                  }`}
-                  aria-expanded={desktopOpenId === item.id}
-                  aria-haspopup="true"
+            {navItems.map((item, index) => {
+              const open = desktopOpenId === item.id;
+              return (
+                <li
+                  key={item.id}
+                  className="relative flex items-center gap-1"
                   onMouseEnter={() => setDesktopOpenId(item.id)}
-                  onClick={() =>
-                    setDesktopOpenId((cur) =>
-                      cur === item.id ? null : item.id,
-                    )
-                  }
                 >
-                  {item.label}
-                </button>
-              </li>
-            ))}
+                  {index > 0 && (
+                    <span
+                      className="select-none px-1 text-stone-400"
+                      aria-hidden
+                    >
+                      |
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    className={`px-2 py-1.5 text-sm font-medium text-stone-800 hover:text-stone-950 ${
+                      open ? "text-stone-950" : ""
+                    }`}
+                    aria-expanded={open}
+                    aria-haspopup="true"
+                    onClick={() =>
+                      setDesktopOpenId((cur) =>
+                        cur === item.id ? null : item.id,
+                      )
+                    }
+                  >
+                    {item.label}
+                  </button>
+                  {open && (
+                    <div className="absolute left-0 top-full z-50 pt-1">
+                      <NavPanel
+                        item={item}
+                        onNavigate={closeDesktop}
+                        className="min-w-[14rem] shadow-sm"
+                      />
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
-
-          {openDesktopItem && (
-            <div className="absolute left-0 right-0 top-full z-50 pt-2">
-              <NavPanel
-                item={openDesktopItem}
-                onNavigate={closeDesktop}
-                className="min-w-[14rem] shadow-sm"
-              />
-            </div>
-          )}
         </nav>
 
-        {/* Mobile: hamburger */}
         <button
           ref={buttonRef}
           type="button"
@@ -156,7 +157,6 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile panel */}
       {mobileOpen && (
         <nav
           id={menuId}
@@ -167,7 +167,10 @@ export function Header() {
             {navItems.map((item) => {
               const expanded = mobileExpanded === item.id;
               return (
-                <li key={item.id} className="border-b border-stone-200 last:border-b-0">
+                <li
+                  key={item.id}
+                  className="border-b border-stone-200 last:border-b-0"
+                >
                   <button
                     type="button"
                     className="flex w-full items-center justify-between py-3 text-left text-base font-medium text-stone-800"
@@ -179,7 +182,10 @@ export function Header() {
                     }
                   >
                     <span>{item.label}</span>
-                    <span className="text-lg leading-none text-stone-500" aria-hidden>
+                    <span
+                      className="text-lg leading-none text-stone-500"
+                      aria-hidden
+                    >
                       {expanded ? "−" : "+"}
                     </span>
                   </button>
