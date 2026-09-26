@@ -42,9 +42,6 @@ export default async function Page() {
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
           Alla rekommenderade produkter
         </h1>
-        <p className="max-w-xl text-stone-600">
-          En rad per produkt. Pris är ungefärligt och kan ändras i butiken.
-        </p>
       </header>
       {sections.map((s) =>
         s.items.length === 0 ? null : (
