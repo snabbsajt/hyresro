@@ -42,8 +42,8 @@ export default async function BalkongPage() {
         </p>
         <p>
           Insynsskydd, markis och allt som skruvas i bjälklag eller räcke är ett ingrepp. Där
-          räcker inte "grannen har en". Mejla förvaltaren. Ljusslinga på batteri eller jordad
-          utomhusskena mot befintligt uttag är en annan sak — dra inte ny el.
+          räcker inte att grannen redan har en. Mejla förvaltaren. Ljusslinga på batteri eller
+          jordad utomhusskena mot befintligt uttag är en annan sak — dra inte ny el.
         </p>
       </section>
 

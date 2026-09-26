@@ -37,8 +37,8 @@ export default async function TavlaPage() {
       <section className="space-y-3">
         <p>
           Gips tål en tejp-krok. Den tål inte att ni struntar i maxvikten. Command anger vikt
-          per remsa — räkna ramen plus glas. En "5 kg"-förpackning är inte fem kilo om ni bara
-          sätter en av fyra remsor. Följ antalet som står på lappen.
+          per remsa — räkna ramen plus glas. En förpackning märkt 5 kg gäller inte fem kilo om
+          ni bara sätter en av fyra remsor. Följ antalet som står på lappen.
         </p>
         <p>
           Spårlöst är ett säljord. Sanningen är: på slät, härdad färg och om ni drar remsan

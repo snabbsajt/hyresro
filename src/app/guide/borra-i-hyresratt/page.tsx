@@ -40,9 +40,9 @@ export default async function BorraIHyresrattPage() {
           balkongräcke och TV-fäste gör det inte. Där är det värden som ska säga ja först.
         </p>
         <p>
-          Många kontrakt är strängare än lagen. Står det "inga hål i vägg" i särskilda villkor
-          eller husordning gäller det, även om grannen borrar. Läs pappret. Fråga skriftligt om
-          ni är osäkra. Vi är inte jurister.
+          Många kontrakt är strängare än lagen. Står det att hål i vägg inte är tillåtna i
+          särskilda villkor eller husordning gäller det, även om grannen borrar. Läs pappret.
+          Fråga skriftligt om ni är osäkra. Vi är inte jurister.
         </p>
       </section>
 

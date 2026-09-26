@@ -23,8 +23,8 @@ export default function KollaKontraktetPage() {
 
       <section className="space-y-3">
         <p>
-          Det ni letar efter heter sällan "borra". Det står ändringar, ingrepp, underhåll,
-          skick vid avflytt eller "särskilda villkor". Husordningen ligger ofta som bilaga — den
+          Det ni letar efter heter sällan ordet borra. Det står ändringar, ingrepp, underhåll,
+          skick vid avflytt eller särskilda villkor. Husordningen ligger ofta som bilaga — den
           räknas. En mening om tavlor på en branschwebb slår inte ert papper.
         </p>
         <p>
