@@ -14,6 +14,8 @@ export const navItems: readonly NavItem[] = [
       { href: "/fasten", label: "Fästen" },
       { href: "/forvaring", label: "Förvaring" },
       { href: "/guide/hylla-utan-borra", label: "Hylla utan borr" },
+      { href: "/guide/tavla-pa-gips", label: "Tavla på gips" },
+      { href: "/guide/balkong-utan-borra", label: "Balkong utan borr" },
     ],
   },
   {
@@ -22,6 +24,7 @@ export const navItems: readonly NavItem[] = [
     links: [
       { href: "/solskydd", label: "Solskydd" },
       { href: "/guide/rullgardin-utan-borra", label: "Rullgardin utan borr" },
+      { href: "/guide/plissegardin-utan-borra", label: "Plisségardin utan borr" },
     ],
   },
   {
@@ -45,6 +48,11 @@ export const navItems: readonly NavItem[] = [
     links: [
       { href: "/guide/kolla-kontraktet", label: "Kolla kontraktet" },
       { href: "/guide/borra-i-hyresratt", label: "Borra i hyresrätt" },
+      { href: "/guide/rullgardin-utan-borra", label: "Rullgardin utan borr" },
+      { href: "/guide/plissegardin-utan-borra", label: "Plisségardin utan borr" },
+      { href: "/guide/hylla-utan-borra", label: "Hylla utan borr" },
+      { href: "/guide/tavla-pa-gips", label: "Tavla på gips" },
+      { href: "/guide/balkong-utan-borra", label: "Balkong utan borr" },
       { href: "/checklista-flytta", label: "Checklista vid flytt" },
     ],
   },

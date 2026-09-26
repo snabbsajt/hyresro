@@ -22,6 +22,13 @@ const entries = [
   { href: "/guide/hylla-utan-borra", title: "Hylla utan att borra" },
 ] as const;
 
+const moreGuides = [
+  { href: "/guide/plissegardin-utan-borra", title: "Plisségardin utan borr" },
+  { href: "/guide/tavla-pa-gips", title: "Tavla på gips" },
+  { href: "/guide/balkong-utan-borra", title: "Balkong utan borr" },
+  { href: "/guide/borra-i-hyresratt", title: "Får man borra i hyresrätt?" },
+] as const;
+
 export default async function HomePage() {
   const products = await getCatalog();
   const featured = products
@@ -48,6 +55,15 @@ export default async function HomePage() {
             </Link>
           ))}
         </div>
+        <ul className="flex flex-wrap gap-x-5 gap-y-2 pt-1 text-sm text-stone-400">
+          {moreGuides.map((g) => (
+            <li key={g.href}>
+              <Link href={g.href} className="underline underline-offset-2 hover:text-white">
+                {g.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="space-y-4">
