@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContractNote } from "@/components/ContractNote";
 import { ProductCard } from "@/components/ProductCard";
+import { Faq } from "@/components/Faq";
 import { getCatalog } from "@/lib/catalog";
 import { Crumbs } from "@/components/Crumbs";
 
@@ -46,6 +47,22 @@ export default async function BorraIHyresrattPage() {
           .
         </p>
       </section>
+      <Faq
+        items={[
+          {
+            q: "Får man borra i hyresrätt?",
+            a: "Ofta ja för små hål till tavlor. Kontraktet kan förbjuda det. Läs särskilda villkor och husordning först.",
+          },
+          {
+            q: "Räknas hål som slitage?",
+            a: "Mindre spikhål räknas oftast som normalt slitage. Större hål, kakel och TV-fäste gör det oftast inte.",
+          },
+          {
+            q: "Måste man spackla igen?",
+            a: "Lämna lägenheten i avtalet skick. Många värdar vill ha små hål igenspacklade. Fråga om ni är osäkra.",
+          },
+        ]}
+      />
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Utan borr när det räcker</h2>
         <div className="grid gap-4 sm:grid-cols-2">
