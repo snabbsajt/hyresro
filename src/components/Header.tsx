@@ -50,15 +50,6 @@ export function Header() {
     return () => document.removeEventListener("mousedown", onPointer);
   }, [desktopOpenId, closeDesktop]);
 
-  useEffect(() => {
-    if (!mobileOpen) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, [mobileOpen]);
-
   return (
     <header className="glass-bar sticky top-0 z-50 border-b border-stone-300">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
@@ -143,57 +134,50 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <>
-          <button
-            type="button"
-            className="fixed inset-0 top-[57px] z-40 bg-[#F3EFEA] md:hidden"
-            aria-label="Stäng meny"
-            onClick={closeMobile}
-          />
-          <nav
-            id={menuId}
-            className="fixed inset-x-0 top-[57px] z-50 max-h-[calc(100dvh-57px)] overflow-y-auto border-t border-stone-300 bg-[#F3EFEA] md:hidden"
-            aria-label="Huvudmeny"
-          >
-            <ul className="mx-auto max-w-6xl px-4 py-2 sm:px-6">
-              {navItems.map((item) => {
-                const expanded = mobileExpanded === item.id;
-                return (
-                  <li key={item.id} className="border-b border-stone-200 last:border-b-0">
-                    <button
-                      type="button"
-                      className="flex w-full items-center justify-between py-3 text-left text-base font-medium text-stone-800"
-                      aria-expanded={expanded}
-                      onClick={() =>
-                        setMobileExpanded((cur) => (cur === item.id ? null : item.id))
-                      }
-                    >
-                      <span>{item.label}</span>
-                      <span className="text-lg leading-none text-stone-500" aria-hidden>
-                        {expanded ? "\u2212" : "+"}
-                      </span>
-                    </button>
-                    {expanded && (
-                      <ul className="pb-3 pl-3">
-                        {item.links.map((link) => (
-                          <li key={link.href}>
-                            <Link
-                              href={link.href}
-                              className="block py-2 text-sm text-stone-700 hover:text-stone-950"
-                              onClick={closeMobile}
-                            >
-                              {link.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </>
+        <nav
+          id={menuId}
+          className="fixed inset-x-0 bottom-0 top-[57px] z-50 overflow-y-auto overscroll-contain border-t border-stone-300 bg-[#F3EFEA] md:hidden"
+          style={{ WebkitOverflowScrolling: "touch" }}
+          aria-label="Huvudmeny"
+        >
+          <ul className="mx-auto max-w-6xl px-4 py-2 pb-24 sm:px-6">
+            {navItems.map((item) => {
+              const expanded = mobileExpanded === item.id;
+              return (
+                <li key={item.id} className="border-b border-stone-200 last:border-b-0">
+                  <button
+                    type="button"
+                    className="flex w-full items-center justify-between py-3 text-left text-base font-medium text-stone-800"
+                    aria-expanded={expanded}
+                    onClick={() =>
+                      setMobileExpanded((cur) => (cur === item.id ? null : item.id))
+                    }
+                  >
+                    <span>{item.label}</span>
+                    <span className="text-lg leading-none text-stone-500" aria-hidden>
+                      {expanded ? "\u2212" : "+"}
+                    </span>
+                  </button>
+                  {expanded && (
+                    <ul className="pb-3 pl-3">
+                      {item.links.map((link) => (
+                        <li key={link.href}>
+                          <Link
+                            href={link.href}
+                            className="block py-2 text-sm text-stone-700 hover:text-stone-950"
+                            onClick={closeMobile}
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
       )}
     </header>
   );
