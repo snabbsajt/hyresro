@@ -10,53 +10,47 @@ export const metadata: Metadata = {
     "Inred hyresrätten utan onödiga hål. Guider, produkter och tips så lägenheten är i skick vid avflytt.",
 };
 
-const featured = products.filter((p) =>
-  ["rullgardin-klamfaste", "tesa-skruv-tung", "hylla-no-drill", "brandfilt"].includes(
-    p.slug,
-  ),
-);
+const featured = products
+  .filter((p) =>
+    ["rullgardin-klamfaste", "tesa-skruv-tung", "hylla-no-drill"].includes(
+      p.slug,
+    ),
+  )
+  .slice(0, 3);
 
 const entries = [
   {
     href: "/guide/kolla-kontraktet",
     title: "Så läser ni kontraktet",
-    body: "Förstå regler kring ändringar och underhåll innan ni påbörjar projekt.",
   },
   {
     href: "/guide/rullgardin-utan-borra",
     title: "Rullgardin utan att borra",
-    body: "Montera solskydd säkert utan att skada fönsterkarmar eller väggar.",
   },
   {
     href: "/guide/hylla-utan-borra",
     title: "Hylla utan att borra",
-    body: "Använd anpassade fästen och tejp för stabil upphängning utan hål.",
   },
 ] as const;
 
 export default function HomePage() {
   return (
-    <div className="space-y-10">
-      <section className="space-y-4">
-        <h1 className="text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">
+    <div className="space-y-12">
+      <section className="space-y-6 py-6 sm:py-10">
+        <h1 className="text-4xl font-semibold tracking-tight text-stone-900 sm:text-5xl">
           Lägenheten i skick
         </h1>
-        <p className="text-lg text-stone-600">
+        <p className="text-xl text-stone-700 sm:text-2xl">
           Inred hyresrätten utan onödiga hål.
         </p>
-        <div className="grid gap-3 pt-1 sm:grid-cols-3">
+        <div className="grid gap-4 pt-2 sm:grid-cols-3">
           {entries.map((e) => (
             <Link
               key={e.href}
               href={e.href}
-              className="rounded-lg border border-stone-200 bg-white p-4 hover:border-sage-600"
+              className="rounded-xl border border-stone-300 bg-white px-5 py-8 text-lg font-semibold text-sage-800 shadow-sm hover:border-sage-600 hover:bg-sage-50 sm:py-10"
             >
-              <span className="block text-sm font-semibold text-sage-800">
-                {e.title}
-              </span>
-              <span className="mt-1 block text-sm leading-relaxed text-stone-600">
-                {e.body}
-              </span>
+              {e.title}
             </Link>
           ))}
         </div>
@@ -66,7 +60,7 @@ export default function HomePage() {
         <h2 className="text-xl font-semibold text-stone-800">
           Utvalda produkter
         </h2>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-3">
           {featured.map((p) => (
             <ProductCard key={p.slug} product={p} />
           ))}

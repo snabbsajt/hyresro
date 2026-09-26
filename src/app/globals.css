@@ -3,9 +3,9 @@
 :root {
   --background: #ebe6dc;
   --foreground: #1c1917;
-  --accent: #4a6356;
+  --accent: #3d5348;
   --accent-soft: #dce8df;
-  --accent-ink: #2f4036;
+  --accent-ink: #24332b;
 }
 
 @theme inline {
@@ -13,8 +13,8 @@
   --color-foreground: var(--foreground);
   --color-sage-50: #eef4ef;
   --color-sage-100: #dce8df;
-  --color-sage-600: #4a6356;
-  --color-sage-800: #2f4036;
+  --color-sage-600: #3d5348;
+  --color-sage-800: #24332b;
   --font-sans: var(--font-geist-sans);
 }
 

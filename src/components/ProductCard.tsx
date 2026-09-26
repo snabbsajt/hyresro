@@ -47,7 +47,7 @@ export function ProductCard({ product }: Props) {
               <AffiliateLink
                 href={m.url}
                 slug={product.slug}
-                className="inline-block rounded border border-sage-600/40 bg-sage-50 px-2.5 py-1 text-sm text-sage-800 hover:bg-sage-100"
+                className="inline-block rounded border border-sage-800/30 bg-sage-800 px-2.5 py-1 text-sm font-medium text-white hover:bg-sage-600"
               >
                 {m.name}
               </AffiliateLink>
