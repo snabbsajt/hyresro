@@ -1,8 +1,6 @@
 import { existsSync } from "fs";
 import path from "path";
-import Link from "next/link";
 import type { Product } from "@/data/types";
-import { getNote } from "@/lib/notes";
 import { AffiliateLink } from "./AffiliateLink";
 
 type Props = {
@@ -23,7 +21,6 @@ function resolveImageUrl(product: Product): string | undefined {
 }
 
 export async function ProductCard({ product }: Props) {
-  const note = product.noteKey ? await getNote(product.noteKey) : undefined;
   const merchant = product.merchants[0];
   const imageUrl = resolveImageUrl(product);
 
@@ -49,16 +46,6 @@ export async function ProductCard({ product }: Props) {
           <p className="mb-3 text-sm text-stone-600">
             Från {product.priceFromSek} kr
             {product.priceNote ? ` · ${product.priceNote}` : ""}
-          </p>
-        )}
-        {note && (
-          <p className="mb-3 text-xs text-stone-500">
-            <Link
-              href={note.href}
-              className="underline underline-offset-2 hover:text-stone-800"
-            >
-              {note.text}
-            </Link>
           </p>
         )}
         {merchant ? (

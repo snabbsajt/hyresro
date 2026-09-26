@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ContractNote } from "@/components/ContractNote";
 import { ProductCard } from "@/components/ProductCard";
 import { getProduct } from "@/lib/catalog";
@@ -37,14 +36,7 @@ export default async function HyllaUtanBorraPage() {
         <ul className="list-disc space-y-2 pl-5">
           <li>Slät målad vägg eller kakel. Inte papperstapet.</li>
           <li>Fukt i badrum släpper klistret över tid.</li>
-          <li>Tunga grejer och TV kräver skruv — det är en annan fråga.</li>
-          <li>
-            Läs{" "}
-            <Link href="/guide/kolla-kontraktet" className="underline underline-offset-2">
-              hyreskontraktet
-            </Link>
-            .
-          </li>
+          <li>Tunga saker och TV-fäste kräver skruv — det är en annan fråga.</li>
         </ul>
       </section>
       <section className="space-y-3 leading-relaxed text-stone-700">
