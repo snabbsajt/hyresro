@@ -43,7 +43,6 @@ export default async function Page() {
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
           Alla rekommenderade produkter
         </h1>
-        <AdNote />
       </header>
       {sections.map((s) =>
         s.items.length === 0 ? null : (
@@ -57,6 +56,7 @@ export default async function Page() {
           </section>
         ),
       )}
+      <AdNote />
     </div>
   );
 }

@@ -78,7 +78,6 @@ export default async function HomePage() {
 
       <section className="space-y-4">
         <h2 className="font-sans text-xl font-semibold">Utvalda produkter</h2>
-        <AdNote />
         <div className="grid gap-4 sm:grid-cols-3">
           {featured.map((p) => (
             <ProductCard key={p.slug} product={p} />
@@ -96,6 +95,7 @@ export default async function HomePage() {
           </Link>{" "}
           innan ni köper monteringsutrustning.
         </p>
+        <AdNote />
       </section>
     </div>
   );

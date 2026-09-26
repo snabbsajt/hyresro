@@ -1,8 +1,17 @@
+import Link from "next/link";
+import { site } from "@/config/site";
+
+/** Quiet affiliate disclosure — commercial intent clear without a mid-page “Annons.” banner. */
 export function AdNote({ className = "" }: { className?: string }) {
   return (
-    <p className={`text-sm text-stone-400 ${className}`}>
-      Annons. Vissa länkar är affiliatelänkar. Handlar ni via dem kan Hyresro få provision,
-      utan extra kostnad för er.
+    <p className={`text-xs leading-relaxed text-stone-500 ${className}`}>
+      {site.disclosure}{" "}
+      <Link
+        href="/om#annonsering"
+        className="underline underline-offset-2 hover:text-stone-300"
+      >
+        Läs mer
+      </Link>
     </p>
   );
 }

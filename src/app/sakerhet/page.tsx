@@ -23,7 +23,6 @@ export default async function Page() {
           varnare och en väska med plåster kräver inte hål. Fast brandvarnare som värden redan
           satt upp rör ni inte.
         </p>
-        <AdNote />
         <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-500">
           <ContractNote />
         </p>
@@ -33,6 +32,7 @@ export default async function Page() {
           <ProductCard key={p.slug} product={p} />
         ))}
       </div>
+      <AdNote />
     </div>
   );
 }
