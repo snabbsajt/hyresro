@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Crumbs } from "@/components/Crumbs";
 import { ContactForm } from "@/components/ContactForm";
 
@@ -17,13 +16,6 @@ export default function KontaktPage() {
         Frågor om sajten. Köp tas med butiken.
       </p>
       <ContactForm />
-      <p className="text-xs text-stone-500">
-        Avsändare står på sidan{" "}
-        <Link href="/integritet" className="underline underline-offset-2">
-          Integritet och kakor
-        </Link>
-        .
-      </p>
     </article>
   );
 }
