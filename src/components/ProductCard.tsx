@@ -12,7 +12,7 @@ export async function ProductCard({ product }: Props) {
   const merchant = product.merchants[0];
 
   return (
-    <article className="overflow-hidden border border-[#E2E0D8] bg-white">
+    <article className="overflow-hidden border border-[#E3DFD9] bg-white">
       {product.imageUrl ? (
         <img
           src={product.imageUrl}
@@ -20,7 +20,7 @@ export async function ProductCard({ product }: Props) {
           className="aspect-[4/3] w-full object-cover"
         />
       ) : (
-        <div className="aspect-[4/3] w-full bg-[#EBEAE6]" aria-hidden />
+        <div className="aspect-[4/3] w-full bg-[#EAE6DF]" aria-hidden />
       )}
       <div className="p-4">
         <h3 className="mb-2 font-medium text-[#1A1A1A]">{product.name}</h3>

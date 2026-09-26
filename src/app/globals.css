@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f4f3f0;
+  --paper: #f3efea;
   --ink: #1a1a1a;
-  --line: #e2e0d8;
-  --slot: #ebeae6;
+  --line: #e3dfd9;
+  --slot: #eae6df;
   --accent: #6b8fd4;
   --background: var(--paper);
   --foreground: var(--ink);
