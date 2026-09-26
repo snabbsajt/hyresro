@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   },
   description:
     "Inreda hyresrätt utan onödiga hål. Guider, produkter och checklistor — sakligt och konkret.",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     siteName: site.name,
     locale: "sv_SE",
