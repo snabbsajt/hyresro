@@ -21,7 +21,7 @@ export const products: Product[] = [
     surfaces: [],
     priceFromSek: 199,
     merchants: [{ name: "JYSK", url: "https://jysk.se/gardiner/rullgardiner/morklaggande-rullgardiner/rullgardin-morklaggande-bolga-60x170-svart" }],
-    notes: "Mörkläggning. Kolla hur den fästs i just den modellen.",
+    notes: "Mörkläggning. Kontrollera att er storlek har klämfäste, inte skruv.",
     noteKey: "rullgardin",
     imageUrl: "/products/morklaggning-klam.jpg",
   },
@@ -59,7 +59,6 @@ export const products: Product[] = [
     priceFromSek: 200,
     merchants: [{ name: "Clas Ohlson", url: "https://www.clasohlson.com/se/D-C-FIX-solskyddsfilm-fonster-inomhus,-90-cm-x-2-m/p/41-8177-1" }],
     notes: "Film på glas. Ingen skruv. Testa på liten yta först.",
-    noteKey: "rullgardin",
     imageUrl: "/products/fonsterfilm-dcfix.jpg",
   },
   {
@@ -71,7 +70,6 @@ export const products: Product[] = [
     priceFromSek: 167,
     merchants: [{ name: "Amazon.se", url: "https://www.amazon.se/GARDINIA-sp%C3%A4nnst%C3%A5ng-Utdragbar-Montering-Mattsvart/dp/B07X5M5RLQ" }],
     notes: "Trycks mellan väggar. Ingen skruv i karm.",
-    noteKey: "rullgardin",
     imageUrl: "/products/gardinstang-spann.jpg",
   },
   {
@@ -94,7 +92,7 @@ export const products: Product[] = [
     surfaces: [],
     priceFromSek: 70,
     merchants: [{ name: "Clas Ohlson", url: "https://www.clasohlson.com/se/Sjalvhaftande-skruvar-Tesa,-graa/p/41-5008" }],
-    notes: "Tyngre grejer. Ta bort enligt Tesa vid flytt.",
+    notes: "Tyngre saker. Ta bort enligt Tesa vid flytt.",
     noteKey: "kontrakt",
     imageUrl: "/products/tesa-skruv-tung.jpg",
   },
