@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Disclosure } from "@/components/Disclosure";
 import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
   title: "Integritet",
   description:
-    "Hur Hyresro hanterar integritet: inget konto, ingen publicerad e-post, anonymiserad driftstatistik.",
+    "Hyresro har inget konto och inget nyhetsbrev. Om tekniska loggar och cookies.",
 };
 
 export default function IntegritetPage() {
@@ -14,18 +13,24 @@ export default function IntegritetPage() {
       <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
         Integritet
       </h1>
-        <BackLink />
+      <BackLink />
       <div className="space-y-4 leading-relaxed text-stone-700">
+        <p>Hyresro har inget konto att skapa och inget nyhetsbrev.</p>
         <p>
-          Vi värnar om er personliga integritet och samlar därför inte in mer
-          uppgifter än nödvändigt. Ni behöver inte skapa något konto för att
-          använda sajten. Webbhotellet och vår tekniska leverantör kan dock
-          logga anonymiserad besöksstatistik för drift och säkerhet. Vi skickar
-          inga nyhetsbrev och har ingen publicerad e-postadress på
-          webbplatsen.
+          Sidan körs på Vercel. Där kan tekniska loggar uppstå (till exempel IP
+          och tidpunkt) för att sajten ska fungera och för att hitta fel. Vi
+          säljer inte sådana uppgifter.
+        </p>
+        <p>
+          Just nu sätter vi inga egna cookies för statistik eller profilering.
+          Klickar ni en butikslänk kan den butiken eller dess samarbetspartner
+          sätta egna kakor. Det styrs av deras villkor.
+        </p>
+        <p>
+          Vill ni veta mer om en konkret butik: läs deras integritetstext innan
+          ni handlar.
         </p>
       </div>
-      <Disclosure />
     </article>
   );
 }

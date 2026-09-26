@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Disclosure } from "@/components/Disclosure";
-import { site } from "@/config/site";
 import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
   title: "Om Hyresro",
   description:
-    "Hyresro hjälper er som bor i hyresrätt att inreda smart utan onödiga hål. Inte hyresvärd, jurist eller e-butik.",
+    "Hyresro är en guide för den som bor i hyresrätt i Sverige. Inte hyresvärd, jurist eller butik.",
 };
 
 export default function OmPage() {
@@ -16,36 +14,55 @@ export default function OmPage() {
       <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
         Om Hyresro
       </h1>
-        <BackLink />
+      <BackLink />
       <div className="space-y-4 leading-relaxed text-stone-700">
         <p>
-          Hyresro hjälper er som bor i hyresrätt att inreda smart utan att göra
-          onödiga hål i väggarna. Vi är varken hyresvärd, juridisk rådgivare
-          eller e-butik. Vårt mål är att samla praktiska tips, idéer och
-          produktförslag för ett tryggare boende. Vissa länkar på sajten kan ge
-          oss en liten provision om ni handlar via dem. Kom dock alltid ihåg att
-          ert eget{" "}
+          Hyresro är en guide för den som bor i hyresrätt i Sverige. Vi samlar
+          sätt att inreda och utrusta lägenheten utan onödiga hål, och vad som
+          oftast gäller innan ni borrar.
+        </p>
+        <p>
+          Vi är inte hyresvärd, inte jurist och inte butik. Råd på sajten
+          ersätter inte{" "}
           <Link
             href="/guide/kolla-kontraktet"
             className="underline underline-offset-2 hover:text-stone-800"
           >
-            hyreskontrakt
+            kontraktet
           </Link>{" "}
-          är det som i första hand styr vad ni får göra i lägenheten. För mer information om praxis och rådande regler länkar vi
-          även till{" "}
+          eller värdens besked. Vid tvekan: läs{" "}
+          <Link
+            href="/guide/kolla-kontraktet"
+            className="underline underline-offset-2 hover:text-stone-800"
+          >
+            avtalet
+          </Link>{" "}
+          och fråga den som står som hyresvärd.
+        </p>
+        <p>
+          Vissa länkar leder till butiker. Om ni handlar via dem kan Hyresro få
+          provision. Priset för er ändras inte. Mer:{" "}
+          <Link
+            href="/affiliate-info"
+            className="underline underline-offset-2 hover:text-stone-800"
+          >
+            Så finansieras sajten
+          </Link>
+          .
+        </p>
+        <p>
+          Praxis kring slitage och ändringar finns hos{" "}
           <a
             href="https://www.hyresgastforeningen.se/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sage-800 underline underline-offset-2"
+            className="underline underline-offset-2 hover:text-stone-800"
           >
             Hyresgästföreningen
           </a>
-          .
+          . Vi länkar dit när det behövs.
         </p>
-        <p className="text-sm text-stone-600">{site.tagline}</p>
       </div>
-      <Disclosure />
     </article>
   );
 }
