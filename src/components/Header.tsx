@@ -10,6 +10,7 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [desktopOpenId, setDesktopOpenId] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const menuId = useId();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const desktopNavRef = useRef<HTMLElement>(null);
@@ -22,6 +23,13 @@ export function Header() {
 
   const closeDesktop = useCallback(() => {
     setDesktopOpenId(null);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -52,7 +60,7 @@ export function Header() {
 
   return (
     <>
-      <header className="glass-bar sticky top-0 z-50 border-b border-white/20">
+      <header className={`glass-bar ${scrolled ? "is-scrolled" : ""}`}>
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2 sm:px-6 md:py-2.5">
           <Link
             href="/"
@@ -138,7 +146,7 @@ export function Header() {
       {mobileOpen ? (
         <nav
           id={menuId}
-          className="fixed inset-x-0 top-[68px] z-[60] max-h-[70vh] overflow-y-auto border-b border-white/10 bg-[#111] shadow-md md:hidden"
+          className="fixed inset-x-0 top-[64px] z-[60] max-h-[70vh] overflow-y-auto border-b border-white/10 bg-[#111] shadow-md md:hidden"
           style={{ WebkitOverflowScrolling: "touch" }}
           aria-label="Huvudmeny"
         >

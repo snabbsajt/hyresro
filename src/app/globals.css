@@ -7,6 +7,7 @@
   --slot: #141414;
   --accent: #3b5fdb;
   --card: #1a1a1a;
+  --header-h: 64px;
   --background: var(--paper);
   --foreground: var(--ink);
 }
@@ -28,6 +29,11 @@ body {
   line-height: 1.6;
 }
 
+body {
+  background-image: radial-gradient(1200px 420px at 50% -80px, #1c2230 0%, #0c0c0c 70%);
+  background-attachment: scroll;
+}
+
 h1,
 h2,
 h3,
@@ -44,11 +50,24 @@ a {
   color: inherit;
 }
 
-/* Samma grepp som snabbsajten.se: mörk rgba + litet blur, INGEN transform/isolation */
 .glass-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
   background: rgba(10, 10, 10, 0.42);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  border-bottom: none;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease,
+    -webkit-backdrop-filter 0.35s ease;
+}
+
+.glass-bar.is-scrolled {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .glass-panel {
@@ -60,6 +79,7 @@ a {
 
 @media (prefers-reduced-transparency: reduce) {
   .glass-bar,
+  .glass-bar.is-scrolled,
   .glass-panel {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
