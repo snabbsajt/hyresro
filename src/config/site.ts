@@ -2,8 +2,10 @@ export const site = {
   name: "Hyresro",
   domain: "hyresro.se",
   url: "https://hyresro.se",
-  tagline: "Lägenheten i skick vid avflytt.",
+  tagline: "Inred hyresrätten utan att borra",
   contractPath: "/guide/kolla-kontraktet",
+  /** Sätts när du skickar adressen. Visas bara på /kontakt. */
+  contactEmail: "",
   disclosure:
-    "Hyresro innehåller affiliate-länkar. Om ni köper via dem kan vi få provision — utan extra kostnad för er. Det påverkar inte våra rekommendationer. Enligt Marknadsföringslagen informerar vi om detta.",
+    "Sajten innehåller affiliatelänkar. Handlar ni via dem kan vi få provision, utan extra kostnad för er.",
 } as const;

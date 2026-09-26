@@ -1,66 +1,37 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BackLink } from "@/components/BackLink";
+import { Crumbs } from "@/components/Crumbs";
 
 export const metadata: Metadata = {
-  title: "Om Hyresro",
-  description:
-    "Hyresro är en guide för den som bor i hyresrätt i Sverige. Inte hyresvärd, jurist eller butik.",
+  title: "Om oss och annonsering",
+  description: "Vad Hyresro är och hur affiliatelänkar fungerar.",
 };
 
 export default function OmPage() {
   return (
     <article className="space-y-6">
-      <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
-        Om Hyresro
-      </h1>
-      <BackLink />
+      <Crumbs items={[{ label: "Om oss och annonsering" }]} />
+      <h1 className="text-3xl font-semibold tracking-tight">Om oss och annonsering</h1>
       <div className="space-y-4 leading-relaxed text-stone-700">
         <p>
-          Hyresro är en guide för den som bor i hyresrätt i Sverige. Vi samlar
-          sätt att inreda och utrusta lägenheten utan onödiga hål, och vad som
-          oftast gäller innan ni borrar.
+          Hyresro är en fristående guide för den som bor i hyresrätt i Sverige.
+          Vi samlar sätt att inreda utan onödiga hål, och vad som oftast gäller innan ni borrar.
         </p>
         <p>
-          Vi är inte hyresvärd, inte jurist och inte butik. Råd på sajten
-          ersätter inte{" "}
-          <Link
-            href="/guide/kolla-kontraktet"
-            className="underline underline-offset-2 hover:text-stone-800"
-          >
+          Vi är inte hyresvärd, inte jurist och inte butik. Texten ersätter inte{" "}
+          <Link href="/guide/kolla-kontraktet" className="underline underline-offset-2">
             kontraktet
           </Link>{" "}
-          eller värdens besked. Vid tvekan: läs{" "}
-          <Link
-            href="/guide/kolla-kontraktet"
-            className="underline underline-offset-2 hover:text-stone-800"
-          >
-            avtalet
-          </Link>{" "}
-          och fråga den som står som hyresvärd.
+          eller värdens besked.
+        </p>
+        <h2 className="text-xl font-semibold text-[#1A1A1A]">Finansiering</h2>
+        <p>
+          Vissa länkar på sajten är affiliatelänkar (reklam enligt marknadsföringslagen).
+          Klickar ni vidare till en återförsäljare och handlar kan vi få provision.
+          Det ändrar inte priset ni betalar. Köpet sluts med butiken, inte med Hyresro.
         </p>
         <p>
-          Vissa länkar leder till butiker. Om ni handlar via dem kan Hyresro få
-          provision. Priset för er ändras inte. Mer:{" "}
-          <Link
-            href="/affiliate-info"
-            className="underline underline-offset-2 hover:text-stone-800"
-          >
-            Så finansieras sajten
-          </Link>
-          .
-        </p>
-        <p>
-          Praxis kring slitage och ändringar finns hos{" "}
-          <a
-            href="https://www.hyresgastforeningen.se/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-stone-800"
-          >
-            Hyresgästföreningen
-          </a>
-          . Vi länkar dit när det behövs.
+          Vi väljer produkter efter hur de fästs och om de går att ta ner — inte efter högst provision.
         </p>
       </div>
     </article>

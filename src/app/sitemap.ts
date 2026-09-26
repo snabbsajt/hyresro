@@ -15,8 +15,8 @@ const paths = [
   "/sakerhet",
   "/checklista-flytta",
   "/om",
-  "/affiliate-info",
   "/integritet",
+  "/kontakt",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
