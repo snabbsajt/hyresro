@@ -60,7 +60,7 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-stone-300 bg-[#F3EFEA]/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-stone-300 bg-[#F3EFEA]">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
@@ -124,7 +124,7 @@ export function Header() {
         <button
           ref={buttonRef}
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center text-stone-800 hover:bg-stone-200/80 md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center text-stone-800 hover:bg-stone-200 md:hidden"
           aria-expanded={mobileOpen}
           aria-controls={menuId}
           aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
@@ -152,7 +152,7 @@ export function Header() {
           />
           <nav
             id={menuId}
-            className="fixed inset-x-0 top-[57px] z-50 max-h-[calc(100dvh-57px)] overflow-y-auto border-t border-stone-300 bg-[#F3EFEA]/95 backdrop-blur-md md:hidden"
+            className="fixed inset-x-0 top-[57px] z-50 max-h-[calc(100dvh-57px)] overflow-y-auto border-t border-stone-300 bg-[#F3EFEA] md:hidden"
             aria-label="Huvudmeny"
           >
             <ul className="mx-auto max-w-6xl px-4 py-2 sm:px-6">
