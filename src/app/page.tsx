@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
+import { AdNote } from "@/components/AdNote";
 import { site } from "@/config/site";
 import { getCatalog } from "@/lib/catalog";
 
@@ -66,8 +67,18 @@ export default async function HomePage() {
         </ul>
       </section>
 
+      <section className="max-w-2xl space-y-3">
+        <h2 className="font-sans text-xl font-semibold">Vad är Hyresro?</h2>
+        <p>
+          Hyresro hjälper er att inreda och använda hyresrätten utan onödiga hål. Guiderna
+          förklarar vad som oftast går, vad som kräver värdens ja, och hur produkterna fästs.
+          Produkterna kommer från svenska återförsäljare. Vi är inte jurist och inte butik.
+        </p>
+      </section>
+
       <section className="space-y-4">
         <h2 className="font-sans text-xl font-semibold">Utvalda produkter</h2>
+        <AdNote />
         <div className="grid gap-4 sm:grid-cols-3">
           {featured.map((p) => (
             <ProductCard key={p.slug} product={p} />

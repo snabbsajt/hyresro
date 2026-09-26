@@ -3,14 +3,12 @@ import { ProductCard } from "@/components/ProductCard";
 import { getProductsByCategory } from "@/lib/catalog";
 import { Crumbs } from "@/components/Crumbs";
 import { ContractNote } from "@/components/ContractNote";
+import { AdNote } from "@/components/AdNote";
 
 export const metadata: Metadata = {
   title: "Säkerhet i hyresrätt",
-  description: "Brandfilt, brandvarnare och första hjälpen. Kolla vad värden redan kräver.",
-  openGraph: {
-    title: "Säkerhet i hyresrätt",
-    description: "Brandfilt, brandvarnare och första hjälpen. Kolla vad värden redan kräver.",
-  },
+  description:
+    "Brandfilt, extra varnare på batteri och första hjälpen — saker ni kan ställa in utan att borra.",
 };
 
 export default async function Page() {
@@ -20,9 +18,12 @@ export default async function Page() {
       <header className="space-y-3">
         <Crumbs items={[{ href: "/produkter", label: "Alla produkter" }, { label: "Säkerhet" }]} />
         <h1 className="text-3xl font-semibold tracking-tight">Kök och säkerhet</h1>
-        <p className="max-w-2xl text-stone-700">
-          Brandfilt vid spisen och extra varnare på batteri. Många värdar kräver redan fast brandvarnare.
+        <p className="max-w-2xl">
+          Det som står löst eller på batteri kan ni ta med er. Brandfilt vid spisen, extra
+          varnare och en väska med plåster kräver inte hål. Fast brandvarnare som värden redan
+          satt upp rör ni inte.
         </p>
+        <AdNote />
         <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-500">
           <ContractNote />
         </p>

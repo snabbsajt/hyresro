@@ -24,17 +24,25 @@ export default function OmPage() {
           </Link>{" "}
           eller värdens besked.
         </p>
-        <h2 className="text-xl font-semibold">Finansiering</h2>
+
+        <h2 id="annonsering" className="text-xl font-semibold">Finansiering och reklam</h2>
         <p>
           Vissa länkar på sajten är affiliatelänkar. Det är reklam enligt marknadsföringslagen.
           Klickar ni vidare till en återförsäljare och handlar kan vi få provision. Det ändrar
           inte priset ni betalar. Köpet sluts med butiken, inte med Hyresro.
         </p>
         <p>
-          Vi väljer produkter efter hur de fästs och om de går att ta ner — inte efter högst
-          provision. Länkarna går i dag till butikernas vanliga produktsidor. När vi är med i
-          ett affiliateprogram byts de mot spårbara länkar.
+          Länkarna går i dag till butikernas vanliga produktsidor. När vi är med i ett
+          affiliateprogram byts de mot spårbara länkar.
         </p>
+
+        <h2 className="text-xl font-semibold">Så väljer vi produkter</h2>
+        <ul className="list-disc space-y-1.5 pl-5">
+          <li>Lösningar som inte kräver permanenta ingrepp kommer först.</li>
+          <li>Vi tittar på fäste, maxvikt och om det går att ta ner vid flytt.</li>
+          <li>Priser ändras hos butiken. Siffran på sajten är en ungefärlig från-pris.</li>
+          <li>Provision styr inte urvalet.</li>
+        </ul>
       </div>
     </article>
   );

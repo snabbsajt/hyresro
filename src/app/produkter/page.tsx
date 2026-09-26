@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ProductRow } from "@/components/ProductRow";
 import { Crumbs } from "@/components/Crumbs";
+import { AdNote } from "@/components/AdNote";
 import { getCatalog } from "@/lib/catalog";
 import type { Product } from "@/data/types";
 
@@ -42,6 +43,7 @@ export default async function Page() {
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
           Alla rekommenderade produkter
         </h1>
+        <AdNote />
       </header>
       {sections.map((s) =>
         s.items.length === 0 ? null : (

@@ -14,32 +14,47 @@ export default function IntegritetPage() {
       <Crumbs items={[{ label: "Integritet och kakor" }]} />
       <h1 className="text-3xl font-semibold tracking-tight">Integritet och kakor</h1>
       <div className="max-w-2xl space-y-4 leading-relaxed">
+        <h2 className="text-xl font-semibold">Personuppgiftsansvarig</h2>
         <p>
-          Inget konto. Inget nyhetsbrev. Ingen egen statistik-cookie just nu.
+          {site.name}. Privatperson, Stockholm. E-post:{" "}
+          <a href={`mailto:${site.contactEmail}`} className="underline underline-offset-2">
+            {site.contactEmail}
+          </a>
+          .
         </p>
+
+        <h2 className="text-xl font-semibold">Vad vi behandlar</h2>
         <p>
-          Sajten körs på Vercel. Där kan tekniska loggar uppstå för att sidan ska fungera. Vi
-          säljer inte sådana uppgifter.
-        </p>
-        <p>
-          Skriver ni via{" "}
+          Inget konto. Inget nyhetsbrev. Ingen egen statistik-cookie just nu. Om ni skriver till
+          oss via{" "}
           <Link href="/kontakt" className="underline underline-offset-2">
             kontaktformuläret
           </Link>{" "}
-          öppnas ert mejlprogram mot {site.contactEmail}. Vi läser det för att kunna svara och
-          sparar inte formuläret på sajten.
+          öppnas ert mejlprogram mot adressen ovan. Då får vi namn, er e-post och meddelandet.
+          Det används bara för att svara. Rättslig grund: berättigat intresse att hantera
+          förfrågan. Vi sparar inte formuläret på sajten. Mejl raderas när ärendet är klart,
+          senast inom ett år om det inte behövs längre för att visa vad som sagts.
         </p>
+
+        <h2 className="text-xl font-semibold">Tekniska loggar</h2>
         <p>
-          När ni klickar vidare till en butik kan den butiken sätta egna kakor. Det styrs av
-          deras villkor, inte av Hyresro.
+          Sajten körs på Vercel. Där kan IP-adress, tidpunkt och sökväg loggas för drift och
+          säkerhet. Vercel är personuppgiftsbiträde för den driften. Vi säljer inte loggar.
         </p>
+
+        <h2 className="text-xl font-semibold">Kakor och butikslänkar</h2>
         <p>
-          Vill ni att ett mejl ska raderas: skriv till samma adress.
+          Hyresro sätter ingen egen cookie för analys just nu. När ni klickar vidare till en
+          butik kan den butiken, och i framtiden ett affiliatenätverk, sätta kakor för att räkna
+          klick och köp. Det styrs av deras villkor.
+        </p>
+
+        <h2 className="text-xl font-semibold">Era rättigheter</h2>
+        <p>
+          Ni kan begära tillgång, rättelse eller radering av mejl vi har fått från er. Skriv
+          till samma adress. Klagomål på personuppgiftshantering kan lämnas till Integritetsskyddsmyndigheten.
         </p>
       </div>
-      <p className="text-xs text-stone-500">
-        {site.name} · {site.operator} · {site.contactEmail}
-      </p>
     </article>
   );
 }
