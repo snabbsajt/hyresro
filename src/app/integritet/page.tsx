@@ -13,20 +13,28 @@ export default function IntegritetPage() {
     <article className="space-y-6">
       <Crumbs items={[{ label: "Integritet och kakor" }]} />
       <h1 className="text-3xl font-semibold tracking-tight">Integritet och kakor</h1>
-      <div className="space-y-4 leading-relaxed text-stone-700">
-        <p>Inget konto. Inget nyhetsbrev. Ingen egen statistik-cookie just nu.</p>
+      <div className="max-w-2xl space-y-4 leading-relaxed">
         <p>
-          Sajten körs på Vercel. Där kan tekniska loggar uppstå för drift. Vi säljer inte sådana uppgifter.
+          Inget konto. Inget nyhetsbrev. Ingen egen statistik-cookie just nu.
         </p>
         <p>
-          Meddelande via{" "}
+          Sajten körs på Vercel. Där kan tekniska loggar uppstå för att sidan ska fungera. Vi
+          säljer inte sådana uppgifter.
+        </p>
+        <p>
+          Skriver ni via{" "}
           <Link href="/kontakt" className="underline underline-offset-2">
             kontaktformuläret
           </Link>{" "}
-          används bara för att svara.
+          öppnas ert mejlprogram mot {site.contactEmail}. Vi läser det för att kunna svara och
+          sparar inte formuläret på sajten.
         </p>
         <p>
-          Butikslänkar kan sätta kakor hos återförsäljaren.
+          När ni klickar vidare till en butik kan den butiken sätta egna kakor. Det styrs av
+          deras villkor, inte av Hyresro.
+        </p>
+        <p>
+          Vill ni att ett mejl ska raderas: skriv till samma adress.
         </p>
       </div>
       <p className="text-xs text-stone-500">

@@ -38,7 +38,9 @@ export async function ProductCard({ product }: Props) {
         <div className="aspect-[4/3] w-full bg-[#141414]" aria-hidden />
       )}
       <div className="p-4">
-        <h3 className="mb-2 font-medium text-stone-100">{product.name}</h3>
+        <h3 className="mb-2 font-medium" style={{ color: "#d2ccc2" }}>
+          {product.name}
+        </h3>
         {product.notes ? (
           <p className="mb-3 text-sm text-stone-400">{product.notes}</p>
         ) : null}

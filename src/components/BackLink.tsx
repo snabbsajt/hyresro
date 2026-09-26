@@ -17,7 +17,7 @@ export function BackLink() {
           router.push("/");
         }
       }}
-      className="text-sm text-stone-400 hover:text-white"
+      className="text-sm text-stone-400 underline-offset-2 hover:text-[#d2ccc2] hover:underline"
     >
       ← Tillbaka
     </button>
