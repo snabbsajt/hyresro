@@ -83,6 +83,7 @@ export const products: Product[] = [
     ],
     notes:
       "Självhäftande eller klämhylla. Bra i badrum och kök. Kolla maxvikt och yta.",
+    noteKey: "kontrakt",
     legalNote: "Kolla ditt kontrakt innan ni sätter upp något på vägg.",
   },
   {

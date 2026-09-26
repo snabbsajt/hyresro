@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
-import { getProductsByCategory } from "@/data/products";
+import { getProductsByCategory } from "@/lib/catalog";
 import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     "Solskydd utan borr i hyresrätt. Klämfästen, mätning och mörkläggning — plus produkter.",
 };
 
-export default function SolskyddPage() {
-  const items = getProductsByCategory("solskydd");
+export default async function SolskyddPage() {
+  const items = await getProductsByCategory("solskydd");
 
   return (
     <div className="space-y-8">

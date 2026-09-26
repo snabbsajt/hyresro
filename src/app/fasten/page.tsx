@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContractNote } from "@/components/ContractNote";
 import { ProductCard } from "@/components/ProductCard";
-import { getProductsByCategory } from "@/data/products";
+import { getProductsByCategory } from "@/lib/catalog";
 import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     "Borrfria fästen i hyresrätt: underlag, viktgräns och när tejp inte räcker.",
 };
 
-export default function FastenPage() {
-  const items = getProductsByCategory("fasten");
+export default async function FastenPage() {
+  const items = await getProductsByCategory("fasten");
 
   return (
     <div className="space-y-8">

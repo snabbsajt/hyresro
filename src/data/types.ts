@@ -15,6 +15,7 @@ export type Product = {
   priceFromSek?: number;
   merchants: Merchant[];
   notes: string;
+  noteKey?: string;
   legalNote?: string;
   imageUrl?: string;
   imageAlt?: string;

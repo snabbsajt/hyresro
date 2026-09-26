@@ -1,6 +1,7 @@
+import Link from "next/link";
 import type { Product } from "@/data/types";
+import { getNote } from "@/lib/notes";
 import { AffiliateLink } from "./AffiliateLink";
-import { ContractNote } from "./ContractNote";
 
 const mountLabel: Record<Product["mountType"], string> = {
   "no-drill": "Utan borr",
@@ -12,7 +13,9 @@ type Props = {
   product: Product;
 };
 
-export function ProductCard({ product }: Props) {
+export async function ProductCard({ product }: Props) {
+  const note = product.noteKey ? await getNote(product.noteKey) : undefined;
+
   return (
     <article className="overflow-hidden rounded-lg border border-stone-300 bg-white shadow-sm">
       {product.imageUrl ? (
@@ -21,12 +24,7 @@ export function ProductCard({ product }: Props) {
           alt={product.imageAlt || product.name}
           className="aspect-[4/3] w-full object-cover"
         />
-      ) : (
-        <div
-          className="aspect-[4/3] w-full bg-stone-100"
-          aria-hidden
-        />
-      )}
+      ) : null}
       <div className="p-4">
         <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
           <h3 className="font-medium text-stone-900">{product.name}</h3>
@@ -40,7 +38,16 @@ export function ProductCard({ product }: Props) {
             Från ca {product.priceFromSek} kr
           </p>
         )}
-        {product.legalNote && <ContractNote className="mb-3" />}
+        {note && (
+          <p className="mb-3 text-xs text-stone-500">
+            <Link
+              href={note.href}
+              className="underline underline-offset-2 hover:text-stone-800"
+            >
+              {note.text}
+            </Link>
+          </p>
+        )}
         <ul className="flex flex-wrap gap-2">
           {product.merchants.map((m) => (
             <li key={m.name}>

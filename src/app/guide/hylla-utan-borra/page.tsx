@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContractNote } from "@/components/ContractNote";
 import { ProductCard } from "@/components/ProductCard";
-import { getProduct } from "@/data/products";
+import { getProduct } from "@/lib/catalog";
 import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
@@ -11,10 +11,10 @@ export const metadata: Metadata = {
     "Hylla utan borr i hyresrätt: yta, maxvikt, tejp-skruv och klämhylla. Kort guide. Inte juridisk rådgivning.",
 };
 
-export default function HyllaUtanBorraPage() {
-  const hylla = getProduct("hylla-no-drill");
-  const tesaTung = getProduct("tesa-skruv-tung");
-  const tesaLatt = getProduct("tesa-skruv-latt");
+export default async function HyllaUtanBorraPage() {
+  const hylla = await getProduct("hylla-no-drill");
+  const tesaTung = await getProduct("tesa-skruv-tung");
+  const tesaLatt = await getProduct("tesa-skruv-latt");
 
   return (
     <article className="space-y-8">

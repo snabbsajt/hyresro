@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContractNote } from "@/components/ContractNote";
 import { ProductCard } from "@/components/ProductCard";
-import { getProduct } from "@/data/products";
+import { getProduct } from "@/lib/catalog";
 import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
@@ -11,9 +11,9 @@ export const metadata: Metadata = {
     "Så sätter ni upp rullgardin med klämfäste i hyresrätt. Mått, fönsterbåge, mörkläggning och när skruvar i karm kräver att ni läser kontraktet.",
 };
 
-export default function RullgardinUtanBorraPage() {
-  const klam = getProduct("rullgardin-klamfaste");
-  const mork = getProduct("morklaggningsrullgardin");
+export default async function RullgardinUtanBorraPage() {
+  const klam = await getProduct("rullgardin-klamfaste");
+  const mork = await getProduct("morklaggningsrullgardin");
 
   return (
     <article className="space-y-8">

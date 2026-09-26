@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
 import { site } from "@/config/site";
-import { products } from "@/data/products";
+import { getCatalog } from "@/lib/catalog";
 
 export const metadata: Metadata = {
   title: `${site.name} — ${site.tagline}`,
@@ -10,13 +10,11 @@ export const metadata: Metadata = {
     "Inred hyresrätten utan onödiga hål. Guider, produkter och tips så lägenheten är i skick vid avflytt.",
 };
 
-const featured = products
-  .filter((p) =>
-    ["rullgardin-klamfaste", "tesa-skruv-tung", "hylla-no-drill"].includes(
-      p.slug,
-    ),
-  )
-  .slice(0, 3);
+const featuredSlugs = [
+  "rullgardin-klamfaste",
+  "tesa-skruv-tung",
+  "hylla-no-drill",
+] as const;
 
 const entries = [
   {
@@ -33,7 +31,12 @@ const entries = [
   },
 ] as const;
 
-export default function HomePage() {
+export default async function HomePage() {
+  const products = await getCatalog();
+  const featured = products
+    .filter((p) => featuredSlugs.includes(p.slug as (typeof featuredSlugs)[number]))
+    .slice(0, 3);
+
   return (
     <div className="space-y-12">
       <section className="space-y-6 py-6 sm:py-10">

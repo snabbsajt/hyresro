@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContractNote } from "@/components/ContractNote";
 import { ProductCard } from "@/components/ProductCard";
-import { products } from "@/data/products";
+import { getCatalog } from "@/lib/catalog";
 import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
@@ -11,11 +11,12 @@ export const metadata: Metadata = {
     "Kort om vad som oftast gäller när ni vill borra i en hyresrätt. Kontraktet styr. Alternativ utan borr när det räcker. Inte juridisk rådgivning.",
 };
 
-const related = products.filter((p) =>
-  ["tesa-skruv-latt", "tesa-skruv-tung", "hylla-no-drill"].includes(p.slug),
-);
+export default async function BorraIHyresrattPage() {
+  const products = await getCatalog();
+  const related = products.filter((p) =>
+    ["tesa-skruv-latt", "tesa-skruv-tung", "hylla-no-drill"].includes(p.slug),
+  );
 
-export default function BorraIHyresrattPage() {
   return (
     <article className="space-y-8">
       <header className="space-y-3">
