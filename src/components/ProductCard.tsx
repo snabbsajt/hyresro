@@ -1,3 +1,5 @@
+import { existsSync } from "fs";
+import path from "path";
 import Link from "next/link";
 import type { Product } from "@/data/types";
 import { getNote } from "@/lib/notes";
@@ -7,15 +9,29 @@ type Props = {
   product: Product;
 };
 
+function resolveImageUrl(product: Product): string | undefined {
+  const fromCsv = product.imageUrl?.trim();
+  if (fromCsv) return fromCsv;
+  const localPath = path.join(
+    process.cwd(),
+    "public",
+    "products",
+    `${product.slug}.jpg`,
+  );
+  if (existsSync(localPath)) return `/products/${product.slug}.jpg`;
+  return undefined;
+}
+
 export async function ProductCard({ product }: Props) {
   const note = product.noteKey ? await getNote(product.noteKey) : undefined;
   const merchant = product.merchants[0];
+  const imageUrl = resolveImageUrl(product);
 
   return (
     <article className="overflow-hidden border border-[#E3DFD9] bg-white">
-      {product.imageUrl ? (
+      {imageUrl ? (
         <img
-          src={product.imageUrl}
+          src={imageUrl}
           alt={product.imageAlt || product.name}
           className="aspect-[4/3] w-full object-cover"
         />
