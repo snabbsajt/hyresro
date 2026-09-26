@@ -3,74 +3,132 @@
 import Link from "next/link";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { site } from "@/config/site";
-
-const groups = [
-  {
-    title: "Guider",
-    links: [
-      { href: "/guide/kolla-kontraktet", label: "Kontraktet" },
-      { href: "/guide/borra-i-hyresratt", label: "Borra" },
-      { href: "/guide/rullgardin-utan-borra", label: "Rullgardin" },
-      { href: "/guide/hylla-utan-borra", label: "Hylla" },
-    ],
-  },
-  {
-    title: "Produkter",
-    links: [
-      { href: "/solskydd", label: "Solskydd" },
-      { href: "/fasten", label: "Fästen" },
-    ],
-  },
-  {
-    title: "Övrigt",
-    links: [
-      { href: "/checklista-flytta", label: "Checklista" },
-      { href: "/om", label: "Om" },
-    ],
-  },
-] as const;
+import { navItems } from "./nav";
+import { NavPanel } from "./NavPanel";
 
 export function Header() {
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [desktopOpenId, setDesktopOpenId] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const menuId = useId();
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const desktopNavRef = useRef<HTMLElement>(null);
 
-  const close = useCallback(() => {
-    setOpen(false);
+  const closeMobile = useCallback(() => {
+    setMobileOpen(false);
+    setMobileExpanded(null);
     queueMicrotask(() => buttonRef.current?.focus());
   }, []);
 
+  const closeDesktop = useCallback(() => {
+    setDesktopOpenId(null);
+  }, []);
+
   useEffect(() => {
-    if (!open) return;
+    if (!mobileOpen && !desktopOpenId) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close();
+      if (e.key === "Escape") {
+        if (mobileOpen) closeMobile();
+        if (desktopOpenId) closeDesktop();
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [open, close]);
+  }, [mobileOpen, desktopOpenId, closeMobile, closeDesktop]);
+
+  useEffect(() => {
+    if (!desktopOpenId) return;
+    const onPointer = (e: MouseEvent) => {
+      if (
+        desktopNavRef.current &&
+        !desktopNavRef.current.contains(e.target as Node)
+      ) {
+        closeDesktop();
+      }
+    };
+    document.addEventListener("mousedown", onPointer);
+    return () => document.removeEventListener("mousedown", onPointer);
+  }, [desktopOpenId, closeDesktop]);
+
+  const openDesktopItem = navItems.find((i) => i.id === desktopOpenId);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-stone-300/90 bg-stone-100/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-stone-300 bg-stone-100">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
           className="shrink-0 text-base font-semibold tracking-tight text-stone-900"
-          onClick={() => setOpen(false)}
+          onClick={() => {
+            closeMobile();
+            closeDesktop();
+          }}
         >
           {site.name}
         </Link>
 
+        {/* Desktop: text labels */}
+        <nav
+          ref={desktopNavRef}
+          className="relative hidden md:block"
+          aria-label="Huvudmeny"
+          onMouseLeave={closeDesktop}
+        >
+          <ul className="flex items-center gap-1">
+            {navItems.map((item, index) => (
+              <li key={item.id} className="flex items-center gap-1">
+                {index > 0 && (
+                  <span
+                    className="select-none px-1 text-stone-400"
+                    aria-hidden
+                  >
+                    |
+                  </span>
+                )}
+                <button
+                  type="button"
+                  className={`px-2 py-1.5 text-sm font-medium text-stone-800 hover:text-stone-950 ${
+                    desktopOpenId === item.id ? "text-stone-950" : ""
+                  }`}
+                  aria-expanded={desktopOpenId === item.id}
+                  aria-haspopup="true"
+                  onMouseEnter={() => setDesktopOpenId(item.id)}
+                  onClick={() =>
+                    setDesktopOpenId((cur) =>
+                      cur === item.id ? null : item.id,
+                    )
+                  }
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          {openDesktopItem && (
+            <div className="absolute left-0 right-0 top-full z-50 pt-2">
+              <NavPanel
+                item={openDesktopItem}
+                onNavigate={closeDesktop}
+                className="min-w-[14rem] shadow-sm"
+              />
+            </div>
+          )}
+        </nav>
+
+        {/* Mobile: hamburger */}
         <button
           ref={buttonRef}
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-stone-800 hover:bg-stone-200/80"
-          aria-expanded={open}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-stone-800 hover:bg-stone-200 md:hidden"
+          aria-expanded={mobileOpen}
           aria-controls={menuId}
-          aria-label={open ? "Stäng meny" : "Öppna meny"}
-          onClick={() => (open ? close() : setOpen(true))}
+          aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
+          onClick={() => (mobileOpen ? closeMobile() : setMobileOpen(true))}
         >
-          <span className="sr-only">{open ? "Stäng meny" : "Öppna meny"}</span>
-          {open ? (
+          <span className="sr-only">
+            {mobileOpen ? "Stäng meny" : "Öppna meny"}
+          </span>
+          {mobileOpen ? (
             <svg
               width="22"
               height="22"
@@ -98,34 +156,52 @@ export function Header() {
         </button>
       </div>
 
-      {open && (
+      {/* Mobile panel */}
+      {mobileOpen && (
         <nav
           id={menuId}
-          className="border-t border-stone-300/90 bg-stone-100"
+          className="border-t border-stone-300 bg-stone-50 md:hidden"
           aria-label="Huvudmeny"
         >
-          <div className="mx-auto grid max-w-6xl gap-6 px-4 py-5 sm:grid-cols-3 sm:px-6">
-            {groups.map((group) => (
-              <div key={group.title}>
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-sage-800">
-                  {group.title}
-                </p>
-                <ul className="flex flex-col">
-                  {group.links.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="block py-2 text-base font-medium text-stone-800 hover:text-stone-950"
-                        onClick={close}
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <ul className="mx-auto max-w-6xl px-4 py-2 sm:px-6">
+            {navItems.map((item) => {
+              const expanded = mobileExpanded === item.id;
+              return (
+                <li key={item.id} className="border-b border-stone-200 last:border-b-0">
+                  <button
+                    type="button"
+                    className="flex w-full items-center justify-between py-3 text-left text-base font-medium text-stone-800"
+                    aria-expanded={expanded}
+                    onClick={() =>
+                      setMobileExpanded((cur) =>
+                        cur === item.id ? null : item.id,
+                      )
+                    }
+                  >
+                    <span>{item.label}</span>
+                    <span className="text-lg leading-none text-stone-500" aria-hidden>
+                      {expanded ? "−" : "+"}
+                    </span>
+                  </button>
+                  {expanded && (
+                    <ul className="pb-3 pl-3">
+                      {item.links.map((link) => (
+                        <li key={link.href}>
+                          <Link
+                            href={link.href}
+                            className="block py-2 text-sm text-stone-700 hover:text-stone-950"
+                            onClick={closeMobile}
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
         </nav>
       )}
     </header>
