@@ -138,11 +138,11 @@ export function Header() {
       {mobileOpen ? (
         <nav
           id={menuId}
-          className="fixed inset-x-0 bottom-0 top-[57px] z-[60] overflow-y-auto overscroll-contain border-t border-stone-300 bg-[#F3EFEA] md:hidden"
+          className="fixed inset-x-0 top-[57px] z-[60] max-h-[70vh] overflow-y-auto border-b border-stone-300 bg-[#F3EFEA] shadow-md md:hidden"
           style={{ WebkitOverflowScrolling: "touch" }}
           aria-label="Huvudmeny"
         >
-          <ul className="mx-auto max-w-6xl px-4 py-2 pb-24 sm:px-6">
+          <ul className="mx-auto max-w-6xl px-4 py-1 sm:px-6">
             {navItems.map((item) => {
               const expanded = mobileExpanded === item.id;
               return (
