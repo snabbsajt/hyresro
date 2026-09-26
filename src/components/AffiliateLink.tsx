@@ -1,7 +1,7 @@
 import { affiliateHref } from "@/lib/affiliate";
 
 const defaultClassName =
-  "inline-block border border-[#1A1A1A] bg-transparent px-3 py-1.5 text-sm font-medium text-[#1A1A1A] transition-colors hover:bg-[#1A1A1A] hover:!text-white";
+  "inline-block border border-white/35 bg-transparent px-3 py-1.5 text-sm font-medium text-stone-100 transition-colors hover:bg-white hover:!text-black";
 
 type Props = {
   href: string;

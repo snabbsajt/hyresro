@@ -42,9 +42,9 @@ export default async function HomePage() {
             <Link
               key={e.href}
               href={e.href}
-              className="group border border-white/15 bg-white px-5 py-8 font-sans text-lg font-semibold sm:py-10 hover:border-white"
+              className="group border border-white/15 bg-[#1a1a1a] px-5 py-8 font-sans text-lg font-semibold sm:py-10 hover:border-white/40"
             >
-              <span className="text-[#1A1A1A]">{e.title}</span>
+              <span className="text-stone-100">{e.title}</span>
             </Link>
           ))}
         </div>
