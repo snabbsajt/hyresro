@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Crumbs } from "@/components/Crumbs";
+import { site } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Integritet och kakor",
@@ -15,28 +16,22 @@ export default function IntegritetPage() {
       <div className="space-y-4 leading-relaxed text-stone-700">
         <p>Inget konto. Inget nyhetsbrev. Ingen egen statistik-cookie just nu.</p>
         <p>
-          Sajten körs på Vercel. Där kan tekniska loggar uppstå (till exempel IP och tidpunkt)
-          för drift och felsökning. Vi säljer inte sådana uppgifter.
+          Sajten körs på Vercel. Där kan tekniska loggar uppstå för drift. Vi säljer inte sådana uppgifter.
         </p>
         <p>
-          Skickar ni meddelande via{" "}
+          Meddelande via{" "}
           <Link href="/kontakt" className="underline underline-offset-2">
             kontaktformuläret
           </Link>{" "}
-          behandlar vi namn, e-post och meddelande för att kunna svara. Uppgifterna sparas inte i ett
-          eget register på sajten. Vill ni att ett mejl raderas: skriv det i ett nytt meddelande.
+          används bara för att svara.
         </p>
         <p>
-          Klickar ni en butikslänk kan butiken eller dess nätverk sätta egna kakor. Det styrs av deras villkor.
-        </p>
-        <p>
-          Ansvarig för sajten och kontaktuppgifter enligt e-handelslagen anges på{" "}
-          <Link href="/kontakt" className="underline underline-offset-2">
-            kontaktsidan
-          </Link>{" "}
-          när de är ifyllda.
+          Butikslänkar kan sätta kakor hos återförsäljaren.
         </p>
       </div>
+      <p className="text-xs text-stone-500">
+        {site.name} · {site.operator} · {site.contactEmail}
+      </p>
     </article>
   );
 }

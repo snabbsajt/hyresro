@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Crumbs } from "@/components/Crumbs";
 import { ContactForm } from "@/components/ContactForm";
-import { site } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -14,14 +14,16 @@ export default function KontaktPage() {
       <Crumbs items={[{ label: "Kontakt" }]} />
       <h1 className="text-3xl font-semibold tracking-tight">Kontakt</h1>
       <p className="max-w-xl leading-relaxed text-stone-700">
-        Frågor om sajten. Köp och reklamationsärenden tas med butiken ni handlat hos.
-      </p>
-      <p className="text-sm text-stone-600">
-        {site.operator}
-        <br />
-        E-post: {site.contactEmail}
+        Frågor om sajten. Köp tas med butiken.
       </p>
       <ContactForm />
+      <p className="text-xs text-stone-500">
+        Avsändare står på sidan{" "}
+        <Link href="/integritet" className="underline underline-offset-2">
+          Integritet och kakor
+        </Link>
+        .
+      </p>
     </article>
   );
 }
