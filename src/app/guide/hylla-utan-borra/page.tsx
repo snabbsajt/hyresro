@@ -4,6 +4,7 @@ import { ContractNote } from "@/components/ContractNote";
 import { Disclosure } from "@/components/Disclosure";
 import { ProductCard } from "@/components/ProductCard";
 import { getProduct } from "@/data/products";
+import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
   title: "Sätta upp hylla utan att borra",
@@ -28,6 +29,7 @@ export default function HyllaUtanBorraPage() {
         <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
           Hylla utan att borra
         </h1>
+        <BackLink />
         <p className="text-lg text-stone-600">
           Förvaring utan hål i väggen — om ytan är rätt och ni håller er under
           maxvikten.

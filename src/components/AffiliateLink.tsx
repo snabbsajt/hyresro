@@ -14,7 +14,7 @@ export function AffiliateLink({ href, slug, children, className }: Props) {
   return (
     <a
       href={affiliateHref(href, slug)}
-      rel="sponsored nofollow"
+      rel="noopener noreferrer nofollow sponsored"
       target="_blank"
       className={className ?? defaultClassName}
     >

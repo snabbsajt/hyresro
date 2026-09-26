@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContractNote } from "@/components/ContractNote";
 import { Disclosure } from "@/components/Disclosure";
+import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
   title: "Checklista: flytta in och ut",
@@ -16,6 +17,7 @@ export default function ChecklistaFlyttaPage() {
         <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
           Checklista: flytta in och ut
         </h1>
+        <BackLink />
         <p className="max-w-xl leading-relaxed text-stone-700">
           Fota allt innan du bär in möblerna – en noggrann dokumentation är ditt
           bästa skydd mot tvister om skicket vid avflytt.

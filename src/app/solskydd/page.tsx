@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Disclosure } from "@/components/Disclosure";
 import { ProductCard } from "@/components/ProductCard";
 import { getProductsByCategory } from "@/data/products";
+import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
   title: "Solskydd utan att borra",
@@ -19,6 +20,7 @@ export default function SolskyddPage() {
         <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
           Solskydd utan att borra
         </h1>
+        <BackLink />
       </header>
 
       <section className="space-y-3 leading-relaxed text-stone-700">

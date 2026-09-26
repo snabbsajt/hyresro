@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
   title: "Så finansieras sajten",
@@ -13,6 +14,7 @@ export default function AffiliateInfoPage() {
       <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
         Så finansieras sajten
       </h1>
+        <BackLink />
       <div className="space-y-4 leading-relaxed text-stone-700">
         <p>
           Vissa länkar till butiker på Hyresro är reklam. Om ni klickar och

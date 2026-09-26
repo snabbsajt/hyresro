@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Disclosure } from "@/components/Disclosure";
 import { site } from "@/config/site";
+import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
   title: "Om Hyresro",
@@ -15,6 +16,7 @@ export default function OmPage() {
       <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
         Om Hyresro
       </h1>
+        <BackLink />
       <div className="space-y-4 leading-relaxed text-stone-700">
         <p>
           Hyresro hjälper er som bor i hyresrätt att inreda smart utan att göra

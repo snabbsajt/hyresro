@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Disclosure } from "@/components/Disclosure";
+import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
   title: "Så läser ni hyreskontraktet innan ni sätter upp något",
@@ -21,6 +22,7 @@ export default function KollaKontraktetPage() {
         <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
           Så läser ni kontraktet
         </h1>
+        <BackLink />
         <p className="text-lg text-stone-600">
           Avtalet styr före generella tips. Hyreslagen är golvet. Ert kontrakt
           kan vara strängare.

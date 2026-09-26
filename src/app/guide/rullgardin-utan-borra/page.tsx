@@ -4,6 +4,7 @@ import { ContractNote } from "@/components/ContractNote";
 import { Disclosure } from "@/components/Disclosure";
 import { ProductCard } from "@/components/ProductCard";
 import { getProduct } from "@/data/products";
+import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
   title: "Rullgardin utan att borra i hyresrätt",
@@ -27,6 +28,7 @@ export default function RullgardinUtanBorraPage() {
         <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
           Rullgardin utan att borra
         </h1>
+        <BackLink />
         <p className="text-lg text-stone-600">
           Klämfäste i fönsterbågen. Inga hål i vägg. Det är standardvalet i
           hyresrätt — om bågen tål klämmorna.

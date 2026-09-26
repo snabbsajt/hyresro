@@ -4,6 +4,7 @@ import { ContractNote } from "@/components/ContractNote";
 import { Disclosure } from "@/components/Disclosure";
 import { ProductCard } from "@/components/ProductCard";
 import { getProductsByCategory } from "@/data/products";
+import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
   title: "Fästen utan att borra",
@@ -20,6 +21,7 @@ export default function FastenPage() {
         <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
           Fästen utan att borra
         </h1>
+        <BackLink />
         <p className="max-w-xl leading-relaxed text-stone-700">
           Du kan hänga tavlor, speglar och hyllor i din hyresrätt utan att borra
           – och så lägenheten är i skick vid avflytt. Här är de borrfria metoder som

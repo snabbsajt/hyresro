@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Disclosure } from "@/components/Disclosure";
+import { BackLink } from "@/components/BackLink";
 
 export const metadata: Metadata = {
   title: "Integritet",
@@ -13,6 +14,7 @@ export default function IntegritetPage() {
       <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
         Integritet
       </h1>
+        <BackLink />
       <div className="space-y-4 leading-relaxed text-stone-700">
         <p>
           Vi värnar om er personliga integritet och samlar därför inte in mer
