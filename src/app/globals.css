@@ -3,6 +3,8 @@
 :root {
   --paper: #0c0c0c;
   --ink: #f3efe8;
+  --muted: #c9c2b6;
+  --faint: #a8a194;
   --line: #2c2c2c;
   --slot: #141414;
   --accent: #3b5fdb;
@@ -42,6 +44,20 @@ h6 {
 
 a {
   color: inherit;
+}
+
+main {
+  color: var(--muted);
+}
+
+main .text-stone-700,
+main .text-stone-600 {
+  color: #d2ccc2;
+}
+
+main .text-stone-500,
+main .text-stone-400 {
+  color: #b4ada2;
 }
 
 .site-bg {
