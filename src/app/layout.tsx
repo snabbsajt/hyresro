@@ -35,14 +35,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sv">
-      <body className={`${geistSans.variable} antialiased`}>
-        <div className="site-shell">
-          <Header />
-          <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-8">
-            {children}
-          </main>
-          <Footer />
-        </div>
+      <body className={`${geistSans.variable} flex min-h-screen flex-col antialiased`}>
+        <Header />
+        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
