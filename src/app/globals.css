@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f3e6d4;
-  --ink: #1c1917;
-  --accent: #7a9ae0;
+  --paper: #f4f3f0;
+  --ink: #1a1a1a;
+  --line: #e2e0d8;
+  --slot: #ebeae6;
+  --accent: #6b8fd4;
   --background: var(--paper);
   --foreground: var(--ink);
 }

@@ -38,12 +38,12 @@ export default async function HomePage() {
     .slice(0, 3);
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-16">
       <section className="space-y-6 py-6 sm:py-10">
-        <h1 className="font-sans text-4xl font-semibold tracking-tight text-stone-900 sm:text-5xl">
+        <h1 className="font-sans text-4xl font-semibold tracking-tight text-[#1A1A1A] sm:text-5xl">
           Lägenheten i skick
         </h1>
-        <p className="font-sans text-xl text-stone-700 sm:text-2xl">
+        <p className="font-sans text-xl text-stone-600 sm:text-2xl">
           Inred hyresrätten utan onödiga hål.
         </p>
         <div className="grid gap-4 pt-2 sm:grid-cols-3">
@@ -51,7 +51,7 @@ export default async function HomePage() {
             <Link
               key={e.href}
               href={e.href}
-              className="rounded-xl border border-stone-300 bg-white px-5 py-8 font-sans text-lg font-semibold text-ink shadow-sm hover:border-accent sm:py-10"
+              className="border border-[#E2E0D8] bg-white px-5 py-8 font-sans text-lg font-semibold text-[#1A1A1A] hover:border-[#1A1A1A] sm:py-10"
             >
               {e.title}
             </Link>
@@ -60,7 +60,7 @@ export default async function HomePage() {
       </section>
 
       <section className="space-y-4">
-        <h2 className="font-sans text-xl font-semibold text-stone-800">
+        <h2 className="font-sans text-xl font-semibold text-[#1A1A1A]">
           Utvalda produkter
         </h2>
         <div className="grid gap-4 sm:grid-cols-3">
