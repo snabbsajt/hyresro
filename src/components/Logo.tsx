@@ -8,30 +8,30 @@ const WINDOW = "#3B5FDB";
 
 export function Logo({ className = "" }: Props) {
   return (
-    <span className={`inline-flex items-center gap-2.5 text-ink ${className}`}>
+    <span className={`inline-flex items-center gap-2 text-white ${className}`}>
       <svg
-        width="38"
+        width="40"
         height="34"
-        viewBox="0 0 36 32"
+        viewBox="0 0 40 34"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden
         className="shrink-0"
       >
         <path
-          d="M3.5 14.5 L18 3.2 L26.2 10.2 V6.2 H31.2 V14.2 L32.5 15.2"
-          stroke="currentColor"
-          strokeWidth="2.2"
+          d="M4 15.5 L20 2.2 L28.8 10 V5.2 H35.2 V14.8 L36 15.5"
+          stroke="white"
+          strokeWidth="3.2"
           strokeLinejoin="miter"
           strokeLinecap="square"
         />
-        <path d="M6.2 14.8 V29.2 H29.8 V14.8" stroke="currentColor" strokeWidth="2.2" />
-        <rect x="13.1" y="16.2" width="4.3" height="4.3" fill={WINDOW} />
-        <rect x="18.4" y="16.2" width="4.3" height="4.3" fill={WINDOW} />
-        <rect x="13.1" y="21.5" width="4.3" height="4.3" fill={WINDOW} />
-        <rect x="18.4" y="21.5" width="4.3" height="4.3" fill={WINDOW} />
+        <path d="M7.2 15.2 V31.2 H32.8 V15.2" stroke="white" strokeWidth="3.2" />
+        <rect x="14.2" y="16.6" width="5" height="5" fill={WINDOW} />
+        <rect x="20.6" y="16.6" width="5" height="5" fill={WINDOW} />
+        <rect x="14.2" y="22.8" width="5" height="5" fill={WINDOW} />
+        <rect x="20.6" y="22.8" width="5" height="5" fill={WINDOW} />
       </svg>
-      <span className="font-sans text-[20px] font-semibold leading-none tracking-tight">
+      <span className="font-sans text-[22px] font-bold leading-none tracking-tight">
         {site.name}
       </span>
     </span>

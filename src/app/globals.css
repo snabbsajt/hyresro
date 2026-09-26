@@ -5,7 +5,7 @@
   --ink: #f3efe8;
   --line: #2c2c2c;
   --slot: #1a1a1a;
-  --accent: #4f6fd0;
+  --accent: #3b5fdb;
   --card: #ffffff;
   --background: var(--paper);
   --foreground: var(--ink);
@@ -45,18 +45,26 @@ a {
 }
 
 .glass-bar {
-  background: rgba(12, 12, 12, 0.55);
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset;
-  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.18) inset;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 @media (prefers-reduced-transparency: reduce) {
-  .glass-bar {
+  .glass-bar,
+  .glass-panel {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: #0c0c0c;
+    background: #161616;
     box-shadow: none;
   }
 }
