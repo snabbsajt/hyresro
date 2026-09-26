@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Solskydd utan att borra",
   description:
     "Jämför rullgardin med kläm, plissé och fönsterfilm. Utan skruv i karm.",
+  openGraph: {
+    title: "Solskydd utan att borra",
+    description:
+      "Jämför rullgardin med kläm, plissé och fönsterfilm. Utan skruv i karm.",
+  },
 };
 
 export default async function SolskyddPage() {
@@ -18,27 +23,24 @@ export default async function SolskyddPage() {
       <header className="space-y-3">
         <Crumbs items={[{ href: "/produkter", label: "Alla produkter" }, { label: "Solskydd" }]} />
         <h1 className="text-3xl font-semibold tracking-tight">Solskydd utan att borra</h1>
-      </header>
-      <section className="space-y-3 leading-relaxed text-stone-700">
-        <ul className="list-disc space-y-2 pl-5">
-          <li>Klämfästen på fönsterbågen utan verktyg.</li>
-          <li>Mät bredd innan köp.</li>
-          <li>Skruvhål i karm räknas ofta som onormalt slitage.</li>
-        </ul>
-        <p>
+        <p className="max-w-2xl leading-relaxed text-stone-700">
+          Klämfäste sitter i bågen, inte i väggen. Mät bredd innan köp — butikerna räknar olika.
+          Skruvhål i karm räknas ofta som onormalt slitage.
+        </p>
+        <p className="text-sm text-stone-600">
           Guide:{" "}
           <Link href="/guide/rullgardin-utan-borra" className="underline underline-offset-2">
             Rullgardin utan att borra
           </Link>
         </p>
-      </section>
+      </header>
       <CompareTable
         caption="Vilken typ ska ni välja"
         rows={[
           {
             name: "Rullgardin — Bolga mörkläggande",
             bestFor: "Sova, mörklägga, vanligt fönster",
-            watch: "Bågen måste tåla klämman. Mät karmdjup.",
+            watch: "Kontrollera att er storlek har klämfäste, inte skruv.",
             fromSek: 199,
           },
           {

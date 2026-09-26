@@ -1,11 +1,27 @@
 import Link from "next/link";
+import { site } from "@/config/site";
 
 export type Crumb = { href?: string; label: string };
 
 export function Crumbs({ items }: { items: Crumb[] }) {
   const trail: Crumb[] = [{ href: "/", label: "Hem" }, ...items];
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: trail.map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: c.label,
+      item: c.href ? `${site.url}${c.href === "/" ? "" : c.href}` : undefined,
+    })),
+  };
+
   return (
     <nav aria-label="Du är här" className="text-sm text-stone-500">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ol className="flex flex-wrap items-center gap-1">
         {trail.map((c, i) => {
           const last = i === trail.length - 1;

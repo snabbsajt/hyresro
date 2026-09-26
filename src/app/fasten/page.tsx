@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
 import { CompareTable } from "@/components/CompareTable";
 import { getProductsByCategory } from "@/lib/catalog";
@@ -8,6 +9,10 @@ import { ContractNote } from "@/components/ContractNote";
 export const metadata: Metadata = {
   title: "Fästen utan att borra",
   description: "Jämför Tesa, Command och krok — vikt och underlag.",
+  openGraph: {
+    title: "Fästen utan att borra",
+    description: "Jämför Tesa, Command och krok — vikt och underlag.",
+  },
 };
 
 export default async function FastenPage() {
@@ -17,6 +22,16 @@ export default async function FastenPage() {
       <header className="space-y-3">
         <Crumbs items={[{ href: "/produkter", label: "Alla produkter" }, { label: "Fästen" }]} />
         <h1 className="text-3xl font-semibold tracking-tight">Fästen utan att borra</h1>
+        <p className="max-w-2xl leading-relaxed text-stone-700">
+          Självhäftande skruv och krok håller på slät målad vägg eller kakel, om ni håller maxvikten.
+          Tapet och fuktig fog släpper. Ta ner enligt tillverkaren vid flytt.
+        </p>
+        <p className="text-sm text-stone-600">
+          Guide:{" "}
+          <Link href="/guide/hylla-utan-borra" className="underline underline-offset-2">
+            Hylla utan att borra
+          </Link>
+        </p>
         <ContractNote />
       </header>
       <CompareTable
@@ -30,7 +45,7 @@ export default async function FastenPage() {
           },
           {
             name: "Självhäftande skruv — Tesa tung",
-            bestFor: "Tyngre grejer på kakel, glas, målad slät vägg",
+            bestFor: "Tyngre saker på kakel, glas, målad slät vägg",
             watch: "Tapet och strukturputt släpper ofta. Ta bort enligt Tesa.",
             fromSek: 70,
           },
@@ -42,7 +57,7 @@ export default async function FastenPage() {
           },
           {
             name: "Krok — Tesa kakel",
-            bestFor: "Handduk och lätta grejer i badrum",
+            bestFor: "Handduk och lätta saker i badrum",
             watch: "Kakelplattan, inte fogen.",
             fromSek: 137,
           },

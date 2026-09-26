@@ -19,9 +19,6 @@ export const metadata: Metadata = {
   description:
     "Inreda hyresrätt utan onödiga hål. Guider, produkter och checklistor — sakligt och konkret.",
   openGraph: {
-    title: site.name,
-    description: site.tagline,
-    url: site.url,
     siteName: site.name,
     locale: "sv_SE",
     type: "website",
