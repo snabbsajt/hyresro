@@ -39,7 +39,7 @@ export default async function FastenPage() {
         rows={[
           {
             name: "Självhäftande skruv — Tesa lätt",
-            bestFor: "Krokar, ljus ram, slät yta",
+            bestFor: "Krokar, lätt ram, slät yta",
             watch: "Maxvikt på förpackningen. Ren, torr vägg.",
             fromSek: 70,
           },
