@@ -75,7 +75,7 @@ export default async function BorraIHyresrattPage() {
             href="https://www.hyresgastforeningen.se/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             Hyresgästföreningen
           </a>
@@ -127,14 +127,14 @@ export default async function BorraIHyresrattPage() {
         <p className="text-sm">
           <Link
             href="/guide/hylla-utan-borra"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             Guide: hylla utan borr
           </Link>
           {" · "}
           <Link
             href="/guide/rullgardin-utan-borra"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             Rullgardin utan borr
           </Link>

@@ -8,7 +8,7 @@ export function ContractNote({ className = "" }: Props) {
     <p className={`text-xs text-stone-500 ${className}`.trim()}>
       <Link
         href={site.contractPath}
-        className="text-sage-800 underline underline-offset-2 hover:text-sage-600"
+        className="text-ink underline underline-offset-2 hover:text-accent"
       >
         Så läser ni kontraktet
       </Link>{" "}

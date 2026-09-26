@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
-import { site } from "@/config/site";
+import { Logo } from "./Logo";
 import { primaryNav, secondaryNav } from "./nav";
 
 export function Header() {
@@ -25,17 +25,13 @@ export function Header() {
   }, [mobileOpen, closeMobile]);
 
   const linkClass =
-    "px-2 py-1.5 text-sm font-medium text-stone-800 hover:text-stone-950";
+    "px-2 py-1.5 text-sm font-medium text-ink hover:text-accent";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-stone-300 bg-stone-100">
-      <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 sm:px-6">
-        <Link
-          href="/"
-          className="shrink-0 text-base font-semibold tracking-tight text-stone-900"
-          onClick={closeMobile}
-        >
-          {site.name}
+    <header className="sticky top-0 z-50 border-b border-stone-300/80 bg-paper">
+      <div className="mx-auto flex w-full max-w-5xl items-center gap-4 px-4 py-3 sm:px-8">
+        <Link href="/" className="shrink-0" onClick={closeMobile}>
+          <Logo />
         </Link>
 
         <nav
@@ -81,7 +77,7 @@ export function Header() {
         <button
           ref={buttonRef}
           type="button"
-          className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-md text-stone-800 hover:bg-stone-200 md:hidden"
+          className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-md text-ink hover:bg-stone-200/60 md:hidden"
           aria-expanded={mobileOpen}
           aria-controls={menuId}
           aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
@@ -121,15 +117,15 @@ export function Header() {
       {mobileOpen && (
         <nav
           id={menuId}
-          className="border-t border-stone-300 bg-stone-50 md:hidden"
+          className="border-t border-stone-300/80 bg-paper md:hidden"
           aria-label="Huvudmeny"
         >
-          <ul className="mx-auto max-w-6xl px-4 py-2 sm:px-6">
+          <ul className="mx-auto max-w-5xl px-4 py-2 sm:px-8">
             {primaryNav.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block py-3 text-base font-medium text-stone-800"
+                  className="block py-3 text-base font-medium text-ink hover:text-accent"
                   onClick={closeMobile}
                 >
                   {link.label}
@@ -145,7 +141,7 @@ export function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block py-3 text-base font-medium text-stone-800"
+                  className="block py-3 text-base font-medium text-ink hover:text-accent"
                   onClick={closeMobile}
                 >
                   {link.label}

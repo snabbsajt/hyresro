@@ -41,7 +41,7 @@ export default async function SolskyddPage() {
           rullgardiner utan borrhål:{" "}
           <Link
             href="/guide/rullgardin-utan-borra"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             Rullgardin utan att borra
           </Link>

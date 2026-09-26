@@ -109,14 +109,14 @@ export default async function RullgardinUtanBorraPage() {
           skruv. Skruv ={" "}
           <Link
             href="/guide/kolla-kontraktet"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             läs kontraktet
           </Link>{" "}
           och ev.{" "}
           <Link
             href="/guide/borra-i-hyresratt"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             guiden om borr
           </Link>

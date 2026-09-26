@@ -11,13 +11,13 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-auto border-t border-stone-300 bg-stone-200/70">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-2 gap-y-1 px-4 py-6 text-xs text-stone-500 sm:px-6">
+    <footer className="mt-auto border-t border-stone-300/80 bg-paper">
+      <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-2 gap-y-1 px-4 py-6 text-xs text-stone-500 sm:px-8">
         <span>Vissa butikslänkar är reklam. Priset ändras inte.</span>
         {links.map((link) => (
           <span key={link.href} className="inline-flex items-center gap-x-2">
             <span aria-hidden>·</span>
-            <Link href={link.href} className="hover:text-stone-700">
+            <Link href={link.href} className="hover:text-accent">
               {link.label}
             </Link>
           </span>

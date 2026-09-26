@@ -62,7 +62,7 @@ export default function ChecklistaFlyttaPage() {
           Osäker på kontraktsvillkor?{" "}
           <Link
             href="/guide/kolla-kontraktet"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             Så läser ni kontraktet
           </Link>

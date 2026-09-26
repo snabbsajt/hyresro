@@ -51,7 +51,7 @@ export default async function HomePage() {
             <Link
               key={e.href}
               href={e.href}
-              className="rounded-xl border border-stone-300 bg-white px-5 py-8 text-lg font-semibold text-sage-800 shadow-sm hover:border-sage-600 hover:bg-sage-50 sm:py-10"
+              className="rounded-xl border border-stone-300 bg-white px-5 py-8 text-lg font-semibold text-ink shadow-sm hover:border-accent sm:py-10"
             >
               {e.title}
             </Link>

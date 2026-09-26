@@ -82,21 +82,21 @@ export default async function HyllaUtanBorraPage() {
             href="https://www.hyresgastforeningen.se/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             Hyresgästföreningen
           </a>
           .{" "}
           <Link
             href="/guide/kolla-kontraktet"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             Läs kontraktet
           </Link>{" "}
           och{" "}
           <Link
             href="/guide/borra-i-hyresratt"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             guiden om borr
           </Link>

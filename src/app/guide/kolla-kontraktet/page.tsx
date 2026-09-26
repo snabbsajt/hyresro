@@ -76,7 +76,7 @@ export default function KollaKontraktetPage() {
             href="https://www.hyresgastforeningen.se/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             Hyresgästföreningen
           </a>
@@ -110,7 +110,7 @@ export default function KollaKontraktetPage() {
           <li>
             <Link
               href="/guide/borra-i-hyresratt"
-              className="text-sage-800 underline underline-offset-2"
+              className="text-ink underline underline-offset-2 hover:text-accent"
             >
               Får man borra i hyresrätt?
             </Link>
@@ -118,7 +118,7 @@ export default function KollaKontraktetPage() {
           <li>
             <Link
               href="/guide/hylla-utan-borra"
-              className="text-sage-800 underline underline-offset-2"
+              className="text-ink underline underline-offset-2 hover:text-accent"
             >
               Hylla utan borr
             </Link>

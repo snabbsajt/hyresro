@@ -78,14 +78,14 @@ export default async function FastenPage() {
           Osäker på vad du får göra i just din lägenhet? Läs guiderna{" "}
           <Link
             href="/guide/hylla-utan-borra"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             Hylla utan att borra
           </Link>{" "}
           och{" "}
           <Link
             href="/guide/borra-i-hyresratt"
-            className="text-sage-800 underline underline-offset-2"
+            className="text-ink underline underline-offset-2 hover:text-accent"
           >
             Får man borra i hyresrätt?
           </Link>
