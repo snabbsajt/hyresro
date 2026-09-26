@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ProductCard } from "@/components/ProductCard";
 import { BackLink } from "@/components/BackLink";
 import { getCatalog } from "@/lib/catalog";
+import type { Product } from "@/data/types";
 
 export const metadata: Metadata = {
   title: "Alla rekommenderade produkter",
@@ -9,18 +10,20 @@ export const metadata: Metadata = {
     "Hela Hyresros katalog: solskydd, fästen, förvaring, belysning och säkerhet.",
 };
 
-const categoryOrder = [
-  ["solskydd", "Sol och fönster"],
-  ["fasten", "Fästen"],
-  ["forvaring", "Förvaring"],
-  ["belysning", "Ljus och el"],
-  ["sakerhet", "Kök och säkerhet"],
-] as const;
+const categoryOrder: { key: string; title: string }[] = [
+  { key: "solskydd", title: "Sol och fönster" },
+  { key: "fasten", title: "Fästen" },
+  { key: "forvaring", title: "Förvaring" },
+  { key: "belysning", title: "Ljus och el" },
+  { key: "sakerhet", title: "Kök och säkerhet" },
+];
+
+type Section = { key: string; title: string; items: Product[] };
 
 export default async function Page() {
   const all = await getCatalog();
   const used = new Set<string>();
-  const sections = categoryOrder.map(([key, title]) => {
+  const sections: Section[] = categoryOrder.map(({ key, title }) => {
     const items = all
       .filter((p) => p.category === key)
       .sort((a, b) => a.name.localeCompare(b.name, "sv"));
