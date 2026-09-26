@@ -22,7 +22,7 @@ export default function FastenPage() {
         </h1>
         <p className="max-w-xl leading-relaxed text-stone-700">
           Du kan hänga tavlor, speglar och hyllor i din hyresrätt utan att borra
-          – och utan att riskera din deposition. Här är de borrfria metoder som
+          – och så lägenheten är i skick vid avflytt. Här är de borrfria metoder som
           faktiskt håller, och när du ändå bör lämna borrmaskinen fram.
         </p>
         <ContractNote />

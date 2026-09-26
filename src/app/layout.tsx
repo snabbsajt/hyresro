@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Inreda hyresrätt utan att riskera depositionen. Guider, produkter och checklistor — sakligt och konkret.",
+    "Inreda hyresrätt utan onödiga hål. Guider, produkter och checklistor — sakligt och konkret.",
   openGraph: {
     title: site.name,
     description: site.tagline,

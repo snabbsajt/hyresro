@@ -7,7 +7,7 @@ import { products } from "@/data/products";
 export const metadata: Metadata = {
   title: `${site.name} — ${site.tagline}`,
   description:
-    "Ett hyreskontrakt kräver att ni återställer bostaden vid utflyttning. Med rätt metoder undviker ni skador och behåller er deposition.",
+    "Inred hyresrätten utan onödiga hål. Guider, produkter och tips så lägenheten är i skick vid avflytt.",
 };
 
 const featured = products.filter((p) =>
@@ -39,14 +39,10 @@ export default function HomePage() {
     <div className="space-y-10">
       <section className="space-y-4">
         <h1 className="text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">
-          trygghet och kontroll i ert boende.
+          Lägenheten i skick
         </h1>
         <p className="text-lg text-stone-600">
-          Lägenheten i skick, depositionen i fred.
-        </p>
-        <p className="max-w-xl leading-relaxed text-stone-700">
-          Ett hyreskontrakt kräver att ni återställer bostaden vid utflyttning.
-          Med rätt metoder undviker ni skador och behåller er deposition.
+          Inred hyresrätten utan onödiga hål.
         </p>
         <div className="grid gap-3 pt-1 sm:grid-cols-3">
           {entries.map((e) => (

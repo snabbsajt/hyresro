@@ -1,8 +1,8 @@
 # Hyresro
 
-Svensk sajt om att inreda hyresrätt utan att riskera depositionen.
+Svensk sajt om att inreda hyresrätt utan onödiga hål.
 
-**Tagline:** Lägenheten i skick, depositionen i fred.
+**Tagline:** Lägenheten i skick vid avflytt.
 
 ## Stack
 
@@ -23,6 +23,3 @@ npm run dev
 npm run build
 ```
 
-## Kontakt
-
-snabbsajt@gmail.com

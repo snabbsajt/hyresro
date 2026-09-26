@@ -18,7 +18,7 @@ export default function ChecklistaFlyttaPage() {
         </h1>
         <p className="max-w-xl leading-relaxed text-stone-700">
           Fota allt innan du bär in möblerna – en noggrann dokumentation är ditt
-          bästa skydd mot tvister och innehållen deposition vid utflyttningen.
+          bästa skydd mot tvister om skicket vid avflytt.
           Gå igenom bostaden metodiskt, både när du flyttar in och ut.
         </p>
         <ContractNote />
