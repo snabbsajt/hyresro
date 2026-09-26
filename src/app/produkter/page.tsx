@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ProductCard } from "@/components/ProductCard";
-import { BackLink } from "@/components/BackLink";
+import { Crumbs } from "@/components/Crumbs";
 import { getCatalog } from "@/lib/catalog";
 import type { Product } from "@/data/types";
 
@@ -33,19 +33,17 @@ export default async function Page() {
   const rest = all
     .filter((p) => !used.has(p.slug))
     .sort((a, b) => a.name.localeCompare(b.name, "sv"));
-  if (rest.length) {
-    sections.push({ key: "ovrigt", title: "Övrigt", items: rest });
-  }
+  if (rest.length) sections.push({ key: "ovrigt", title: "Övrigt", items: rest });
 
   return (
     <div className="space-y-12">
       <header className="space-y-3">
+        <Crumbs items={[{ label: "Alla produkter" }]} />
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
           Alla rekommenderade produkter
         </h1>
-        <BackLink />
         <p className="max-w-xl text-stone-600">
-          Samma urval som på kategorisidorna, i en lista. En länk per rad.
+          Samma urval som på kategorisidorna. En länk per rad. Pris är ungefärligt och kan ändras i butiken.
         </p>
       </header>
       {sections.map((s) =>
