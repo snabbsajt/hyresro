@@ -28,12 +28,14 @@ export async function ProductCard({ product }: Props) {
   const imageUrl = resolveImageUrl(product);
 
   return (
-    <article className="overflow-hidden border border-[#E3DFD9] bg-white">
+    <article className="overflow-hidden border border-[#E3DFD9] bg-white [content-visibility:auto]">
       {imageUrl ? (
         <img
           src={imageUrl}
           alt={product.imageAlt || product.name}
           className="aspect-[4/3] w-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
       ) : (
         <div className="aspect-[4/3] w-full bg-[#EAE6DF]" aria-hidden />
@@ -45,7 +47,8 @@ export async function ProductCard({ product }: Props) {
         ) : null}
         {product.priceFromSek != null && (
           <p className="mb-3 text-sm text-stone-600">
-            Från ca {product.priceFromSek} kr
+            Ca {product.priceFromSek} kr
+            {product.priceNote ? ` · ${product.priceNote}` : ""}
           </p>
         )}
         {note && (

@@ -13,6 +13,8 @@ export type Product = {
   surfaces: string[];
   weightKg?: number;
   priceFromSek?: number;
+  /** t.ex. "2-pack", "per st", "2 för 249 kr" */
+  priceNote?: string;
   merchants: Merchant[];
   notes: string;
   noteKey?: string;
