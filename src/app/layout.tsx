@@ -38,16 +38,19 @@ export default function RootLayout({
   return (
     <html lang="sv">
       <body
-        className={`${geistSans.variable} ${geistSans.className} flex min-h-screen flex-col font-sans antialiased`}
+        className={`${geistSans.variable} ${geistSans.className} relative flex min-h-screen flex-col font-sans antialiased`}
       >
-        <Header />
-        <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-8 pt-24 sm:px-6">
-          <div className="mb-4">
-            <BackLink />
-          </div>
-          {children}
-        </main>
-        <Footer />
+        <div className="site-bg" aria-hidden />
+        <div className="relative z-[1] flex min-h-screen flex-col">
+          <Header />
+          <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6">
+            <div className="mb-4">
+              <BackLink />
+            </div>
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

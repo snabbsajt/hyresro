@@ -60,8 +60,15 @@ export function Header() {
 
   return (
     <>
-      <header className={`glass-bar ${scrolled ? "is-scrolled" : ""}`}>
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2 sm:px-6 md:py-2.5">
+      <header
+        className={`site-nav ${scrolled ? "is-scrolled" : ""}`}
+        style={{
+          background: scrolled ? "rgba(10, 10, 10, 0.6)" : "rgba(10, 10, 10, 0.42)",
+          backdropFilter: scrolled ? "blur(16px)" : "blur(8px)",
+          WebkitBackdropFilter: scrolled ? "blur(16px)" : "blur(8px)",
+        }}
+      >
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <Link
             href="/"
             className="shrink-0"
@@ -146,7 +153,7 @@ export function Header() {
       {mobileOpen ? (
         <nav
           id={menuId}
-          className="fixed inset-x-0 top-[64px] z-[60] max-h-[70vh] overflow-y-auto border-b border-white/10 bg-[#111] shadow-md md:hidden"
+          className="fixed inset-x-0 top-[72px] z-[60] max-h-[70vh] overflow-y-auto border-b border-white/10 bg-[#111] shadow-md md:hidden"
           style={{ WebkitOverflowScrolling: "touch" }}
           aria-label="Huvudmeny"
         >

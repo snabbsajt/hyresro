@@ -7,7 +7,6 @@
   --slot: #141414;
   --accent: #3b5fdb;
   --card: #1a1a1a;
-  --header-h: 64px;
   --background: var(--paper);
   --foreground: var(--ink);
 }
@@ -23,15 +22,10 @@
 
 html,
 body {
-  background: var(--paper);
+  background: #0c0c0c;
   color: var(--ink);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   line-height: 1.6;
-}
-
-body {
-  background-image: radial-gradient(1200px 420px at 50% -80px, #1c2230 0%, #0c0c0c 70%);
-  background-attachment: scroll;
 }
 
 h1,
@@ -50,12 +44,21 @@ a {
   color: inherit;
 }
 
-.glass-bar {
+.site-bg {
   position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(70% 55% at 18% 12%, rgba(197, 200, 206, 0.08), transparent 60%),
+    radial-gradient(50% 40% at 85% 8%, rgba(59, 95, 219, 0.12), transparent 55%),
+    #0c0c0c;
+}
+
+.site-nav {
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
+  z-index: 20;
   background: rgba(10, 10, 10, 0.42);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -64,7 +67,7 @@ a {
     -webkit-backdrop-filter 0.35s ease;
 }
 
-.glass-bar.is-scrolled {
+.site-nav.is-scrolled {
   background: rgba(10, 10, 10, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -75,14 +78,4 @@ a {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-@media (prefers-reduced-transparency: reduce) {
-  .glass-bar,
-  .glass-bar.is-scrolled,
-  .glass-panel {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: #161616;
-  }
 }
