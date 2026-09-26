@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ProductCard } from "@/components/ProductCard";
+import { ProductRow } from "@/components/ProductRow";
 import { Crumbs } from "@/components/Crumbs";
 import { getCatalog } from "@/lib/catalog";
 import type { Product } from "@/data/types";
@@ -36,25 +36,25 @@ export default async function Page() {
   if (rest.length) sections.push({ key: "ovrigt", title: "Övrigt", items: rest });
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-10">
       <header className="space-y-3">
         <Crumbs items={[{ label: "Alla produkter" }]} />
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
           Alla rekommenderade produkter
         </h1>
         <p className="max-w-xl text-stone-600">
-          Samma urval som på kategorisidorna. En länk per rad. Pris är ungefärligt och kan ändras i butiken.
+          En rad per produkt. Pris är ungefärligt och kan ändras i butiken.
         </p>
       </header>
       {sections.map((s) =>
         s.items.length === 0 ? null : (
-          <section key={s.key} className="space-y-4">
+          <section key={s.key} className="space-y-2">
             <h2 className="text-xl font-semibold">{s.title}</h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <ul>
               {s.items.map((p) => (
-                <ProductCard key={p.slug} product={p} />
+                <ProductRow key={p.slug} product={p} />
               ))}
-            </div>
+            </ul>
           </section>
         ),
       )}

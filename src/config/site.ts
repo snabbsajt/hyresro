@@ -4,8 +4,8 @@ export const site = {
   url: "https://hyresro.se",
   tagline: "Inred hyresrätten utan att borra",
   contractPath: "/guide/kolla-kontraktet",
-  /** Sätts när du skickar adressen. Visas bara på /kontakt. */
-  contactEmail: "",
+  contactEmail: "info.hyresro@gmail.com",
+  operator: "Privatperson, Stockholm",
   disclosure:
     "Sajten innehåller affiliatelänkar. Handlar ni via dem kan vi få provision, utan extra kostnad för er.",
 } as const;

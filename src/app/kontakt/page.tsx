@@ -16,15 +16,11 @@ export default function KontaktPage() {
       <p className="max-w-xl leading-relaxed text-stone-700">
         Frågor om sajten. Köp och reklamationsärenden tas med butiken ni handlat hos.
       </p>
-      {site.contactEmail ? (
-        <p className="text-sm text-stone-600">
-          E-post: {site.contactEmail}
-        </p>
-      ) : (
-        <p className="text-sm text-stone-600">
-          E-postadress publiceras här när den är satt. Formuläret under öppnar ert eget mejlprogram.
-        </p>
-      )}
+      <p className="text-sm text-stone-600">
+        {site.operator}
+        <br />
+        E-post: {site.contactEmail}
+      </p>
       <ContactForm />
     </article>
   );
