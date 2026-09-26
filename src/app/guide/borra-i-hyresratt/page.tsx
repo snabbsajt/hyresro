@@ -29,8 +29,14 @@ export default function BorraIHyresrattPage() {
           Får man borra i hyresrätt?
         </h1>
         <p className="text-lg text-stone-600">
-          Oftast: små hål för tavlor räknas som normalt slitage. Kontraktet kan
-          säga nej. Större hål, kakel och el är en annan sak.
+          Oftast: små hål för tavlor räknas som normalt slitage.{" "}
+          <Link
+            href="/guide/kolla-kontraktet"
+            className="underline underline-offset-2 hover:text-stone-800"
+          >
+            Kontraktet
+          </Link>{" "}
+          kan säga nej. Större hål, kakel och el är en annan sak.
         </p>
         <ContractNote />
       </header>
@@ -50,7 +56,16 @@ export default function BorraIHyresrattPage() {
             Avtalet eller husordningen kan vara strängare än lagen. Då gäller
             avtalet.
           </li>
-          <li>Andra hand: fråga den som står på kontraktet, och ofta värden.</li>
+          <li>
+            Andra hand: fråga den som står på{" "}
+            <Link
+              href="/guide/kolla-kontraktet"
+              className="underline underline-offset-2 hover:text-stone-800"
+            >
+              kontraktet
+            </Link>
+            , och ofta värden.
+          </li>
         </ul>
         <p>
           Hyresro är inte jurist. Läs mer hos{" "}

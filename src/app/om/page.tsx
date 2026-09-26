@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Disclosure } from "@/components/Disclosure";
 import { site } from "@/config/site";
 
@@ -21,8 +22,14 @@ export default function OmPage() {
           eller e-butik. Vårt mål är att samla praktiska tips, idéer och
           produktförslag för ett tryggare boende. Vissa länkar på sajten kan ge
           oss en liten provision om ni handlar via dem. Kom dock alltid ihåg att
-          ert eget hyreskontrakt är det som i första hand styr vad ni får göra i
-          lägenheten. För mer information om praxis och rådande regler länkar vi
+          ert eget{" "}
+          <Link
+            href="/guide/kolla-kontraktet"
+            className="underline underline-offset-2 hover:text-stone-800"
+          >
+            hyreskontrakt
+          </Link>{" "}
+          är det som i första hand styr vad ni får göra i lägenheten. För mer information om praxis och rådande regler länkar vi
           även till{" "}
           <a
             href="https://www.hyresgastforeningen.se/"

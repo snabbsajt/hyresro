@@ -1,29 +1,41 @@
 import type { Metadata } from "next";
-import { Disclosure } from "@/components/Disclosure";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Om länkarna",
+  title: "Så finansieras sajten",
   description:
-    "Affiliate-länkar på Hyresro: information enligt marknadsföringslagen.",
+    "Hur Hyresro finansieras: vissa butikslänkar kan ge provision. Priset ändras inte.",
 };
 
 export default function AffiliateInfoPage() {
   return (
     <article className="space-y-6">
       <h1 className="text-3xl font-semibold tracking-tight text-stone-900">
-        Om länkarna
+        Så finansieras sajten
       </h1>
       <div className="space-y-4 leading-relaxed text-stone-700">
-        <Disclosure />
         <p>
-          I enlighet med marknadsföringslagen vill vi informera om att sajten
-          innehåller köplänkar som kallas affiliate-länkar. När ni klickar på en
-          sådan länk och genomför ett köp kan vi få ersättning från
-          återförsäljaren. Detta medför ingen extra kostnad för er som
-          besökare. Provisionen påverkar inte vilka produkter vi väljer att
-          skriva om eller rekommendera på sajten. Vi gör inte anspråk på att
-          vara ett oberoende testlaboratorium, utan lyfter fram lösningar som
-          underlättar inredning i hyresrätt.
+          Vissa länkar till butiker på Hyresro är reklam. Om ni klickar och
+          handlar via dem kan vi få provision från återförsäljaren. Priset ni
+          betalar ändras inte.
+        </p>
+        <p>
+          Provisionen styr inte vilka produkter vi nämner. Vi rekommenderar
+          lösningar som passar hyresrätt — inte för att någon betalar mer.
+        </p>
+        <p>
+          Hyresro ger praktiska tips, inte juridisk rådgivning. Ert eget{" "}
+          <Link
+            href="/guide/kolla-kontraktet"
+            className="underline underline-offset-2 hover:text-stone-800"
+          >
+            hyresavtal
+          </Link>{" "}
+          och hyresvärden avgör vad som gäller i er lägenhet.
+        </p>
+        <p>
+          Frågor om länkarna? Titta vidare i menyn under Om Hyresro och
+          Integritet.
         </p>
       </div>
     </article>

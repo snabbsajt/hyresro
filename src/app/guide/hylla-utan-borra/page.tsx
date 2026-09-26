@@ -63,8 +63,15 @@ export default function HyllaUtanBorraPage() {
           </li>
           <li>
             <strong className="font-medium text-stone-800">Hyresavtal:</strong>{" "}
-            Kontrollera alltid ert hyreskontrakt eller fråga fastighetsägaren om
-            ni är osäkra på vad som gäller för er bostad.
+            Kontrollera alltid ert{" "}
+            <Link
+              href="/guide/kolla-kontraktet"
+              className="underline underline-offset-2 hover:text-stone-800"
+            >
+              hyreskontrakt
+            </Link>{" "}
+            eller fråga fastighetsägaren om ni är osäkra på vad som gäller för
+            er bostad.
           </li>
         </ul>
         <p>

@@ -33,8 +33,15 @@ export default function ChecklistaFlyttaPage() {
             <strong className="font-medium text-stone-800">
               Dokumentera befintliga skador.
             </strong>{" "}
-            Gå igenom kontraktet tillsammans med hyresvärden och fotografera
-            alla märken, repor och slitage.
+            Gå igenom{" "}
+            <Link
+              href="/guide/kolla-kontraktet"
+              className="underline underline-offset-2 hover:text-stone-800"
+            >
+              kontraktet
+            </Link>{" "}
+            tillsammans med hyresvärden och fotografera alla märken, repor och
+            slitage.
           </li>
           <li>
             <strong className="font-medium text-stone-800">

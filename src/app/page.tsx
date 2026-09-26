@@ -66,8 +66,14 @@ export default function HomePage() {
           ))}
         </div>
         <p className="text-sm leading-relaxed text-stone-600">
-          Kontrollera alltid villkoren i ert hyreskontrakt innan ni köper
-          monteringsutrustning.
+          Kontrollera alltid villkoren i ert{" "}
+          <Link
+            href="/guide/kolla-kontraktet"
+            className="underline underline-offset-2 hover:text-stone-800"
+          >
+            hyreskontrakt
+          </Link>{" "}
+          innan ni köper monteringsutrustning.
         </p>
       </section>
     </div>

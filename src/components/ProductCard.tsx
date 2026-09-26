@@ -30,7 +30,7 @@ export function ProductCard({ product }: Props) {
       <div className="p-4">
         <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
           <h3 className="font-medium text-stone-900">{product.name}</h3>
-          <span className="rounded-full bg-sage-100 px-2 py-0.5 text-xs text-sage-800">
+          <span className="rounded-full border border-stone-300 bg-stone-100 px-2 py-0.5 text-xs text-stone-700">
             {mountLabel[product.mountType]}
           </span>
         </div>
@@ -44,11 +44,7 @@ export function ProductCard({ product }: Props) {
         <ul className="flex flex-wrap gap-2">
           {product.merchants.map((m) => (
             <li key={m.name}>
-              <AffiliateLink
-                href={m.url}
-                slug={product.slug}
-                className="inline-block rounded border border-sage-800/30 bg-sage-800 px-2.5 py-1 text-sm font-medium text-white hover:bg-sage-600"
-              >
+              <AffiliateLink href={m.url} slug={product.slug}>
                 {m.name}
               </AffiliateLink>
             </li>

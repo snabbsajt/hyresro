@@ -43,7 +43,13 @@ export default function RullgardinUtanBorraPage() {
           </li>
           <li>Trä- och PVC-bågar fungerar oftast. Aluminium kan slira.</li>
           <li>
-            Skruvar i karm eller vägg är ett annat beslut — läs kontraktet
+            Skruvar i karm eller vägg är ett annat beslut —{" "}
+            <Link
+              href="/guide/kolla-kontraktet"
+              className="underline underline-offset-2 hover:text-stone-800"
+            >
+              läs kontraktet
+            </Link>{" "}
             först.
           </li>
           <li>

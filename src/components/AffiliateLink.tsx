@@ -1,5 +1,8 @@
 import { affiliateHref } from "@/lib/affiliate";
 
+const defaultClassName =
+  "inline-block rounded border border-stone-400 bg-white px-2.5 py-1 text-sm font-medium text-stone-800 hover:bg-stone-50";
+
 type Props = {
   href: string;
   slug: string;
@@ -13,7 +16,7 @@ export function AffiliateLink({ href, slug, children, className }: Props) {
       href={affiliateHref(href, slug)}
       rel="sponsored nofollow"
       target="_blank"
-      className={className}
+      className={className ?? defaultClassName}
     >
       {children}
     </a>
