@@ -51,92 +51,94 @@ export function Header() {
   }, [desktopOpenId, closeDesktop]);
 
   return (
-    <header className="glass-bar sticky top-0 z-50 border-b border-stone-300">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link
-          href="/"
-          className="shrink-0"
-          onClick={() => {
-            closeMobile();
-            closeDesktop();
-          }}
-        >
-          <Logo />
-        </Link>
+    <>
+      <header className="glass-bar sticky top-0 z-50 border-b border-stone-300">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+          <Link
+            href="/"
+            className="shrink-0"
+            onClick={() => {
+              closeMobile();
+              closeDesktop();
+            }}
+          >
+            <Logo />
+          </Link>
 
-        <nav
-          ref={desktopNavRef}
-          className="hidden md:block"
-          aria-label="Huvudmeny"
-          onMouseLeave={closeDesktop}
-        >
-          <ul className="flex items-center gap-1">
-            {navItems.map((item, index) => {
-              const open = desktopOpenId === item.id;
-              return (
-                <li
-                  key={item.id}
-                  className="relative flex items-center gap-1"
-                  onMouseEnter={() => setDesktopOpenId(item.id)}
-                >
-                  {index > 0 && (
-                    <span className="select-none px-1 text-stone-400" aria-hidden>
-                      |
-                    </span>
-                  )}
-                  <button
-                    type="button"
-                    className={`px-2 py-1.5 text-sm font-medium text-stone-800 hover:text-stone-950 ${
-                      open ? "text-stone-950" : ""
-                    }`}
-                    aria-expanded={open}
-                    aria-haspopup="true"
-                    onClick={() =>
-                      setDesktopOpenId((cur) => (cur === item.id ? null : item.id))
-                    }
+          <nav
+            ref={desktopNavRef}
+            className="hidden md:block"
+            aria-label="Huvudmeny"
+            onMouseLeave={closeDesktop}
+          >
+            <ul className="flex items-center gap-1">
+              {navItems.map((item, index) => {
+                const open = desktopOpenId === item.id;
+                return (
+                  <li
+                    key={item.id}
+                    className="relative flex items-center gap-1"
+                    onMouseEnter={() => setDesktopOpenId(item.id)}
                   >
-                    {item.label}
-                  </button>
-                  {open && (
-                    <div className="absolute left-0 top-full z-50 pt-1">
-                      <NavPanel
-                        item={item}
-                        onNavigate={closeDesktop}
-                        className="min-w-[14rem] shadow-sm"
-                      />
-                    </div>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+                    {index > 0 && (
+                      <span className="select-none px-1 text-stone-400" aria-hidden>
+                        |
+                      </span>
+                    )}
+                    <button
+                      type="button"
+                      className={`px-2 py-1.5 text-sm font-medium text-stone-800 hover:text-stone-950 ${
+                        open ? "text-stone-950" : ""
+                      }`}
+                      aria-expanded={open}
+                      aria-haspopup="true"
+                      onClick={() =>
+                        setDesktopOpenId((cur) => (cur === item.id ? null : item.id))
+                      }
+                    >
+                      {item.label}
+                    </button>
+                    {open && (
+                      <div className="absolute left-0 top-full z-50 pt-1">
+                        <NavPanel
+                          item={item}
+                          onNavigate={closeDesktop}
+                          className="min-w-[14rem] shadow-sm"
+                        />
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
 
-        <button
-          ref={buttonRef}
-          type="button"
-          className="inline-flex h-10 w-10 items-center justify-center text-stone-800 hover:bg-stone-200 md:hidden"
-          aria-expanded={mobileOpen}
-          aria-controls={menuId}
-          aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
-          onClick={() => (mobileOpen ? closeMobile() : setMobileOpen(true))}
-        >
-          {mobileOpen ? (
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-              <path d="M6 6l12 12M18 6L6 18" />
-            </svg>
-          ) : (
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
-          )}
-        </button>
-      </div>
+          <button
+            ref={buttonRef}
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center text-stone-800 hover:bg-stone-200 md:hidden"
+            aria-expanded={mobileOpen}
+            aria-controls={menuId}
+            aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
+            onClick={() => (mobileOpen ? closeMobile() : setMobileOpen(true))}
+          >
+            {mobileOpen ? (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                <path d="M6 6l12 12M18 6L6 18" />
+              </svg>
+            ) : (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </header>
 
-      {mobileOpen && (
+      {mobileOpen ? (
         <nav
           id={menuId}
-          className="fixed inset-x-0 bottom-0 top-[57px] z-50 overflow-y-auto overscroll-contain border-t border-stone-300 bg-[#F3EFEA] md:hidden"
+          className="fixed inset-x-0 bottom-0 top-[57px] z-[60] overflow-y-auto overscroll-contain border-t border-stone-300 bg-[#F3EFEA] md:hidden"
           style={{ WebkitOverflowScrolling: "touch" }}
           aria-label="Huvudmeny"
         >
@@ -178,7 +180,7 @@ export function Header() {
             })}
           </ul>
         </nav>
-      )}
-    </header>
+      ) : null}
+    </>
   );
 }
