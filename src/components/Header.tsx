@@ -52,7 +52,7 @@ export function Header() {
 
   return (
     <>
-      <header className="glass-bar sticky top-0 z-50 border-b border-stone-300">
+      <header className="glass-bar sticky top-0 z-50 border-b border-white/10">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <Link
             href="/"
@@ -81,14 +81,14 @@ export function Header() {
                     onMouseEnter={() => setDesktopOpenId(item.id)}
                   >
                     {index > 0 && (
-                      <span className="select-none px-1 text-stone-400" aria-hidden>
+                      <span className="select-none px-1 text-stone-600" aria-hidden>
                         |
                       </span>
                     )}
                     <button
                       type="button"
-                      className={`px-2 py-1.5 text-sm font-medium text-stone-800 hover:text-stone-950 ${
-                        open ? "text-stone-950" : ""
+                      className={`px-2 py-1.5 text-sm font-medium text-stone-200 hover:text-white ${
+                        open ? "text-white" : ""
                       }`}
                       aria-expanded={open}
                       aria-haspopup="true"
@@ -116,7 +116,7 @@ export function Header() {
           <button
             ref={buttonRef}
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center text-stone-800 hover:bg-stone-200 md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center text-stone-100 hover:bg-white/10 md:hidden"
             aria-expanded={mobileOpen}
             aria-controls={menuId}
             aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
@@ -138,7 +138,7 @@ export function Header() {
       {mobileOpen ? (
         <nav
           id={menuId}
-          className="fixed inset-x-0 top-[57px] z-[60] max-h-[70vh] overflow-y-auto border-b border-stone-300 bg-[#F3EFEA] shadow-md md:hidden"
+          className="fixed inset-x-0 top-[57px] z-[60] max-h-[70vh] overflow-y-auto border-b border-white/10 bg-[#111] shadow-md md:hidden"
           style={{ WebkitOverflowScrolling: "touch" }}
           aria-label="Huvudmeny"
         >
@@ -146,10 +146,10 @@ export function Header() {
             {navItems.map((item) => {
               const expanded = mobileExpanded === item.id;
               return (
-                <li key={item.id} className="border-b border-stone-200 last:border-b-0">
+                <li key={item.id} className="border-b border-white/10 last:border-b-0">
                   <button
                     type="button"
-                    className="flex w-full items-center justify-between py-3 text-left text-base font-medium text-stone-800"
+                    className="flex w-full items-center justify-between py-3 text-left text-base font-medium text-stone-100"
                     aria-expanded={expanded}
                     onClick={() =>
                       setMobileExpanded((cur) => (cur === item.id ? null : item.id))
@@ -166,7 +166,7 @@ export function Header() {
                         <li key={link.href}>
                           <Link
                             href={link.href}
-                            className="block py-2 text-sm text-stone-700 hover:text-stone-950"
+                            className="block py-2 text-sm text-stone-300 hover:text-white"
                             onClick={closeMobile}
                           >
                             {link.label}

@@ -17,7 +17,7 @@ export function Crumbs({ items }: { items: Crumb[] }) {
   };
 
   return (
-    <nav aria-label="Du är här" className="text-sm text-stone-500">
+    <nav aria-label="Du är här" className="text-sm text-stone-400">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -27,11 +27,11 @@ export function Crumbs({ items }: { items: Crumb[] }) {
           const last = i === trail.length - 1;
           return (
             <li key={`${c.label}-${i}`} className="flex items-center gap-1">
-              {i > 0 ? <span aria-hidden className="text-stone-400">/</span> : null}
+              {i > 0 ? <span aria-hidden className="text-stone-600">/</span> : null}
               {last || !c.href ? (
-                <span className={last ? "text-stone-800" : ""}>{c.label}</span>
+                <span className={last ? "text-stone-200" : ""}>{c.label}</span>
               ) : (
-                <Link href={c.href} className="underline-offset-2 hover:underline hover:text-stone-800">
+                <Link href={c.href} className="underline-offset-2 hover:underline hover:text-white">
                   {c.label}
                 </Link>
               )}
