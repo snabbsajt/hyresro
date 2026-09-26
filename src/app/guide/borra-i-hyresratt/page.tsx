@@ -23,7 +23,7 @@ export default async function BorraIHyresrattPage() {
       <header className="space-y-3">
         <Crumbs items={[{ label: "Får man borra i hyresrätt?" }]} />
         <h1 className="text-3xl font-semibold tracking-tight">Får man borra i hyresrätt?</h1>
-        <p className="text-lg text-stone-600">
+        <p className="text-lg">
           Små hål för tavlor räknas oftast som normalt slitage.{" "}
           <Link href="/guide/kolla-kontraktet" className="underline underline-offset-2">
             Kontraktet
@@ -32,7 +32,21 @@ export default async function BorraIHyresrattPage() {
         </p>
         <ContractNote />
       </header>
-      <section className="space-y-3 leading-relaxed text-stone-700">
+
+      <section className="space-y-3 leading-relaxed">
+        <p>
+          Hyreslagen ger ett golv: ni ska vårda lägenheten och lämna den i skick, med normalt
+          slitage. Ett par spikhål för tavlor brukar räknas dit. Kakel, bärande vägg, el,
+          balkongräcke och TV-fäste gör det inte. Där är det värden som ska säga ja först.
+        </p>
+        <p>
+          Många kontrakt är strängare än lagen. Står det "inga hål i vägg" i särskilda villkor
+          eller husordning gäller det, även om grannen borrar. Läs pappret. Fråga skriftligt om
+          ni är osäkra. Vi är inte jurister.
+        </p>
+      </section>
+
+      <section className="space-y-3 leading-relaxed">
         <h2 className="text-xl font-semibold">Kort svar</h2>
         <ul className="list-disc space-y-2 pl-5">
           <li>Vårdplikt. Lägenheten ska lämnas i skick, med normalt slitage.</li>
@@ -40,13 +54,14 @@ export default async function BorraIHyresrattPage() {
           <li>Kakel, TV-fäste, el och balkong: fråga först.</li>
         </ul>
         <p>
-          Inte jurist. Läs hos{" "}
+          Läs mer hos{" "}
           <a href="https://www.hyresgastforeningen.se/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
             Hyresgästföreningen
           </a>
           .
         </p>
       </section>
+
       <Faq
         items={[
           {
@@ -59,10 +74,11 @@ export default async function BorraIHyresrattPage() {
           },
           {
             q: "Måste man spackla igen?",
-            a: "Lämna lägenheten i avtalet skick. Många värdar vill ha små hål igenspacklade. Fråga om ni är osäkra.",
+            a: "Lämna lägenheten i avtalets skick. Många värdar vill ha små hål igenspacklade. Fråga om ni är osäkra.",
           },
         ]}
       />
+
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Utan borr när det räcker</h2>
         <div className="grid gap-4 sm:grid-cols-2">

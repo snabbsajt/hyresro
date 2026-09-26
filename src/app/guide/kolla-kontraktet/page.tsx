@@ -15,11 +15,27 @@ export default function KollaKontraktetPage() {
       <header className="space-y-3">
         <Crumbs items={[{ label: "Så läser ni kontraktet" }]} />
         <h1 className="text-3xl font-semibold tracking-tight">Så läser ni kontraktet</h1>
-        <p className="text-stone-700">
-          Avtalet styr före generella tips. Hyreslagen är golvet. Ert kontrakt kan vara strängare.
+        <p>
+          Avtalet styr före generella tips. Hyreslagen är golvet. Ert kontrakt kan vara
+          strängare.
         </p>
       </header>
-      <section className="space-y-3 text-stone-700">
+
+      <section className="space-y-3">
+        <p>
+          Det ni letar efter heter sällan "borra". Det står ändringar, ingrepp, underhåll,
+          skick vid avflytt eller "särskilda villkor". Husordningen ligger ofta som bilaga — den
+          räknas. En mening om tavlor på en branschwebb slår inte ert papper.
+        </p>
+        <p>
+          Hittar ni inget om hål i vägg betyder det inte fritt fram. Det betyder att ni får
+          gå på vårdplikt och sunt förnuft: små hål för tavlor är en sak, hål i kakel en annan.
+          Vid tvekan: ett kort mejl till förvaltaren. Svaret är lättare att visa vid avflytt än
+          ett samtal i trappan.
+        </p>
+      </section>
+
+      <section className="space-y-3">
         <h2 className="text-xl font-semibold">Var ni tittar</h2>
         <ol className="list-decimal space-y-1.5 pl-5">
           <li>Förstasidans särskilda villkor.</li>
@@ -27,17 +43,19 @@ export default function KollaKontraktetPage() {
           <li>Rubriker om ändringar, ingrepp, underhåll, skick vid avflytt.</li>
         </ol>
       </section>
-      <section className="space-y-3 text-stone-700">
+
+      <section className="space-y-3">
         <h2 className="text-xl font-semibold">Vad lagen säger i korthet</h2>
         <p>
-          Vårdplikt. Mindre hål för tavlor räknas oftast som normalt slitage. Större ingrepp kräver samtycke.
-          Inte juridisk rådgivning. Läs hos{" "}
+          Vårdplikt. Mindre hål för tavlor räknas oftast som normalt slitage. Större ingrepp
+          kräver samtycke. Inte juridisk rådgivning. Läs hos{" "}
           <a href="https://www.hyresgastforeningen.se/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
             Hyresgästföreningen
           </a>
           .
         </p>
       </section>
+
       <Faq
         items={[
           {
@@ -50,6 +68,7 @@ export default function KollaKontraktetPage() {
           },
         ]}
       />
+
       <ul className="space-y-2 text-sm">
         <li>
           <Link href="/guide/borra-i-hyresratt" className="underline underline-offset-2">
@@ -59,6 +78,11 @@ export default function KollaKontraktetPage() {
         <li>
           <Link href="/guide/hylla-utan-borra" className="underline underline-offset-2">
             Hylla utan att borra
+          </Link>
+        </li>
+        <li>
+          <Link href="/guide/tavla-pa-gips" className="underline underline-offset-2">
+            Tavla på gips
           </Link>
         </li>
       </ul>

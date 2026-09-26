@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContractNote } from "@/components/ContractNote";
 import { ProductCard } from "@/components/ProductCard";
 import { Faq } from "@/components/Faq";
@@ -27,14 +28,27 @@ export default async function HyllaUtanBorraPage() {
           ]}
         />
         <h1 className="text-3xl font-semibold tracking-tight">Hylla utan att borra</h1>
-        <p className="text-stone-700">
-          Fungerar om ytan är slät och ni håller maxvikten.
-        </p>
+        <p>Fungerar om ytan är slät och ni håller maxvikten.</p>
         <p className="flex flex-wrap gap-x-3 text-sm text-stone-500">
           <ContractNote />
         </p>
       </header>
-      <section className="space-y-3 text-stone-700">
+
+      <section className="space-y-3">
+        <p>
+          Tejp och självhäftande skruv håller på färgad slät vägg eller kakelplatta. De släpper
+          på papperstapet, strukturputt och i badrum där imma sitter kvar. Maxvikten på
+          förpackningen gäller hela hyllan plus det ni ställer på den — inte bara själva
+          brädan.
+        </p>
+        <p>
+          Den vanligaste skadan vid avflytt är inte att hyllan ramlar, utan att färgen följer
+          med när man sliter loss. Tesa och Command har egna avdragningsremsor. Använd dem.
+          Dra inte rakt ut från väggen.
+        </p>
+      </section>
+
+      <section className="space-y-3">
         <h2 className="text-xl font-semibold">Innan ni börjar</h2>
         <ul className="list-disc space-y-1.5 pl-5">
           <li>Slät målad vägg eller kakel. Inte papperstapet.</li>
@@ -42,14 +56,23 @@ export default async function HyllaUtanBorraPage() {
           <li>Tunga saker och TV-fäste kräver skruv — det är en annan fråga.</li>
         </ul>
       </section>
-      <section className="space-y-3 text-stone-700">
+
+      <section className="space-y-3">
         <h2 className="text-xl font-semibold">Montera</h2>
         <ol className="list-decimal space-y-1.5 pl-5">
           <li>Rengör ytan. Låt torka.</li>
           <li>Pressa enligt tillverkaren.</li>
           <li>Vänta den tid som står på förpackningen innan last.</li>
         </ol>
+        <p>
+          En tavla är lättare än en hylla. Se{" "}
+          <Link href="/guide/tavla-pa-gips" className="underline underline-offset-2">
+            tavla på gips
+          </Link>{" "}
+          om det är ramar ni vill upp.
+        </p>
       </section>
+
       <Faq
         items={[
           {
@@ -66,6 +89,7 @@ export default async function HyllaUtanBorraPage() {
           },
         ]}
       />
+
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Produkter</h2>
         <div className="grid gap-4 sm:grid-cols-2">

@@ -9,7 +9,7 @@ import { Crumbs } from "@/components/Crumbs";
 export const metadata: Metadata = {
   title: "Rullgardin utan att borra i hyresrätt",
   description:
-    "Så sätter ni upp rullgardin med klämfäste. Mått, båge och när skruv i karm kräver att ni läser kontraktet.",
+    "Så sätter ni upp rullgardin med klämfäste. Mått, båge, aluminium och när skruv i karm kräver att ni läser kontraktet.",
 };
 
 export default async function RullgardinUtanBorraPage() {
@@ -28,14 +28,29 @@ export default async function RullgardinUtanBorraPage() {
           ]}
         />
         <h1 className="text-3xl font-semibold tracking-tight">Rullgardin utan att borra</h1>
-        <p className="text-stone-700">
+        <p>
           Klämfäste i fönsterbågen. Inga hål i vägg — om bågen tål klämmorna.
         </p>
         <p className="flex flex-wrap gap-x-3 text-sm text-stone-500">
           <ContractNote />
         </p>
       </header>
-      <section className="space-y-3 text-stone-700">
+
+      <section className="space-y-3">
+        <p>
+          Klämfästet trycks fast mellan bågens överkant och listen. Det är därför trä och PVC
+          brukar fungera, medan aluminium ofta slirar — ytan är slät och bågen fjädrar. Testa
+          med handen först: ger listen efter är kläm en dålig idé.
+        </p>
+        <p>
+          Märken på karmen kommer nästan alltid från att man drar åt för hårt eller lämnar
+          klemman år efter år mot lackad list. Lägg en tunn filtbit eller den skyddstejp som
+          följer med, och ta ner gardinen när ni flyttar — låt den inte sitta som en fast
+          installation.
+        </p>
+      </section>
+
+      <section className="space-y-3">
         <h2 className="text-xl font-semibold">Kort svar</h2>
         <ul className="list-disc space-y-1.5 pl-5">
           <li>Klämfäste sitter på bågen, inte i väggen.</li>
@@ -49,19 +64,28 @@ export default async function RullgardinUtanBorraPage() {
           </li>
         </ul>
       </section>
-      <section className="space-y-3 text-stone-700">
+
+      <section className="space-y-3">
         <h2 className="text-xl font-semibold">Mät</h2>
         <ol className="list-decimal space-y-1.5 pl-5">
           <li>Läs produktens måttanvisning. Butikerna mäter olika.</li>
           <li>Bredd: glaset eller bågens insida — inte hela karmen på gissning.</li>
           <li>Höjd: från klämmorna ner till där tyget ska sluta.</li>
         </ol>
+        <p>
+          Vill ni kunna släppa in ljus upptill och täcka nertill är{" "}
+          <Link href="/guide/plissegardin-utan-borra" className="underline underline-offset-2">
+            plissé med upp/ner
+          </Link>{" "}
+          oftast enklare än rullgardin.
+        </p>
       </section>
+
       <Faq
         items={[
           {
             q: "Går det utan att borra?",
-            a: "Ja, om ni köper modell med klämfäste och bågen tål trycket. Inte alla storlekar har kläm.",
+            a: "Ja, om ni köper modell med klämfäste och bågen tål trycket. Inte alla storlekar har kläm — läs produkttexten, inte bara bilden.",
           },
           {
             q: "Hur mäter man?",
@@ -73,6 +97,7 @@ export default async function RullgardinUtanBorraPage() {
           },
         ]}
       />
+
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Produkter</h2>
         <div className="grid gap-4 sm:grid-cols-2">
