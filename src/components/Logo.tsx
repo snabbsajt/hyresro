@@ -9,11 +9,11 @@ const WINDOW = "#8BA4D9";
 export function Logo({ className = "" }: Props) {
   return (
     <span
-      className={`inline-flex items-center gap-2 font-sans text-base font-semibold tracking-tight text-ink ${className}`}
+      className={`inline-flex items-center gap-3 ${className}`}
     >
       <svg
-        width="28"
-        height="26"
+        width="36"
+        height="34"
         viewBox="0 0 28 26"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,9 @@ export function Logo({ className = "" }: Props) {
         <rect x="10.2" y="17.6" width="3.2" height="3.2" fill={WINDOW} />
         <rect x="14.6" y="17.6" width="3.2" height="3.2" fill={WINDOW} />
       </svg>
-      <span>{site.name}</span>
+      <span className="translate-y-[1px] font-sans text-[19px] font-semibold leading-none tracking-tight text-ink">
+        {site.name}
+      </span>
     </span>
   );
 }
