@@ -2,10 +2,8 @@
 
 export const ADDREVENUE = {
   channel: "3469712",
-  merchants: {
-    "Fönsterfilm.se": "986347",
-    Sortix: "987692",
-  },
+  // Add merchant IDs only after Jonathan provides live deep links.
+  merchants: {},
 };
 
 /**

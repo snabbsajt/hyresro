@@ -3,7 +3,7 @@
  * Print a wrapped affiliate URL and a products.ts stub.
  *
  * Usage:
- *   node scripts/catalog-add.mjs --network addrevenue --merchant Sortix \
+ *   node scripts/catalog-add.mjs --network addrevenue --merchant MERCHANT_NAME \
  *     --url "https://..." --price 239 --name "..." --slug "..." --category fasten
  */
 import { NETWORKS, wrapAddrevenue } from "./networks.mjs";
@@ -24,7 +24,7 @@ function parseArgs(argv) {
 
 function usage() {
   console.error(`Usage:
-  node scripts/catalog-add.mjs --network addrevenue --merchant Sortix \\
+  node scripts/catalog-add.mjs --network addrevenue --merchant MERCHANT_NAME \\
     --url "https://merchant.example/product" --price 239 \\
     --name "Product name" --slug "product-slug" --category fasten
 

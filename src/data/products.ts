@@ -52,12 +52,12 @@ export const products: Product[] = [
   },
   {
     slug: "fonsterfilm-dcfix",
-    name: "Fönsterfilm — solskydd på glas",
+    name: "D-C-FIX solskyddsfilm — självhäftande 92×200 cm",
     category: "solskydd",
     mountType: "no-drill",
     surfaces: [],
-    priceFromSek: 200,
-    merchants: [{ name: "Fönsterfilm.se", url: "https://addrevenue.io/t?a=986347&c=3469712&m=SE&u=https%3A%2F%2Ffonsterfilm.se%2F" }],
+    priceFromSek: 329,
+    merchants: [{ name: "Clas Ohlson", url: "https://www.clasohlson.com/se/D-C-FIX-solskyddsfilm-sjalvhaftande-inomhus,-92-cm-x-2-m/p/41-8176-1" }],
     notes: "Film på glas. Ingen skruv. Testa på liten yta först — lim kan sitta kvar om den suttit länge.",
     imageUrl: "/products/fonsterfilm-dcfix.jpg",
   },
@@ -305,27 +305,5 @@ export const products: Product[] = [
     notes: "Står på bänken.",
     imageUrl: "/products/diskstall-kvot.jpg",
   },
-  {
-    slug: "stadskap-organiseringspaket",
-    name: "Organiseringspaket — städskåp",
-    category: "forvaring",
-    mountType: "no-drill",
-    surfaces: [],
-    priceFromSek: 649,
-    merchants: [{ name: "Sortix", url: "https://addrevenue.io/t?c=3469712&a=987692&m=SE&u=https%3A%2F%2Fredofix.myshopify.com%2Fproducts%2Forganiseringspaket-for-stadskapet" }],
-    notes: "Förvaring i skåp utan väggmontering.",
-    imageUrl: "/products/stadskap-organiseringspaket.jpg",
-  },
-  {
-    slug: "dorrhangare-rostfritt",
-    name: "Dörrhängare — borstat rostfritt",
-    category: "forvaring",
-    mountType: "no-drill",
-    surfaces: [],
-    priceFromSek: 239,
-    merchants: [{ name: "Sortix", url: "https://addrevenue.io/t?c=3469712&a=987692&m=SE&u=https%3A%2F%2Fredofix.myshopify.com%2Fproducts%2Fdorrhangare-i-borstat-rostfritt-stal" }],
-    notes: "Hängs över dörren. Inga borrhål.",
-    imageUrl: "/products/dorrhangare-rostfritt.jpg",
-  }
 ];
 

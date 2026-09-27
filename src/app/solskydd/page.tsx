@@ -42,10 +42,10 @@ export default async function SolskyddPage() {
         caption="Vilken typ ska ni välja"
         rows={[
           {
-            name: "Fönsterfilm — solskydd på glas",
+            name: "D-C-FIX solskyddsfilm — självhäftande 92×200 cm",
             bestFor: "Glas utan list, sol på kök/badrum",
             watch: "Testa liten yta. Kan lämna lim om den sitter länge.",
-            fromSek: 200,
+            fromSek: 329,
           },
           {
             name: "Rullgardin — Bolga mörkläggande",
