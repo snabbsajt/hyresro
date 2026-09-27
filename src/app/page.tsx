@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: `${site.name} — Inred hyresrätten utan att borra`,
   description:
     "Guider och utvalda produkter som inte kräver hål i väggen. Solskydd, fästen, förvaring och belysning för hyresrätt.",
+  alternates: { canonical: "/" },
 };
 
 const entries = [

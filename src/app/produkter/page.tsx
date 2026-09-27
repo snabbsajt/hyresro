@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Alla rekommenderade produkter",
   description:
     "Hela Hyresros katalog: solskydd, fästen, förvaring, belysning och säkerhet.",
+  alternates: { canonical: "/produkter" },
 };
 
 const categoryOrder: { key: string; title: string }[] = [

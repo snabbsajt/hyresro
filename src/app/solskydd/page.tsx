@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description:
       "Jämför rullgardin med kläm, plissé och fönsterfilm. Utan skruv i karm.",
   },
+  alternates: { canonical: "/solskydd" },
 };
 
 export default async function SolskyddPage() {

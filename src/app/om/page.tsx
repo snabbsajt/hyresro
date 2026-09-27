@@ -5,6 +5,7 @@ import { Crumbs } from "@/components/Crumbs";
 export const metadata: Metadata = {
   title: "Om oss och annonsering",
   description: "Vad Hyresro är och hur affiliatelänkar fungerar.",
+  alternates: { canonical: "/om" },
 };
 
 export default function OmPage() {

@@ -6,6 +6,7 @@ import { site } from "@/config/site";
 export const metadata: Metadata = {
   title: "Kontakt",
   description: "Kontakta Hyresro.",
+  alternates: { canonical: "/kontakt" },
 };
 
 export default function KontaktPage() {

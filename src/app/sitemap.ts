@@ -20,6 +20,7 @@ const paths = [
   "/om",
   "/integritet",
   "/kontakt",
+  "/affiliate-info",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

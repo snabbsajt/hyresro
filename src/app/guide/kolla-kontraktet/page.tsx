@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Så läser ni hyreskontraktet innan ni sätter upp något",
   description:
     "Var reglerna står, vad som oftast gäller borr och fästen, när ni ska fråga värden. Inte juridisk rådgivning.",
+  alternates: { canonical: "/guide/kolla-kontraktet" },
 };
 
 export default function KollaKontraktetPage() {

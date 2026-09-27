@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "Belysning utan fast el",
     description: "Lampor, slinga och dimmer i sladd. Ingen ny elpunkt.",
   },
+  alternates: { canonical: "/belysning" },
 };
 
 export default async function Page() {

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Förvaring utan att borra",
     description: "Hyllor, spännstång och balkonglåda utan hål i vägg.",
   },
+  alternates: { canonical: "/forvaring" },
 };
 
 export default async function Page() {

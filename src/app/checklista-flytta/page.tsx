@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Checklista: flytta in och ut",
   description:
     "Checklista för flytt in och ut i hyresrätt: dokumentera, ta ner fästen och återställ ytor.",
+  alternates: { canonical: "/checklista-flytta" },
 };
 
 export default function ChecklistaFlyttaPage() {

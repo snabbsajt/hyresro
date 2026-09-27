@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Plisségardin utan att borra i hyresrätt",
   description:
     "Plissé med klämfäste: när den slår rullgardin, hur ni mäter och vad som gäller aluminiumbåge.",
+  alternates: { canonical: "/guide/plissegardin-utan-borra" },
 };
 
 export default async function PlissePage() {

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Får man borra i hyresrätt?",
   description:
     "Vad som oftast gäller. Kontraktet styr. Alternativ utan borr. Inte juridisk rådgivning.",
+  alternates: { canonical: "/guide/borra-i-hyresratt" },
 };
 
 export default async function BorraIHyresrattPage() {

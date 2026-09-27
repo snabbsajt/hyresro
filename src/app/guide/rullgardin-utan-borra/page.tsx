@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Rullgardin utan att borra i hyresrätt",
   description:
     "Så sätter ni upp rullgardin med klämfäste. Mått, båge, aluminium och när skruv i karm kräver att ni läser kontraktet.",
+  alternates: { canonical: "/guide/rullgardin-utan-borra" },
 };
 
 export default async function RullgardinUtanBorraPage() {

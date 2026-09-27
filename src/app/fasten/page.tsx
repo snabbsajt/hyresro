@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Fästen utan att borra",
     description: "Jämför Tesa, Command och krok — vikt och underlag.",
   },
+  alternates: { canonical: "/fasten" },
 };
 
 export default async function FastenPage() {

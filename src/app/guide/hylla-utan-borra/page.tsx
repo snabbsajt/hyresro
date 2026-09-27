@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Sätta upp hylla utan att borra",
   description:
     "Hylla utan borr i hyresrätt: yta, maxvikt och tejp-skruv. Inte juridisk rådgivning.",
+  alternates: { canonical: "/guide/hylla-utan-borra" },
 };
 
 export default async function HyllaUtanBorraPage() {

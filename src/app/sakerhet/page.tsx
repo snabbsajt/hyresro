@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Säkerhet i hyresrätt",
   description:
     "Brandfilt, extra varnare på batteri och första hjälpen — saker ni kan ställa in utan att borra.",
+  alternates: { canonical: "/sakerhet" },
 };
 
 export default async function Page() {
