@@ -52,20 +52,28 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-14">
-      <section className="py-4 sm:py-8">
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
-          <div className="space-y-5">
+      <section className="hero-wallpaper relative -mx-4 overflow-hidden sm:-mx-6">
+        <div className="absolute inset-0" aria-hidden>
+          <Image
+            src="/hero.jpg"
+            alt=""
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="hero-glass absolute inset-0" />
+          <div className="hero-fade absolute inset-0" />
+        </div>
+
+        <div className="relative z-10 space-y-8 px-4 py-10 sm:px-6 sm:py-14">
+          <div className="max-w-2xl space-y-5">
             <h1 className="font-sans text-4xl font-semibold tracking-tight sm:text-5xl">
               Inred hyresrätten utan att borra
             </h1>
             <p className="max-w-xl font-sans text-xl text-stone-400 sm:text-2xl">
               Guider och utvalda produkter som inte kräver hål i väggen.
             </p>
-            <div className="trust-row" aria-label="Snabbfakta">
-              <span>Tydligt om affiliatelänkar</span>
-              <span>Svenska butiker</span>
-              <span>Utan onödiga hål</span>
-            </div>
             <ul className="flex flex-wrap gap-2 pt-1">
               {moreGuides.map((g) => (
                 <li key={g.href}>
@@ -76,23 +84,12 @@ export default async function HomePage() {
               ))}
             </ul>
           </div>
-          <div className="relative overflow-hidden rounded-sm border border-white/12">
-            <Image
-              src="/hero.jpg"
-              alt="Lugnt hyresrum med rullgardin, hylla och lampa — inrett utan synliga borrhål"
-              width={1200}
-              height={900}
-              priority
-              className="aspect-[4/3] w-full object-cover"
-              sizes="(min-width: 1024px) 50vw, 100vw"
-            />
-          </div>
-        </div>
 
-        <div className="mt-8 grid gap-3 sm:grid-cols-3 sm:gap-4">
-          {entries.map((e) => (
-            <GuideCard key={e.href} href={e.href} title={e.title} blurb={e.blurb} />
-          ))}
+          <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
+            {entries.map((e) => (
+              <GuideCard key={e.href} href={e.href} title={e.title} blurb={e.blurb} />
+            ))}
+          </div>
         </div>
       </section>
 

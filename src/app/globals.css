@@ -128,26 +128,23 @@ main .text-stone-400 {
   background: rgba(20, 19, 17, 0.55);
 }
 
-.trust-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
-  font-size: 0.8125rem;
-  line-height: 1.4;
-  color: #a8a194;
+.hero-wallpaper {
+  min-height: 28rem;
 }
 
-.trust-row span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
+.hero-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
-.trust-row span::before {
-  content: "";
-  width: 0.35rem;
-  height: 0.35rem;
-  border-radius: 9999px;
-  background: rgba(59, 95, 219, 0.75);
-  flex-shrink: 0;
+.hero-fade {
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 12, 12, 0.15) 0%,
+    rgba(12, 12, 12, 0.35) 45%,
+    rgba(12, 12, 12, 0.85) 78%,
+    #0c0c0c 100%
+  );
+  pointer-events: none;
 }

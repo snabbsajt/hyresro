@@ -54,7 +54,7 @@ export default async function SolskyddPage() {
             fromSek: 275,
           },
           {
-            name: "Fönsterfilm — D-C-FIX solskydd",
+            name: "Fönsterfilm — solskydd på glas",
             bestFor: "Glas utan list, sol på kök/badrum",
             watch: "Testa liten yta. Kan lämna lim om den sitter länge.",
             fromSek: 200,

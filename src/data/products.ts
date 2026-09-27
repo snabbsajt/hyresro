@@ -52,13 +52,13 @@ export const products: Product[] = [
   },
   {
     slug: "fonsterfilm-dcfix",
-    name: "Fönsterfilm — D-C-FIX solskydd",
+    name: "Fönsterfilm — solskydd på glas",
     category: "solskydd",
     mountType: "no-drill",
     surfaces: [],
     priceFromSek: 200,
-    merchants: [{ name: "Clas Ohlson", url: "https://www.clasohlson.com/se/D-C-FIX-solskyddsfilm-fonster-inomhus,-90-cm-x-2-m/p/41-8177-1" }],
-    notes: "Film på glas. Ingen skruv. Testa på liten yta först.",
+    merchants: [{ name: "Fönsterfilm.se", url: "https://addrevenue.io/t?a=986347&c=3469712&m=SE&u=https%3A%2F%2Ffonsterfilm.se%2F" }],
+    notes: "Film på glas, ingen skruv. Butik Fönsterfilm.se via Addrevenue.",
     imageUrl: "/products/fonsterfilm-dcfix.jpg",
   },
   {
