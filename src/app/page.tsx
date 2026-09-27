@@ -1,23 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ProductCard } from "@/components/ProductCard";
+import { FeaturedAffiliateGrid } from "@/components/FeaturedAffiliateGrid";
 import { GuideCard } from "@/components/GuideCard";
 import { AdNote } from "@/components/AdNote";
 import { site } from "@/config/site";
-import { getCatalog } from "@/lib/catalog";
+import { getTrackedAffiliateProducts } from "@/lib/catalog";
 
 export const metadata: Metadata = {
   title: `${site.name} — Inred hyresrätten utan att borra`,
   description:
     "Guider och utvalda produkter som inte kräver hål i väggen. Solskydd, fästen, förvaring och belysning för hyresrätt.",
 };
-
-const featuredSlugs = [
-  "fonsterfilm-dcfix",
-  "dorrhangare-rostfritt",
-  "stadskap-organiseringspaket",
-] as const;
 
 const entries = [
   {
@@ -45,10 +39,24 @@ const moreGuides = [
 ] as const;
 
 export default async function HomePage() {
-  const products = await getCatalog();
-  const featured = products
-    .filter((p) => featuredSlugs.includes(p.slug as (typeof featuredSlugs)[number]))
-    .slice(0, 3);
+  const tracked = await getTrackedAffiliateProducts();
+  const featuredCards = tracked
+    .map((p) => {
+      const merchant = p.merchants[0];
+      if (!merchant) return null;
+      return {
+        slug: p.slug,
+        name: p.name,
+        notes: p.notes,
+        priceFromSek: p.priceFromSek,
+        priceNote: p.priceNote,
+        imageUrl: p.imageUrl,
+        imageAlt: p.imageAlt,
+        merchantName: merchant.name,
+        merchantUrl: merchant.url,
+      };
+    })
+    .filter((x): x is NonNullable<typeof x> => x != null);
 
   return (
     <div className="space-y-14">
@@ -104,11 +112,7 @@ export default async function HomePage() {
 
       <section className="space-y-4">
         <h2 className="font-sans text-xl font-semibold">Utvalda produkter</h2>
-        <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
-          {featured.map((p) => (
-            <ProductCard key={p.slug} product={p} />
-          ))}
-        </div>
+        <FeaturedAffiliateGrid products={featuredCards} count={3} />
         <p>
           <Link href="/produkter" className="text-sm font-medium underline underline-offset-2 hover:text-white">
             Visa alla rekommenderade produkter

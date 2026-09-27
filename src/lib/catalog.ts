@@ -37,3 +37,7 @@ export async function getProductsByCategory(
 ): Promise<Product[]> {
   return withTrackedFirst(fallbackProducts.filter((p) => p.category === category));
 }
+
+export async function getTrackedAffiliateProducts(): Promise<Product[]> {
+  return fallbackProducts.filter(hasTrackedAffiliate);
+}
