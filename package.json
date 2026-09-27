@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "catalog:check": "node scripts/catalog-check.mjs",
+    "catalog:add": "node scripts/catalog-add.mjs"
   },
   "dependencies": {
     "react": "19.1.0",

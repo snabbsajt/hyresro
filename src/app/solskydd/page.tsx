@@ -45,7 +45,7 @@ export default async function SolskyddPage() {
             name: "Fönsterfilm — solskydd på glas",
             bestFor: "Glas utan list, sol på kök/badrum",
             watch: "Testa liten yta. Kan lämna lim om den sitter länge.",
-            fromSek: 200,
+            fromSek: 329,
           },
           {
             name: "Rullgardin — Bolga mörkläggande",
