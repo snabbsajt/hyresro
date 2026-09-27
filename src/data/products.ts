@@ -306,29 +306,6 @@ export const products: Product[] = [
     imageUrl: "/products/diskstall-kvot.jpg",
   },
   {
-    slug: "solcellslampa-flexible-globe",
-    name: "Solcellslampa — Flexible Globe",
-    category: "belysning",
-    mountType: "no-drill",
-    surfaces: [],
-    priceFromSek: 439,
-    merchants: [{ name: "Ecostar", url: "https://addrevenue.io/t?c=3469712&a=987127&m=SE&u=https%3A%2F%2Fecostar.se%2Fproducts%2Fflexible-globe-solcellslampa-tradgard-20-40-60cm" }],
-    notes: "Solcell. Balkong/uteplats utan eldragning eller borr.",
-    imageUrl: "/products/solcellslampa-flexible-globe.jpg",
-  },
-  {
-    slug: "solcellslampa-rorelse-2pack",
-    name: "Solcellslampa — rörelsedetektor 2-pack",
-    category: "belysning",
-    mountType: "no-drill",
-    surfaces: [],
-    priceFromSek: 399,
-    priceNote: "2-pack",
-    merchants: [{ name: "Ecostar", url: "https://addrevenue.io/t?c=3469712&a=987127&m=SE&u=https%3A%2F%2Fecostar.se%2Fproducts%2Frorelsebelysning-med-ecostar-lampor-kraftfulla-och-bekvama" }],
-    notes: "Sol/batteri med rörelsesensor. Ingen fast installation.",
-    imageUrl: "/products/solcellslampa-rorelse-2pack.jpg",
-  },
-  {
     slug: "stadskap-organiseringspaket",
     name: "Organiseringspaket — städskåp",
     category: "forvaring",
@@ -349,6 +326,6 @@ export const products: Product[] = [
     merchants: [{ name: "Sortix", url: "https://addrevenue.io/t?c=3469712&a=987692&m=SE&u=https%3A%2F%2Fredofix.myshopify.com%2Fproducts%2Fdorrhangare-i-borstat-rostfritt-stal" }],
     notes: "Hängs över dörren. Inga borrhål.",
     imageUrl: "/products/dorrhangare-rostfritt.jpg",
-  },
+  }
 ];
 
