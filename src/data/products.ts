@@ -58,7 +58,7 @@ export const products: Product[] = [
     surfaces: [],
     priceFromSek: 200,
     merchants: [{ name: "Fönsterfilm.se", url: "https://addrevenue.io/t?a=986347&c=3469712&m=SE&u=https%3A%2F%2Ffonsterfilm.se%2F" }],
-    notes: "Film på glas, ingen skruv. Butik Fönsterfilm.se via Addrevenue.",
+    notes: "Film på glas. Ingen skruv. Testa på liten yta först — lim kan sitta kvar om den suttit länge.",
     imageUrl: "/products/fonsterfilm-dcfix.jpg",
   },
   {

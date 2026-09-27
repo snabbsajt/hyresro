@@ -42,6 +42,12 @@ export default async function SolskyddPage() {
         caption="Vilken typ ska ni välja"
         rows={[
           {
+            name: "Fönsterfilm — solskydd på glas",
+            bestFor: "Glas utan list, sol på kök/badrum",
+            watch: "Testa liten yta. Kan lämna lim om den sitter länge.",
+            fromSek: 200,
+          },
+          {
             name: "Rullgardin — Bolga mörkläggande",
             bestFor: "Sova, mörklägga, vanligt fönster",
             watch: "Kontrollera att er storlek har klämfäste, inte skruv.",
@@ -52,12 +58,6 @@ export default async function SolskyddPage() {
             bestFor: "Insyn och ljus upp/ner",
             watch: "Bekräfta att just den modellen har klämfäste.",
             fromSek: 275,
-          },
-          {
-            name: "Fönsterfilm — solskydd på glas",
-            bestFor: "Glas utan list, sol på kök/badrum",
-            watch: "Testa liten yta. Kan lämna lim om den sitter länge.",
-            fromSek: 200,
           },
           {
             name: "Gardinstång — GARDINIA spännstång",

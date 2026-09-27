@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 const featuredSlugs = [
-  "rullgardin-klamfaste",
-  "tesa-skruv-tung",
+  "fonsterfilm-dcfix",
   "dorrhangare-rostfritt",
+  "stadskap-organiseringspaket",
 ] as const;
 
 const entries = [

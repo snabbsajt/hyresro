@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ProductRow } from "@/components/ProductRow";
 import { Crumbs } from "@/components/Crumbs";
 import { AdNote } from "@/components/AdNote";
-import { getCatalog } from "@/lib/catalog";
+import { getCatalog, hasTrackedAffiliate } from "@/lib/catalog";
 import type { Product } from "@/data/types";
 
 export const metadata: Metadata = {
@@ -21,19 +21,22 @@ const categoryOrder: { key: string; title: string }[] = [
 
 type Section = { key: string; title: string; items: Product[] };
 
+function sortForDisplay(a: Product, b: Product): number {
+  const ta = hasTrackedAffiliate(a) ? 0 : 1;
+  const tb = hasTrackedAffiliate(b) ? 0 : 1;
+  if (ta !== tb) return ta - tb;
+  return a.name.localeCompare(b.name, "sv");
+}
+
 export default async function Page() {
   const all = await getCatalog();
   const used = new Set<string>();
   const sections: Section[] = categoryOrder.map(({ key, title }) => {
-    const items = all
-      .filter((p) => p.category === key)
-      .sort((a, b) => a.name.localeCompare(b.name, "sv"));
+    const items = all.filter((p) => p.category === key).sort(sortForDisplay);
     items.forEach((p) => used.add(p.slug));
     return { key, title, items };
   });
-  const rest = all
-    .filter((p) => !used.has(p.slug))
-    .sort((a, b) => a.name.localeCompare(b.name, "sv"));
+  const rest = all.filter((p) => !used.has(p.slug)).sort(sortForDisplay);
   if (rest.length) sections.push({ key: "ovrigt", title: "Övrigt", items: rest });
 
   return (
