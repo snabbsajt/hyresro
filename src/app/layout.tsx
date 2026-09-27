@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { BackLink } from "@/components/BackLink";
+import { MainShell } from "@/components/MainShell";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { site } from "@/config/site";
 import "./globals.css";
@@ -54,12 +54,7 @@ export default function RootLayout({
         <div className="site-bg" aria-hidden />
         <div className="relative z-[1] flex min-h-screen flex-col">
           <Header />
-          <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6">
-            <div className="mb-4">
-              <BackLink />
-            </div>
-            {children}
-          </main>
+          <MainShell>{children}</MainShell>
           <Footer />
         </div>
       </body>
