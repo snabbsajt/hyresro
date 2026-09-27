@@ -12,14 +12,14 @@ type Props = {
 export function NavPanel({ item, onNavigate, className = "" }: Props) {
   return (
     <div
-      className={`border border-white/15 bg-[#141414] px-4 py-4 ${className}`}
+      className={`glass-panel-solid px-4 py-3.5 ${className}`}
       role="region"
       aria-label={item.label}
     >
       <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-stone-400">
         {item.label}
       </p>
-      <ul className="flex flex-col gap-1">
+      <ul className="flex flex-col gap-0.5">
         {item.links.map((link) => (
           <li key={link.href}>
             <Link
