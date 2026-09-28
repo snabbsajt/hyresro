@@ -35,14 +35,14 @@ export function CategoryComparison({ products, categoryLabel }: Props) {
 
   return (
     <section className="space-y-3" aria-labelledby="category-comparison-heading">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+      <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-x-3">
         <h2
           id="category-comparison-heading"
           className="text-xl font-semibold tracking-tight"
         >
           Utvalda i {label}
         </h2>
-        <p className="text-sm text-stone-500">
+        <p className="text-sm text-stone-500 md:shrink-0 md:text-right">
           Baserat på montering, pris och tillgänglighet — inte påhittade betyg.
         </p>
       </div>
@@ -84,53 +84,71 @@ function ComparisonRow({
   const merchant = product.merchants[0];
 
   return (
-    <li className="flex flex-col gap-2 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-4">
-      <div className="min-w-0 flex-1 space-y-1.5">
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-          {badge ? <Badge label={badge} /> : null}
-          <a
-            href={`#${product.slug}`}
-            className="font-medium text-stone-100 underline underline-offset-2 decoration-white/30 transition-colors hover:text-white hover:decoration-white/60"
+    <li className="px-3 py-3 md:px-4">
+      {/*
+        Mobile: stacked flex column (badge+name → chips → price+CTA).
+        Desktop (md+): 4-col grid via md:contents on wrappers so badge-slot,
+        name+chips, price and CTA each occupy a fixed column — names align.
+      */}
+      <div className="flex flex-col gap-2 md:grid md:grid-cols-[6rem_minmax(0,1fr)_auto_minmax(9rem,auto)] md:items-center md:gap-x-3 md:gap-y-1">
+        <div className="flex min-w-0 items-center gap-2 md:contents">
+          <div
+            className="hidden shrink-0 md:flex md:w-full md:items-center"
+            aria-hidden={badge ? undefined : true}
           >
-            {product.name}
-          </a>
-          <a
-            href={`#${product.slug}`}
-            className="text-xs text-stone-500 transition-colors hover:text-stone-300"
-          >
-            Visa produkt
-          </a>
-        </div>
-        {why.length > 0 ? (
-          <p className="flex flex-wrap gap-1.5 text-xs text-stone-500">
-            {why.map((signal) => (
-              <span
-                key={signal}
-                className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2 py-0.5"
-              >
-                {signal}
-              </span>
-            ))}
-          </p>
-        ) : null}
-      </div>
+            {badge ? <Badge label={badge} /> : null}
+          </div>
 
-      <div className="flex shrink-0 flex-wrap items-center gap-x-3 gap-y-2 sm:flex-col sm:items-end sm:gap-y-1.5">
-        <ProductPrice
-          priceFromSek={product.priceFromSek}
-          compareAtPriceSek={product.compareAtPriceSek}
-          priceNote={product.priceNote}
-          compact
-        />
-        {merchant ? (
-          <AffiliateLink
-            href={merchant.url}
-            slug={product.slug}
-            className="inline-block border border-white/25 bg-transparent px-2.5 py-1 text-xs font-medium text-stone-200 transition-colors hover:bg-white hover:!text-black"
-          >
-            Till {merchant.name}
-          </AffiliateLink>
-        ) : null}
+          <div className="min-w-0 space-y-1.5">
+            <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
+              {badge ? (
+                <span className="md:hidden">
+                  <Badge label={badge} />
+                </span>
+              ) : null}
+              <a
+                href={`#${product.slug}`}
+                className="font-medium text-stone-100 decoration-white/40 underline-offset-2 transition-colors hover:text-white hover:underline"
+              >
+                {product.name}
+              </a>
+            </div>
+            {why.length > 0 ? (
+              <p className="flex flex-wrap gap-1.5 text-xs text-stone-500">
+                {why.map((signal) => (
+                  <span
+                    key={signal}
+                    className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2 py-0.5"
+                  >
+                    {signal}
+                  </span>
+                ))}
+              </p>
+            ) : null}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between gap-3 md:contents">
+          <div className="min-w-0 md:justify-self-end md:text-right">
+            <ProductPrice
+              priceFromSek={product.priceFromSek}
+              compareAtPriceSek={product.compareAtPriceSek}
+              priceNote={product.priceNote}
+              compact
+            />
+          </div>
+          {merchant ? (
+            <AffiliateLink
+              href={merchant.url}
+              slug={product.slug}
+              className="inline-flex min-w-[9rem] shrink-0 items-center justify-center border border-white/25 bg-transparent px-2.5 py-1 text-xs font-medium text-stone-200 transition-colors hover:bg-white hover:!text-black"
+            >
+              Till butik
+            </AffiliateLink>
+          ) : (
+            <span className="hidden min-w-[9rem] md:block" aria-hidden />
+          )}
+        </div>
       </div>
     </li>
   );
