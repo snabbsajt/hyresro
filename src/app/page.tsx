@@ -50,6 +50,7 @@ export default async function HomePage() {
         name: p.name,
         notes: p.notes,
         priceFromSek: p.priceFromSek,
+        compareAtPriceSek: p.compareAtPriceSek,
         priceNote: p.priceNote,
         imageUrl: p.imageUrl,
         imageAlt: p.imageAlt,

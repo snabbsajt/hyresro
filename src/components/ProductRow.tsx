@@ -1,5 +1,6 @@
 import type { Product } from "@/data/types";
 import { AffiliateLink } from "./AffiliateLink";
+import { ProductPrice } from "./ProductPrice";
 
 export function ProductRow({ product }: { product: Product }) {
   const merchant = product.merchants[0];
@@ -9,10 +10,12 @@ export function ProductRow({ product }: { product: Product }) {
         <p className="font-medium" style={{ color: "#d2ccc2" }}>
           {product.name}
         </p>
-        <p className="text-sm text-stone-400">
-          {product.priceFromSek != null ? `Från ${product.priceFromSek} kr` : ""}
-          {product.priceNote ? ` · ${product.priceNote}` : ""}
-        </p>
+        <ProductPrice
+          priceFromSek={product.priceFromSek}
+          compareAtPriceSek={product.compareAtPriceSek}
+          priceNote={product.priceNote}
+          compact
+        />
       </div>
       {merchant ? (
         <AffiliateLink href={merchant.url} slug={product.slug}>

@@ -2,6 +2,7 @@ import { existsSync } from "fs";
 import path from "path";
 import type { Product } from "@/data/types";
 import { AffiliateLink } from "./AffiliateLink";
+import { ProductPrice } from "./ProductPrice";
 
 type Props = {
   product: Product;
@@ -44,12 +45,11 @@ export async function ProductCard({ product }: Props) {
         {product.notes ? (
           <p className="mb-2.5 text-sm text-stone-400">{product.notes}</p>
         ) : null}
-        {product.priceFromSek != null && (
-          <p className="mb-2.5 text-sm text-stone-400">
-            Från {product.priceFromSek} kr
-            {product.priceNote ? ` · ${product.priceNote}` : ""}
-          </p>
-        )}
+        <ProductPrice
+          priceFromSek={product.priceFromSek}
+          compareAtPriceSek={product.compareAtPriceSek}
+          priceNote={product.priceNote}
+        />
         {merchant ? (
           <AffiliateLink href={merchant.url} slug={product.slug}>
             {merchant.name}

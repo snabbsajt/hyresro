@@ -2,12 +2,14 @@
 
 import { useMemo, useState, useEffect } from "react";
 import { AffiliateLink } from "./AffiliateLink";
+import { ProductPrice } from "./ProductPrice";
 
 export type FeaturedCard = {
   slug: string;
   name: string;
   notes?: string;
   priceFromSek?: number;
+  compareAtPriceSek?: number;
   priceNote?: string;
   imageUrl?: string;
   imageAlt?: string;
@@ -73,12 +75,11 @@ export function FeaturedAffiliateGrid({ products, count = 3 }: Props) {
             {p.notes ? (
               <p className="mb-2.5 text-sm text-stone-400">{p.notes}</p>
             ) : null}
-            {p.priceFromSek != null && (
-              <p className="mb-2.5 text-sm text-stone-400">
-                Från {p.priceFromSek} kr
-                {p.priceNote ? ` · ${p.priceNote}` : ""}
-              </p>
-            )}
+            <ProductPrice
+              priceFromSek={p.priceFromSek}
+              compareAtPriceSek={p.compareAtPriceSek}
+              priceNote={p.priceNote}
+            />
             <AffiliateLink href={p.merchantUrl} slug={p.slug}>
               {p.merchantName}
             </AffiliateLink>

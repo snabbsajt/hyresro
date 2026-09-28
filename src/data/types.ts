@@ -12,7 +12,10 @@ export type Product = {
   mountType: MountType;
   surfaces: string[];
   weightKg?: number;
+  /** Aktuellt/köppris i SEK (kampanjpris om butiken har kampanj). */
   priceFromSek?: number;
+  /** Ordinarie pris när högre än priceFromSek — visas som jämförelsepris. */
+  compareAtPriceSek?: number;
   /** t.ex. "2-pack", "per st", "2 för 249 kr" */
   priceNote?: string;
   merchants: Merchant[];
