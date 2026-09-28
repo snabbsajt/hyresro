@@ -256,8 +256,7 @@ export const products: Product[] = [
     category: "belysning",
     mountType: "no-drill",
     surfaces: [],
-    priceFromSek: 480,
-    priceNote: "kampanj — ord. 890 kr",
+    priceFromSek: 890,
     merchants: [
       {
         name: "Ljus-butiken.se",
@@ -277,7 +276,7 @@ export const products: Product[] = [
     category: "belysning",
     mountType: "no-drill",
     surfaces: [],
-    priceFromSek: 490,
+    priceFromSek: 720,
     merchants: [
       {
         name: "Ljus-butiken.se",
