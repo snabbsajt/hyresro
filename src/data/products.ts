@@ -312,6 +312,46 @@ export const products: Product[] = [
     noteKey: "hylla",
     imageUrl: "/products/base-toalettpappershallare-med-hylla-borstad-rostfritt.jpg",
   },
+  {
+    slug: "boelle-alva-kladhangare-vitlaserad",
+    name: "Alva Klädhängare — Vitlaserad/Stål",
+    category: "forvaring",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 1499,
+    merchants: [
+      {
+        name: "Boelle.se",
+        url: wrapAddrevenue(
+          "boelle",
+          "https://boelle.se/products/venture-home-alva-clothing-hanger-whitewash-steel",
+        ),
+      },
+    ],
+    notes: "Fristående klädhängare, golvplacerad, ingen väggmontage.",
+    noteKey: "hylla",
+    imageUrl: "/products/boelle-alva-kladhangare-vitlaserad.jpg",
+  },
+  {
+    slug: "boelle-quito-kladhangare-svart",
+    name: "Quito Klädhängare — Svart/Svart",
+    category: "forvaring",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 1750,
+    merchants: [
+      {
+        name: "Boelle.se",
+        url: wrapAddrevenue(
+          "boelle",
+          "https://boelle.se/products/venture-home-quito-clothing-hanger-black-black",
+        ),
+      },
+    ],
+    notes: "Fristående med låda/fack, ingen väggmontage.",
+    noteKey: "hylla",
+    imageUrl: "/products/boelle-quito-kladhangare-svart.jpg",
+  },
 
   {
     slug: "blomlada-racke-co",

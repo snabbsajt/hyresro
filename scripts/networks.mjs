@@ -7,6 +7,7 @@ export const ADDREVENUE = {
     ljusgrossisten: "986665",
     kokochbad: "987907",
     fonsterfilm: "986347",
+    boelle: "988151",
   },
 };
 
