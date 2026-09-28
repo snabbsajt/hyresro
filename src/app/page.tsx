@@ -48,6 +48,7 @@ export default async function HomePage() {
       return {
         slug: p.slug,
         name: p.name,
+        category: p.category,
         notes: p.notes,
         priceFromSek: p.priceFromSek,
         compareAtPriceSek: p.compareAtPriceSek,

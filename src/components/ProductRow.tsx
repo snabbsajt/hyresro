@@ -1,6 +1,7 @@
 import type { Product } from "@/data/types";
 import { AffiliateLink } from "./AffiliateLink";
 import { ProductPrice } from "./ProductPrice";
+import { ProductCategoryTitleLink } from "./ProductCategoryTitleLink";
 
 export function ProductRow({ product }: { product: Product }) {
   const merchant = product.merchants[0];
@@ -8,7 +9,10 @@ export function ProductRow({ product }: { product: Product }) {
     <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-white/12 py-3">
       <div className="min-w-0 flex-1">
         <p className="font-medium" style={{ color: "#d2ccc2" }}>
-          {product.name}
+          <ProductCategoryTitleLink
+            name={product.name}
+            category={product.category}
+          />
         </p>
         <ProductPrice
           priceFromSek={product.priceFromSek}
