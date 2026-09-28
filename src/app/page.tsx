@@ -55,6 +55,7 @@ export default async function HomePage() {
         priceNote: p.priceNote,
         imageUrl: p.imageUrl,
         imageAlt: p.imageAlt,
+        imageBackdrop: p.imageBackdrop,
         merchantName: merchant.name,
         merchantUrl: merchant.url,
       };

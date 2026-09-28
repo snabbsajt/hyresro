@@ -1,9 +1,11 @@
 "use client";
 
 import { useMemo, useState, useEffect } from "react";
+import type { ImageBackdrop } from "@/data/types";
 import { AffiliateLink } from "./AffiliateLink";
 import { ProductPrice } from "./ProductPrice";
 import { ProductCategoryTitleLink } from "./ProductCategoryTitleLink";
+import { ProductImageSlot } from "./ProductImageSlot";
 
 export type FeaturedCard = {
   slug: string;
@@ -15,6 +17,7 @@ export type FeaturedCard = {
   priceNote?: string;
   imageUrl?: string;
   imageAlt?: string;
+  imageBackdrop?: ImageBackdrop;
   merchantName: string;
   merchantUrl: string;
 };
@@ -59,17 +62,11 @@ export function FeaturedAffiliateGrid({ products, count = 3 }: Props) {
           key={p.slug}
           className="overflow-hidden border border-white/12 bg-[#1c1b19] [content-visibility:auto]"
         >
-          {p.imageUrl ? (
-            <img
-              src={p.imageUrl}
-              alt={p.imageAlt || p.name}
-              className="aspect-[4/3] w-full object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-          ) : (
-            <div className="aspect-[4/3] w-full bg-[#141414]" aria-hidden />
-          )}
+          <ProductImageSlot
+            src={p.imageUrl}
+            alt={p.imageAlt || p.name}
+            backdrop={p.imageBackdrop}
+          />
           <div className="px-4 py-3">
             <h3 className="mb-1.5 font-medium" style={{ color: "#d6d0c4" }}>
               <ProductCategoryTitleLink name={p.name} category={p.category} />
