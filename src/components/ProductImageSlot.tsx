@@ -23,7 +23,7 @@ export function ProductImageSlot({ src, alt, backdrop = "light" }: Props) {
         <img
           src={src}
           alt={alt}
-          className="absolute inset-0 h-full w-full object-contain p-2.5"
+          className="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
           decoding="async"
         />
