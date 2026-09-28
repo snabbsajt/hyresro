@@ -60,8 +60,8 @@ export default async function HomePage() {
     .filter((x): x is NonNullable<typeof x> => x != null);
 
   return (
-    <div className="space-y-14">
-      <section className="hero-wallpaper relative -mx-4 overflow-hidden sm:-mx-6">
+    <>
+      <section className="hero-wallpaper">
         <div className="absolute inset-0" aria-hidden>
           <Image
             src="/hero.jpg"
@@ -75,8 +75,8 @@ export default async function HomePage() {
           <div className="hero-fade absolute inset-0" />
         </div>
 
-        <div className="relative z-10 space-y-8 px-4 py-10 sm:px-6 sm:py-14">
-          <div className="max-w-2xl space-y-5">
+        <div className="relative z-10 mx-auto max-w-6xl space-y-8 px-4 py-10 sm:px-6 sm:py-14 md:py-16 md:space-y-10">
+          <div className="max-w-2xl space-y-5 md:max-w-3xl">
             <h1 className="font-sans text-4xl font-semibold tracking-tight sm:text-5xl">
               Inred hyresrätten utan att borra
             </h1>
@@ -94,7 +94,7 @@ export default async function HomePage() {
             </ul>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
+          <div className="grid gap-3 sm:grid-cols-3 sm:gap-4 md:gap-5">
             {entries.map((e) => (
               <GuideCard key={e.href} href={e.href} title={e.title} blurb={e.blurb} />
             ))}
@@ -102,32 +102,34 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="max-w-2xl space-y-3">
-        <h2 className="font-sans text-xl font-semibold">Vad är Hyresro?</h2>
-        <p>
-          Hyresro hjälper er att inreda och använda hyresrätten utan onödiga hål. Guiderna
-          förklarar vad som oftast går, vad som kräver värdens ja, och hur produkterna fästs.
-          Produkterna kommer från svenska återförsäljare. Vi är inte jurist och inte butik.
-        </p>
-      </section>
+      <div className="mx-auto mt-14 w-full max-w-6xl space-y-14 px-4 sm:px-6">
+        <section className="max-w-2xl space-y-3">
+          <h2 className="font-sans text-xl font-semibold">Vad är Hyresro?</h2>
+          <p>
+            Hyresro hjälper er att inreda och använda hyresrätten utan onödiga hål. Guiderna
+            förklarar vad som oftast går, vad som kräver värdens ja, och hur produkterna fästs.
+            Produkterna kommer från svenska återförsäljare. Vi är inte jurist och inte butik.
+          </p>
+        </section>
 
-      <section className="space-y-4">
-        <h2 className="font-sans text-xl font-semibold">Utvalda produkter</h2>
-        <FeaturedAffiliateGrid products={featuredCards} count={3} />
-        <p>
-          <Link href="/produkter" className="text-sm font-medium underline underline-offset-2 hover:text-white">
-            Visa alla rekommenderade produkter
-          </Link>
-        </p>
-        <p className="text-sm leading-relaxed text-stone-400">
-          Kontrollera alltid villkoren i ert{" "}
-          <Link href="/guide/kolla-kontraktet" className="underline underline-offset-2 hover:text-white">
-            hyreskontrakt
-          </Link>{" "}
-          innan ni köper monteringsutrustning.
-        </p>
-        <AdNote />
-      </section>
-    </div>
+        <section className="space-y-4">
+          <h2 className="font-sans text-xl font-semibold">Utvalda produkter</h2>
+          <FeaturedAffiliateGrid products={featuredCards} count={3} />
+          <p>
+            <Link href="/produkter" className="text-sm font-medium underline underline-offset-2 hover:text-white">
+              Visa alla rekommenderade produkter
+            </Link>
+          </p>
+          <p className="text-sm leading-relaxed text-stone-400">
+            Kontrollera alltid villkoren i ert{" "}
+            <Link href="/guide/kolla-kontraktet" className="underline underline-offset-2 hover:text-white">
+              hyreskontrakt
+            </Link>{" "}
+            innan ni köper monteringsutrustning.
+          </p>
+          <AdNote />
+        </section>
+      </div>
+    </>
   );
 }

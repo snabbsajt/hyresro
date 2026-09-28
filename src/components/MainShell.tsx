@@ -11,7 +11,7 @@ export function MainShell({ children }: { children: React.ReactNode }) {
     <main
       className={
         isHome
-          ? "mx-auto w-full max-w-6xl flex-1 px-4 pb-8 sm:px-6"
+          ? "w-full flex-1 pb-8"
           : "mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6"
       }
     >

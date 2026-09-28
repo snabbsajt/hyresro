@@ -129,7 +129,9 @@ main .text-stone-400 {
 }
 
 .hero-wallpaper {
+  position: relative;
   min-height: 28rem;
+  overflow: hidden;
 }
 
 .hero-glass {
@@ -139,6 +141,7 @@ main .text-stone-400 {
 }
 
 .hero-fade {
+  /* Mobil: samma recept som tidigare (hårdare botten) */
   background: linear-gradient(
     to bottom,
     rgba(12, 12, 12, 0.15) 0%,
@@ -147,4 +150,98 @@ main .text-stone-400 {
     #0c0c0c 100%
   );
   pointer-events: none;
+}
+
+/* Desktop: livligare wallpaper + flytande glass-paneler */
+@media (min-width: 768px) {
+  .hero-wallpaper {
+    min-height: 38rem;
+  }
+
+  .hero-glass {
+    /* Lättare frost så fotot syns bakom glaset */
+    background: rgba(14, 13, 12, 0.3);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .hero-fade {
+    background: linear-gradient(
+      to bottom,
+      rgba(12, 12, 12, 0.05) 0%,
+      rgba(12, 12, 12, 0.18) 35%,
+      rgba(12, 12, 12, 0.42) 65%,
+      rgba(12, 12, 12, 0.78) 88%,
+      #0c0c0c 100%
+    );
+  }
+
+  .hero-wallpaper .glass-panel {
+    background: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(20px) saturate(1.25);
+    -webkit-backdrop-filter: blur(20px) saturate(1.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.85rem;
+    box-shadow:
+      0 10px 40px rgba(0, 0, 0, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-wallpaper .glass-panel:hover {
+    border-color: rgba(255, 255, 255, 0.34);
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .hero-wallpaper .guide-chip {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .hero-wallpaper .guide-chip:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.38);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .hero-glass,
+  .glass-panel,
+  .glass-panel-solid,
+  .guide-chip,
+  .site-nav {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .hero-glass {
+    background: rgba(12, 12, 12, 0.9);
+  }
+
+  .glass-panel {
+    background: rgba(22, 21, 19, 0.96);
+  }
+
+  .hero-wallpaper .glass-panel {
+    background: rgba(22, 21, 19, 0.96);
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glass,
+  .hero-wallpaper .glass-panel,
+  .hero-wallpaper .guide-chip {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .hero-glass {
+    background: rgba(12, 12, 12, 0.82);
+  }
+
+  .hero-wallpaper .glass-panel {
+    background: rgba(20, 19, 17, 0.88);
+  }
 }
