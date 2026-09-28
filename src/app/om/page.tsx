@@ -33,8 +33,9 @@ export default function OmPage() {
           inte priset ni betalar. Köpet sluts med butiken, inte med Hyresro.
         </p>
         <p>
-          Länkarna går i dag till butikernas vanliga produktsidor. När vi är med i ett
-          affiliateprogram byts de mot spårbara länkar.
+          En del länkar är spårbara via affiliateprogram (bland annat Amazon Associates).
+          Övriga går fortfarande till butikernas vanliga produktsidor tills vi är med i
+          deras program.
         </p>
 
         <h2 className="text-xl font-semibold">Så väljer vi produkter</h2>

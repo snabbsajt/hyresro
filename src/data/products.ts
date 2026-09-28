@@ -1,5 +1,5 @@
 import type { Product } from "./types";
-import { wrapAddrevenue } from "./networks";
+import { wrapAddrevenue, wrapAmazon } from "./networks";
 
 export const products: Product[] = [
   {
@@ -46,7 +46,7 @@ export const products: Product[] = [
     mountType: "no-drill",
     surfaces: [],
     priceFromSek: 362,
-    merchants: [{ name: "Amazon.se", url: "https://www.amazon.se/Sonello-Pliss%C3%A9gardin-rullgardiner-kl%C3%A4mf%C3%A4sten-insynsskydd/dp/B0816LHM7X" }],
+    merchants: [{ name: "Amazon.se", url: wrapAmazon("https://www.amazon.se/Sonello-Pliss%C3%A9gardin-rullgardiner-kl%C3%A4mf%C3%A4sten-insynsskydd/dp/B0816LHM7X") }],
     notes: "Uttryckligt klämfäste. Mät karmdjup.",
     noteKey: "rullgardin",
     imageUrl: "/products/plisse-sonello-klam.jpg",
@@ -130,7 +130,7 @@ export const products: Product[] = [
     mountType: "no-drill",
     surfaces: [],
     priceFromSek: 167,
-    merchants: [{ name: "Amazon.se", url: "https://www.amazon.se/GARDINIA-sp%C3%A4nnst%C3%A5ng-Utdragbar-Montering-Mattsvart/dp/B07X5M5RLQ" }],
+    merchants: [{ name: "Amazon.se", url: wrapAmazon("https://www.amazon.se/GARDINIA-sp%C3%A4nnst%C3%A5ng-Utdragbar-Montering-Mattsvart/dp/B07X5M5RLQ") }],
     notes: "Trycks mellan väggar. Ingen skruv i karm.",
     imageUrl: "/products/gardinstang-spann.jpg",
   },
@@ -243,7 +243,7 @@ export const products: Product[] = [
     mountType: "no-drill",
     surfaces: [],
     priceFromSek: 299,
-    merchants: [{ name: "Amazon.se", url: "https://www.amazon.se/Toski-V%C3%A4gghylla-upps%C3%A4ttning-sj%C3%A4lvh%C3%A4ftande-vardagsrum/dp/B0BYJZPSYK" }],
+    merchants: [{ name: "Amazon.se", url: wrapAmazon("https://www.amazon.se/Toski-V%C3%A4gghylla-upps%C3%A4ttning-sj%C3%A4lvh%C3%A4ftande-vardagsrum/dp/B0BYJZPSYK") }],
     notes: "Självhäftande hylla. Kolla maxvikt och yta.",
     noteKey: "hylla",
     imageUrl: "/products/hylla-no-drill.jpg",
@@ -255,7 +255,7 @@ export const products: Product[] = [
     mountType: "no-drill",
     surfaces: [],
     priceFromSek: 322,
-    merchants: [{ name: "Amazon.se", url: "https://www.amazon.se/dp/B0F2MQF6QN" }],
+    merchants: [{ name: "Amazon.se", url: wrapAmazon("https://www.amazon.se/dp/B0F2MQF6QN") }],
     notes: "Trycks i nisch eller dörröppning.",
     noteKey: "hylla",
     imageUrl: "/products/spannstang-dorr.jpg",

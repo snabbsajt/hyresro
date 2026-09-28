@@ -9,7 +9,7 @@ export function hasTrackedAffiliate(product: Product): boolean {
       u.includes("addrevenue.io/t") ||
       u.includes("tc.tradetracker") ||
       u.includes("partner-ads.com") ||
-      u.includes("tag=") && u.includes("amazon.")
+      (u.includes("tag=") && u.includes("amazon."))
     );
   });
 }
