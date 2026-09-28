@@ -2,8 +2,10 @@
 
 export const ADDREVENUE = {
   channel: "3469712",
-  // Add merchant IDs only after Jonathan provides live deep links.
-  merchants: {},
+  merchants: {
+    ljusButiken: "986383",
+    ljusgrossisten: "986665",
+  },
 } as const;
 
 export type AddrevenueMerchant = keyof typeof ADDREVENUE.merchants;

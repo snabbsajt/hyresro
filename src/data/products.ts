@@ -1,4 +1,5 @@
 import type { Product } from "./types";
+import { wrapAddrevenue } from "./networks";
 
 export const products: Product[] = [
   {
@@ -247,6 +248,48 @@ export const products: Product[] = [
     merchants: [{ name: "Clas Ohlson", url: "https://www.clasohlson.com/se/Grenuttag-5-vags,-strombrytare,-5-m-kabel/p/36-8907" }],
     notes: "Summera watt. Ingen ny elpunkt.",
     imageUrl: "/products/grenuttag-5vag.jpg",
+  },
+
+  {
+    slug: "ljus-butiken-oslo-portabel-bordslampa-vit",
+    name: "Oslo portabel bordslampa — vit 38 cm",
+    category: "belysning",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 480,
+    priceNote: "kampanj — ord. 890 kr",
+    merchants: [
+      {
+        name: "Ljus-butiken.se",
+        url: wrapAddrevenue(
+          "ljusButiken",
+          "https://ljus-butiken.se/products/portabel-bordslampa-oslo-vit",
+        ),
+      },
+    ],
+    notes:
+      "Uppladdningsbar bordslampa (USB-C), touchdimmer, 6–10 timmars batteritid. IP20 — inomhus eller skyddad utomhus. Ingen montering.",
+    imageUrl: "/products/ljus-butiken-oslo-portabel-bordslampa-vit.jpg",
+  },
+  {
+    slug: "ljus-butiken-porto-portabel-bordslampa-gron",
+    name: "Porto portabel bordslampa — grön 24 cm",
+    category: "belysning",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 490,
+    merchants: [
+      {
+        name: "Ljus-butiken.se",
+        url: wrapAddrevenue(
+          "ljusButiken",
+          "https://ljus-butiken.se/products/portabel-bordslampa-porto-gron",
+        ),
+      },
+    ],
+    notes:
+      "Dimbar batteridriven lampa med handtag och USB-C, 6–10 timmars batteritid. IP20. Ställs på bord — ingen montering.",
+    imageUrl: "/products/ljus-butiken-porto-portabel-bordslampa-gron.jpg",
   },
   {
     slug: "brandfilt",
