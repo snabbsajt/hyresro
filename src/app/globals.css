@@ -140,6 +140,7 @@ main .text-stone-400 {
 
 .hero-wallpaper {
   position: relative;
+  width: 100%;
   min-height: 28rem;
   overflow: hidden;
 }
@@ -151,12 +152,12 @@ main .text-stone-400 {
 }
 
 .hero-fade {
-  /* Mobil: samma recept som tidigare (hårdare botten) */
+  /* Mobil: något lättare topp så wallpaper syns; botten hård för läsbarhet */
   background: linear-gradient(
     to bottom,
-    rgba(12, 12, 12, 0.15) 0%,
-    rgba(12, 12, 12, 0.35) 45%,
-    rgba(12, 12, 12, 0.85) 78%,
+    rgba(12, 12, 12, 0.1) 0%,
+    rgba(12, 12, 12, 0.28) 45%,
+    rgba(12, 12, 12, 0.8) 78%,
     #0c0c0c 100%
   );
   pointer-events: none;
@@ -165,23 +166,23 @@ main .text-stone-400 {
 /* Desktop: livligare wallpaper + flytande glass-paneler */
 @media (min-width: 768px) {
   .hero-wallpaper {
-    min-height: 38rem;
+    min-height: min(42rem, 88vh);
   }
 
   .hero-glass {
-    /* Lättare frost så fotot syns bakom glaset */
-    background: rgba(14, 13, 12, 0.3);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    /* Lättare frost så fotot syns bakom glaset (brightened wallpaper) */
+    background: rgba(14, 13, 12, 0.22);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
 
   .hero-fade {
     background: linear-gradient(
       to bottom,
-      rgba(12, 12, 12, 0.05) 0%,
-      rgba(12, 12, 12, 0.18) 35%,
-      rgba(12, 12, 12, 0.42) 65%,
-      rgba(12, 12, 12, 0.78) 88%,
+      rgba(12, 12, 12, 0.02) 0%,
+      rgba(12, 12, 12, 0.12) 35%,
+      rgba(12, 12, 12, 0.32) 65%,
+      rgba(12, 12, 12, 0.68) 88%,
       #0c0c0c 100%
     );
   }
