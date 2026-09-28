@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ProductCard } from "@/components/ProductCard";
+import { CategoryComparison } from "@/components/CategoryComparison";
 import { getProductsByCategory } from "@/lib/catalog";
 import { Crumbs } from "@/components/Crumbs";
 
@@ -24,7 +25,8 @@ export default async function Page() {
           Golvlampa, klämlampa, slinga och dimmer i sladden. Ingen takdosa. Summera watt på grenuttaget.
         </p>
       </header>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <CategoryComparison products={items} categoryLabel="belysning" />
+      <div id="produkter" className="grid scroll-mt-24 gap-4 sm:grid-cols-2">
         {items.map((p) => (
           <ProductCard key={p.slug} product={p} />
         ))}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
-import { CompareTable } from "@/components/CompareTable";
+import { CategoryComparison } from "@/components/CategoryComparison";
 import { getProductsByCategory } from "@/lib/catalog";
 import { Crumbs } from "@/components/Crumbs";
 import { ContractNote } from "@/components/ContractNote";
@@ -37,36 +37,8 @@ export default async function FastenPage() {
           <ContractNote />
         </p>
       </header>
-      <CompareTable
-        caption="Vilket fäste ska ni välja"
-        rows={[
-          {
-            name: "Självhäftande skruv — Tesa lätt",
-            bestFor: "Krokar, lätt ram, slät yta",
-            watch: "Maxvikt på förpackningen. Ren, torr vägg.",
-            fromSek: 70,
-          },
-          {
-            name: "Självhäftande skruv — Tesa tung",
-            bestFor: "Tyngre saker på kakel, glas, målad slät vägg",
-            watch: "Tapet och strukturputt släpper ofta. Ta bort enligt Tesa.",
-            fromSek: 70,
-          },
-          {
-            name: "Tavelupphängning — Command 5 kg",
-            bestFor: "Tavlor upp till angiven vikt",
-            watch: "Dra av remsan vid flytt. Inte på fuktig fog.",
-            fromSek: 50,
-          },
-          {
-            name: "Krok — Tesa kakel",
-            bestFor: "Handduk och lätta saker i badrum",
-            watch: "Kakelplattan, inte fogen.",
-            fromSek: 137,
-          },
-        ]}
-      />
-      <div className="grid gap-4 sm:grid-cols-2">
+      <CategoryComparison products={items} categoryLabel="fästen" />
+      <div id="produkter" className="grid scroll-mt-24 gap-4 sm:grid-cols-2">
         {items.map((p) => (
           <ProductCard key={p.slug} product={p} />
         ))}

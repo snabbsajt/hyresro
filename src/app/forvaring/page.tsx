@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
+import { CategoryComparison } from "@/components/CategoryComparison";
 import { getProductsByCategory } from "@/lib/catalog";
 import { Crumbs } from "@/components/Crumbs";
 import { ContractNote } from "@/components/ContractNote";
@@ -35,7 +36,8 @@ export default async function Page() {
           <ContractNote />
         </p>
       </header>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <CategoryComparison products={items} categoryLabel="förvaring" />
+      <div id="produkter" className="grid scroll-mt-24 gap-4 sm:grid-cols-2">
         {items.map((p) => (
           <ProductCard key={p.slug} product={p} />
         ))}

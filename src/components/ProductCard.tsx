@@ -26,7 +26,10 @@ export async function ProductCard({ product }: Props) {
   const imageUrl = resolveImageUrl(product);
 
   return (
-    <article className="overflow-hidden border border-white/12 bg-[#1c1b19] [content-visibility:auto]">
+    <article
+      id={product.slug}
+      className="scroll-mt-24 overflow-hidden border border-white/12 bg-[#1c1b19] [content-visibility:auto]"
+    >
       {imageUrl ? (
         <img
           src={imageUrl}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
-import { CompareTable } from "@/components/CompareTable";
+import { CategoryComparison } from "@/components/CategoryComparison";
 import { getProductsByCategory } from "@/lib/catalog";
 import { Crumbs } from "@/components/Crumbs";
 import { ContractNote } from "@/components/ContractNote";
@@ -39,36 +39,8 @@ export default async function SolskyddPage() {
           <ContractNote />
         </p>
       </header>
-      <CompareTable
-        caption="Vilken typ ska ni välja"
-        rows={[
-          {
-            name: "D-C-FIX solskyddsfilm — självhäftande 92×200 cm",
-            bestFor: "Glas utan list, sol på kök/badrum",
-            watch: "Testa liten yta. Kan lämna lim om den sitter länge.",
-            fromSek: 329,
-          },
-          {
-            name: "Rullgardin — Bolga mörkläggande",
-            bestFor: "Sova, mörklägga, vanligt fönster",
-            watch: "Kontrollera att er storlek har klämfäste, inte skruv.",
-            fromSek: 199,
-          },
-          {
-            name: "Plisségardin — Hven upp/ner",
-            bestFor: "Insyn och ljus upp/ner",
-            watch: "Bekräfta att just den modellen har klämfäste.",
-            fromSek: 275,
-          },
-          {
-            name: "Gardinstång — GARDINIA spännstång",
-            bestFor: "Nisch eller fönster mellan två väggar",
-            watch: "Kräver motstånd på båda sidor. Inte på lös list.",
-            fromSek: 167,
-          },
-        ]}
-      />
-      <div className="grid gap-4 sm:grid-cols-2">
+      <CategoryComparison products={items} categoryLabel="solskydd" />
+      <div id="produkter" className="grid scroll-mt-24 gap-4 sm:grid-cols-2">
         {items.map((p) => (
           <ProductCard key={p.slug} product={p} />
         ))}
