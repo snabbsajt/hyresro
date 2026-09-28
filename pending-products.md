@@ -21,7 +21,7 @@ En produkt behöver följande innan den går live:
 - `ljusgrossisten` `a=986665` — ingen produkt än (Sylvania struken)
 - `kokochbad` `a=987907` — live: Base enkelkrok, Base 210, kroklist, toalettpappershållare
 - `fonsterfilm` `a=986347` — live: frostad, randig, blommig fönsterfilm
-- `boelle` `a=988151` — live: Alva klädhängare, Quito klädhängare
+- `boelle` `a=988151` — live: Alva, Quito, Umeå golvlampa, Manaus hylla
 
 ## Strukna / publicera inte
 
@@ -33,7 +33,7 @@ En produkt behöver följande innan den går live:
 - Kök&Bad Base (4): `base-enkelkrok-mattsvart`, `base-210-3-krok-borstad-rostfritt`, `base-kroklist-med-hylla-mattsvart`, `base-toalettpappershallare-med-hylla-borstad-rostfritt`
 - Fönsterfilm.se (3): `frostad-fonsterfilm-insynsskydd-utan-lim`, `fonsterfilm-randigt-frostad-monster`, `fonsterfilm-vackert-blommigt-monster`
 - Ljus-butiken (2): `flowerbud-portabel-bordslampa-gul`, `iron-portabel-bordslampa-krom` (ordinarie pris)
-- Boelle.se (2): `boelle-alva-kladhangare-vitlaserad`, `boelle-quito-kladhangare-svart`
+- Boelle.se (4): `boelle-alva-kladhangare-vitlaserad`, `boelle-quito-kladhangare-svart`, `boelle-umea-golvlampa-gra-linne`, `boelle-manaus-hylla-svart`
 
 ## Kö — väntar tracking
 

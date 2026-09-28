@@ -19,7 +19,7 @@ export default function OmPage() {
           man inreder utan onödiga hål, och vad som oftast gäller innan man borrar.
         </p>
         <p>
-          Texten ersätter inte{" "}
+          Hemsidan ersätter inte{" "}
           <Link href="/guide/kolla-kontraktet" className="underline underline-offset-2">
             kontraktet
           </Link>{" "}

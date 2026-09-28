@@ -354,6 +354,27 @@ export const products: Product[] = [
   },
 
   {
+    slug: "boelle-manaus-hylla-svart",
+    name: "Manaus hylla — Svart",
+    category: "forvaring",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 616,
+    merchants: [
+      {
+        name: "Boelle.se",
+        url: wrapAddrevenue(
+          "boelle",
+          "https://boelle.se/products/venture-home-manaus-drawer-black",
+        ),
+      },
+    ],
+    notes: "Fristående förvaringshylla med lådor och hjul. Ingen väggmontage.",
+    noteKey: "hylla",
+    imageUrl: "/products/boelle-manaus-hylla-svart.jpg",
+  },
+
+  {
     slug: "blomlada-racke-co",
     name: "Blomlåda — räcke Clas Ohlson",
     category: "forvaring",
@@ -398,6 +419,26 @@ export const products: Product[] = [
     merchants: [{ name: "Clas Ohlson", url: "https://www.clasohlson.com/se/Northlight-Didrik-golvlampa,-linne-och-metall/p/36-9869" }],
     notes: "Står på golvet. Ingen takdosa.",
     imageUrl: "/products/golvlampa-didrik.jpg",
+  },
+
+  {
+    slug: "boelle-umea-golvlampa-gra-linne",
+    name: "Umeå golvlampa — grå linne",
+    category: "belysning",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 1899,
+    merchants: [
+      {
+        name: "Boelle.se",
+        url: wrapAddrevenue(
+          "boelle",
+          "https://boelle.se/products/vind-umea-x-josefin-lustig-floor-lamp-grey-grey-linen-fabric",
+        ),
+      },
+    ],
+    notes: "Fristående golvlampa. Står på golvet — ingen takdosa eller väggmontage.",
+    imageUrl: "/products/boelle-umea-golvlampa-gra-linne.jpg",
   },
   {
     slug: "klamlampa-flex",
