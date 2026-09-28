@@ -8,6 +8,11 @@ export type NavItem = {
 
 export const navItems: readonly NavItem[] = [
   {
+    id: "ljus",
+    label: "Ljus & el",
+    links: [{ href: "/belysning", label: "Belysning & sladd" }],
+  },
+  {
     id: "fasta",
     label: "Fästa & förvara",
     links: [
@@ -19,6 +24,11 @@ export const navItems: readonly NavItem[] = [
     ],
   },
   {
+    id: "sakerhet",
+    label: "Kök & säkerhet",
+    links: [{ href: "/sakerhet", label: "Säkerhet" }],
+  },
+  {
     id: "sol",
     label: "Sol & fönster",
     links: [
@@ -26,16 +36,6 @@ export const navItems: readonly NavItem[] = [
       { href: "/guide/rullgardin-utan-borra", label: "Rullgardin utan borr" },
       { href: "/guide/plissegardin-utan-borra", label: "Plisségardin utan borr" },
     ],
-  },
-  {
-    id: "ljus",
-    label: "Ljus & el",
-    links: [{ href: "/belysning", label: "Belysning & sladd" }],
-  },
-  {
-    id: "sakerhet",
-    label: "Kök & säkerhet",
-    links: [{ href: "/sakerhet", label: "Säkerhet" }],
   },
   {
     id: "alla",

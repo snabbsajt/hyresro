@@ -7,11 +7,11 @@ import { ProductPrice } from "./ProductPrice";
 import { AffiliateLink } from "./AffiliateLink";
 
 const categoryTitles: Record<string, string> = {
-  solskydd: "solskydd",
+  belysning: "belysning",
   fasten: "fästen",
   forvaring: "förvaring",
-  belysning: "belysning",
   sakerhet: "kök och säkerhet",
+  solskydd: "solskydd",
 };
 
 type Props = {

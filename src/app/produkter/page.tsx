@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 };
 
 const categoryOrder: { key: string; title: string }[] = [
-  { key: "solskydd", title: "Sol och fönster" },
+  { key: "belysning", title: "Ljus och el" },
   { key: "fasten", title: "Fästen" },
   { key: "forvaring", title: "Förvaring" },
-  { key: "belysning", title: "Ljus och el" },
   { key: "sakerhet", title: "Kök och säkerhet" },
+  { key: "solskydd", title: "Sol och fönster" },
 ];
 
 type Section = { key: string; title: string; items: Product[] };

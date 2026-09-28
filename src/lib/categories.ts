@@ -1,19 +1,19 @@
 /** Product category slug → site route (same paths as app/ and sitemap). */
 export const CATEGORY_HREFS: Record<string, `/${string}`> = {
-  solskydd: "/solskydd",
+  belysning: "/belysning",
   fasten: "/fasten",
   forvaring: "/forvaring",
-  belysning: "/belysning",
   sakerhet: "/sakerhet",
+  solskydd: "/solskydd",
 };
 
 /** Short Swedish labels for aria/title (category page, not product). */
 export const CATEGORY_LABELS: Record<string, string> = {
-  solskydd: "solskydd",
+  belysning: "belysning",
   fasten: "fästen",
   forvaring: "förvaring",
-  belysning: "belysning",
   sakerhet: "kök och säkerhet",
+  solskydd: "solskydd",
 };
 
 export function getCategoryHref(category: string): `/${string}` | undefined {
