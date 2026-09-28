@@ -25,6 +25,12 @@ export default function IntegritetPage() {
           </a>
         </p>
 
+        <h2 className="text-xl font-semibold">Om innehållet</h2>
+        <p>
+          Vi är inte jurist och inte butik. Innehållet på sajten är allmän information och
+          ersätter inte ert hyreskontrakt eller värdens besked.
+        </p>
+
         <h2 className="text-xl font-semibold">Vad vi behandlar</h2>
         <p>
           Inget konto. Inget nyhetsbrev. Ingen egen statistik-cookie just nu. Om ni skriver till

@@ -111,7 +111,7 @@ export default async function HomePage() {
           <p>
             Hyresro hjälper er att inreda och använda hyresrätten utan onödiga hål. Guiderna
             förklarar vad som oftast går, vad som kräver värdens ja, och hur produkterna fästs.
-            Produkterna kommer från svenska återförsäljare. Vi är inte jurist och inte butik.
+            Produkterna kommer från svenska återförsäljare.
           </p>
         </section>
 
