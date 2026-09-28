@@ -4,7 +4,6 @@ import type { Product } from "@/data/types";
 import { AffiliateLink } from "./AffiliateLink";
 import { ProductPrice } from "./ProductPrice";
 import { ProductCategoryTitleLink } from "./ProductCategoryTitleLink";
-import { ProductImageSlot } from "./ProductImageSlot";
 
 type Props = {
   product: Product;
@@ -32,11 +31,17 @@ export async function ProductCard({ product }: Props) {
       id={product.slug}
       className="scroll-mt-24 overflow-hidden border border-white/12 bg-[#1c1b19] [content-visibility:auto]"
     >
-      <ProductImageSlot
-        src={imageUrl}
-        alt={product.imageAlt || product.name}
-        backdrop={product.imageBackdrop}
-      />
+      {imageUrl ? (
+        <img
+          src={imageUrl}
+          alt={product.imageAlt || product.name}
+          className="aspect-[4/3] w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <div className="aspect-[4/3] w-full bg-[#141414]" aria-hidden />
+      )}
       <div className="px-4 py-3">
         <h3 className="mb-1.5 font-medium" style={{ color: "#d6d0c4" }}>
           <ProductCategoryTitleLink

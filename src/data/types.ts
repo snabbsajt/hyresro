@@ -5,9 +5,6 @@ export type Merchant = {
   url: string;
 };
 
-/** Image slot surface behind the product photo. Default: solid white. */
-export type ImageBackdrop = "studio" | "dark" | "light";
-
 export type Product = {
   slug: string;
   name: string;
@@ -27,6 +24,4 @@ export type Product = {
   legalNote?: string;
   imageUrl?: string;
   imageAlt?: string;
-  /** Image slot surface. Defaults to solid white; use for product-specific exceptions. */
-  imageBackdrop?: ImageBackdrop;
 };
