@@ -17,12 +17,21 @@ En produkt behöver följande innan den går live:
 ## Registrerade merchants (Addrevenue)
 
 - channel `c=3469712` (Hyresro)
-- `ljusButiken` `a=986383` — live: Oslo + Porto i `products.ts`
+- `ljusButiken` `a=986383` — live: Oslo, Porto, Flowerbud, Iron i `products.ts`
 - `ljusgrossisten` `a=986665` — ingen produkt än (Sylvania struken)
+- `kokochbad` `a=987907` — live: Base enkelkrok, Base 210, kroklist, toalettpappershållare
+- `fonsterfilm` `a=986347` — live: frostad, randig, blommig fönsterfilm
 
 ## Strukna / publicera inte
 
 - **Sylvania Cabinet Sense Linear USB** (Ljusgrossisten): utgången, opålitligt pris, oklart fäste
+
+
+## Publicerat 2026-09-28 (ej längre i kö)
+
+- Kök&Bad Base (4): `base-enkelkrok-mattsvart`, `base-210-3-krok-borstad-rostfritt`, `base-kroklist-med-hylla-mattsvart`, `base-toalettpappershallare-med-hylla-borstad-rostfritt`
+- Fönsterfilm.se (3): `frostad-fonsterfilm-insynsskydd-utan-lim`, `fonsterfilm-randigt-frostad-monster`, `fonsterfilm-vackert-blommigt-monster`
+- Ljus-butiken (2): `flowerbud-portabel-bordslampa-gul`, `iron-portabel-bordslampa-krom` (ordinarie pris)
 
 ## Kö — väntar tracking
 

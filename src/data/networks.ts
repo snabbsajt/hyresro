@@ -5,6 +5,8 @@ export const ADDREVENUE = {
   merchants: {
     ljusButiken: "986383",
     ljusgrossisten: "986665",
+    kokochbad: "987907",
+    fonsterfilm: "986347",
   },
 } as const;
 

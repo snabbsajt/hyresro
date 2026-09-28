@@ -63,6 +63,67 @@ export const products: Product[] = [
     imageUrl: "/products/fonsterfilm-dcfix.jpg",
   },
   {
+    slug: "frostad-fonsterfilm-insynsskydd-utan-lim",
+    name: "Frostad fönsterfilm – insynsskydd utan lim",
+    category: "solskydd",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 279,
+    merchants: [
+      {
+        name: "Fönsterfilm.se",
+        url: wrapAddrevenue(
+          "fonsterfilm",
+          "https://xn--fnsterfilm-ecb.se/products/fonsterfilm-frostad-enkel-insynsskydd",
+        ),
+      },
+    ],
+    notes:
+      "Statisk film utan lim — insynsskydd som släpper igenom dagsljus. Enkel att sätta upp och ta bort.",
+    imageUrl: "/products/frostad-fonsterfilm-insynsskydd-utan-lim.jpg",
+  },
+  {
+    slug: "fonsterfilm-randigt-frostad-monster",
+    name: "Fönsterfilm med randigt frostat mönster",
+    category: "solskydd",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 249,
+    merchants: [
+      {
+        name: "Fönsterfilm.se",
+        url: wrapAddrevenue(
+          "fonsterfilm",
+          "https://xn--fnsterfilm-ecb.se/products/fonsterfilm-randig-frostad-design",
+        ),
+      },
+    ],
+    notes:
+      "Frostad film med randigt mönster. Ingen lim — fästs på glas utan borr eller skruv.",
+    imageUrl: "/products/fonsterfilm-randigt-frostad-monster.jpg",
+  },
+  {
+    slug: "fonsterfilm-vackert-blommigt-monster",
+    name: "Fönsterfilm med vackert blommönster",
+    category: "solskydd",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 269,
+    merchants: [
+      {
+        name: "Fönsterfilm.se",
+        url: wrapAddrevenue(
+          "fonsterfilm",
+          "https://xn--fnsterfilm-ecb.se/products/fonsterfilm-vackert-blommigt-monster",
+        ),
+      },
+    ],
+    notes:
+      "Dekorativ frostad film med blommönster. Ingen lim — fästs på glas utan borr.",
+    imageUrl: "/products/fonsterfilm-vackert-blommigt-monster.jpg",
+  },
+
+  {
     slug: "gardinstang-spann",
     name: "Gardinstång — GARDINIA spännstång",
     category: "solskydd",
@@ -135,6 +196,47 @@ export const products: Product[] = [
     imageUrl: "/products/command-tavel.jpg",
   },
   {
+    slug: "base-enkelkrok-mattsvart",
+    name: "Base - Enkelkrok - Mattsvart",
+    category: "fasten",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 73,
+    merchants: [
+      {
+        name: "Kök&Bad",
+        url: wrapAddrevenue(
+          "kokochbad",
+          "https://kokochbad.se/produkt/base-enkelkrok-mattsvart",
+        ),
+      },
+    ],
+    notes: "Självhäftande enkelkrok utan borrning. Ren och torr yta.",
+    noteKey: "kontrakt",
+    imageUrl: "/products/base-enkelkrok-mattsvart.jpg",
+  },
+  {
+    slug: "base-210-3-krok-borstad-rostfritt",
+    name: "Base 210 - 3 Krok - Borstad rostfritt",
+    category: "fasten",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 221,
+    merchants: [
+      {
+        name: "Kök&Bad",
+        url: wrapAddrevenue(
+          "kokochbad",
+          "https://kokochbad.se/produkt/base-210-3-krok-borstad-rostfritt",
+        ),
+      },
+    ],
+    notes: "Självhäftande trekrok utan borrning. Följ maxvikt.",
+    noteKey: "kontrakt",
+    imageUrl: "/products/base-210-3-krok-borstad-rostfritt.jpg",
+  },
+
+  {
     slug: "hylla-no-drill",
     name: "Vägghylla — Toski självhäftande",
     category: "forvaring",
@@ -170,6 +272,47 @@ export const products: Product[] = [
     noteKey: "hylla",
     imageUrl: "/products/toaletthylla-staende.jpg",
   },
+  {
+    slug: "base-kroklist-med-hylla-mattsvart",
+    name: "Base - Kroklist med hylla - Mattsvart",
+    category: "forvaring",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 524,
+    merchants: [
+      {
+        name: "Kök&Bad",
+        url: wrapAddrevenue(
+          "kokochbad",
+          "https://kokochbad.se/produkt/base-kroklist-med-hylla-mattsvart",
+        ),
+      },
+    ],
+    notes: "Självhäftande kroklist med hylla. Ingen borr — kolla maxvikt och yta.",
+    noteKey: "hylla",
+    imageUrl: "/products/base-kroklist-med-hylla-mattsvart.jpg",
+  },
+  {
+    slug: "base-toalettpappershallare-med-hylla-borstad-rostfritt",
+    name: "Base - Toalettpappershållare med hylla - Borstad rostfritt",
+    category: "forvaring",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 450,
+    merchants: [
+      {
+        name: "Kök&Bad",
+        url: wrapAddrevenue(
+          "kokochbad",
+          "https://kokochbad.se/produkt/base-toalettpappershallare-med-hylla-borstad-rostfritt",
+        ),
+      },
+    ],
+    notes: "Självhäftande toalettpappershållare med hylla. Ingen borr.",
+    noteKey: "hylla",
+    imageUrl: "/products/base-toalettpappershallare-med-hylla-borstad-rostfritt.jpg",
+  },
+
   {
     slug: "blomlada-racke-co",
     name: "Blomlåda — räcke Clas Ohlson",
@@ -290,6 +433,47 @@ export const products: Product[] = [
       "Dimbar batteridriven lampa med handtag och USB-C, 6–10 timmars batteritid. IP20. Ställs på bord — ingen montering.",
     imageUrl: "/products/ljus-butiken-porto-portabel-bordslampa-gron.jpg",
   },
+  {
+    slug: "flowerbud-portabel-bordslampa-gul",
+    name: "Flowerbud portabel bordslampa Gul 30 cm",
+    category: "belysning",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 1295,
+    merchants: [
+      {
+        name: "Ljus-butiken.se",
+        url: wrapAddrevenue(
+          "ljusButiken",
+          "https://ljus-butiken.se/products/portabel-bordslampa-flowerbud-gul",
+        ),
+      },
+    ],
+    notes:
+      "Uppladdningsbar bordslampa (USB) med dimbart ljus, ca 30 cm. Ställs på bord — ingen montering.",
+    imageUrl: "/products/flowerbud-portabel-bordslampa-gul.jpg",
+  },
+  {
+    slug: "iron-portabel-bordslampa-krom",
+    name: "Iron portabel bordslampa Krom 28 cm",
+    category: "belysning",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 720,
+    merchants: [
+      {
+        name: "Ljus-butiken.se",
+        url: wrapAddrevenue(
+          "ljusButiken",
+          "https://ljus-butiken.se/products/portabel-bordslampa-iron-krom",
+        ),
+      },
+    ],
+    notes:
+      "Uppladdningsbar bordslampa i krom med dimbart ljus, ca 28 cm. Ställs på bord — ingen montering.",
+    imageUrl: "/products/iron-portabel-bordslampa-krom.jpg",
+  },
+
   {
     slug: "brandfilt",
     name: "Brandfilt",
