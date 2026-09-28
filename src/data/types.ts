@@ -5,7 +5,7 @@ export type Merchant = {
   url: string;
 };
 
-/** Image slot surface behind the product photo. Default: studio. */
+/** Image slot surface behind the product photo. Default: solid white. */
 export type ImageBackdrop = "studio" | "dark" | "light";
 
 export type Product = {
@@ -27,10 +27,6 @@ export type Product = {
   legalNote?: string;
   imageUrl?: string;
   imageAlt?: string;
-  /**
-   * Image slot surface. Default "studio" (soft warm gray) — contrasts with
-   * both the dark site and light / transparent PNG products. No per-product
-   * flag needed for typical light shots (e.g. white Oslo lamp).
-   */
+  /** Image slot surface. Defaults to solid white; use for product-specific exceptions. */
   imageBackdrop?: ImageBackdrop;
 };
