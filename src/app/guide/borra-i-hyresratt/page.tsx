@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default async function BorraIHyresrattPage() {
   const products = await getCatalog();
   const related = products.filter((p) =>
-    ["tesa-skruv-latt", "tesa-skruv-tung", "hylla-no-drill"].includes(p.slug),
+    ["amz-virea-vaggkrokar-8kg-latt", "amz-virea-vaggkrokar-8kg-tung", "hylla-no-drill"].includes(p.slug),
   );
 
   return (

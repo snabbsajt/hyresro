@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 export default async function TavlaPage() {
-  const command = await getProduct("command-tavel");
-  const tesaLatt = await getProduct("tesa-skruv-latt");
-  const tesaTung = await getProduct("tesa-skruv-tung");
+  const command = await getProduct("amz-designfabrik-kokskrokar");
+  const tesaLatt = await getProduct("amz-virea-vaggkrokar-8kg-latt");
+  const tesaTung = await getProduct("amz-virea-vaggkrokar-8kg-tung");
 
   return (
     <article className="space-y-8">

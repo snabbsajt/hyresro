@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 export default async function RullgardinUtanBorraPage() {
-  const klam = await getProduct("rullgardin-klamfaste");
-  const mork = await getProduct("morklaggning-klam");
-  const plisse = await getProduct("plissegardin-hven");
+  const klam = await getProduct("amz-vounot-duo");
+  const mork = await getProduct("amz-gardinia");
+  const plisse = await getProduct("plisse-sonello-klam");
 
   return (
     <article className="space-y-8">

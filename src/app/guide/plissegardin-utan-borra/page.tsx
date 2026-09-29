@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 export default async function PlissePage() {
-  const hven = await getProduct("plissegardin-hven");
   const sonello = await getProduct("plisse-sonello-klam");
-  const film = await getProduct("fonsterfilm-dcfix");
+  const film = await getProduct("frostad-fonsterfilm-insynsskydd-utan-lim");
+  const filmRandig = await getProduct("fonsterfilm-randigt-frostad-monster");
 
   return (
     <article className="space-y-8">
@@ -93,7 +93,7 @@ export default async function PlissePage() {
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Produkter</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {[hven, sonello, film].filter(Boolean).map((p) => (
+          {[sonello, film, filmRandig].filter(Boolean).map((p) => (
             <ProductCard key={p!.slug} product={p!} />
           ))}
         </div>

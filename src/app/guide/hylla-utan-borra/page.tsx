@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 
 export default async function HyllaUtanBorraPage() {
   const hylla = await getProduct("hylla-no-drill");
-  const tesaTung = await getProduct("tesa-skruv-tung");
-  const tesaLatt = await getProduct("tesa-skruv-latt");
+  const tesaTung = await getProduct("amz-virea-vaggkrokar-8kg-tung");
+  const tesaLatt = await getProduct("amz-virea-vaggkrokar-8kg-latt");
 
   return (
     <article className="space-y-8">

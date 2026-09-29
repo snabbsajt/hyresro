@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 export default async function BalkongPage() {
-  const laCo = await getProduct("blomlada-racke-co");
-  const laCdon = await getProduct("blomlada-racke-cdon");
-  const slinga = await getProduct("ljusslinga-sladd");
+  const laCo = await getProduct("amz-xclou-blomladahallare");
+  const laCdon = await getProduct("amz-comfour");
+  const slinga = await getProduct("amz-hit-ledslinga-96");
 
   return (
     <article className="space-y-8">
