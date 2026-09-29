@@ -22,6 +22,30 @@ En produkt behöver följande innan den går live:
 - `kokochbad` `a=987907` — live: Base enkelkrok, Base 210, kroklist, toalettpappershållare
 - `fonsterfilm` `a=986347` — live: frostad, randig, blommig fönsterfilm
 - `boelle` `a=988151` — live: Alva, Quito, Umeå golvlampa, Manaus hylla
+- `solskyddsshoppen` `a=985467` — live: Plisségardin Flex, Flex Dubbel, insektsnät skjutdörr plissé, insektsnät fönster (c=3469712)
+
+
+## Publicerat 2026-09-29 — Solskyddsshoppen (Addrevenue a=985467)
+
+Live i `products.ts` (no-drill / either med ärlig notering):
+
+| slug | price_sek | mount | notes |
+|---|---:|---|---|
+| `plissegardin-flex` | 795 | no-drill | självhäftande fäste +199 kr; lim max ~2 m² |
+| `plissegardin-flex-dubbel` | 995 | no-drill | samma lim-notering |
+| `insektsnat-skjutdorr-plisse` | 4490 | either | limmad bottenprofil vs skruvad hög profil |
+| `insektsnat-fonster` | 1785 | either | utvändigt; verktyg/skenor osäkra — ärlig copy |
+
+### Drill-ok deferred (publicera inte)
+
+Montage med skruv/borra — ligger kvar i kö tills vidare. Ignorera redan rejected markiser.
+
+| suggested_slug | product_url | status | notes |
+|---|---|---|---|
+| `rullgardin-modern` | <https://solskyddsshoppen.se/rullgardin-modern/> | deferred drill-ok | — |
+| `rullgardin-classic` | <https://solskyddsshoppen.se/rullgardin-classic/> | deferred drill-ok | — |
+| `rullgardin-premium` | <https://solskyddsshoppen.se/rullgardin-premium/> | deferred drill-ok | — |
+| `persienn-bambu-50mm` | <https://solskyddsshoppen.se/persienn-bambu-50mm/> | deferred drill-ok | — |
 
 ## Strukna / publicera inte
 

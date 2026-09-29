@@ -8,6 +8,7 @@ export const ADDREVENUE = {
     kokochbad: "987907",
     fonsterfilm: "986347",
     boelle: "988151",
+    solskyddsshoppen: "985467",
   },
 } as const;
 

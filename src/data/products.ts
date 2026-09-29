@@ -129,6 +129,92 @@ export const products: Product[] = [
   },
 
   {
+    slug: "plissegardin-flex",
+    name: "Plisségardin Flex — Solskyddsshoppen",
+    category: "solskydd",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 795,
+    merchants: [
+      {
+        name: "Solskyddsshoppen",
+        url: wrapAddrevenue(
+          "solskyddsshoppen",
+          "https://solskyddsshoppen.se/plissegardin-flex/",
+        ),
+      },
+    ],
+    notes:
+      "Självhäftande fäste tillval (+199 kr). Butiken rekommenderar limfäste bara till fönster upp till ca 2 m² — större fönster kräver skruv. Måttanpassad up-and-down plissé.",
+    noteKey: "rullgardin",
+    imageUrl: "/products/plissegardin-flex.jpg",
+  },
+
+  {
+    slug: "plissegardin-flex-dubbel",
+    name: "Plisségardin Flex Dubbel — Solskyddsshoppen",
+    category: "solskydd",
+    mountType: "no-drill",
+    surfaces: [],
+    priceFromSek: 995,
+    merchants: [
+      {
+        name: "Solskyddsshoppen",
+        url: wrapAddrevenue(
+          "solskyddsshoppen",
+          "https://solskyddsshoppen.se/plissegardin-flex-dubbel/",
+        ),
+      },
+    ],
+    notes:
+      "Dubbeltyg (honeycomb). Självhäftande fäste tillval (+199 kr); limfäste rekommenderas bara upp till ca 2 m². Annars skruvmontage.",
+    noteKey: "rullgardin",
+    imageUrl: "/products/plissegardin-flex-dubbel.jpg",
+  },
+
+  {
+    slug: "insektsnat-skjutdorr-plisse",
+    name: "Insektsnät skjutdörr plissé — Solskyddsshoppen",
+    category: "ovrigt",
+    mountType: "either",
+    surfaces: [],
+    priceFromSek: 4490,
+    merchants: [
+      {
+        name: "Solskyddsshoppen",
+        url: wrapAddrevenue(
+          "solskyddsshoppen",
+          "https://solskyddsshoppen.se/insektsnat-skjutdorr-plisse/",
+        ),
+      },
+    ],
+    notes:
+      "Låg bottenprofil limmas (6 mm, ingen skruv i golv); hög bottenprofil är den som skruvas. Välj limmad profil för hyresvänligt montage. Högt från-pris.",
+    imageUrl: "/products/insektsnat-skjutdorr-plisse.jpg",
+  },
+
+  {
+    slug: "insektsnat-fonster",
+    name: "Insektsnät fönster — Solskyddsshoppen",
+    category: "ovrigt",
+    mountType: "either",
+    surfaces: [],
+    priceFromSek: 1785,
+    merchants: [
+      {
+        name: "Solskyddsshoppen",
+        url: wrapAddrevenue(
+          "solskyddsshoppen",
+          "https://solskyddsshoppen.se/insektsnat-fonster/",
+        ),
+      },
+    ],
+    notes:
+      "Monteras utvändigt; fästen ingår. Butiken skriver att krångliga verktyg inte behövs, men montering i karm/foder med skenor är vanligt — osäkert som rent no-drill. Kolla med värden innan.",
+    imageUrl: "/products/insektsnat-fonster.jpg",
+  },
+
+  {
     slug: "amz-virea-vaggkrokar-8kg-latt",
     name: "Virea väggkrokar 8 kg — lätt",
     category: "fasten",
