@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/config/site";
+import { getAllSolutionSlugs } from "@/data/solutions";
 
 const paths = [
   "/",
@@ -22,6 +23,7 @@ const paths = [
   "/integritet",
   "/kontakt",
   "/affiliate-info",
+  ...getAllSolutionSlugs().map((slug) => `/losning/${slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FeaturedAffiliateGrid } from "@/components/FeaturedAffiliateGrid";
 import { GuideCard } from "@/components/GuideCard";
 import { site } from "@/config/site";
+import { solutions } from "@/data/solutions";
 import { getTrackedAffiliateProducts } from "@/lib/catalog";
 
 export const metadata: Metadata = {
@@ -20,38 +21,11 @@ export const metadata: Metadata = {
   },
 };
 
-const problemCards = [
-  {
-    href: "/guide/tavla-pa-gips",
-    title: "Hänga tavla",
-    blurb: "Tejp-krok på gips — vikt, yta och hur ni tar ner.",
-  },
-  {
-    href: "/guide/hylla-utan-borra",
-    title: "Sätta hylla",
-    blurb: "Självhäftande hylla utan hål. Maxvikt och yta.",
-  },
-  {
-    href: "/guide/borra-i-hyresratt",
-    title: "TV eller tungt",
-    blurb: "När tejpen inte räcker — och när ni måste fråga.",
-  },
-  {
-    href: "/guide/rullgardin-utan-borra",
-    title: "Gardiner",
-    blurb: "Rullgardin och plissé med kläm — utan skruv i karm.",
-  },
-  {
-    href: "/forvaring",
-    title: "Badrum",
-    blurb: "Hyllor och krokar för kakel utan borr.",
-  },
-  {
-    href: "/guide/borra-i-hyresratt",
-    title: "Får jag borra?",
-    blurb: "Kort om vad som oftast gäller i hyresrätt.",
-  },
-] as const;
+const problemCards = solutions.map((s) => ({
+  href: s.href,
+  title: s.cardTitle,
+  blurb: s.cardBlurb,
+}));
 
 export default async function HomePage() {
   const tracked = await getTrackedAffiliateProducts();
@@ -118,11 +92,13 @@ export default async function HomePage() {
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4">
               {problemCards.map((e) => (
                 <GuideCard
-                  key={`${e.href}-${e.title}`}
+                  key={e.href}
                   href={e.href}
                   title={e.title}
                   blurb={e.blurb}
                   className="problem-card"
+                  badge="Lösning"
+                  cta="Se lösningar"
                 />
               ))}
             </div>
@@ -159,6 +135,21 @@ export default async function HomePage() {
               hyreskontrakt
             </Link>{" "}
             innan ni köper monteringsutrustning.
+          </p>
+        </section>
+
+        <section className="max-w-xl space-y-2 border-t border-white/10 pt-10">
+          <p className="text-sm text-stone-400">
+            <Link
+              href="/guide/borra-i-hyresratt"
+              className="font-medium text-stone-300 underline underline-offset-2 hover:text-white"
+            >
+              Osäker på vad du får göra?
+            </Link>
+            <span className="text-stone-500">
+              {" "}
+              — kort om vad som oftast gäller när ni vill borra eller fästa tungt.
+            </span>
           </p>
         </section>
       </div>

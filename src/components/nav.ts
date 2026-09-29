@@ -6,41 +6,50 @@ export type NavItem = {
   links: readonly NavLink[];
 };
 
+/** Option B — short problem-ish labels; Alla produkter lives in footer. */
 export const navItems: readonly NavItem[] = [
   {
-    id: "ljus",
-    label: "Ljus & el",
-    links: [{ href: "/belysning", label: "Belysning & sladd" }],
-  },
-  {
-    id: "fasta",
-    label: "Fästa & förvara",
+    id: "hanga",
+    label: "Hänga upp",
     links: [
-      { href: "/fasten", label: "Fästen" },
-      { href: "/forvaring", label: "Förvaring" },
-      { href: "/guide/hylla-utan-borra", label: "Hylla utan borr" },
+      { href: "/losning/hanga-upp", label: "Hänga upp saker" },
+      { href: "/fasten", label: "Alla fästen" },
       { href: "/guide/tavla-pa-gips", label: "Tavla på gips" },
-      { href: "/guide/balkong-utan-borra", label: "Balkong utan borr" },
+      { href: "/guide/hylla-utan-borra", label: "Hylla utan borr" },
     ],
   },
   {
-    id: "sakerhet",
-    label: "Kök & säkerhet",
-    links: [{ href: "/sakerhet", label: "Säkerhet" }],
-  },
-  {
-    id: "sol",
-    label: "Sol & fönster",
+    id: "fonster",
+    label: "Fönster & ljus",
     links: [
-      { href: "/solskydd", label: "Solskydd" },
+      { href: "/losning/gardiner", label: "Sätta upp gardiner" },
+      { href: "/losning/morklagga", label: "Mörklägga" },
+      { href: "/losning/insynsskydd", label: "Insynsskydd" },
+      { href: "/solskydd", label: "Alla solskydd" },
+      { href: "/belysning", label: "Belysning" },
       { href: "/guide/rullgardin-utan-borra", label: "Rullgardin utan borr" },
       { href: "/guide/plissegardin-utan-borra", label: "Plisségardin utan borr" },
     ],
   },
   {
-    id: "alla",
-    label: "Alla produkter",
-    links: [{ href: "/produkter", label: "Hela katalogen" }],
+    id: "forvara",
+    label: "Förvara",
+    links: [
+      { href: "/losning/forvaring", label: "Få mer förvaring" },
+      { href: "/forvaring", label: "Alla förvaring" },
+      { href: "/guide/hylla-utan-borra", label: "Hylla utan borr" },
+      { href: "/guide/balkong-utan-borra", label: "Balkong utan borr" },
+    ],
+  },
+  {
+    id: "kok-bad",
+    label: "Kök & badrum",
+    links: [
+      { href: "/losning/badrum", label: "Fixa badrummet" },
+      { href: "/sakerhet", label: "Säkerhet" },
+      { href: "/fasten", label: "Krokar & fästen" },
+      { href: "/forvaring", label: "Förvaring" },
+    ],
   },
   {
     id: "guider",
