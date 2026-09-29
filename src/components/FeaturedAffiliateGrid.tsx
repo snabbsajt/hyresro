@@ -123,16 +123,15 @@ export function FeaturedAffiliateGrid({ products, count = 3 }: Props) {
                 <img
                   src={p.imageUrl}
                   alt={p.imageAlt || p.name}
-                  className="h-full w-full object-contain"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
             ) : (
-              <div className="product-card-image bg-[#e8e4dc]" aria-hidden />
+              <div className="product-card-image" aria-hidden />
             )}
-            <div className="px-4 py-3">
-              <h3 className="mb-1.5 font-medium" style={{ color: "#2a2620" }}>
+            <div className="flex flex-col gap-2 px-4 py-3.5">
+              <h3 className="font-medium leading-snug" style={{ color: "#2a2620" }}>
                 <ProductTitleAffiliateLink
                   name={p.name}
                   href={p.merchantUrl}
@@ -140,7 +139,7 @@ export function FeaturedAffiliateGrid({ products, count = 3 }: Props) {
                   className="group/title inline text-inherit no-underline transition-colors hover:text-stone-800 hover:no-underline"
                 />
               </h3>
-              <p className="mb-2 space-y-0.5 text-sm text-stone-600">
+              <p className="space-y-0.5 text-sm text-stone-600">
                 <span className="block truncate">
                   <span className="font-medium text-stone-700">Passar för:</span>{" "}
                   <span className="passar-for">{passar}</span>
@@ -153,20 +152,22 @@ export function FeaturedAffiliateGrid({ products, count = 3 }: Props) {
                 ) : null}
               </p>
               {p.notes ? (
-                <p className="mb-2.5 text-sm text-stone-600">{p.notes}</p>
+                <p className="text-sm leading-snug text-stone-600">{p.notes}</p>
               ) : null}
               <ProductPrice
                 priceFromSek={p.priceFromSek}
                 compareAtPriceSek={p.compareAtPriceSek}
                 priceNote={p.priceNote}
               />
-              <AffiliateLink
-                href={p.merchantUrl}
-                slug={p.slug}
-                merchantName={p.merchantName}
-              >
-                {p.merchantName}
-              </AffiliateLink>
+              <div className="mt-0.5">
+                <AffiliateLink
+                  href={p.merchantUrl}
+                  slug={p.slug}
+                  merchantName={p.merchantName}
+                >
+                  {p.merchantName}
+                </AffiliateLink>
+              </div>
             </div>
           </article>
         );

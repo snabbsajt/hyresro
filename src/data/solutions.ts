@@ -68,7 +68,7 @@ export const solutions: SolutionMeta[] = [
       "boelle-quito-kladhangare-svart",
     ],
     guideLinks: [
-      { href: "/guide/tavla-pa-gips", label: "Tavla på gips" },
+      { href: "/guide/tavla-pa-gips", label: "Tavla på gips utan borr" },
       { href: "/guide/borra-i-hyresratt", label: "Får man borra?" },
       { href: "/fasten", label: "Alla fästen" },
     ],
@@ -261,7 +261,7 @@ export const solutions: SolutionMeta[] = [
     ],
     guideLinks: [
       { href: "/guide/hylla-utan-borra", label: "Hylla utan borr" },
-      { href: "/guide/tavla-pa-gips", label: "Tavla / krok på vägg" },
+      { href: "/guide/tavla-pa-gips", label: "Tavla / krok utan borr" },
       { href: "/guide/borra-i-hyresratt", label: "Får man borra?" },
     ],
   },

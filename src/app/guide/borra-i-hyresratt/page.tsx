@@ -12,7 +12,7 @@ import { getGuide } from "@/data/guides";
 export const metadata: Metadata = {
   title: "Får man borra i hyresrätt?",
   description:
-    "Vad som oftast gäller. Kontraktet styr. Alternativ utan borr. Inte juridisk rådgivning.",
+    "Vad som oftast gäller när ni vill borra i hyresrätt. Kontraktet styr. Alternativ utan borr. Inte juridisk rådgivning.",
   alternates: { canonical: "/guide/borra-i-hyresratt" },
   openGraph: {
     url: "/guide/borra-i-hyresratt",
@@ -34,13 +34,26 @@ export default async function BorraIHyresrattPage() {
             { label: "Får man borra i hyresrätt?" },
           ]}
         />
-        <h1 className="text-3xl font-semibold tracking-tight">Får man borra i hyresrätt?</h1>
-        <p className="text-lg">
+        <h1 className="text-3xl font-semibold tracking-tight">
+          Får man borra i hyresrätt?
+        </h1>
+        <p className="max-w-2xl text-lg">
           Små hål för tavlor räknas oftast som normalt slitage.{" "}
           <Link href="/guide/kolla-kontraktet" className="underline underline-offset-2">
             Kontraktet
           </Link>{" "}
-          kan säga nej.
+          kan säga nej — och för kakel, TV och balkong räcker lagen sällan.
+        </p>
+        <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-500">
+          <Link href="/losning/hanga-upp" className="underline underline-offset-2 hover:text-white">
+            Hänga upp utan borr
+          </Link>
+          <Link href="/losning/gardiner" className="underline underline-offset-2 hover:text-white">
+            Gardiner utan borr
+          </Link>
+          <Link href="/checklista-flytta" className="underline underline-offset-2 hover:text-white">
+            Checklista vid flytt
+          </Link>
         </p>
       </header>
 
@@ -99,7 +112,11 @@ export default async function BorraIHyresrattPage() {
       />
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">Utan borr när det räcker — utvalda grejer</h2>
+        <h2 className="text-xl font-semibold">Utan borr när det räcker</h2>
+        <p className="max-w-2xl text-sm text-stone-400">
+          Tejp-krok, självhäftande hylla och kläm-rullgardin — tre vanliga vägar när kontraktet
+          säger nej till hål.
+        </p>
         <div className="grid gap-4 sm:grid-cols-2">
           {products.map((p) => (
             <ProductCard key={p!.slug} product={p!} />
@@ -107,7 +124,13 @@ export default async function BorraIHyresrattPage() {
         </div>
       </section>
 
-      <GuideNext slug="borra-i-hyresratt" />
+      <GuideNext
+        slug="borra-i-hyresratt"
+        tips={[
+          "Läs särskilda villkor innan ni borrar — lagen är golvet, avtalet kan vara strängare.",
+          "Mejla förvaltaren vid tvekan. Skriftligt svar hjälper vid avflytt.",
+        ]}
+      />
     </article>
   );
 }

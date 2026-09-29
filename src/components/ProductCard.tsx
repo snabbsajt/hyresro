@@ -38,16 +38,15 @@ export async function ProductCard({ product }: Props) {
           <img
             src={imageUrl}
             alt={product.imageAlt || product.name}
-            className="h-full w-full object-contain"
             loading="lazy"
             decoding="async"
           />
         </div>
       ) : (
-        <div className="product-card-image bg-[#e8e4dc]" aria-hidden />
+        <div className="product-card-image" aria-hidden />
       )}
-      <div className="px-4 py-3">
-        <h3 className="mb-1.5 font-medium" style={{ color: "#2a2620" }}>
+      <div className="flex flex-col gap-2 px-4 py-3.5">
+        <h3 className="font-medium leading-snug" style={{ color: "#2a2620" }}>
           <ProductTitleAffiliateLink
             name={product.name}
             href={merchant?.url}
@@ -55,7 +54,7 @@ export async function ProductCard({ product }: Props) {
             className="group/title inline text-inherit no-underline transition-colors hover:text-stone-800 hover:no-underline"
           />
         </h3>
-        <p className="mb-2 space-y-0.5 text-sm text-stone-600">
+        <p className="space-y-0.5 text-sm text-stone-600">
           <span className="block truncate">
             <span className="font-medium text-stone-700">Passar för:</span>{" "}
             <span className="passar-for">{passar}</span>
@@ -68,7 +67,7 @@ export async function ProductCard({ product }: Props) {
           ) : null}
         </p>
         {product.notes ? (
-          <p className="mb-2.5 text-sm text-stone-600">{product.notes}</p>
+          <p className="text-sm leading-snug text-stone-600">{product.notes}</p>
         ) : null}
         <ProductPrice
           priceFromSek={product.priceFromSek}
@@ -76,13 +75,15 @@ export async function ProductCard({ product }: Props) {
           priceNote={product.priceNote}
         />
         {merchant ? (
-          <AffiliateLink
-            href={merchant.url}
-            slug={product.slug}
-            merchantName={merchant.name}
-          >
-            {merchant.name}
-          </AffiliateLink>
+          <div className="mt-0.5">
+            <AffiliateLink
+              href={merchant.url}
+              slug={product.slug}
+              merchantName={merchant.name}
+            >
+              {merchant.name}
+            </AffiliateLink>
+          </div>
         ) : null}
       </div>
     </article>

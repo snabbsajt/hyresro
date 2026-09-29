@@ -6,7 +6,7 @@ export type NavItem = {
   links: readonly NavLink[];
 };
 
-/** Option B — short problem-ish labels; Alla produkter lives in footer. */
+/** Problem-first nav; Alla produkter also in Guider + footer. */
 export const navItems: readonly NavItem[] = [
   {
     id: "hanga",
@@ -56,6 +56,7 @@ export const navItems: readonly NavItem[] = [
     label: "Guider",
     links: [
       { href: "/guide", label: "Alla guider" },
+      { href: "/produkter", label: "Alla produkter" },
       { href: "/guide/kolla-kontraktet", label: "Kolla kontraktet" },
       { href: "/guide/borra-i-hyresratt", label: "Borra i hyresrätt" },
       { href: "/guide/rullgardin-utan-borra", label: "Rullgardin utan borr" },

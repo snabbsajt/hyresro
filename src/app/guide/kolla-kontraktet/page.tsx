@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Crumbs } from "@/components/Crumbs";
 import { Faq } from "@/components/Faq";
 import { GuideAnswerBox } from "@/components/GuideAnswerBox";
@@ -28,9 +29,17 @@ export default function KollaKontraktetPage() {
           ]}
         />
         <h1 className="text-3xl font-semibold tracking-tight">Så läser ni kontraktet</h1>
-        <p>
+        <p className="max-w-2xl text-lg">
           Avtalet styr före generella tips. Hyreslagen är golvet. Ert kontrakt kan vara
           strängare.
+        </p>
+        <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-500">
+          <Link href="/guide/borra-i-hyresratt" className="underline underline-offset-2 hover:text-white">
+            Får man borra?
+          </Link>
+          <Link href="/checklista-flytta" className="underline underline-offset-2 hover:text-white">
+            Checklista vid flytt
+          </Link>
         </p>
       </header>
 
@@ -89,7 +98,13 @@ export default function KollaKontraktetPage() {
         ]}
       />
 
-      <GuideNext slug="kolla-kontraktet" />
+      <GuideNext
+        slug="kolla-kontraktet"
+        tips={[
+          "Husordningen som bilaga räknas — missa den inte.",
+          "Skriftligt svar från förvaltaren är starkare än ett samtal i trappan.",
+        ]}
+      />
     </article>
   );
 }

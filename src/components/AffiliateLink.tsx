@@ -33,14 +33,7 @@ export function AffiliateLink({
       target="_blank"
       className={className ?? (priceLabel ? defaultClassName : undefined) ?? defaultClassName}
     >
-      {priceLabel ? (
-        <span className="flex flex-col items-start gap-0.5 leading-tight">
-          <span className="font-semibold">{priceLabel}</span>
-          <span className="text-[0.7rem] font-normal opacity-80">{merchantName}</span>
-        </span>
-      ) : (
-        children
-      )}
+      {priceLabel ?? children}
     </a>
   );
 }

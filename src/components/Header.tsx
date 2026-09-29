@@ -130,6 +130,16 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-1">
+            <Link
+              href="/produkter"
+              className="hidden px-2 py-1.5 text-sm font-medium text-stone-300 hover:text-white md:inline"
+              onClick={() => {
+                closeMobile();
+                closeDesktop();
+              }}
+            >
+              Produkter
+            </Link>
             <SearchForm variant="header" />
             <button
               ref={buttonRef}
@@ -174,6 +184,15 @@ export function Header() {
                 onClick={closeMobile}
               >
                 Sök
+              </Link>
+            </li>
+            <li className="border-b border-white/10">
+              <Link
+                href="/produkter"
+                className="block py-3 text-base font-medium text-stone-100"
+                onClick={closeMobile}
+              >
+                Alla produkter
               </Link>
             </li>
             {navItems.map((item) => {

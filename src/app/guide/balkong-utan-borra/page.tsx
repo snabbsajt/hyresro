@@ -12,7 +12,7 @@ import { getGuide } from "@/data/guides";
 export const metadata: Metadata = {
   title: "Balkong utan att borra i hyresrätt",
   description:
-    "Blomlåda på räcke, ljusslinga på sladd och vad som oftast kräver värdens godkännande.",
+    "Blomlåda på räcke, ljusslinga på sladd och vad som oftast kräver värdens godkännande i hyresrätt.",
   alternates: { canonical: "/guide/balkong-utan-borra" },
   openGraph: {
     url: "/guide/balkong-utan-borra",
@@ -31,12 +31,26 @@ export default async function BalkongPage() {
         <Crumbs
           items={[
             { href: "/guide", label: "Guider" },
-            { href: "/forvaring", label: "Förvaring" },
+            { href: "/losning/forvaring", label: "Förvaring" },
             { label: "Balkong utan att borra" },
           ]}
         />
         <h1 className="text-3xl font-semibold tracking-tight">Balkong utan att borra</h1>
-        <p>Räcket är värdens. Kläm och sladd går. Skruv i betong eller räcke gör det oftast inte.</p>
+        <p className="max-w-2xl text-lg">
+          Räcket är värdens. Kläm och sladd går oftast. Skruv i betong eller räcke gör det
+          oftast inte — fråga först.
+        </p>
+        <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-500">
+          <Link href="/losning/forvaring" className="underline underline-offset-2 hover:text-white">
+            Mer förvaring
+          </Link>
+          <Link href="/guide/kolla-kontraktet" className="underline underline-offset-2 hover:text-white">
+            Kolla kontraktet
+          </Link>
+          <Link href="/guide/borra-i-hyresratt" className="underline underline-offset-2 hover:text-white">
+            Får man borra?
+          </Link>
+        </p>
       </header>
 
       {meta.answer ? <GuideAnswerBox answer={meta.answer} /> : null}
@@ -97,7 +111,11 @@ export default async function BalkongPage() {
       />
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">Blomlåda och ljus utan skruv i räcket</h2>
+        <h2 className="text-xl font-semibold">Blomlåda och ljus — utan skruv i räcket</h2>
+        <p className="max-w-2xl text-sm text-stone-400">
+          Hållare som kläms på räcket plus LED-slinga för befintligt uttag. Inget som kräver
+          hål i betong.
+        </p>
         <div className="grid gap-4 sm:grid-cols-2">
           {products.map((p) => (
             <ProductCard key={p!.slug} product={p!} />
@@ -110,6 +128,7 @@ export default async function BalkongPage() {
         tips={[
           "Kolla räckets tjocklek mot lådans mått innan köp.",
           "Skruv i räcke kräver värdens ja — kläm först.",
+          "Töm blomlådan på hösten så räcket slipper tjäle i blöt jord.",
         ]}
       />
     </article>

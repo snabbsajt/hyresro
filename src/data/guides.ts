@@ -60,7 +60,7 @@ export const guides: GuideMeta[] = [
     blurb: "Var reglerna står och när ni ska fråga värden.",
     group: "regler",
     productSlugs: [],
-    nextSlugs: ["borra-i-hyresratt", "tavla-pa-gips", "hylla-utan-borra"],
+    nextSlugs: ["borra-i-hyresratt", "checklista-flytta", "tavla-pa-gips"],
     answer: {
       tillatet: [
         "Läsa särskilda villkor och husordning innan ni fäster något.",
@@ -78,14 +78,14 @@ export const guides: GuideMeta[] = [
     slug: "borra-i-hyresratt",
     href: "/guide/borra-i-hyresratt",
     title: "Får man borra i hyresrätt?",
-    blurb: "Små hål vs kontraktets nej. Alternativ utan borr.",
+    blurb: "Små hål vs kontraktets nej — och vad ni gör utan borr.",
     group: "regler",
     productSlugs: [
       "amz-virea-vaggkrokar-8kg-latt",
       "hylla-no-drill",
       "amz-vounot-duo",
     ],
-    nextSlugs: ["kolla-kontraktet", "tavla-pa-gips", "hylla-utan-borra"],
+    nextSlugs: ["kolla-kontraktet", "tavla-pa-gips", "rullgardin-utan-borra"],
     answer: {
       tillatet: [
         "Små hål för tavlor räknas oftast som normalt slitage — om kontraktet inte säger nej.",
@@ -104,15 +104,15 @@ export const guides: GuideMeta[] = [
   {
     slug: "tavla-pa-gips",
     href: "/guide/tavla-pa-gips",
-    title: "Tavla på gips",
-    blurb: "Tejp-krok på slät målad gips. Vikt, yta och avdrag.",
+    title: "Tavla på gips utan att borra",
+    blurb: "Tejp-krok på slät målad gips — vikt, yta och hur ni tar ner.",
     group: "vagg",
     productSlugs: [
       "amz-virea-vaggkrokar-8kg-latt",
       "amz-virea-vaggkrokar-8kg-tung",
-      "amz-ricoo",
+      "base-enkelkrok-mattsvart",
     ],
-    nextSlugs: ["hylla-utan-borra", "borra-i-hyresratt", "kolla-kontraktet"],
+    nextSlugs: ["hylla-utan-borra", "borra-i-hyresratt", "checklista-flytta"],
     answer: {
       tillatet: [
         "Tejp-krok / självhäftande krok på slät, torr, målad gips under maxvikt.",
@@ -131,17 +131,18 @@ export const guides: GuideMeta[] = [
     slug: "hylla-utan-borra",
     href: "/guide/hylla-utan-borra",
     title: "Hylla utan att borra",
-    blurb: "Självhäftande hylla: yta, maxvikt och hur ni tar ner.",
+    blurb: "Självhäftande hylla och spännstång — yta, maxvikt och avdrag.",
     group: "vagg",
     productSlugs: [
       "hylla-no-drill",
+      "spannstang-dorr",
       "base-kroklist-med-hylla-mattsvart",
-      "amz-weissenstein-badrumshylla",
     ],
-    nextSlugs: ["tavla-pa-gips", "borra-i-hyresratt", "balkong-utan-borra"],
+    nextSlugs: ["tavla-pa-gips", "borra-i-hyresratt", "checklista-flytta"],
     answer: {
       tillatet: [
         "Självhäftande hylla på slät målad vägg eller kakel under maxvikt.",
+        "Spännstång i nisch eller dörrpost — ingen tejp, ingen skruv.",
         "Vänta den tid tillverkaren anger innan ni lastar.",
       ],
       fragaForst: [
@@ -157,17 +158,18 @@ export const guides: GuideMeta[] = [
     slug: "rullgardin-utan-borra",
     href: "/guide/rullgardin-utan-borra",
     title: "Rullgardin utan att borra",
-    blurb: "Klämfäste i bågen. Mått, trä/PVC och aluminium.",
+    blurb: "Klämfäste i bågen — mått, trä/PVC och när aluminium slirar.",
     group: "fonster",
     productSlugs: [
       "amz-vounot-duo",
-      "amz-gardinia",
       "gardinstang-spann",
+      "amz-meisenberg-teleskopstang",
     ],
-    nextSlugs: ["plissegardin-utan-borra", "kolla-kontraktet", "tavla-pa-gips"],
+    nextSlugs: ["plissegardin-utan-borra", "kolla-kontraktet", "checklista-flytta"],
     answer: {
       tillatet: [
-        "Rullgardin med klämfäste i trä- eller PVC-båge.",
+        "Rullgardin med klämfäste i trä- eller PVC-båge med tillräckligt djup.",
+        "Spännstång / teleskopstång för tyg-gardin mellan väggar — ingen skruv i karm.",
         "Ta ner gardinen vid flytt så karmen slipper märken.",
       ],
       fragaForst: [
@@ -183,14 +185,14 @@ export const guides: GuideMeta[] = [
     slug: "plissegardin-utan-borra",
     href: "/guide/plissegardin-utan-borra",
     title: "Plisségardin utan att borra",
-    blurb: "Klämplissé och film när ni vill ha ljus uppifrån.",
+    blurb: "Klämplissé och film — ljus uppifrån, insyn nertill.",
     group: "fonster",
     productSlugs: [
       "plisse-sonello-klam",
+      "plissegardin-flex",
       "frostad-fonsterfilm-insynsskydd-utan-lim",
-      "fonsterfilm-randigt-frostad-monster",
     ],
-    nextSlugs: ["rullgardin-utan-borra", "kolla-kontraktet", "balkong-utan-borra"],
+    nextSlugs: ["rullgardin-utan-borra", "kolla-kontraktet", "checklista-flytta"],
     answer: {
       tillatet: [
         "Plissé med uttryckligt klämfäste och tillräckligt karmdjup.",
@@ -216,7 +218,7 @@ export const guides: GuideMeta[] = [
       "amz-comfour",
       "amz-hit-ledslinga-96",
     ],
-    nextSlugs: ["kolla-kontraktet", "borra-i-hyresratt", "hylla-utan-borra"],
+    nextSlugs: ["kolla-kontraktet", "borra-i-hyresratt", "checklista-flytta"],
     answer: {
       tillatet: [
         "Blomlåda som kläms på räcket (rätt mått, ingen överlast).",
@@ -235,10 +237,23 @@ export const guides: GuideMeta[] = [
     slug: "checklista-flytta",
     href: "/checklista-flytta",
     title: "Checklista vid flytt",
-    blurb: "Dokumentera in, ta ner fästen skonsamt, fota ut.",
+    blurb: "Dokumentera in, ta ner fästen skonsamt, fota ut — så slipper ni bråk om depositionen.",
     group: "flytt",
     productSlugs: [],
     nextSlugs: ["kolla-kontraktet", "tavla-pa-gips", "hylla-utan-borra"],
+    answer: {
+      tillatet: [
+        "Fota varje rum vid inflytt och avflytt — datum i bilden hjälper.",
+        "Ta ner tejp-krokar och klämfästen enligt tillverkaren innan slutstäd.",
+      ],
+      fragaForst: [
+        "Om ni ska spackla igen hål — fråga vad värden kräver i just ert kontrakt.",
+      ],
+      undvik: [
+        "Att slita loss tejp rakt ut från väggen (färgen följer ofta med).",
+        "Att lämna kvar klämgardiner och tejphyllor som «fast» inredning.",
+      ],
+    },
   },
 ];
 

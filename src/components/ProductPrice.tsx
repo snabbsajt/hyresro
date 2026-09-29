@@ -27,7 +27,7 @@ export function ProductPrice({
     return (
       <p
         className={
-          compact ? "text-sm text-stone-400" : "mb-2.5 text-sm text-stone-400"
+          compact ? "text-sm text-stone-400" : "text-sm text-stone-400"
         }
       >
         Från {formatSek(priceFromSek)} kr{note}
@@ -40,7 +40,7 @@ export function ProductPrice({
       className={
         compact
           ? "flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-sm"
-          : "mb-2.5 flex flex-wrap items-baseline gap-x-2 gap-y-1"
+          : "flex flex-wrap items-baseline gap-x-2 gap-y-1"
       }
     >
       <span

@@ -12,7 +12,7 @@ import { getGuide } from "@/data/guides";
 export const metadata: Metadata = {
   title: "Hänga tavla på gips i hyresrätt utan att borra",
   description:
-    "Command och Tesa på gipsvägg: vikt, yta och hur ni tar ner utan att färgen följer med.",
+    "Tejp-krok på gipsvägg i hyresrätt: vikt, yta och hur ni tar ner utan att färgen följer med.",
   alternates: { canonical: "/guide/tavla-pa-gips" },
   openGraph: {
     url: "/guide/tavla-pa-gips",
@@ -31,12 +31,28 @@ export default async function TavlaPage() {
         <Crumbs
           items={[
             { href: "/guide", label: "Guider" },
-            { href: "/fasten", label: "Fästen" },
+            { href: "/losning/hanga-upp", label: "Hänga upp" },
             { label: "Tavla på gips" },
           ]}
         />
-        <h1 className="text-3xl font-semibold tracking-tight">Tavla på gips utan att borra</h1>
-        <p>Remsa på slät målad gips. Inte spegel, inte TV, inte tapet.</p>
+        <h1 className="text-3xl font-semibold tracking-tight">
+          Tavla på gips utan att borra
+        </h1>
+        <p className="max-w-2xl text-lg">
+          Ja — på slät målad gips och under maxvikten. Tejp-krok räcker till de flesta ramar.
+          Spegel, TV och tapet är andra frågor.
+        </p>
+        <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-500">
+          <Link href="/losning/hanga-upp" className="underline underline-offset-2 hover:text-white">
+            Hänga upp saker
+          </Link>
+          <Link href="/fasten" className="underline underline-offset-2 hover:text-white">
+            Alla fästen
+          </Link>
+          <Link href="/guide/hylla-utan-borra" className="underline underline-offset-2 hover:text-white">
+            Hylla utan borr
+          </Link>
+        </p>
       </header>
 
       {meta.answer ? <GuideAnswerBox answer={meta.answer} /> : null}
@@ -50,8 +66,8 @@ export default async function TavlaPage() {
         </p>
         <p>
           Spårlöst är ett säljord. Sanningen är: på slät, härdad färg och om ni drar remsan
-          längs väggen enligt 3M lämnar det sällan märke. På färsk färg, kalkfärg och tapet
-          följer ytskiktet med. Testa bakom en dörr först om väggen känns osäker.
+          längs väggen enligt tillverkaren lämnar det sällan märke. På färsk färg, kalkfärg och
+          tapet följer ytskiktet med. Testa bakom en dörr först om väggen känns osäker.
         </p>
       </section>
 
@@ -72,14 +88,18 @@ export default async function TavlaPage() {
           <Link href="/guide/kolla-kontraktet" className="underline underline-offset-2">
             kontraktet kan säga nej
           </Link>
-          . Läs först.
+          . Läs först. Mer i{" "}
+          <Link href="/guide/borra-i-hyresratt" className="underline underline-offset-2">
+            får man borra?
+          </Link>
+          .
         </p>
       </section>
 
       <Faq
         items={[
           {
-            q: "Håller Command på gips?",
+            q: "Håller tejp-krok på gips?",
             a: "På slät, torr, målad gips och under angiven vikt. Inte på tapet.",
           },
           {
@@ -95,6 +115,9 @@ export default async function TavlaPage() {
 
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Krokar till tavlan — utan spik</h2>
+        <p className="max-w-2xl text-sm text-stone-400">
+          Lätt och tung tejp-krok plus enkelkrok för hall och kök. Alla från katalogen.
+        </p>
         <div className="grid gap-4 sm:grid-cols-2">
           {products.map((p) => (
             <ProductCard key={p!.slug} product={p!} />
@@ -107,6 +130,7 @@ export default async function TavlaPage() {
         tips={[
           "Räkna ram + glas mot maxvikten på förpackningen.",
           "Testa bakom en dörr om väggen känns osäker.",
+          "Dra remsan längs väggen vid flytt — aldrig rakt ut.",
         ]}
       />
     </article>

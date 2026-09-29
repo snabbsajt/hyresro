@@ -11,7 +11,8 @@
   --accent-warm: #c4785a;
   --accent-warm-hover: #b56a4c;
   --card: #1c1b19;
-  --card-light: #f3efe8;
+  --card-light: #f1ebe3;
+  --card-image-bg: #e8e2d8;
   --background: var(--paper);
   --foreground: var(--ink);
   --glass-bg: rgba(14, 13, 12, 0.48);
@@ -82,8 +83,8 @@ main .text-stone-400 {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(70% 55% at 18% 12%, rgba(197, 200, 206, 0.08), transparent 60%),
-    radial-gradient(50% 40% at 85% 8%, rgba(59, 95, 219, 0.12), transparent 55%),
+    radial-gradient(70% 55% at 18% 12%, rgba(196, 168, 140, 0.07), transparent 60%),
+    radial-gradient(50% 40% at 85% 8%, rgba(59, 95, 219, 0.10), transparent 55%),
     #0c0c0c;
 }
 
@@ -149,11 +150,10 @@ main .text-stone-400 {
 }
 
 .hero-glass {
-  /* Even darken across full width — no left/right asymmetry (Safari-safe) */
-  background: rgba(12, 12, 12, 0.40);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  /* Force compositing so Safari doesn't leave a bright strip */
+  /* Even warm darken across full width — no left/right asymmetry (Safari-safe) */
+  background: rgba(18, 14, 11, 0.42);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
@@ -162,9 +162,9 @@ main .text-stone-400 {
   /* Vertical only — same brightness L→R; bottom soft into page */
   background: linear-gradient(
     to bottom,
-    rgba(12, 12, 12, 0.22) 0%,
-    rgba(12, 12, 12, 0.28) 40%,
-    rgba(12, 12, 12, 0.55) 78%,
+    rgba(18, 14, 11, 0.20) 0%,
+    rgba(16, 13, 10, 0.26) 38%,
+    rgba(12, 11, 10, 0.52) 78%,
     #0c0c0c 100%
   );
   pointer-events: none;
@@ -173,9 +173,9 @@ main .text-stone-400 {
 .hero-copy h1,
 .hero-copy p {
   text-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.55),
-    0 2px 12px rgba(0, 0, 0, 0.40),
-    0 0 1px rgba(0, 0, 0, 0.35);
+    0 1px 2px rgba(0, 0, 0, 0.50),
+    0 2px 10px rgba(0, 0, 0, 0.38),
+    0 0 1px rgba(0, 0, 0, 0.30);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -186,38 +186,36 @@ main .text-stone-400 {
   }
 
   .hero-glass {
-    /* Even overlay — neutralize bright window band on left */
-    background: rgba(12, 12, 12, 0.38);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(18, 14, 11, 0.38);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
   }
 
   .hero-fade {
     background: linear-gradient(
       to bottom,
-      rgba(12, 12, 12, 0.18) 0%,
-      rgba(12, 12, 12, 0.22) 30%,
-      rgba(12, 12, 12, 0.32) 60%,
-      rgba(12, 12, 12, 0.55) 88%,
+      rgba(18, 14, 11, 0.16) 0%,
+      rgba(16, 13, 10, 0.20) 28%,
+      rgba(14, 12, 10, 0.30) 58%,
+      rgba(12, 11, 10, 0.52) 88%,
       #0c0c0c 100%
     );
   }
 
   .hero-wallpaper .glass-panel {
-    /* Lighter glass — frostat men ljust */
-    background: rgba(28, 24, 20, 0.38);
-    backdrop-filter: blur(18px) saturate(1.3);
-    -webkit-backdrop-filter: blur(18px) saturate(1.3);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(32, 26, 20, 0.36);
+    backdrop-filter: blur(18px) saturate(1.25);
+    -webkit-backdrop-filter: blur(18px) saturate(1.25);
+    border: 1px solid rgba(255, 255, 255, 0.28);
     border-radius: 0.85rem;
     box-shadow:
-      0 10px 40px rgba(0, 0, 0, 0.28),
-      inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      0 10px 40px rgba(0, 0, 0, 0.26),
+      inset 0 1px 0 rgba(255, 255, 255, 0.14);
   }
 
   .hero-wallpaper .glass-panel:hover {
-    border-color: rgba(255, 255, 255, 0.45);
-    background: rgba(32, 28, 24, 0.46);
+    border-color: rgba(255, 255, 255, 0.42);
+    background: rgba(36, 30, 24, 0.44);
   }
 
   .hero-wallpaper .guide-chip {
@@ -246,7 +244,7 @@ main .text-stone-400 {
   }
 
   .hero-glass {
-    background: rgba(12, 12, 12, 0.9);
+    background: rgba(14, 12, 10, 0.9);
   }
 
   .glass-panel {
@@ -268,14 +266,13 @@ main .text-stone-400 {
   }
 
   .hero-glass {
-    background: rgba(12, 12, 12, 0.82);
+    background: rgba(14, 12, 10, 0.82);
   }
 
   .hero-wallpaper .glass-panel {
     background: rgba(20, 19, 17, 0.88);
   }
 }
-
 
 /* Warm filled CTA — min ~48px */
 .cta-btn {
@@ -284,20 +281,22 @@ main .text-stone-400 {
   justify-content: center;
   min-height: 48px;
   width: 100%;
-  padding: 0.65rem 1rem;
+  padding: 0.7rem 1.1rem;
   border-radius: 0.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.10);
   background: var(--accent-warm);
   color: #1a1410;
   font-size: 0.9375rem;
   font-weight: 600;
+  letter-spacing: 0.01em;
   text-decoration: none;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.18) inset;
   transition: background 0.15s ease, filter 0.15s ease;
 }
 .cta-btn:hover {
   background: var(--accent-warm-hover);
   color: #1a1410;
-  filter: brightness(1.05);
+  filter: brightness(1.04);
 }
 li > .cta-btn {
   width: auto;
@@ -305,27 +304,38 @@ li > .cta-btn {
   padding-inline: 1rem;
 }
 
-/* Lighter product cards so white product photos blend */
+/* Warm product cards — white studio photos sit naturally */
 .product-card {
   background: var(--card-light);
   color: #3a3530;
-  border-color: rgba(255, 255, 255, 0.18);
-  border-radius: 0.55rem;
+  border-color: rgba(255, 255, 255, 0.14);
+  border-radius: 0.65rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
 }
 .product-card-image {
   aspect-ratio: 4 / 3;
   max-height: 240px;
   width: 100%;
-  background: #ebe6de;
+  background: var(--card-image-bg);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 @media (min-width: 640px) {
   .product-card-image {
     max-height: 260px;
+    padding: 1rem 1.15rem;
   }
+}
+.product-card-image img {
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 .product-card .text-stone-400,
 .product-card .text-stone-500,
@@ -335,14 +345,18 @@ li > .cta-btn {
 .product-card .text-stone-700 {
   color: #4a453f !important;
 }
-.product-card .text-stone-200 {
+.product-card .text-stone-200,
+.product-card .text-stone-100 {
   color: #2a2620 !important;
 }
-.product-card .border-white\/12 {
+.product-card .border-white\/12,
+.product-card .border-white\/10,
+.product-card .border-white\/15 {
   border-color: rgba(0, 0, 0, 0.12);
 }
-.product-card .bg-white\/5 {
-  background: rgba(0, 0, 0, 0.04);
+.product-card .bg-white\/5,
+.product-card .bg-white\/8 {
+  background: rgba(0, 0, 0, 0.05);
 }
 .product-card [style*="color: #d6d0c4"],
 .product-card [style*="color:#d6d0c4"] {
@@ -356,4 +370,15 @@ li > .cta-btn {
 .passar-for {
   display: inline;
   white-space: nowrap;
+}
+
+/* Quiet secondary CTA on home */
+.quiet-cta {
+  color: #a8a194;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+}
+.quiet-cta:hover {
+  color: #f5f0e8;
 }

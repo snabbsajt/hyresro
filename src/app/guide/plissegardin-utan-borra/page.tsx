@@ -12,7 +12,7 @@ import { getGuide } from "@/data/guides";
 export const metadata: Metadata = {
   title: "Plisségardin utan att borra i hyresrätt",
   description:
-    "Plissé med klämfäste: när den slår rullgardin, hur ni mäter och vad som gäller aluminiumbåge.",
+    "Plissé med klämfäste i hyresrätt: när den slår rullgardin, hur ni mäter och vad som gäller aluminiumbåge.",
   alternates: { canonical: "/guide/plissegardin-utan-borra" },
   openGraph: {
     url: "/guide/plissegardin-utan-borra",
@@ -31,12 +31,28 @@ export default async function PlissePage() {
         <Crumbs
           items={[
             { href: "/guide", label: "Guider" },
-            { href: "/solskydd", label: "Solskydd" },
+            { href: "/losning/gardiner", label: "Gardiner" },
             { label: "Plisségardin utan att borra" },
           ]}
         />
-        <h1 className="text-3xl font-semibold tracking-tight">Plisségardin utan att borra</h1>
-        <p>Kläm i bågen. Ljus uppifrån, insyn nertill — utan skruv i karm.</p>
+        <h1 className="text-3xl font-semibold tracking-tight">
+          Plisségardin utan att borra
+        </h1>
+        <p className="max-w-2xl text-lg">
+          Ja — om ni köper modell med klämfäste och karmdjupet räcker. Upp/ner ger ljus
+          uppifrån och insyn nertill, utan skruv i karm.
+        </p>
+        <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-500">
+          <Link href="/losning/gardiner" className="underline underline-offset-2 hover:text-white">
+            Alla gardinlösningar
+          </Link>
+          <Link href="/losning/insynsskydd" className="underline underline-offset-2 hover:text-white">
+            Insynsskydd
+          </Link>
+          <Link href="/losning/morklagga" className="underline underline-offset-2 hover:text-white">
+            Mörklägga
+          </Link>
+        </p>
       </header>
 
       {meta.answer ? <GuideAnswerBox answer={meta.answer} /> : null}
@@ -64,8 +80,12 @@ export default async function PlissePage() {
         </ul>
         <p>
           Behöver ni totalmörkt i sovrum är{" "}
+          <Link href="/losning/morklagga" className="underline underline-offset-2">
+            mörklägga utan borr
+          </Link>{" "}
+          eller{" "}
           <Link href="/guide/rullgardin-utan-borra" className="underline underline-offset-2">
-            mörkläggande rullgardin
+            duo-rullgardin
           </Link>{" "}
           oftast bättre. Plissé ljusdämpar. Den stänger sällan ute allt ljus.
         </p>
@@ -92,13 +112,17 @@ export default async function PlissePage() {
           },
           {
             q: "Räcker plissé som mörkläggning?",
-            a: "Sällan. Den dämpar ljus och tar insyn. Sovrum nattetid vill oftast ha rullgardin.",
+            a: "Sällan. Den dämpar ljus och tar insyn. Sovrum nattetid vill oftast ha duo-rullgardin.",
           },
         ]}
       />
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">Plissé och film utan limkaos</h2>
+        <h2 className="text-xl font-semibold">Plissé och film — utan limkaos</h2>
+        <p className="max-w-2xl text-sm text-stone-400">
+          Klämplissé för karm, flex-plissé och limfri film för glas. Film mörklägger inte —
+          den tar insyn.
+        </p>
         <div className="grid gap-4 sm:grid-cols-2">
           {products.map((p) => (
             <ProductCard key={p!.slug} product={p!} />
@@ -111,6 +135,7 @@ export default async function PlissePage() {
         tips={[
           "Kolla att storleken säljs med kläm — många plisséer skruvas.",
           "Mät karmdjup så skenan får plats.",
+          "Film är insynsskydd, inte mörkläggning.",
         ]}
       />
     </article>

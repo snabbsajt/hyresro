@@ -115,9 +115,12 @@ export default async function HomePage() {
             förklarar vad som oftast går, vad som kräver värdens ja, och hur produkterna fästs.
             Produkterna kommer från svenska återförsäljare.
           </p>
-          <p>
-            <Link href="/guide" className="text-sm font-medium underline underline-offset-2 hover:text-white">
+          <p className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+            <Link href="/guide" className="font-medium underline underline-offset-2 hover:text-white">
               Alla guider
+            </Link>
+            <Link href="/produkter" className="font-medium underline underline-offset-2 hover:text-white">
+              Alla produkter
             </Link>
           </p>
         </section>
@@ -140,14 +143,11 @@ export default async function HomePage() {
         </section>
 
         <section className="max-w-xl space-y-2 border-t border-white/10 pt-10">
-          <p className="text-sm text-stone-400">
-            <Link
-              href="/guide/borra-i-hyresratt"
-              className="font-medium text-stone-300 underline underline-offset-2 hover:text-white"
-            >
+          <p className="text-sm text-stone-500">
+            <Link href="/guide/borra-i-hyresratt" className="quiet-cta">
               Osäker på vad du får göra?
             </Link>
-            <span className="text-stone-500">
+            <span>
               {" "}
               — kort om vad som oftast gäller när ni vill borra eller fästa tungt.
             </span>
