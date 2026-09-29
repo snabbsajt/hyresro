@@ -3,7 +3,7 @@
 import { useMemo, useState, useEffect } from "react";
 import { AffiliateLink } from "./AffiliateLink";
 import { ProductPrice } from "./ProductPrice";
-import { ProductCategoryTitleLink } from "./ProductCategoryTitleLink";
+import { ProductTitleAffiliateLink } from "./ProductTitleAffiliateLink";
 
 export type FeaturedCard = {
   slug: string;
@@ -72,7 +72,7 @@ export function FeaturedAffiliateGrid({ products, count = 3 }: Props) {
           )}
           <div className="px-4 py-3">
             <h3 className="mb-1.5 font-medium" style={{ color: "#d6d0c4" }}>
-              <ProductCategoryTitleLink name={p.name} category={p.category} />
+              <ProductTitleAffiliateLink name={p.name} href={p.merchantUrl} slug={p.slug} />
             </h3>
             {p.notes ? (
               <p className="mb-2.5 text-sm text-stone-400">{p.notes}</p>

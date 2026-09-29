@@ -5,6 +5,7 @@ import {
 } from "@/lib/categoryComparison";
 import { ProductPrice } from "./ProductPrice";
 import { AffiliateLink } from "./AffiliateLink";
+import { ProductTitleAffiliateLink } from "./ProductTitleAffiliateLink";
 
 const categoryTitles: Record<string, string> = {
   belysning: "belysning",
@@ -23,7 +24,7 @@ type Props = {
 /**
  * Automatisk, kompakt produktjämförelse för en kategori.
  * Renderas bara när buildCategoryComparison returnerar picks (≥ COMPARISON_MIN_PRODUCTS).
- * Produktnamn länkar till #slug på samma sida (inga egna produktsidor i IA).
+ * Produktnamn länkar till handlarens spårade affiliatelänk, precis som CTA:n.
  */
 export function CategoryComparison({ products, categoryLabel }: Props) {
   const comparison = buildCategoryComparison(products);
@@ -106,12 +107,12 @@ function ComparisonRow({
                   <Badge label={badge} />
                 </span>
               ) : null}
-              <a
-                href={`#${product.slug}`}
+              <ProductTitleAffiliateLink
+                name={product.name}
+                href={merchant?.url}
+                slug={product.slug}
                 className="font-medium text-stone-100 decoration-white/40 underline-offset-2 transition-colors hover:text-white hover:underline"
-              >
-                {product.name}
-              </a>
+              />
             </div>
             {why.length > 0 ? (
               <p className="flex flex-wrap gap-1.5 text-xs text-stone-500">

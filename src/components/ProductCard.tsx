@@ -3,7 +3,7 @@ import path from "path";
 import type { Product } from "@/data/types";
 import { AffiliateLink } from "./AffiliateLink";
 import { ProductPrice } from "./ProductPrice";
-import { ProductCategoryTitleLink } from "./ProductCategoryTitleLink";
+import { ProductTitleAffiliateLink } from "./ProductTitleAffiliateLink";
 
 type Props = {
   product: Product;
@@ -44,9 +44,10 @@ export async function ProductCard({ product }: Props) {
       )}
       <div className="px-4 py-3">
         <h3 className="mb-1.5 font-medium" style={{ color: "#d6d0c4" }}>
-          <ProductCategoryTitleLink
+          <ProductTitleAffiliateLink
             name={product.name}
-            category={product.category}
+            href={merchant?.url}
+            slug={product.slug}
           />
         </h3>
         {product.notes ? (
