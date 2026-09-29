@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description:
     "Var reglerna står, vad som oftast gäller borr och fästen, när ni ska fråga värden. Inte juridisk rådgivning.",
   alternates: { canonical: "/guide/kolla-kontraktet" },
+  openGraph: {
+    url: "/guide/kolla-kontraktet",
+  },
 };
 
 export default function KollaKontraktetPage() {

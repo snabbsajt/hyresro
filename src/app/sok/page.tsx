@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Sök",
   description: "Sök bland produkter och guider för hyresrätt utan borr.",
   alternates: { canonical: "/sok" },
+  openGraph: {
+    url: "/sok",
+  },
   robots: { index: false, follow: true },
 };
 

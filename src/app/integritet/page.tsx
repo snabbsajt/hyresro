@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Integritet och kakor",
   description: "Hur Hyresro hanterar uppgifter och kakor.",
   alternates: { canonical: "/integritet" },
+  openGraph: {
+    url: "/integritet",
+  },
 };
 
 export default function IntegritetPage() {

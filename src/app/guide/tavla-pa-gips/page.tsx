@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description:
     "Command och Tesa på gipsvägg: vikt, yta och hur ni tar ner utan att färgen följer med.",
   alternates: { canonical: "/guide/tavla-pa-gips" },
+  openGraph: {
+    url: "/guide/tavla-pa-gips",
+  },
 };
 
 export default async function TavlaPage() {

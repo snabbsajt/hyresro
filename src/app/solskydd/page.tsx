@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Jämför rullgardin med kläm, plissé och fönsterfilm. Utan skruv i karm.",
   openGraph: {
+    url: "/solskydd",
     title: "Solskydd utan att borra",
     description:
       "Jämför rullgardin med kläm, plissé och fönsterfilm. Utan skruv i karm.",

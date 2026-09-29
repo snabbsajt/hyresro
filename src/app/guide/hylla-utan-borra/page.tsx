@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description:
     "Hylla utan borr i hyresrätt: yta, maxvikt och tejp-skruv. Inte juridisk rådgivning.",
   alternates: { canonical: "/guide/hylla-utan-borra" },
+  openGraph: {
+    url: "/guide/hylla-utan-borra",
+  },
 };
 
 export default async function HyllaUtanBorraPage() {

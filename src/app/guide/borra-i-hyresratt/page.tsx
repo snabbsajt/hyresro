@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description:
     "Vad som oftast gäller. Kontraktet styr. Alternativ utan borr. Inte juridisk rådgivning.",
   alternates: { canonical: "/guide/borra-i-hyresratt" },
+  openGraph: {
+    url: "/guide/borra-i-hyresratt",
+  },
 };
 
 export default async function BorraIHyresrattPage() {

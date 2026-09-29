@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description:
     "Så sätter ni upp rullgardin med klämfäste. Mått, båge, aluminium och när skruv i karm kräver att ni läser kontraktet.",
   alternates: { canonical: "/guide/rullgardin-utan-borra" },
+  openGraph: {
+    url: "/guide/rullgardin-utan-borra",
+  },
 };
 
 export default async function RullgardinUtanBorraPage() {

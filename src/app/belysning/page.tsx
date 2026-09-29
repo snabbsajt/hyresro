@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Belysning utan fast el",
   description: "Lampor, slinga och dimmer i sladd. Ingen ny elpunkt.",
   openGraph: {
+    url: "/belysning",
     title: "Belysning utan fast el",
     description: "Lampor, slinga och dimmer i sladd. Ingen ny elpunkt.",
   },

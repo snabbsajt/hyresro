@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description:
     "Plissé med klämfäste: när den slår rullgardin, hur ni mäter och vad som gäller aluminiumbåge.",
   alternates: { canonical: "/guide/plissegardin-utan-borra" },
+  openGraph: {
+    url: "/guide/plissegardin-utan-borra",
+  },
 };
 
 export default async function PlissePage() {

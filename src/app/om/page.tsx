@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Om oss och annonsering",
   description: "Vad Hyresro är och hur affiliatelänkar fungerar.",
   alternates: { canonical: "/om" },
+  openGraph: {
+    url: "/om",
+  },
 };
 
 export default function OmPage() {

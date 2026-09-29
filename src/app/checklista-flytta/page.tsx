@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description:
     "Checklista för flytt in och ut i hyresrätt: dokumentera, ta ner fästen och återställ ytor.",
   alternates: { canonical: "/checklista-flytta" },
+  openGraph: {
+    url: "/checklista-flytta",
+  },
 };
 
 export default function ChecklistaFlyttaPage() {

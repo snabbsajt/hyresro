@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   description:
     "Brandfilt, extra varnare på batteri och första hjälpen — saker ni kan ställa in utan att borra.",
   alternates: { canonical: "/sakerhet" },
+  openGraph: {
+    url: "/sakerhet",
+  },
 };
 
 export default async function Page() {

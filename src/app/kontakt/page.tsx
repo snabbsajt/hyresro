@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Kontakt",
   description: "Kontakta Hyresro.",
   alternates: { canonical: "/kontakt" },
+  openGraph: {
+    url: "/kontakt",
+  },
 };
 
 export default function KontaktPage() {

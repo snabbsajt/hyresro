@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Förvaring utan att borra",
   description: "Hyllor, spännstång och balkonglåda utan hål i vägg.",
   openGraph: {
+    url: "/forvaring",
     title: "Förvaring utan att borra",
     description: "Hyllor, spännstång och balkonglåda utan hål i vägg.",
   },

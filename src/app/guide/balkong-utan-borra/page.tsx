@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description:
     "Blomlåda på räcke, ljusslinga på sladd och vad som oftast kräver värdens godkännande.",
   alternates: { canonical: "/guide/balkong-utan-borra" },
+  openGraph: {
+    url: "/guide/balkong-utan-borra",
+  },
 };
 
 export default async function BalkongPage() {
