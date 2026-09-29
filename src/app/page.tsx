@@ -54,6 +54,7 @@ export default async function HomePage() {
         weightKg: p.weightKg,
         surfaces: p.surfaces,
         mountType: p.mountType,
+        fitsFor: p.fitsFor,
       };
     })
     .filter((x): x is NonNullable<typeof x> => x != null);
@@ -76,11 +77,11 @@ export default async function HomePage() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-6xl space-y-8 px-4 py-10 sm:px-6 sm:py-14 md:py-16 md:space-y-10">
-          <div className="max-w-2xl space-y-5 md:max-w-3xl">
-            <h1 className="font-sans text-4xl font-semibold tracking-tight sm:text-5xl">
+          <div className="hero-copy max-w-2xl space-y-5 md:max-w-3xl">
+            <h1 className="font-sans text-4xl font-semibold tracking-tight text-white sm:text-5xl">
               Inred hyresrätten utan att borra
             </h1>
-            <p className="max-w-xl font-sans text-xl text-stone-300 sm:text-2xl">
+            <p className="max-w-xl font-sans text-xl text-stone-100 sm:text-2xl">
               Guider och utvalda produkter som inte kräver hål i väggen.
             </p>
           </div>

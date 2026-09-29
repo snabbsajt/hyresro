@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState, useEffect } from "react";
+import { getFitsFor } from "@/lib/fitsFor";
+import type { Product } from "@/data/types";
 import { AffiliateLink } from "./AffiliateLink";
 import { ProductPrice } from "./ProductPrice";
 import { ProductTitleAffiliateLink } from "./ProductTitleAffiliateLink";
@@ -20,7 +22,22 @@ export type FeaturedCard = {
   weightKg?: number;
   surfaces?: string[];
   mountType?: string;
+  fitsFor?: string;
 };
+
+function asProductLike(p: FeaturedCard): Product {
+  return {
+    slug: p.slug,
+    name: p.name,
+    category: p.category,
+    mountType: (p.mountType as Product["mountType"]) || "no-drill",
+    surfaces: p.surfaces ?? [],
+    notes: p.notes ?? "",
+    merchants: [],
+    weightKg: p.weightKg,
+    fitsFor: p.fitsFor,
+  };
+}
 
 function shuffle<T>(items: T[]): T[] {
   const a = [...items];
@@ -42,7 +59,6 @@ function diversify(items: FeaturedCard[], count: number): FeaturedCard[] {
   const preferred = ["fasten", "solskydd", "forvaring", "belysning", "sakerhet"];
   const picked: FeaturedCard[] = [];
   const used = new Set<string>();
-  // Round-robin preferred categories first
   let guard = 0;
   while (picked.length < count && guard < items.length * 2) {
     guard += 1;
@@ -88,7 +104,6 @@ export function FeaturedAffiliateGrid({ products, count = 3 }: Props) {
 
   const shown = useMemo(() => {
     if (picked) return picked;
-    // SSR / first paint: stable first N (prefer preferred cats already ordered by page)
     return products.slice(0, Math.min(count, products.length));
   }, [picked, products, count]);
 
@@ -97,10 +112,7 @@ export function FeaturedAffiliateGrid({ products, count = 3 }: Props) {
   return (
     <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
       {shown.map((p) => {
-        const passar =
-          p.surfaces && p.surfaces.length > 0
-            ? p.surfaces.join(", ")
-            : null;
+        const passar = getFitsFor(asProductLike(p));
         return (
           <article
             key={p.slug}
@@ -128,22 +140,18 @@ export function FeaturedAffiliateGrid({ products, count = 3 }: Props) {
                   className="group/title inline text-inherit no-underline transition-colors hover:text-stone-800 hover:no-underline"
                 />
               </h3>
-              {(passar || p.weightKg != null) && (
-                <p className="mb-2 space-y-0.5 text-sm text-stone-600">
-                  {passar ? (
-                    <span className="block">
-                      <span className="font-medium text-stone-700">Passar för:</span>{" "}
-                      {passar}
-                    </span>
-                  ) : null}
-                  {p.weightKg != null ? (
-                    <span className="block">
-                      <span className="font-medium text-stone-700">Tål:</span>{" "}
-                      {p.weightKg} kg
-                    </span>
-                  ) : null}
-                </p>
-              )}
+              <p className="mb-2 space-y-0.5 text-sm text-stone-600">
+                <span className="block truncate">
+                  <span className="font-medium text-stone-700">Passar för:</span>{" "}
+                  <span className="passar-for">{passar}</span>
+                </span>
+                {p.weightKg != null ? (
+                  <span className="block">
+                    <span className="font-medium text-stone-700">Tål:</span>{" "}
+                    {p.weightKg} kg
+                  </span>
+                ) : null}
+              </p>
               {p.notes ? (
                 <p className="mb-2.5 text-sm text-stone-600">{p.notes}</p>
               ) : null}

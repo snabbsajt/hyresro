@@ -1,6 +1,7 @@
 import { existsSync } from "fs";
 import path from "path";
 import type { Product } from "@/data/types";
+import { getFitsFor } from "@/lib/fitsFor";
 import { AffiliateLink } from "./AffiliateLink";
 import { ProductPrice } from "./ProductPrice";
 import { ProductTitleAffiliateLink } from "./ProductTitleAffiliateLink";
@@ -22,15 +23,10 @@ function resolveImageUrl(product: Product): string | undefined {
   return undefined;
 }
 
-function passarFor(product: Product): string | null {
-  if (product.surfaces.length > 0) return product.surfaces.join(", ");
-  return null;
-}
-
 export async function ProductCard({ product }: Props) {
   const merchant = product.merchants[0];
   const imageUrl = resolveImageUrl(product);
-  const passar = passarFor(product);
+  const passar = getFitsFor(product);
 
   return (
     <article
@@ -59,22 +55,18 @@ export async function ProductCard({ product }: Props) {
             className="group/title inline text-inherit no-underline transition-colors hover:text-stone-800 hover:no-underline"
           />
         </h3>
-        {(passar || product.weightKg != null) && (
-          <p className="mb-2 space-y-0.5 text-sm text-stone-600">
-            {passar ? (
-              <span className="block">
-                <span className="font-medium text-stone-700">Passar för:</span>{" "}
-                {passar}
-              </span>
-            ) : null}
-            {product.weightKg != null ? (
-              <span className="block">
-                <span className="font-medium text-stone-700">Tål:</span>{" "}
-                {product.weightKg} kg
-              </span>
-            ) : null}
-          </p>
-        )}
+        <p className="mb-2 space-y-0.5 text-sm text-stone-600">
+          <span className="block truncate">
+            <span className="font-medium text-stone-700">Passar för:</span>{" "}
+            <span className="passar-for">{passar}</span>
+          </span>
+          {product.weightKg != null ? (
+            <span className="block">
+              <span className="font-medium text-stone-700">Tål:</span>{" "}
+              {product.weightKg} kg
+            </span>
+          ) : null}
+        </p>
         {product.notes ? (
           <p className="mb-2.5 text-sm text-stone-600">{product.notes}</p>
         ) : null}

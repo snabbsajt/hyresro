@@ -5,6 +5,7 @@ import { getAllSolutionSlugs } from "@/data/solutions";
 const paths = [
   "/",
   "/produkter",
+  "/sok",
   "/guide",
   "/guide/borra-i-hyresratt",
   "/guide/hylla-utan-borra",

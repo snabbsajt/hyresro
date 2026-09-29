@@ -11,6 +11,8 @@ export type Product = {
   category: string;
   mountType: MountType;
   surfaces: string[];
+  /** Short "Passar för" override (max ~40 chars). */
+  fitsFor?: string;
   weightKg?: number;
   /** Aktuellt/köppris i SEK (kampanjpris om butiken har kampanj). */
   priceFromSek?: number;

@@ -96,7 +96,7 @@ export default async function BorraIHyresrattPage() {
       />
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">Utan borr när det räcker</h2>
+        <h2 className="text-xl font-semibold">Utan borr när det räcker — utvalda grejer</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {products.map((p) => (
             <ProductCard key={p!.slug} product={p!} />

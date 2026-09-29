@@ -94,7 +94,7 @@ export default async function BalkongPage() {
       />
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">Produkter</h2>
+        <h2 className="text-xl font-semibold">Blomlåda och ljus utan skruv i räcket</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {products.map((p) => (
             <ProductCard key={p!.slug} product={p!} />

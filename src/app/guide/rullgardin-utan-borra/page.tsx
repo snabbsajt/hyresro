@@ -87,7 +87,7 @@ export default async function RullgardinUtanBorraPage() {
       />
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">Produkter</h2>
+        <h2 className="text-xl font-semibold">Rullgardiner med kläm — utan skruv</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {products.map((p) => (
             <ProductCard key={p!.slug} product={p!} />

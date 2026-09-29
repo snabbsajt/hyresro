@@ -5,6 +5,7 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { Logo } from "./Logo";
 import { navItems } from "./nav";
 import { NavPanel } from "./NavPanel";
+import { SearchForm } from "./SearchForm";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -128,25 +129,28 @@ export function Header() {
             </ul>
           </nav>
 
-          <button
-            ref={buttonRef}
-            type="button"
-            className="inline-flex h-10 w-10 items-center justify-center text-stone-100 hover:bg-white/10 md:hidden"
-            aria-expanded={mobileOpen}
-            aria-controls={menuId}
-            aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
-            onClick={() => (mobileOpen ? closeMobile() : setMobileOpen(true))}
-          >
-            {mobileOpen ? (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                <path d="M6 6l12 12M18 6L6 18" />
-              </svg>
-            ) : (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                <path d="M4 7h16M4 12h16M4 17h16" />
-              </svg>
-            )}
-          </button>
+          <div className="flex items-center gap-1">
+            <SearchForm variant="header" />
+            <button
+              ref={buttonRef}
+              type="button"
+              className="inline-flex h-10 w-10 items-center justify-center text-stone-100 hover:bg-white/10 md:hidden"
+              aria-expanded={mobileOpen}
+              aria-controls={menuId}
+              aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
+              onClick={() => (mobileOpen ? closeMobile() : setMobileOpen(true))}
+            >
+              {mobileOpen ? (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M6 6l12 12M18 6L6 18" />
+                </svg>
+              ) : (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M4 7h16M4 12h16M4 17h16" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -163,6 +167,15 @@ export function Header() {
           aria-label="Huvudmeny"
         >
           <ul className="mx-auto max-w-6xl px-4 py-1 sm:px-6">
+            <li className="border-b border-white/10">
+              <Link
+                href="/sok"
+                className="block py-3 text-base font-medium text-stone-100"
+                onClick={closeMobile}
+              >
+                Sök
+              </Link>
+            </li>
             {navItems.map((item) => {
               const expanded = mobileExpanded === item.id;
               return (

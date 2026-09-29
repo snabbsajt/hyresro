@@ -149,22 +149,34 @@ main .text-stone-400 {
 }
 
 .hero-glass {
-  /* Lighter frost — wallpaper syns mer, glaset kvar */
-  background: rgba(18, 16, 14, 0.22);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* Even darken across full width — no left/right asymmetry (Safari-safe) */
+  background: rgba(12, 12, 12, 0.40);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  /* Force compositing so Safari doesn't leave a bright strip */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .hero-fade {
-  /* Mobil: ljusare overlay, botten fortfarande läsbar mot innehåll */
+  /* Vertical only — same brightness L→R; bottom soft into page */
   background: linear-gradient(
     to bottom,
-    rgba(12, 12, 12, 0.0) 0%,
-    rgba(12, 12, 12, 0.10) 40%,
+    rgba(12, 12, 12, 0.22) 0%,
+    rgba(12, 12, 12, 0.28) 40%,
     rgba(12, 12, 12, 0.55) 78%,
     #0c0c0c 100%
   );
   pointer-events: none;
+}
+
+.hero-copy h1,
+.hero-copy p {
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.55),
+    0 2px 12px rgba(0, 0, 0, 0.40),
+    0 0 1px rgba(0, 0, 0, 0.35);
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Desktop: livligare wallpaper + flytande glass-paneler */
@@ -174,19 +186,19 @@ main .text-stone-400 {
   }
 
   .hero-glass {
-    /* Desktop: lätt frost — bright wallpaper syns tydligt */
-    background: rgba(14, 13, 12, 0.04);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* Even overlay — neutralize bright window band on left */
+    background: rgba(12, 12, 12, 0.38);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   .hero-fade {
     background: linear-gradient(
       to bottom,
-      rgba(12, 12, 12, 0.0) 0%,
-      rgba(12, 12, 12, 0.02) 30%,
-      rgba(12, 12, 12, 0.12) 60%,
-      rgba(12, 12, 12, 0.42) 88%,
+      rgba(12, 12, 12, 0.18) 0%,
+      rgba(12, 12, 12, 0.22) 30%,
+      rgba(12, 12, 12, 0.32) 60%,
+      rgba(12, 12, 12, 0.55) 88%,
       #0c0c0c 100%
     );
   }
@@ -339,4 +351,9 @@ li > .cta-btn {
 
 .problem-card {
   min-height: 7.5rem;
+}
+
+.passar-for {
+  display: inline;
+  white-space: nowrap;
 }
