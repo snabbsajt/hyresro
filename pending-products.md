@@ -54,3 +54,47 @@ Alla produkter nedan kommer från Jonathans research och har `network: none`.
 ## Kö — väntar bra Ljusgrossisten-produkt
 
 Merchant är registrerad. Behöver länk / namn / pris samt belagt fäste. Ingen Sylvania.
+
+## Kö — Amazon.se substitutes (needs_manual_check)
+
+Staging only. **Inte** tillagda i `src/data/products.ts`. Nätverk: Amazon Associates SE, tag `hyresro-21` (`wrapAmazon` i `networks.ts`). Alla `price_sek: null` — pris måste kollas manuellt innan publicering.
+
+Omfång: 21 kandidater mot live otrackade produkter. Bland 22 otrackade som Claude mapade saknas Amazon-ersättning för **`fonsterfilm-dcfix`** (D-C-FIX självhäftande 92×200, Clas Ohlson) — ingen kandidat i listan.
+
+### Mismatch-flaggor (verifiera innan live)
+
+- **`amz-meisenberg-teleskopstang` → `golvlampa-didrik`**: live-slug `golvlampa-didrik` är **Golvlampa — Didrik** (kategori `belysning`, står på golvet). Kandidaten är en teleskop-/gardinstång (`solskydd`). Fel mapping — överväg t.ex. `gardinstang-spann` (GARDINIA spännstång) i stället, eller hitta rätt live-mål.
+- **`amz-vagghylla-badcaddie-sjalvhaftande` → `plissegardin-hven`**: live-slug `plissegardin-hven` är **Plisségardin — Hven** (`solskydd`), inte hylla/badrumscaddie (`forvaring`). Fel mapping.
+- **`amz-aroha-rok-co-larm-kombinerat` → `kolmonoxidlarm`**: kandidaten är **kombinerat rök+CO-larm, 3-pack** — inte rent kolmonoxidlarm. Ersätter inte 1:1; notera skillnad i produkttyp och packstorlek.
+
+### Kandidater
+
+| suggested_slug | name | category | mount | product_url | replaces | price_sek | status | notes |
+|---|---|---|---|---|---|---:|---|---|
+| `amz-command-tavelkrokar-transparenta` | Command tavelkrokar — transparenta | fasten | no-drill | https://www.amazon.se/dp/B0C64WVMPD | `command-tavel` | null | needs_manual_check | price_note: needs manual check. Ersätter live Tavelupphängning Command 5 kg. |
+| `amz-virea-vaggkrokar-8kg-latt` | Virea väggkrokar 8 kg — lätt | fasten | no-drill | https://www.amazon.se/dp/B0845T2XHN | `tesa-skruv-latt` | null | needs_manual_check | price_note: needs manual check. |
+| `amz-virea-vaggkrokar-8kg-tung` | Virea väggkrokar 8 kg — tung | fasten | no-drill | https://www.amazon.se/dp/B084655CX1 | `tesa-skruv-tung` | null | needs_manual_check | price_note: needs manual check. |
+| `amz-weissenstein-badrumshylla` | Weissenstein badrumshylla | forvaring | no-drill | https://www.amazon.se/dp/B075F4PMPN | `toaletthylla-staende` | null | needs_manual_check | price_note: needs manual check. |
+| `amz-xclou-blomladahallare` | Xclou blomlådehållare | ovrigt | no-drill | https://www.amazon.se/dp/B003D1NM5I | `blomlada-racke-co` | null | needs_manual_check | price_note: needs manual check. Live kategori `forvaring`; kandidat listad som `ovrigt`. |
+| `amz-hit-ledslinga-96` | HIT LEDslinga 96 | belysning | no-drill | https://www.amazon.se/dp/B00OG8YRBA | `ljusslinga-sladd` | null | needs_manual_check | price_note: needs manual check. |
+| `amz-meisenberg-teleskopstang` | Meisenberg teleskopstång | solskydd | no-drill | https://www.amazon.se/dp/B09D41HLJH | `golvlampa-didrik` | null | needs_manual_check | **MISMATCH:** live `golvlampa-didrik` = golvlampa (belysning), inte gardinstång. price_note: needs manual check. |
+| `amz-grenuttag-kabelbox-5vag-usb` | Grenuttag kabelbox 5-väg USB | ovrigt | no-drill | https://www.amazon.se/dp/B09SG1FS8S | `grenuttag-5vag` | null | needs_manual_check | price_note: needs manual check. Live kategori `belysning`; kandidat `ovrigt`. |
+| `amz-lifesystems-forsta-hjalpen-kit` | Lifesystems första hjälpen-kit | sakerhet | either | https://www.amazon.se/dp/B000T9LRUY | `forsta-hjalpen` | null | needs_manual_check | price_note: needs manual check. |
+| `amz-gardinia-sjalvhaftande-gardinhallare` | Gardinia självhäftande gardinhållare | solskydd | no-drill | https://www.amazon.se/dp/B0989VT1D8 | `morklaggning-klam` | null | needs_manual_check | price_note: needs manual check. Live är Bolga rullgardin (JYSK); kandidat är självhäftande hållare — typ skiljer sig. |
+| `amz-vagghylla-badcaddie-sjalvhaftande` | Vägghylla / badcaddie — självhäftande | forvaring | no-drill | https://www.amazon.se/dp/B08JQ9QW6X | `plissegardin-hven` | null | needs_manual_check | **MISMATCH:** live `plissegardin-hven` = plisségardin (solskydd), inte hylla. price_note: needs manual check. |
+| `amz-vounot-duo-rullgardin-klamfaste` | Vounot duo-rullgardin med klämfäste | solskydd | no-drill | https://www.amazon.se/dp/B08VWKXDW2 | `rullgardin-klamfaste` | null | needs_manual_check | price_note: needs manual check. |
+| `amz-comfour-blomladahallare-4pack` | Comfour blomlådehållare 4-pack | ovrigt | no-drill | https://www.amazon.se/dp/B07TF74WM1 | `blomlada-racke-cdon` | null | needs_manual_check | price_note: needs manual check. Live kategori `forvaring`; kandidat `ovrigt`. |
+| `amz-wangel-sjalvhaftande-krok-10kg` | Wangel självhäftande krok 10 kg | fasten | no-drill | https://www.amazon.se/dp/B07BSZBVLH | `tesa-skruv-jula` | null | needs_manual_check | price_note: needs manual check. |
+| `amz-housegard-brandfilt-120x180` | Housegard brandfilt 120×180 | sakerhet | either | https://www.amazon.se/dp/B08FY4FZDS | `brandfilt` | null | needs_manual_check | price_note: needs manual check. Storlek 120×180 vs live Jula-filt (ofta 120×120) — verifiera. |
+| `amz-led-dimmer-sladd-1-60w` | LED-dimmer sladd 1–60 W | belysning | no-drill | https://www.amazon.se/dp/B07TYKST53 | `dimmer-sladd` | null | needs_manual_check | price_note: needs manual check. URL normaliserad från `arcus-www.amazon.se` → `www.amazon.se`. |
+| `amz-heiman-brandvarnare-10ar` | Heiman brandvarnare 10 år | sakerhet | either | https://www.amazon.se/dp/B07NRZ3W44 | `brandvarnare-luma` | null | needs_manual_check | price_note: needs manual check. Live är Housegard Luma 2-pack. |
+| `amz-aroha-rok-co-larm-kombinerat` | Aroha rök- + CO-larm kombinerat (3-pack) | sakerhet | either | https://www.amazon.se/dp/B0D933ZP3F | `kolmonoxidlarm` | null | needs_manual_check | **Ej rent CO:** kombinerat rök+CO, 3-pack — ersätter inte 1:1 rent kolmonoxidlarm. price_note: needs manual check. |
+| `amz-klamlampa-skrivbord-led` | Klämlampa skrivbord LED | belysning | no-drill | https://www.amazon.se/dp/B07WPT6HYC | `klamlampa-flex` | null | needs_manual_check | price_note: needs manual check. |
+| `amz-ricoo-badrumskrokar-sjalvhaftande` | Ricoo badrumskrokar — självhäftande | fasten | no-drill | https://www.amazon.se/dp/B0CC9W1ZRW | `tesa-krok-kakel` | null | needs_manual_check | price_note: needs manual check. |
+| `amz-mdesign-disktork-rostfritt` | mDesign disktork — rostfritt | ovrigt | no-drill | https://www.amazon.se/dp/B01MTCU3AM | `diskstall-kvot` | null | needs_manual_check | price_note: needs manual check. Live kategori `forvaring`; kandidat `ovrigt`. |
+
+### Saknad ersättning (bland 22 otrackade)
+
+| live slug | name | notes |
+|---|---|---|
+| `fonsterfilm-dcfix` | D-C-FIX solskyddsfilm — självhäftande 92×200 cm | Ingen Amazon-substitut i Claudes lista. Behöver egen kandidat eller behåll Clas Ohlson. |

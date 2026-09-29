@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FeaturedAffiliateGrid } from "@/components/FeaturedAffiliateGrid";
 import { GuideCard } from "@/components/GuideCard";
-import { AdNote } from "@/components/AdNote";
 import { site } from "@/config/site";
 import { getTrackedAffiliateProducts } from "@/lib/catalog";
 
@@ -130,7 +129,6 @@ export default async function HomePage() {
             </Link>{" "}
             innan ni köper monteringsutrustning.
           </p>
-          <AdNote />
         </section>
       </div>
     </>
