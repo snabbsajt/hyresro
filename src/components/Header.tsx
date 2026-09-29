@@ -34,6 +34,13 @@ export function Header() {
   }, []);
 
   useEffect(() => {
+    if (!mobileOpen) return;
+    const onScroll = () => closeMobile();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [mobileOpen, closeMobile]);
+
+  useEffect(() => {
     if (!mobileOpen && !desktopOpenId) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -165,7 +172,13 @@ export function Header() {
       </header>
 
       {mobileOpen ? (
-        <nav
+        <>
+          <div
+            className="fixed inset-0 z-50 bg-black/20 md:hidden"
+            aria-hidden="true"
+            onClick={closeMobile}
+          />
+          <nav
           id={menuId}
           className="glass-panel-solid fixed inset-x-0 top-[72px] z-[60] max-h-[70vh] overflow-y-auto border-b shadow-lg md:hidden"
           style={{
@@ -175,8 +188,8 @@ export function Header() {
             WebkitOverflowScrolling: "touch",
           }}
           aria-label="Huvudmeny"
-        >
-          <ul className="mx-auto max-w-6xl px-4 py-1 sm:px-6">
+          >
+            <ul className="mx-auto max-w-6xl px-4 py-1 sm:px-6">
             <li className="border-b border-white/10">
               <Link
                 href="/sok"
@@ -230,8 +243,9 @@ export function Header() {
                 </li>
               );
             })}
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        </>
       ) : null}
     </>
   );

@@ -32,10 +32,10 @@ export function SearchForm({
 
   if (variant === "header") {
     return (
-      <div className="relative flex items-center">
+      <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center text-stone-200 hover:bg-white/10 hover:text-white"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center text-stone-200 hover:bg-white/10 hover:text-white"
           aria-label="Sök"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -70,7 +70,7 @@ export function SearchForm({
               onChange={(e) => setQ(e.target.value)}
               placeholder="Sök produkter, guider…"
               autoFocus
-              className="min-w-0 flex-1 rounded border-0 bg-transparent px-2 py-1.5 text-sm text-stone-100 placeholder:text-stone-500 outline-none"
+              className="min-w-0 flex-1 rounded border-0 bg-transparent px-2 py-1.5 text-base text-stone-100 placeholder:text-stone-500 outline-none"
             />
             <button
               type="submit"
