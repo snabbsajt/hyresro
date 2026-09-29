@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Crumbs } from "@/components/Crumbs";
 import { Faq } from "@/components/Faq";
+import { GuideAnswerBox } from "@/components/GuideAnswerBox";
+import { GuideNext } from "@/components/GuideNext";
+import { getGuide } from "@/data/guides";
 
 export const metadata: Metadata = {
   title: "Så läser ni hyreskontraktet innan ni sätter upp något",
@@ -11,16 +13,25 @@ export const metadata: Metadata = {
 };
 
 export default function KollaKontraktetPage() {
+  const meta = getGuide("kolla-kontraktet")!;
+
   return (
     <article className="space-y-8">
       <header className="space-y-3">
-        <Crumbs items={[{ label: "Så läser ni kontraktet" }]} />
+        <Crumbs
+          items={[
+            { href: "/guide", label: "Guider" },
+            { label: "Så läser ni kontraktet" },
+          ]}
+        />
         <h1 className="text-3xl font-semibold tracking-tight">Så läser ni kontraktet</h1>
         <p>
           Avtalet styr före generella tips. Hyreslagen är golvet. Ert kontrakt kan vara
           strängare.
         </p>
       </header>
+
+      {meta.answer ? <GuideAnswerBox answer={meta.answer} /> : null}
 
       <section className="space-y-3">
         <p>
@@ -50,7 +61,12 @@ export default function KollaKontraktetPage() {
         <p>
           Vårdplikt. Mindre hål för tavlor räknas oftast som normalt slitage. Större ingrepp
           kräver samtycke. Inte juridisk rådgivning. Läs hos{" "}
-          <a href="https://www.hyresgastforeningen.se/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+          <a
+            href="https://www.hyresgastforeningen.se/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2"
+          >
             Hyresgästföreningen
           </a>
           .
@@ -70,23 +86,7 @@ export default function KollaKontraktetPage() {
         ]}
       />
 
-      <ul className="space-y-2 text-sm">
-        <li>
-          <Link href="/guide/borra-i-hyresratt" className="underline underline-offset-2">
-            Får man borra i hyresrätt?
-          </Link>
-        </li>
-        <li>
-          <Link href="/guide/hylla-utan-borra" className="underline underline-offset-2">
-            Hylla utan att borra
-          </Link>
-        </li>
-        <li>
-          <Link href="/guide/tavla-pa-gips" className="underline underline-offset-2">
-            Tavla på gips
-          </Link>
-        </li>
-      </ul>
+      <GuideNext slug="kolla-kontraktet" />
     </article>
   );
 }

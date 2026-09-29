@@ -4,14 +4,20 @@ type Props = {
   href: string;
   title: string;
   blurb: string;
+  className?: string;
 };
 
 /** Glass guide entry — clearly “läs guide”, not a product/buy card. */
-export function GuideCard({ href, title, blurb }: Props) {
+export function GuideCard({ href, title, blurb, className }: Props) {
   return (
     <Link
       href={href}
-      className="glass-panel group flex flex-col gap-2 px-5 py-5 sm:py-6 transition-colors hover:border-white/30"
+      className={[
+        "glass-panel group flex flex-col gap-2 px-5 py-5 sm:py-6 transition-colors hover:border-white/30",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
       <span className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-stone-500">
         Guide

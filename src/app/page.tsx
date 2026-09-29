@@ -11,36 +11,57 @@ export const metadata: Metadata = {
   description:
     "Guider och utvalda produkter som inte kräver hål i väggen. Solskydd, fästen, förvaring och belysning för hyresrätt.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: `${site.name} — Inred hyresrätten utan att borra`,
+    description:
+      "Guider och utvalda produkter som inte kräver hål i väggen. Solskydd, fästen, förvaring och belysning för hyresrätt.",
+    url: "/",
+    images: [{ url: "/hero.jpg", alt: "Hyresro — inred hyresrätten utan att borra" }],
+  },
 };
 
-const entries = [
+const problemCards = [
   {
-    href: "/guide/kolla-kontraktet",
-    title: "Så läser ni kontraktet",
-    blurb: "Vad ni får ändra — och vad ni bör fråga värden om.",
-  },
-  {
-    href: "/guide/rullgardin-utan-borra",
-    title: "Rullgardin utan att borra",
-    blurb: "Klämmor och fästen som sitter utan hål i karmen.",
+    href: "/guide/tavla-pa-gips",
+    title: "Hänga tavla",
+    blurb: "Tejp-krok på gips — vikt, yta och hur ni tar ner.",
   },
   {
     href: "/guide/hylla-utan-borra",
-    title: "Hylla utan att borra",
-    blurb: "Stabil förvaring med limfästen och andra lösningar.",
+    title: "Sätta hylla",
+    blurb: "Självhäftande hylla utan hål. Maxvikt och yta.",
   },
-] as const;
-
-const moreGuides = [
-  { href: "/guide/plissegardin-utan-borra", title: "Plisségardin utan borr" },
-  { href: "/guide/tavla-pa-gips", title: "Tavla på gips" },
-  { href: "/guide/balkong-utan-borra", title: "Balkong utan borr" },
-  { href: "/guide/borra-i-hyresratt", title: "Får man borra i hyresrätt?" },
+  {
+    href: "/guide/borra-i-hyresratt",
+    title: "TV eller tungt",
+    blurb: "När tejpen inte räcker — och när ni måste fråga.",
+  },
+  {
+    href: "/guide/rullgardin-utan-borra",
+    title: "Gardiner",
+    blurb: "Rullgardin och plissé med kläm — utan skruv i karm.",
+  },
+  {
+    href: "/forvaring",
+    title: "Badrum",
+    blurb: "Hyllor och krokar för kakel utan borr.",
+  },
+  {
+    href: "/guide/borra-i-hyresratt",
+    title: "Får jag borra?",
+    blurb: "Kort om vad som oftast gäller i hyresrätt.",
+  },
 ] as const;
 
 export default async function HomePage() {
   const tracked = await getTrackedAffiliateProducts();
-  const featuredCards = tracked
+  // Prefer no-drill categories that match site purpose; still all tracked.
+  const preferredCats = new Set(["fasten", "solskydd", "forvaring", "belysning"]);
+  const featuredPool = [
+    ...tracked.filter((p) => preferredCats.has(p.category)),
+    ...tracked.filter((p) => !preferredCats.has(p.category)),
+  ];
+  const featuredCards = featuredPool
     .map((p) => {
       const merchant = p.merchants[0];
       if (!merchant) return null;
@@ -56,6 +77,9 @@ export default async function HomePage() {
         imageAlt: p.imageAlt,
         merchantName: merchant.name,
         merchantUrl: merchant.url,
+        weightKg: p.weightKg,
+        surfaces: p.surfaces,
+        mountType: p.mountType,
       };
     })
     .filter((x): x is NonNullable<typeof x> => x != null);
@@ -82,24 +106,26 @@ export default async function HomePage() {
             <h1 className="font-sans text-4xl font-semibold tracking-tight sm:text-5xl">
               Inred hyresrätten utan att borra
             </h1>
-            <p className="max-w-xl font-sans text-xl text-stone-400 sm:text-2xl">
+            <p className="max-w-xl font-sans text-xl text-stone-300 sm:text-2xl">
               Guider och utvalda produkter som inte kräver hål i väggen.
             </p>
-            <ul className="flex flex-wrap gap-2 pt-1">
-              {moreGuides.map((g) => (
-                <li key={g.href}>
-                  <Link href={g.href} className="guide-chip">
-                    {g.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3 sm:gap-4 md:gap-5">
-            {entries.map((e) => (
-              <GuideCard key={e.href} href={e.href} title={e.title} blurb={e.blurb} />
-            ))}
+          <div className="space-y-4">
+            <h2 className="font-sans text-lg font-semibold text-stone-100 sm:text-xl">
+              Vad vill du göra?
+            </h2>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4">
+              {problemCards.map((e) => (
+                <GuideCard
+                  key={`${e.href}-${e.title}`}
+                  href={e.href}
+                  title={e.title}
+                  blurb={e.blurb}
+                  className="problem-card"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -111,6 +137,11 @@ export default async function HomePage() {
             Hyresro hjälper er att inreda och använda hyresrätten utan onödiga hål. Guiderna
             förklarar vad som oftast går, vad som kräver värdens ja, och hur produkterna fästs.
             Produkterna kommer från svenska återförsäljare.
+          </p>
+          <p>
+            <Link href="/guide" className="text-sm font-medium underline underline-offset-2 hover:text-white">
+              Alla guider
+            </Link>
           </p>
         </section>
 

@@ -4,6 +4,7 @@ import { site } from "@/config/site";
 const paths = [
   "/",
   "/produkter",
+  "/guide",
   "/guide/borra-i-hyresratt",
   "/guide/hylla-utan-borra",
   "/guide/rullgardin-utan-borra",

@@ -6,7 +6,7 @@ import { ProductTitleAffiliateLink } from "./ProductTitleAffiliateLink";
 export function ProductRow({ product }: { product: Product }) {
   const merchant = product.merchants[0];
   return (
-    <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-white/12 py-3">
+    <li className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-b border-white/12 py-3">
       <div className="min-w-0 flex-1">
         <p className="font-medium" style={{ color: "#d2ccc2" }}>
           <ProductTitleAffiliateLink
@@ -23,7 +23,11 @@ export function ProductRow({ product }: { product: Product }) {
         />
       </div>
       {merchant ? (
-        <AffiliateLink href={merchant.url} slug={product.slug}>
+        <AffiliateLink
+          href={merchant.url}
+          slug={product.slug}
+          merchantName={merchant.name}
+        >
           {merchant.name}
         </AffiliateLink>
       ) : null}

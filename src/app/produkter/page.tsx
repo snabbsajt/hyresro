@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   description:
     "Hela Hyresros katalog: solskydd, fästen, förvaring, belysning och säkerhet.",
   alternates: { canonical: "/produkter" },
+  openGraph: {
+    title: "Alla rekommenderade produkter",
+    description:
+      "Hela Hyresros katalog: solskydd, fästen, förvaring, belysning och säkerhet.",
+    url: "/produkter",
+  },
 };
 
 const categoryOrder: { key: string; title: string }[] = [

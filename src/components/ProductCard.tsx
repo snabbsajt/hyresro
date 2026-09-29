@@ -22,36 +22,61 @@ function resolveImageUrl(product: Product): string | undefined {
   return undefined;
 }
 
+function passarFor(product: Product): string | null {
+  if (product.surfaces.length > 0) return product.surfaces.join(", ");
+  return null;
+}
+
 export async function ProductCard({ product }: Props) {
   const merchant = product.merchants[0];
   const imageUrl = resolveImageUrl(product);
+  const passar = passarFor(product);
 
   return (
     <article
       id={product.slug}
-      className="scroll-mt-24 overflow-hidden border border-white/12 bg-[#1c1b19] [content-visibility:auto]"
+      className="product-card scroll-mt-24 overflow-hidden border border-white/12 [content-visibility:auto]"
     >
       {imageUrl ? (
-        <img
-          src={imageUrl}
-          alt={product.imageAlt || product.name}
-          className="aspect-[4/3] w-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
+        <div className="product-card-image">
+          <img
+            src={imageUrl}
+            alt={product.imageAlt || product.name}
+            className="h-full w-full object-contain"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       ) : (
-        <div className="aspect-[4/3] w-full bg-[#141414]" aria-hidden />
+        <div className="product-card-image bg-[#e8e4dc]" aria-hidden />
       )}
       <div className="px-4 py-3">
-        <h3 className="mb-1.5 font-medium" style={{ color: "#d6d0c4" }}>
+        <h3 className="mb-1.5 font-medium" style={{ color: "#2a2620" }}>
           <ProductTitleAffiliateLink
             name={product.name}
             href={merchant?.url}
             slug={product.slug}
+            className="group/title inline text-inherit no-underline transition-colors hover:text-stone-800 hover:no-underline"
           />
         </h3>
+        {(passar || product.weightKg != null) && (
+          <p className="mb-2 space-y-0.5 text-sm text-stone-600">
+            {passar ? (
+              <span className="block">
+                <span className="font-medium text-stone-700">Passar för:</span>{" "}
+                {passar}
+              </span>
+            ) : null}
+            {product.weightKg != null ? (
+              <span className="block">
+                <span className="font-medium text-stone-700">Tål:</span>{" "}
+                {product.weightKg} kg
+              </span>
+            ) : null}
+          </p>
+        )}
         {product.notes ? (
-          <p className="mb-2.5 text-sm text-stone-400">{product.notes}</p>
+          <p className="mb-2.5 text-sm text-stone-600">{product.notes}</p>
         ) : null}
         <ProductPrice
           priceFromSek={product.priceFromSek}
@@ -59,7 +84,11 @@ export async function ProductCard({ product }: Props) {
           priceNote={product.priceNote}
         />
         {merchant ? (
-          <AffiliateLink href={merchant.url} slug={product.slug}>
+          <AffiliateLink
+            href={merchant.url}
+            slug={product.slug}
+            merchantName={merchant.name}
+          >
             {merchant.name}
           </AffiliateLink>
         ) : null}

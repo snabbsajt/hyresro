@@ -46,8 +46,8 @@ export function ProductPrice({
       <span
         className={
           compact
-            ? "font-medium text-[#d2ccc2]"
-            : "text-base font-medium text-[#d6d0c4]"
+            ? "font-medium text-stone-200"
+            : "text-base font-medium text-stone-200"
         }
       >
         {formatSek(priceFromSek)} kr
@@ -57,9 +57,7 @@ export function ProductPrice({
         <span aria-hidden="true">ord. </span>
         <del>{formatSek(compareAtPriceSek)} kr</del>
       </span>
-      <span
-        className="inline-flex items-center rounded-full border border-white/12 bg-white/5 px-1.5 py-0.5 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-stone-400"
-      >
+      <span className="inline-flex items-center rounded-full border border-white/12 bg-white/5 px-1.5 py-0.5 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-stone-400">
         Kampanj
       </span>
       {priceNote ? <span className="text-stone-500">{note}</span> : null}

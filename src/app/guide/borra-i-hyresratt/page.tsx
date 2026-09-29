@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ContractNote } from "@/components/ContractNote";
 import { ProductCard } from "@/components/ProductCard";
 import { Faq } from "@/components/Faq";
-import { getCatalog } from "@/lib/catalog";
+import { getProduct } from "@/lib/catalog";
 import { Crumbs } from "@/components/Crumbs";
+import { GuideAnswerBox } from "@/components/GuideAnswerBox";
+import { ContractBox } from "@/components/ContractBox";
+import { GuideNext } from "@/components/GuideNext";
+import { getGuide } from "@/data/guides";
 
 export const metadata: Metadata = {
   title: "Får man borra i hyresrätt?",
@@ -14,15 +17,20 @@ export const metadata: Metadata = {
 };
 
 export default async function BorraIHyresrattPage() {
-  const products = await getCatalog();
-  const related = products.filter((p) =>
-    ["amz-virea-vaggkrokar-8kg-latt", "amz-virea-vaggkrokar-8kg-tung", "hylla-no-drill"].includes(p.slug),
-  );
+  const meta = getGuide("borra-i-hyresratt")!;
+  const products = (
+    await Promise.all(meta.productSlugs.map((s) => getProduct(s)))
+  ).filter(Boolean);
 
   return (
     <article className="space-y-8">
       <header className="space-y-3">
-        <Crumbs items={[{ label: "Får man borra i hyresrätt?" }]} />
+        <Crumbs
+          items={[
+            { href: "/guide", label: "Guider" },
+            { label: "Får man borra i hyresrätt?" },
+          ]}
+        />
         <h1 className="text-3xl font-semibold tracking-tight">Får man borra i hyresrätt?</h1>
         <p className="text-lg">
           Små hål för tavlor räknas oftast som normalt slitage.{" "}
@@ -31,8 +39,10 @@ export default async function BorraIHyresrattPage() {
           </Link>{" "}
           kan säga nej.
         </p>
-        <ContractNote />
       </header>
+
+      {meta.answer ? <GuideAnswerBox answer={meta.answer} /> : null}
+      <ContractBox />
 
       <section className="space-y-3 leading-relaxed">
         <p>
@@ -48,7 +58,7 @@ export default async function BorraIHyresrattPage() {
       </section>
 
       <section className="space-y-3 leading-relaxed">
-        <h2 className="text-xl font-semibold">Kort svar</h2>
+        <h2 className="text-xl font-semibold">Mer om reglerna</h2>
         <ul className="list-disc space-y-2 pl-5">
           <li>Vårdplikt. Lägenheten ska lämnas i skick, med normalt slitage.</li>
           <li>Avtalet kan vara strängare än lagen.</li>
@@ -56,7 +66,12 @@ export default async function BorraIHyresrattPage() {
         </ul>
         <p>
           Läs mer hos{" "}
-          <a href="https://www.hyresgastforeningen.se/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+          <a
+            href="https://www.hyresgastforeningen.se/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2"
+          >
             Hyresgästföreningen
           </a>
           .
@@ -83,11 +98,13 @@ export default async function BorraIHyresrattPage() {
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Utan borr när det räcker</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {related.map((p) => (
-            <ProductCard key={p.slug} product={p} />
+          {products.map((p) => (
+            <ProductCard key={p!.slug} product={p!} />
           ))}
         </div>
       </section>
+
+      <GuideNext slug="borra-i-hyresratt" />
     </article>
   );
 }

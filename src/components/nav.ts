@@ -46,6 +46,7 @@ export const navItems: readonly NavItem[] = [
     id: "guider",
     label: "Guider",
     links: [
+      { href: "/guide", label: "Alla guider" },
       { href: "/guide/kolla-kontraktet", label: "Kolla kontraktet" },
       { href: "/guide/borra-i-hyresratt", label: "Borra i hyresrätt" },
       { href: "/guide/rullgardin-utan-borra", label: "Rullgardin utan borr" },

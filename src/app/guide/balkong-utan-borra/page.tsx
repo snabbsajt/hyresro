@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ContractNote } from "@/components/ContractNote";
 import { ProductCard } from "@/components/ProductCard";
 import { Faq } from "@/components/Faq";
 import { getProduct } from "@/lib/catalog";
 import { Crumbs } from "@/components/Crumbs";
+import { GuideAnswerBox } from "@/components/GuideAnswerBox";
+import { ContractBox } from "@/components/ContractBox";
+import { GuideNext } from "@/components/GuideNext";
+import { getGuide } from "@/data/guides";
 
 export const metadata: Metadata = {
   title: "Balkong utan att borra i hyresrätt",
@@ -14,26 +17,27 @@ export const metadata: Metadata = {
 };
 
 export default async function BalkongPage() {
-  const laCo = await getProduct("amz-xclou-blomladahallare");
-  const laCdon = await getProduct("amz-comfour");
-  const slinga = await getProduct("amz-hit-ledslinga-96");
+  const meta = getGuide("balkong-utan-borra")!;
+  const products = (
+    await Promise.all(meta.productSlugs.map((s) => getProduct(s)))
+  ).filter(Boolean);
 
   return (
     <article className="space-y-8">
       <header className="space-y-3">
         <Crumbs
           items={[
-            { href: "/produkter", label: "Alla produkter" },
+            { href: "/guide", label: "Guider" },
             { href: "/forvaring", label: "Förvaring" },
             { label: "Balkong utan att borra" },
           ]}
         />
         <h1 className="text-3xl font-semibold tracking-tight">Balkong utan att borra</h1>
         <p>Räcket är värdens. Kläm och sladd går. Skruv i betong eller räcke gör det oftast inte.</p>
-        <p className="flex flex-wrap gap-x-3 text-sm text-stone-500">
-          <ContractNote />
-        </p>
       </header>
+
+      {meta.answer ? <GuideAnswerBox answer={meta.answer} /> : null}
+      <ContractBox />
 
       <section className="space-y-3">
         <p>
@@ -92,11 +96,19 @@ export default async function BalkongPage() {
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Produkter</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {[laCo, laCdon, slinga].filter(Boolean).map((p) => (
+          {products.map((p) => (
             <ProductCard key={p!.slug} product={p!} />
           ))}
         </div>
       </section>
+
+      <GuideNext
+        slug="balkong-utan-borra"
+        tips={[
+          "Kolla räckets tjocklek mot lådans mått innan köp.",
+          "Skruv i räcke kräver värdens ja — kläm först.",
+        ]}
+      />
     </article>
   );
 }

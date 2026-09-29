@@ -17,6 +17,9 @@ export type FeaturedCard = {
   imageAlt?: string;
   merchantName: string;
   merchantUrl: string;
+  weightKg?: number;
+  surfaces?: string[];
+  mountType?: string;
 };
 
 function shuffle<T>(items: T[]): T[] {
@@ -26,6 +29,45 @@ function shuffle<T>(items: T[]): T[] {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+/** Prefer a mix across categories (no-drill-relevant) rather than three lamps. */
+function diversify(items: FeaturedCard[], count: number): FeaturedCard[] {
+  const byCat = new Map<string, FeaturedCard[]>();
+  for (const p of shuffle(items)) {
+    const list = byCat.get(p.category) ?? [];
+    list.push(p);
+    byCat.set(p.category, list);
+  }
+  const preferred = ["fasten", "solskydd", "forvaring", "belysning", "sakerhet"];
+  const picked: FeaturedCard[] = [];
+  const used = new Set<string>();
+  // Round-robin preferred categories first
+  let guard = 0;
+  while (picked.length < count && guard < items.length * 2) {
+    guard += 1;
+    let added = false;
+    for (const cat of preferred) {
+      if (picked.length >= count) break;
+      const list = byCat.get(cat);
+      if (!list || list.length === 0) continue;
+      const next = list.shift()!;
+      if (used.has(next.slug)) continue;
+      used.add(next.slug);
+      picked.push(next);
+      added = true;
+    }
+    if (!added) break;
+  }
+  if (picked.length < count) {
+    for (const p of shuffle(items)) {
+      if (picked.length >= count) break;
+      if (used.has(p.slug)) continue;
+      used.add(p.slug);
+      picked.push(p);
+    }
+  }
+  return picked;
 }
 
 type Props = {
@@ -41,12 +83,12 @@ export function FeaturedAffiliateGrid({ products, count = 3 }: Props) {
       setPicked([]);
       return;
     }
-    setPicked(shuffle(products).slice(0, Math.min(count, products.length)));
+    setPicked(diversify(products, Math.min(count, products.length)));
   }, [products, count]);
 
   const shown = useMemo(() => {
     if (picked) return picked;
-    // SSR / first paint: stable first N so layout doesn't jump empty
+    // SSR / first paint: stable first N (prefer preferred cats already ordered by page)
     return products.slice(0, Math.min(count, products.length));
   }, [picked, products, count]);
 
@@ -54,40 +96,73 @@ export function FeaturedAffiliateGrid({ products, count = 3 }: Props) {
 
   return (
     <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
-      {shown.map((p) => (
-        <article
-          key={p.slug}
-          className="overflow-hidden border border-white/12 bg-[#1c1b19] [content-visibility:auto]"
-        >
-          {p.imageUrl ? (
-            <img
-              src={p.imageUrl}
-              alt={p.imageAlt || p.name}
-              className="aspect-[4/3] w-full object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-          ) : (
-            <div className="aspect-[4/3] w-full bg-[#141414]" aria-hidden />
-          )}
-          <div className="px-4 py-3">
-            <h3 className="mb-1.5 font-medium" style={{ color: "#d6d0c4" }}>
-              <ProductTitleAffiliateLink name={p.name} href={p.merchantUrl} slug={p.slug} />
-            </h3>
-            {p.notes ? (
-              <p className="mb-2.5 text-sm text-stone-400">{p.notes}</p>
-            ) : null}
-            <ProductPrice
-              priceFromSek={p.priceFromSek}
-              compareAtPriceSek={p.compareAtPriceSek}
-              priceNote={p.priceNote}
-            />
-            <AffiliateLink href={p.merchantUrl} slug={p.slug}>
-              {p.merchantName}
-            </AffiliateLink>
-          </div>
-        </article>
-      ))}
+      {shown.map((p) => {
+        const passar =
+          p.surfaces && p.surfaces.length > 0
+            ? p.surfaces.join(", ")
+            : null;
+        return (
+          <article
+            key={p.slug}
+            className="product-card overflow-hidden border border-white/12 [content-visibility:auto]"
+          >
+            {p.imageUrl ? (
+              <div className="product-card-image">
+                <img
+                  src={p.imageUrl}
+                  alt={p.imageAlt || p.name}
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            ) : (
+              <div className="product-card-image bg-[#e8e4dc]" aria-hidden />
+            )}
+            <div className="px-4 py-3">
+              <h3 className="mb-1.5 font-medium" style={{ color: "#2a2620" }}>
+                <ProductTitleAffiliateLink
+                  name={p.name}
+                  href={p.merchantUrl}
+                  slug={p.slug}
+                  className="group/title inline text-inherit no-underline transition-colors hover:text-stone-800 hover:no-underline"
+                />
+              </h3>
+              {(passar || p.weightKg != null) && (
+                <p className="mb-2 space-y-0.5 text-sm text-stone-600">
+                  {passar ? (
+                    <span className="block">
+                      <span className="font-medium text-stone-700">Passar för:</span>{" "}
+                      {passar}
+                    </span>
+                  ) : null}
+                  {p.weightKg != null ? (
+                    <span className="block">
+                      <span className="font-medium text-stone-700">Tål:</span>{" "}
+                      {p.weightKg} kg
+                    </span>
+                  ) : null}
+                </p>
+              )}
+              {p.notes ? (
+                <p className="mb-2.5 text-sm text-stone-600">{p.notes}</p>
+              ) : null}
+              <ProductPrice
+                priceFromSek={p.priceFromSek}
+                compareAtPriceSek={p.compareAtPriceSek}
+                priceNote={p.priceNote}
+              />
+              <AffiliateLink
+                href={p.merchantUrl}
+                slug={p.slug}
+                merchantName={p.merchantName}
+              >
+                {p.merchantName}
+              </AffiliateLink>
+            </div>
+          </article>
+        );
+      })}
     </div>
   );
 }

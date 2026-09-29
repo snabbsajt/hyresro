@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ContractNote } from "@/components/ContractNote";
 import { ProductCard } from "@/components/ProductCard";
 import { Faq } from "@/components/Faq";
 import { getProduct } from "@/lib/catalog";
 import { Crumbs } from "@/components/Crumbs";
+import { GuideAnswerBox } from "@/components/GuideAnswerBox";
+import { ContractBox } from "@/components/ContractBox";
+import { GuideNext } from "@/components/GuideNext";
+import { getGuide } from "@/data/guides";
 
 export const metadata: Metadata = {
   title: "Sätta upp hylla utan att borra",
@@ -14,26 +17,27 @@ export const metadata: Metadata = {
 };
 
 export default async function HyllaUtanBorraPage() {
-  const hylla = await getProduct("hylla-no-drill");
-  const tesaTung = await getProduct("amz-virea-vaggkrokar-8kg-tung");
-  const tesaLatt = await getProduct("amz-virea-vaggkrokar-8kg-latt");
+  const meta = getGuide("hylla-utan-borra")!;
+  const products = (
+    await Promise.all(meta.productSlugs.map((s) => getProduct(s)))
+  ).filter(Boolean);
 
   return (
     <article className="space-y-8">
       <header className="space-y-3">
         <Crumbs
           items={[
-            { href: "/produkter", label: "Alla produkter" },
+            { href: "/guide", label: "Guider" },
             { href: "/fasten", label: "Fästen" },
             { label: "Hylla utan att borra" },
           ]}
         />
         <h1 className="text-3xl font-semibold tracking-tight">Hylla utan att borra</h1>
         <p>Fungerar om ytan är slät och ni håller maxvikten.</p>
-        <p className="flex flex-wrap gap-x-3 text-sm text-stone-500">
-          <ContractNote />
-        </p>
       </header>
+
+      {meta.answer ? <GuideAnswerBox answer={meta.answer} /> : null}
+      <ContractBox />
 
       <section className="space-y-3">
         <p>
@@ -94,11 +98,19 @@ export default async function HyllaUtanBorraPage() {
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Produkter</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {[hylla, tesaTung, tesaLatt].filter(Boolean).map((p) => (
+          {products.map((p) => (
             <ProductCard key={p!.slug} product={p!} />
           ))}
         </div>
       </section>
+
+      <GuideNext
+        slug="hylla-utan-borra"
+        tips={[
+          "Maxvikten gäller hylla + innehåll — inte bara brädan.",
+          "Använd tillverkarens avdragningsmetod vid flytt.",
+        ]}
+      />
     </article>
   );
 }

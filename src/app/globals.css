@@ -8,7 +8,10 @@
   --line: #2c2c2c;
   --slot: #141414;
   --accent: #3b5fdb;
+  --accent-warm: #c4785a;
+  --accent-warm-hover: #b56a4c;
   --card: #1c1b19;
+  --card-light: #f3efe8;
   --background: var(--paper);
   --foreground: var(--ink);
   --glass-bg: rgba(14, 13, 12, 0.48);
@@ -146,19 +149,19 @@ main .text-stone-400 {
 }
 
 .hero-glass {
-  /* Mildare mörkning så wallpaper syns bättre (särskilt mobil) */
-  background: rgba(14, 13, 12, 0.36);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  /* Lighter frost — wallpaper syns mer, glaset kvar */
+  background: rgba(18, 16, 14, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .hero-fade {
-  /* Mobil: något ljusare overlay så wallpaper syns; botten hård för läsbarhet */
+  /* Mobil: ljusare overlay, botten fortfarande läsbar mot innehåll */
   background: linear-gradient(
     to bottom,
-    rgba(12, 12, 12, 0.04) 0%,
-    rgba(12, 12, 12, 0.18) 45%,
-    rgba(12, 12, 12, 0.72) 78%,
+    rgba(12, 12, 12, 0.0) 0%,
+    rgba(12, 12, 12, 0.10) 40%,
+    rgba(12, 12, 12, 0.55) 78%,
     #0c0c0c 100%
   );
   pointer-events: none;
@@ -171,39 +174,38 @@ main .text-stone-400 {
   }
 
   .hero-glass {
-    /* Desktop: ännu lättare frost så bright wallpaper syns mer */
-    background: rgba(14, 13, 12, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    /* Desktop: lätt frost — bright wallpaper syns tydligt */
+    background: rgba(14, 13, 12, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .hero-fade {
-    /* Softare mid-stops — mer ljus från hero, botten fortfarande solid mot innehåll */
     background: linear-gradient(
       to bottom,
       rgba(12, 12, 12, 0.0) 0%,
-      rgba(12, 12, 12, 0.04) 35%,
-      rgba(12, 12, 12, 0.16) 65%,
-      rgba(12, 12, 12, 0.50) 88%,
+      rgba(12, 12, 12, 0.02) 30%,
+      rgba(12, 12, 12, 0.12) 60%,
+      rgba(12, 12, 12, 0.42) 88%,
       #0c0c0c 100%
     );
   }
 
   .hero-wallpaper .glass-panel {
-    /* Lite mer opacitet för läsbarhet mot wallpaper, fortfarande glassigt */
-    background: rgba(18, 16, 14, 0.52);
-    backdrop-filter: blur(20px) saturate(1.25);
-    -webkit-backdrop-filter: blur(20px) saturate(1.25);
-    border: 1px solid rgba(255, 255, 255, 0.26);
+    /* Lighter glass — frostat men ljust */
+    background: rgba(28, 24, 20, 0.38);
+    backdrop-filter: blur(18px) saturate(1.3);
+    -webkit-backdrop-filter: blur(18px) saturate(1.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 0.85rem;
     box-shadow:
-      0 10px 40px rgba(0, 0, 0, 0.34),
-      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      0 10px 40px rgba(0, 0, 0, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.16);
   }
 
   .hero-wallpaper .glass-panel:hover {
-    border-color: rgba(255, 255, 255, 0.4);
-    background: rgba(22, 20, 18, 0.58);
+    border-color: rgba(255, 255, 255, 0.45);
+    background: rgba(32, 28, 24, 0.46);
   }
 
   .hero-wallpaper .guide-chip {
@@ -260,4 +262,81 @@ main .text-stone-400 {
   .hero-wallpaper .glass-panel {
     background: rgba(20, 19, 17, 0.88);
   }
+}
+
+
+/* Warm filled CTA — min ~48px */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: var(--accent-warm);
+  color: #1a1410;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, filter 0.15s ease;
+}
+.cta-btn:hover {
+  background: var(--accent-warm-hover);
+  color: #1a1410;
+  filter: brightness(1.05);
+}
+li > .cta-btn {
+  width: auto;
+  min-width: 10.5rem;
+  padding-inline: 1rem;
+}
+
+/* Lighter product cards so white product photos blend */
+.product-card {
+  background: var(--card-light);
+  color: #3a3530;
+  border-color: rgba(255, 255, 255, 0.18);
+  border-radius: 0.55rem;
+}
+.product-card-image {
+  aspect-ratio: 4 / 3;
+  max-height: 240px;
+  width: 100%;
+  background: #ebe6de;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media (min-width: 640px) {
+  .product-card-image {
+    max-height: 260px;
+  }
+}
+.product-card .text-stone-400,
+.product-card .text-stone-500,
+.product-card .text-stone-600 {
+  color: #6b6560 !important;
+}
+.product-card .text-stone-700 {
+  color: #4a453f !important;
+}
+.product-card .text-stone-200 {
+  color: #2a2620 !important;
+}
+.product-card .border-white\/12 {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+.product-card .bg-white\/5 {
+  background: rgba(0, 0, 0, 0.04);
+}
+.product-card [style*="color: #d6d0c4"],
+.product-card [style*="color:#d6d0c4"] {
+  color: #2a2620 !important;
+}
+
+.problem-card {
+  min-height: 7.5rem;
 }
