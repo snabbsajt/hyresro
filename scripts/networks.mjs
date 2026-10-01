@@ -9,6 +9,7 @@ export const ADDREVENUE = {
     fonsterfilm: "986347",
     boelle: "988151",
     solskyddsshoppen: "985467",
+    northmans: "984457",
   },
 };
 
