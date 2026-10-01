@@ -215,6 +215,29 @@ export const products: Product[] = [
   },
 
   {
+    slug: "dorrstopp-stop-blomus-stal-1-kg",
+    name: "Dörrstopp STOP Blomus — stål 1 kg",
+    category: "ovrigt",
+    mountType: "no-drill",
+    surfaces: [],
+    fitsFor: "golv",
+    weightKg: 1,
+    priceFromSek: 749,
+    merchants: [
+      {
+        name: "Northmans.se",
+        url: wrapAddrevenue(
+          "northmans",
+          "https://northmans.se/forvaring-organisering/dorrstopp/dorrstopp-stop-blomus-stal-1-kg/",
+        ),
+      },
+    ],
+    notes:
+      "Fristående dörrstopp i matt stål (1 kg). Ingen montering — ställs på golvet.",
+    imageUrl: "/products/dorrstopp-stop-blomus-stal-1-kg.jpg",
+  },
+
+  {
     slug: "amz-virea-vaggkrokar-8kg-latt",
     name: "Virea väggkrokar 8 kg — lätt",
     category: "fasten",
@@ -645,6 +668,116 @@ export const products: Product[] = [
     notes:
       "Uppladdningsbar bordslampa i krom med dimbart ljus, ca 28 cm. Ställs på bord — ingen montering.",
     imageUrl: "/products/iron-portabel-bordslampa-krom.jpg",
+  },
+
+  {
+    slug: "portabel-led-lampa-beam-svart-kreafunk",
+    name: "Portabel LED-lampa Beam — svart",
+    category: "belysning",
+    mountType: "no-drill",
+    surfaces: [],
+    fitsFor: "bord",
+    priceFromSek: 449,
+    merchants: [
+      {
+        name: "Northmans.se",
+        url: wrapAddrevenue(
+          "northmans",
+          "https://northmans.se/belysning/portabla-led-lampor/portabel-led-lampa-beam-svart/",
+        ),
+      },
+    ],
+    notes:
+      "Uppladdningsbar dimbar LED-lampa (USB-C), upp till 30 timmar. Ställs på bord — ingen montering.",
+    imageUrl: "/products/portabel-led-lampa-beam-svart-kreafunk.jpg",
+  },
+
+  {
+    slug: "portabel-led-lampa-beam-dusty-olive-kreafunk",
+    name: "Portabel LED-lampa Beam — dusty olive",
+    category: "belysning",
+    mountType: "no-drill",
+    surfaces: [],
+    fitsFor: "bord",
+    priceFromSek: 449,
+    merchants: [
+      {
+        name: "Northmans.se",
+        url: wrapAddrevenue(
+          "northmans",
+          "https://northmans.se/belysning/portabel-led-lampa-beam-dusty-olive/",
+        ),
+      },
+    ],
+    notes:
+      "Uppladdningsbar dimbar LED-lampa (USB-C), dusty olive, upp till 30 timmar. Ställs på bord — ingen montering.",
+    imageUrl: "/products/portabel-led-lampa-beam-dusty-olive-kreafunk.jpg",
+  },
+
+  {
+    slug: "portabel-led-lampa-spirit-s-moonbeam-blomus",
+    name: "Portabel LED-lampa Spirit S — Moonbeam",
+    category: "belysning",
+    mountType: "no-drill",
+    surfaces: [],
+    fitsFor: "bord",
+    priceFromSek: 599,
+    merchants: [
+      {
+        name: "Northmans.se",
+        url: wrapAddrevenue(
+          "northmans",
+          "https://northmans.se/belysning/bordslampor/portabel-led-lampa-spirit-s-15-cm-moonbeam/",
+        ),
+      },
+    ],
+    notes:
+      "Uppladdningsbar dimbar LED-lampa från Blomus, IP44, 6–12 timmar. Ställs på bord — ingen montering.",
+    imageUrl: "/products/portabel-led-lampa-spirit-s-moonbeam-blomus.jpg",
+  },
+
+  {
+    slug: "portabel-bordslampa-light-to-go-vit-koziol",
+    name: "Portabel bordslampa Light To Go — vit",
+    category: "belysning",
+    mountType: "no-drill",
+    surfaces: [],
+    fitsFor: "bord",
+    priceFromSek: 879,
+    merchants: [
+      {
+        name: "Northmans.se",
+        url: wrapAddrevenue(
+          "northmans",
+          "https://northmans.se/belysning/portabel-bordslampa-light-to-go-vit/",
+        ),
+      },
+    ],
+    notes:
+      "Uppladdningsbar dimbar LED-lampa från Koziol, upp till 14 timmar. Inomhus och utomhus. Ställs på bord — ingen montering.",
+    imageUrl: "/products/portabel-bordslampa-light-to-go-vit-koziol.jpg",
+  },
+
+  {
+    slug: "portabel-led-lampa-arc-solcell-svart-kreafunk",
+    name: "Portabel LED-lampa Arc solcell — svart",
+    category: "belysning",
+    mountType: "no-drill",
+    surfaces: [],
+    fitsFor: "balkong, utomhus",
+    priceFromSek: 999,
+    merchants: [
+      {
+        name: "Northmans.se",
+        url: wrapAddrevenue(
+          "northmans",
+          "https://northmans.se/belysning/portabel-led-lampa-arc-solcell-svart/",
+        ),
+      },
+    ],
+    notes:
+      "Solcells-/USB-C-laddad utomhuslampa (IPX4), dimbar. Ställs på terrass eller balkong — ingen montering.",
+    imageUrl: "/products/portabel-led-lampa-arc-solcell-svart-kreafunk.jpg",
   },
 
   {

@@ -23,23 +23,23 @@ En produkt behöver följande innan den går live:
 - `fonsterfilm` `a=986347` — live: frostad, randig, blommig fönsterfilm
 - `boelle` `a=988151` — live: Alva, Quito, Umeå golvlampa, Manaus hylla
 - `solskyddsshoppen` `a=985467` — live: Plisségardin Flex, Flex Dubbel, insektsnät skjutdörr plissé, insektsnät fönster (c=3469712)
-- `northmans` `a=984457` — kandidater ej publicerade; Addrevenue (c=3469712)
+- `northmans` `a=984457` — live: Blomus dörrstopp, Beam×2, Spirit S, Light To Go, Arc solcell (c=3469712)
 
 
-## Northmans — ej publicerat (Addrevenue a=984457)
+## Publicerat 2026-10-01 — Northmans (Addrevenue a=984457)
 
-Claude-research markerade samtliga kandidater som slut i lager. Behåll dem i kö med `status: out_of_stock`; om någon återkommer krävs `needs_manual_check` innan eventuell publicering. Tracking: använd Addrevenue-wrap med `a=984457` och `c=3469712` — inte Adrecord trots nätverksfältet i JSON.
+Live i `products.ts` (Jonathan bekräftade i lager; priser från pending). Tracking: Addrevenue `a=984457` `c=3469712`.
 
-| suggested_slug | product_url | price_sek | status | notes |
-|---|---|---:|---|---|
-| `dorrstopp-stop-blomus-stal-1-kg` | <https://northmans.se/forvaring-organisering/dorrstopp/dorrstopp-stop-blomus-stal-1-kg/> | 749 | `out_of_stock` | needs_manual_check om produkten återkommer |
-| `portabel-led-lampa-beam-svart-kreafunk` | <https://northmans.se/belysning/portabel-led-lampa-beam-svart/> | 449 | `out_of_stock` | needs_manual_check om produkten återkommer |
-| `portabel-led-lampa-beam-dusty-olive-kreafunk` | <https://northmans.se/belysning/portabel-led-lampa-beam-dusty-olive/> | 449 | `out_of_stock` | needs_manual_check om produkten återkommer |
-| `portabel-led-lampa-spirit-s-moonbeam-blomus` | <https://northmans.se/belysning/bordslampor/portabel-led-lampa-spirit-s-15-cm-moonbeam/> | 599 | `out_of_stock` | needs_manual_check om produkten återkommer |
-| `portabel-bordslampa-light-to-go-vit-koziol` | <https://northmans.se/belysning/portabel-bordslampa-light-to-go-vit/> | 879 | `out_of_stock` | needs_manual_check om produkten återkommer |
-| `portabel-led-lampa-arc-solcell-svart-kreafunk` | <https://northmans.se/belysning/portabel-led-lampa-arc-solcell-svart/> | 999 | `out_of_stock` | needs_manual_check om produkten återkommer |
+| slug | price_sek | mount | category | notes |
+|---|---:|---|---|---|
+| `dorrstopp-stop-blomus-stal-1-kg` | 749 | no-drill | ovrigt | fristående, 1 kg |
+| `portabel-led-lampa-beam-svart-kreafunk` | 449 | no-drill | belysning | — |
+| `portabel-led-lampa-beam-dusty-olive-kreafunk` | 449 | no-drill | belysning | — |
+| `portabel-led-lampa-spirit-s-moonbeam-blomus` | 599 | no-drill | belysning | — |
+| `portabel-bordslampa-light-to-go-vit-koziol` | 879 | no-drill | belysning | — |
+| `portabel-led-lampa-arc-solcell-svart-kreafunk` | 999 | no-drill | belysning | solcell/USB-C |
 
-Rejected: Ponto hooks / UMAGE — `out_of_niche`, publicera inte.
+Rejected / SKIP: Ponto krokar / UMAGE Lean On Me — `out_of_niche`, publicera inte.
 
 
 ## Publicerat 2026-09-29 — Solskyddsshoppen (Addrevenue a=985467)
